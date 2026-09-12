@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=21.0">
+  <link rel="stylesheet" href="styles.css?v=23.0">
   
   <!-- Chart.js Library -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -33,9 +33,13 @@
   <header class="modern-header">
     <a href="#hero" class="brand-title-badge">
       <img src="assets/candidate_photo.jpg" alt="Luka Xiong" class="header-avatar-mini">
-      LUKA XIONG <span style="color: #94A3B8; font-weight: 600;">/ CANDIDAT SKEMA BUSINESS SCHOOL</span>
+      <div class="brand-text-group">
+        <span class="brand-name">LUKA XIONG</span>
+        <span class="brand-subtitle"><span class="sub-sep">/ </span>CANDIDAT SKEMA<span class="sub-full"> BUSINESS SCHOOL</span></span>
+      </div>
     </a>
 
+    <!-- Desktop Navigation Links -->
     <div class="nav-links-wrapper">
       <ul class="nav-links-container">
         <li><a href="#hero" class="nav-item-link active"><i class="fa-solid fa-house"></i> Accueil</a></li>
@@ -46,10 +50,88 @@
       </ul>
     </div>
 
-    <button class="btn-vivid-blue" id="btnShortlist">
+    <!-- Desktop Contact Button -->
+    <button class="btn-vivid-blue header-contact-btn" id="btnShortlist">
       <i class="fa-solid fa-paper-plane"></i> Contact
     </button>
+
+    <!-- Mobile 3-Bar Hamburger Toggle Button -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menu de navigation" title="Ouvrir le menu">
+      <span class="bar bar-1"></span>
+      <span class="bar bar-2"></span>
+      <span class="bar bar-3"></span>
+    </button>
   </header>
+
+  <!-- Modern Fluid Mobile Navigation Popup Sheet -->
+  <div class="mobile-nav-popover" id="mobileNavPopover">
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav-pane">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-brand">
+          <img src="assets/candidate_photo.jpg" alt="Luka Xiong" class="header-avatar-mini">
+          <div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: #F9FAFB;">Luka Xiong</div>
+            <div style="font-size: 0.72rem; color: #FCA5A5; font-weight: 700;"><i class="fa-solid fa-graduation-cap"></i> Candidat SKEMA Business School</div>
+          </div>
+        </div>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Fermer le menu">&times;</button>
+      </div>
+
+      <nav class="mobile-nav-menu">
+        <a href="#hero" class="mobile-nav-item active">
+          <div class="mobile-nav-icon"><i class="fa-solid fa-house"></i></div>
+          <div class="mobile-nav-info">
+            <span class="mobile-nav-title">Accueil</span>
+            <span class="mobile-nav-subtitle">Hub Central &amp; Profil</span>
+          </div>
+          <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+        </a>
+
+        <a href="#etape1" class="mobile-nav-item">
+          <div class="mobile-nav-icon" style="color: #F59E0B; background: rgba(245, 158, 11, 0.12);"><i class="fa-solid fa-certificate"></i></div>
+          <div class="mobile-nav-info">
+            <span class="mobile-nav-title">1. INSIDE LVMH</span>
+            <span class="mobile-nav-subtitle">Certifications Luxe &amp; Management</span>
+          </div>
+          <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+        </a>
+
+        <a href="#etape2" class="mobile-nav-item">
+          <div class="mobile-nav-icon" style="color: #10B981; background: rgba(16, 185, 129, 0.12);"><i class="fa-solid fa-building-user"></i></div>
+          <div class="mobile-nav-info">
+            <span class="mobile-nav-title">2. C'Parc Déméter</span>
+            <span class="mobile-nav-subtitle">Architecture &amp; Transition Écologique</span>
+          </div>
+          <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+        </a>
+
+        <a href="#etape3" class="mobile-nav-item">
+          <div class="mobile-nav-icon" style="color: #3B82F6; background: rgba(59, 130, 246, 0.12);"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="mobile-nav-info">
+            <span class="mobile-nav-title">3. Achat-Revente</span>
+            <span class="mobile-nav-subtitle">7 ans de terrain • Esprit d'Entreprise</span>
+          </div>
+          <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+        </a>
+
+        <a href="#etape4" class="mobile-nav-item">
+          <div class="mobile-nav-icon" style="color: #EF4444; background: rgba(239, 68, 68, 0.12);"><i class="fa-solid fa-hands-holding-circle"></i></div>
+          <div class="mobile-nav-info">
+            <span class="mobile-nav-title">4. Festivals Hmong</span>
+            <span class="mobile-nav-subtitle">Bénévolat &amp; Engagement Communautaire</span>
+          </div>
+          <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+        </a>
+      </nav>
+
+      <div class="mobile-nav-footer">
+        <button class="btn-mobile-contact" id="btnMobileContact">
+          <i class="fa-solid fa-paper-plane"></i> Contacter Luka Xiong
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Sticky Bottom Floating Contact Button -->
   <button class="sticky-contact-btn" id="btnShortlistFloating">
@@ -1224,19 +1306,12 @@
     </div>
   </div>
 
-  <!-- IN-PAGE LIGHTBOX POPUP MODAL WITH ZOOM CONTROLS -->
+  <!-- IN-PAGE LIGHTBOX POPUP MODAL (PURE BLURRED BACKDROP & PINCH-TO-ZOOM) -->
   <div class="modal-overlay" id="modalOverlay">
+    <button class="modal-close" id="modalClose" aria-label="Fermer l'image" title="Fermer (Échap)">&times;</button>
     <div class="modal-content">
-      <button class="modal-close" id="modalClose" title="Fermer (Échap)">&times;</button>
-      
-      <div class="modal-image-container">
+      <div class="modal-image-container" id="modalImageContainer">
         <img id="modalImage" src="" alt="Agrandissement Visuel">
-      </div>
-
-      <div class="modal-toolbar">
-        <button class="modal-zoom-btn" id="zoomOutBtn" title="Zoom arrière"><i class="fa-solid fa-minus"></i></button>
-        <button class="modal-zoom-btn" id="zoomResetBtn" style="width: auto; padding: 0 12px; border-radius: 99px; font-size: 0.8rem;" title="Réinitialiser zoom">100%</button>
-        <button class="modal-zoom-btn" id="zoomInBtn" title="Zoom avant"><i class="fa-solid fa-plus"></i></button>
       </div>
     </div>
   </div>
