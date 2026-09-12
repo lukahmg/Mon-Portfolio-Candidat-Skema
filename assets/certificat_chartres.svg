@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 980" width="100%" height="100%">
+  <defs>
+    <!-- Background Soft Mandala Watermark Pattern -->
+    <pattern id="mandalaWatermark" width="400" height="400" patternUnits="userSpaceOnUse">
+      <g opacity="0.04" fill="none" stroke="#B89647" stroke-width="1.5">
+        <circle cx="200" cy="200" r="180"/>
+        <circle cx="200" cy="200" r="140"/>
+        <circle cx="200" cy="200" r="100"/>
+        <circle cx="200" cy="200" r="60"/>
+        <path d="M 200 20 L 200 380 M 20 200 L 380 200 M 72.7 72.7 L 327.3 327.3 M 72.7 327.3 L 327.3 72.7"/>
+        <path d="M 200 60 Q 250 130 200 200 Q 150 130 200 60 Z"/>
+        <path d="M 200 200 Q 250 270 200 340 Q 150 270 200 200 Z"/>
+        <path d="M 60 200 Q 130 250 200 200 Q 130 150 60 200 Z"/>
+        <path d="M 200 200 Q 270 250 340 200 Q 270 150 200 200 Z"/>
+      </g>
+    </pattern>
+  </defs>
+
+  <!-- Outer Dark Navy Border -->
+  <rect width="1400" height="980" fill="#131F33"/>
+  <rect x="18" y="18" width="1364" height="944" fill="#FAF8F3" stroke="#B89647" stroke-width="4"/>
+  <rect x="32" y="32" width="1336" height="916" fill="none" stroke="#131F33" stroke-width="2"/>
+  <rect x="38" y="38" width="1324" height="904" fill="none" stroke="#B89647" stroke-width="1"/>
+
+  <!-- Watermark Fill Layer -->
+  <rect x="40" y="40" width="1320" height="900" fill="url(#mandalaWatermark)"/>
+
+  <!-- Precise Classical Gold Corner Ornaments (Filigree) -->
+  <g fill="none" stroke="#B89647" stroke-width="2.5">
+    <!-- Top-Left Corner -->
+    <g transform="translate(45, 45)">
+      <path d="M 0,0 C 40,0 80,10 100,30 C 80,50 60,60 40,40 C 20,20 0,40 0,0 Z" fill="#B89647" opacity="0.85"/>
+      <path d="M 10,10 C 60,10 110,25 140,55 C 120,85 85,95 55,65 C 35,45 10,60 10,10 Z"/>
+      <circle cx="25" cy="25" r="5" fill="#B89647"/>
+      <circle cx="65" cy="25" r="4" fill="#B89647"/>
+      <circle cx="25" cy="65" r="4" fill="#B89647"/>
+    </g>
+    <!-- Top-Right Corner -->
+    <g transform="translate(1355, 45) scale(-1, 1)">
+      <path d="M 0,0 C 40,0 80,10 100,30 C 80,50 60,60 40,40 C 20,20 0,40 0,0 Z" fill="#B89647" opacity="0.85"/>
+      <path d="M 10,10 C 60,10 110,25 140,55 C 120,85 85,95 55,65 C 35,45 10,60 10,10 Z"/>
+      <circle cx="25" cy="25" r="5" fill="#B89647"/>
+      <circle cx="65" cy="25" r="4" fill="#B89647"/>
+      <circle cx="25" cy="65" r="4" fill="#B89647"/>
+    </g>
+    <!-- Bottom-Left Corner -->
+    <g transform="translate(45, 935) scale(1, -1)">
+      <path d="M 0,0 C 40,0 80,10 100,30 C 80,50 60,60 40,40 C 20,20 0,40 0,0 Z" fill="#B89647" opacity="0.85"/>
+      <path d="M 10,10 C 60,10 110,25 140,55 C 120,85 85,95 55,65 C 35,45 10,60 10,10 Z"/>
+      <circle cx="25" cy="25" r="5" fill="#B89647"/>
+      <circle cx="65" cy="25" r="4" fill="#B89647"/>
+      <circle cx="25" cy="65" r="4" fill="#B89647"/>
+    </g>
+    <!-- Bottom-Right Corner -->
+    <g transform="translate(1355, 935) scale(-1, -1)">
+      <path d="M 0,0 C 40,0 80,10 100,30 C 80,50 60,60 40,40 C 20,20 0,40 0,0 Z" fill="#B89647" opacity="0.85"/>
+      <path d="M 10,10 C 60,10 110,25 140,55 C 120,85 85,95 55,65 C 35,45 10,60 10,10 Z"/>
+      <circle cx="25" cy="25" r="5" fill="#B89647"/>
+      <circle cx="65" cy="25" r="4" fill="#B89647"/>
+      <circle cx="25" cy="65" r="4" fill="#B89647"/>
+    </g>
+  </g>
+
+  <!-- HEADER TEXT -->
+  <text x="700" y="160" font-family="'Times New Roman', Georgia, serif" font-size="76" font-weight="normal" fill="#1C2836" text-anchor="middle" letter-spacing="14">CERTIFICAT</text>
+  <text x="700" y="235" font-family="'Times New Roman', Georgia, serif" font-size="44" font-weight="normal" fill="#1C2836" text-anchor="middle" letter-spacing="10">DE PARTICIPATION</text>
+
+  <!-- Gold Flourish Divider under Header -->
+  <g transform="translate(700, 275)">
+    <path d="M -160,0 Q -80,-15 0,0 Q 80,15 160,0 M -120,0 C -60,12 60,-12 120,0" fill="none" stroke="#B89647" stroke-width="2"/>
+    <circle cx="0" cy="0" r="6" fill="#B89647"/>
+    <circle cx="-30" cy="0" r="3" fill="#B89647"/>
+    <circle cx="30" cy="0" r="3" fill="#B89647"/>
+  </g>
+
+  <!-- RECIPIENT HEADER -->
+  <text x="700" y="345" font-family="'Times New Roman', Georgia, serif" font-size="20" font-weight="bold" fill="#444444" text-anchor="middle" letter-spacing="4">CE CERTIFICAT EST DÉCERNÉ À :</text>
+
+  <!-- RECIPIENT NAME (Luka XIONG) -->
+  <text x="700" y="445" font-family="'Times New Roman', Georgia, serif" font-size="64" font-weight="bold" fill="#8C6D1F" text-anchor="middle" letter-spacing="2">Luka XIONG</text>
+  <line x1="420" y1="475" x2="980" y2="475" stroke="#B89647" stroke-width="1.5"/>
+
+  <!-- EXACT BODY TEXT (PARAGRAPH) -->
+  <text x="700" y="540" font-family="'Times New Roman', Georgia, serif" font-size="22" fill="#222222" text-anchor="middle">Je certifie par la présente que Lukas Xiong, élève de terminale au lycée Jehan-de-Beauce,</text>
+  <text x="700" y="582" font-family="'Times New Roman', Georgia, serif" font-size="22" fill="#222222" text-anchor="middle">a contribué à la réalisation de l'exposition « Le Clos-Pajot se réinvente ».</text>
+  <text x="700" y="624" font-family="'Times New Roman', Georgia, serif" font-size="22" fill="#222222" text-anchor="middle">Sa performance témoigne de sa maîtrise dans le domaine. Félicitations pour cette réussite méritée.</text>
+
+  <!-- DATE & PLACE LINE -->
+  <text x="360" y="720" font-family="'Times New Roman', Georgia, serif" font-size="20" font-weight="normal" fill="#333333" text-anchor="middle">Fait à Chartres, le 22 juin 2026</text>
+
+  <!-- EXACT BLUE INK SIGNATURE & SIGNATORY METADATA -->
+  <g transform="translate(720, 680)">
+    <!-- Blue Ink Signature Path -->
+    <path d="M 30,50 C 60,-10 80,90 110,20 C 130,-10 160,80 190,40 C 210,10 240,70 280,30" fill="none" stroke="#1A4389" stroke-width="3.5" stroke-linecap="round"/>
+    
+    <text x="160" y="115" font-family="'Times New Roman', Georgia, serif" font-size="20" font-weight="bold" fill="#1C2836" text-anchor="middle">Ladislas VERGNE</text>
+    <text x="160" y="142" font-family="'Times New Roman', Georgia, serif" font-size="18" fill="#444444" text-anchor="middle">Maire de Chartres</text>
+    <text x="160" y="166" font-family="'Times New Roman', Georgia, serif" font-size="18" fill="#444444" text-anchor="middle">Président de Chartres métropole</text>
+  </g>
+
+  <!-- VILLE DE CHARTRES EMBLEM / LOGO (BOTTOM RIGHT) -->
+  <g transform="translate(1240, 850)">
+    <!-- Sunburst Golden Mandala Icon -->
+    <g fill="none" stroke="#B89647" stroke-width="1.5">
+      <circle cx="0" cy="-30" r="26"/>
+      <circle cx="0" cy="-30" r="18"/>
+      <path d="M 0,-56 L 0,-4 M -26,-30 L 26,-30 M -18,-48 L 18,-12 M -18,-12 L 18,-48"/>
+    </g>
+    <text x="0" y="18" font-family="'Times New Roman', Georgia, serif" font-size="15" font-weight="bold" fill="#B89647" text-anchor="middle" letter-spacing="4">CHARTRES</text>
+  </g>
+</svg>
