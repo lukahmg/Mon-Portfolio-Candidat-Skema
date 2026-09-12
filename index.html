@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luka Xiong | Portfolio — Architecture, Reseller & Global Management</title>
+  <meta name="description" content="Portfolio moderne de Luka Xiong - Bac STI2D Architecture, Certifications INSIDE LVMH, Certificat de la Ville de Chartres, Projet C'Parc Déméter, Reseller Achat-Revente & Business Analytics.">
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=13.0">
+  
+  <!-- Chart.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Fullscreen Immersive Artistic Theme Transition Layer -->
+  <div id="artisticTransitionOverlay" class="art-transition-overlay">
+    <canvas id="transitionCanvas"></canvas>
+    <div id="transitionContent" class="transition-content"></div>
+  </div>
+
+  <!-- Interactive Animated Reactive Canvas Background -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Modern Animated Floating Header Navbar -->
+  <header class="modern-header">
+    <a href="#hero" class="brand-title-badge">
+      <img src="assets/candidate_photo.jpg" alt="Luka Xiong" class="header-avatar-mini">
+      LUKA XIONG <span>/ PORTFOLIO</span>
+    </a>
+
+    <div class="nav-links-wrapper">
+      <ul class="nav-links-container">
+        <li><a href="#hero" class="nav-item-link active"><i class="fa-solid fa-house"></i> Accueil</a></li>
+        <li><a href="#etape1" class="nav-item-link"><i class="fa-solid fa-certificate"></i> 1. LVMH</a></li>
+        <li><a href="#etape2" class="nav-item-link"><i class="fa-solid fa-building-user"></i> 2. Déméter</a></li>
+        <li><a href="#etape3" class="nav-item-link"><i class="fa-solid fa-chart-line"></i> 3. Reseller</a></li>
+        <li><a href="#etape4" class="nav-item-link"><i class="fa-solid fa-hands-holding-circle"></i> 4. Festivals Hmong</a></li>
+      </ul>
+    </div>
+
+    <button class="btn-vivid-blue" id="btnShortlist">
+      <i class="fa-solid fa-paper-plane"></i> Contact
+    </button>
+  </header>
+
+  <!-- Sticky Bottom Floating Contact Button -->
+  <button class="sticky-contact-btn" id="btnShortlistFloating">
+    <i class="fa-solid fa-user-check"></i> Contact Luka Xiong
+  </button>
+
+  <!-- HERO CENTRAL ORBIT HUB SECTION -->
+  <section class="modern-section active-view" id="hero">
+    <div class="central-universe-container">
+      
+      <!-- BACKGROUND ORBITAL RINGS & CONSTELLATION -->
+      <div class="orbit-ring orbit-ring-1"></div>
+      <div class="orbit-ring orbit-ring-2"></div>
+
+      <!-- CENTER HUB: LUKA XIONG -->
+      <div class="center-profile-core">
+        <div class="avatar-ring-container center-avatar-glow">
+          <img src="assets/candidate_photo.jpg" alt="Luka Xiong" class="avatar-img image-box">
+          <div class="online-badge-dot" title="Disponible pour entretien"></div>
+        </div>
+
+        <div class="center-core-content">
+          <div class="step-number-tag" style="margin-bottom: 6px;">
+            <i class="fa-solid fa-sparkles"></i> LUKA XIONG
+          </div>
+          <h1 class="center-core-title">LUKA XIONG</h1>
+          <div class="center-core-subtitle">Bac STI2D Architecture • Chartres</div>
+          <div class="center-core-quote">
+            "Apprendre, créer et entreprendre pour évoluer au plus haut niveau."
+          </div>
+
+          <!-- Social Quick Links -->
+          <div class="center-social-bar">
+            <a href="https://www.linkedin.com/in/luka-xiong-8209503b0/" target="_blank" rel="noopener noreferrer" class="orbit-social-link" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/lukahmg/" target="_blank" rel="noopener noreferrer" class="orbit-social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 ORBITING THEME NODES DISPERSED AROUND LUKA -->
+      
+      <!-- Node 1: INSIDE LVMH (Top Left) -->
+      <a href="#etape1" class="orbit-node node-lvmh" style="--node-color: #3B82F6; --node-glow: rgba(59, 130, 246, 0.4);">
+        <div class="node-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="node-text-wrap">
+          <span class="node-tag">1. CERTIFICATIONS</span>
+          <span class="node-title">INSIDE LVMH</span>
+          <span class="node-desc">3 Spécialisations Luxe</span>
+        </div>
+        <div class="node-pulse"></div>
+      </a>
+
+      <!-- Node 2: PROJET DÉMÉTER (Top Right) -->
+      <a href="#etape2" class="orbit-node node-demeter" style="--node-color: #10B981; --node-glow: rgba(16, 185, 129, 0.4);">
+        <div class="node-icon"><i class="fa-solid fa-building-user"></i></div>
+        <div class="node-text-wrap">
+          <span class="node-tag">2. ARCHITECTURE</span>
+          <span class="node-title">C'Parc Déméter</span>
+          <span class="node-desc">Trophée des Talents 2025</span>
+        </div>
+        <div class="node-pulse"></div>
+      </a>
+
+      <!-- Node 3: RESELLER (Bottom Left) -->
+      <a href="#etape3" class="orbit-node node-resell" style="--node-color: #A855F7; --node-glow: rgba(168, 85, 247, 0.4);">
+        <div class="node-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="node-text-wrap">
+          <span class="node-tag">3. COMMERCE</span>
+          <span class="node-title">Reseller Achat-Revente</span>
+          <span class="node-desc">7 Ans d'Expertise Marché</span>
+        </div>
+        <div class="node-pulse"></div>
+      </a>
+
+      <!-- Node 4: BÉNÉVOLAT & FESTIVALS HMONG (Bottom Right) -->
+      <a href="#etape4" class="orbit-node node-benevolat" style="--node-color: #06B6D4; --node-glow: rgba(6, 182, 212, 0.4);">
+        <div class="node-icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
+        <div class="node-text-wrap">
+          <span class="node-tag">4. ENGAGEMENT</span>
+          <span class="node-title">Festivals &amp; Nouvel An Hmong</span>
+          <span class="node-desc">Bénévolat &amp; Événements Hmong (7 Villes • Depuis 2015)</span>
+        </div>
+        <div class="node-pulse"></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ÉTAPE 1 : CERTIFICATIONS PROFESSIONNELLES INSIDE LVMH -->
+  <section class="modern-section" id="etape1">
+    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
+    <div class="step-number-tag">
+      <i class="fa-solid fa-certificate"></i> ÉTAPE 1 / 4 — APPRENDRE AU-DELÀ DES COURS
+    </div>
+    <h2 class="section-hero-title">Certifications <highlight>INSIDE LVMH</highlight></h2>
+    <div class="section-hero-subtitle">Immersion officielle certifiée au cœur du premier groupe de luxe mondial</div>
+
+    <!-- Official LVMH Certificates Display -->
+    <div style="margin-bottom: 3rem;">
+      <div style="font-size: 0.9rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sec-accent); margin-bottom: 1.25rem;">
+        <i class="fa-solid fa-award"></i> Mes 3 Certificats Officiels INSIDE LVMH
+      </div>
+
+      <div class="grid-3">
+        <div class="vivid-card image-box" style="padding: 12px;">
+          <div class="photo-frame-wrapper aspect-16-9">
+            <img src="assets/lvmh_cert_1.svg" alt="Certificat Officiel LVMH Operations & Retail - Luka Xiong">
+          </div>
+          <div style="padding: 14px 4px 4px 4px; font-size: 0.85rem; font-weight: 700;">
+            <div style="color: var(--sec-accent);">Spécialisation 1</div>
+            <div style="color: #F9FAFB; font-weight: 800;">Operations &amp; Supply Chain, Retail &amp; Customer Experience</div>
+          </div>
+        </div>
+
+        <div class="vivid-card image-box" style="padding: 12px;">
+          <div class="photo-frame-wrapper aspect-16-9">
+            <img src="assets/lvmh_cert_2.svg" alt="Certificat Officiel LVMH Creation & Retail - Luka Xiong">
+          </div>
+          <div style="padding: 14px 4px 4px 4px; font-size: 0.85rem; font-weight: 700;">
+            <div style="color: var(--sec-accent);">Spécialisation 2</div>
+            <div style="color: #F9FAFB; font-weight: 800;">Creation &amp; Branding, Retail &amp; Customer Experience</div>
+          </div>
+        </div>
+
+        <div class="vivid-card image-box" style="padding: 12px;">
+          <div class="photo-frame-wrapper aspect-16-9">
+            <img src="assets/lvmh_cert_3.svg" alt="Certificat Officiel LVMH Creation & Operations - Luka Xiong">
+          </div>
+          <div style="padding: 14px 4px 4px 4px; font-size: 0.85rem; font-weight: 700;">
+            <div style="color: var(--sec-accent);">Spécialisation 3</div>
+            <div style="color: #F9FAFB; font-weight: 800;">Creation &amp; Branding, Operations &amp; Supply Chain</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Official Inside LVMH 4 Core Modules Breakdown -->
+    <div class="tab-container vivid-card" style="margin-bottom: 2rem;">
+      <div style="font-size: 0.85rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sec-accent); margin-bottom: 1.25rem;">
+        <i class="fa-solid fa-book-open"></i> Les 4 Piliers Fondamentaux du Programme INSIDE LVMH
+      </div>
+
+      <div class="tab-controls">
+        <button class="tab-btn active" data-tab="module1">1. LVMH Ecosystem</button>
+        <button class="tab-btn" data-tab="module2">2. Creation & Branding</button>
+        <button class="tab-btn" data-tab="module3">3. Operations & Supply Chain</button>
+        <button class="tab-btn" data-tab="module4">4. Retail & Customer Experience</button>
+      </div>
+
+      <div class="tab-pane active" id="module1">
+        <h4 style="color: #F9FAFB; font-size: 1.2rem; font-weight: 900; margin-bottom: 6px;">L'Écosystème LVMH & Les Fondamentaux du Luxe</h4>
+        <p class="vivid-card-desc">
+          Compréhension globale du groupe LVMH et de ses 75 Maisons d'exception (Louis Vuitton, Dior, Tiffany & Co., Hennessy, Sephora). Analyse des modèles économiques du luxe, de la préservation de l'héritage artisanal et des enjeux mondiaux de désirabilité.
+        </p>
+      </div>
+
+      <div class="tab-pane" id="module2">
+        <h4 style="color: #F9FAFB; font-size: 1.2rem; font-weight: 900; margin-bottom: 6px;">Creation & Branding — Création, Design & Image de Marque</h4>
+        <p class="vivid-card-desc">
+          Étude du processus de création d'une collection haut de gamme, du rôle stratégique des directeurs artistiques, de la protection de l'ADN des Maisons et de la gestion de la valeur immatérielle de marque.
+        </p>
+      </div>
+
+      <div class="tab-pane" id="module3">
+        <h4 style="color: #F9FAFB; font-size: 1.2rem; font-weight: 900; margin-bottom: 6px;">Operations & Supply Chain — Logistique, RSE & LIFE 360</h4>
+        <p class="vivid-card-desc">
+          Maîtrise de la chaîne logistique internationale du luxe : approvisionnement en matières d'exception, traçabilité des ressources rares, circularité des produits et respect du programme environnemental mondial LVMH LIFE 360.
+        </p>
+      </div>
+
+      <div class="tab-pane" id="module4">
+        <h4 style="color: #F9FAFB; font-size: 1.2rem; font-weight: 900; margin-bottom: 6px;">Retail & Customer Experience — Commerce de Détail & Expérience Client</h4>
+        <p class="vivid-card-desc">
+          Analyse des stratégies de distribution omnicanale : théâtralisation des boutiques physiques, expérience client VIP ultra-personnalisée et digitalisation du parcours d'achat e-commerce.
+        </p>
+      </div>
+    </div>
+
+    <!-- Why this Certification -->
+    <div class="grid-2">
+      <div class="vivid-card">
+        <div class="card-watermark"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div style="font-size: 0.8rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">POURQUOI J'AI CHOISI CETTE CERTIFICATION</div>
+        <h3 class="vivid-card-title">Curiosité &amp; Découverte du Luxe</h3>
+        <p class="vivid-card-desc">
+          J'étais très curieux de comprendre comment fonctionne l'univers du luxe. Cette immersion avec INSIDE LVMH m'a montré que c'est un monde très différent de ce qu'on peut imaginer, mais extrêmement intéressant, et j'ai vraiment adoré en découvrir les coulisses.
+        </p>
+      </div>
+
+      <div class="vivid-card">
+        <div class="card-watermark"><i class="fa-solid fa-briefcase"></i></div>
+        <div style="font-size: 0.8rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">APPLICABILITÉ BUSINESS</div>
+        <h3 class="vivid-card-title">Agilité &amp; Prise de Conscience</h3>
+        <p class="vivid-card-desc">
+          Cette certification m'a fait prendre conscience de la rigueur, des enjeux d'image et de la valeur de marque indispensables dans le monde des affaires. Cela a développé ma vision globale et renforcé ma capacité d'auto-formation en toute autonomie.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 2 : PROJET SCOLAIRE STI2D ARCHITECTURE (C'PARC DÉMÉTER - JEHAN DE BEAUCE) -->
+  <section class="modern-section" id="etape2">
+    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
+    <div class="step-number-tag">
+      <i class="fa-solid fa-building-user"></i> ÉTAPE 2 / 4 — CONCEVOIR DES PROJETS CONCRETS
+    </div>
+    <h2 class="section-hero-title">Projet Scolaire : <highlight>C'Parc Déméter</highlight></h2>
+    <div class="section-hero-subtitle">
+      Réinvention bioclimatique du <strong>Quartier de La Madeleine à Chartres</strong> — Exposition inaugurée en partenariat avec Le Forum &amp; la Ville de Chartres (Trophée des Talents de la Préfecture 2025)
+    </div>
+
+    <!-- BLOCK 1 : PAGE DE COUVERTURE OFFICIELLE DU PROJET (FULL WIDTH HERO SHOWCASE) -->
+    <div style="margin-bottom: 3rem; background: var(--sec-card-bg); border: 3px solid var(--sec-accent); border-radius: var(--radius-lg); padding: 1.8rem; box-shadow: 0 16px 48px rgba(220, 38, 38, 0.20);">
+      <div style="font-size: 0.95rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: var(--sec-accent); margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: space-between;">
+        <span><i class="fa-solid fa-book-bookmark"></i> PAGE DE COUVERTURE OFFICIELLE DU PROJET ARCHITECTURAL</span>
+        <span style="background: rgba(220, 38, 38, 0.1); color: var(--sec-accent); padding: 6px 16px; border-radius: 99px; font-size: 0.8rem; font-weight: 900; border: 1px solid var(--sec-accent);">VILLE DE CHARTRES</span>
+      </div>
+
+      <div class="photo-frame-wrapper aspect-banner image-box">
+        <img src="assets/demeter_slide_1_cover.jpg" alt="Page de couverture officielle Projet C'Parc Déméter La Madeleine Chartres" onerror="this.src='assets/demeter_slide_1_cover.png';">
+      </div>
+
+      <div style="padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h3 style="font-size: 1.6rem; font-weight: 900; color: #F9FAFB; letter-spacing: -0.01em;">LA MADELEINE — Projet : C'Parc Déméter</h3>
+          <p class="vivid-card-desc" style="font-size: 0.95rem; margin-top: 4px;">
+            Document officiel d'aménagement du Quartier de La Madeleine par les élèves de l'option histoire de l'art, chaudronnerie et électricité du Lycée Jehan-de-Beauce.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCK 2 : DOSSIER COMPLET AMPHITHÉÂTRE EN PLEIN AIR (4 PAGES HARMONISÉES) -->
+    <div style="margin-bottom: 3rem; background: var(--sec-card-bg); border: 3px solid var(--sec-accent); border-radius: var(--radius-lg); padding: 1.8rem; box-shadow: 0 16px 40px rgba(0,0,0,0.12);">
+      <div style="font-size: 0.95rem; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sec-accent); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px;">
+        <i class="fa-solid fa-masks-theater"></i> DOSSIER D'ARCHITECTURE — AMPHITHÉÂTRE EN PLEIN AIR (4 PAGES DU DOCUMENT)
+      </div>
+
+      <div class="grid-4">
+        <!-- Page 1 -->
+        <div class="vivid-card image-box" style="padding: 12px;">
+          <div class="photo-frame-wrapper aspect-4-3">
+            <img src="assets/demeter_amphitheatre_p1.png" alt="Amphithéâtre en plein air - Page 1 Caractéristiques & Avantages" onerror="this.src='assets/demeter_amphitheatre_p1.jpg';">
+          </div>
+          <div style="padding-top: 12px; display: flex; flex-direction: column; flex: 1;">
+            <div style="color: var(--sec-accent); font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">PAGE 1 / DOSSIER</div>
+            <div style="color: #F9FAFB; font-weight: 900; font-size: 1rem; margin-top: 2px;">Amphithéâtre Romantique</div>
+            <div style="font-size: 0.82rem; color: #F9FAFB; font-weight: 600; margin-top: 6px; line-height: 1.5;">Inspiré des édifices antiques romains, reliant arts de la scène et cadre naturel bioclimatique.</div>
+          </div>
+        </div>
+
+        <!-- Page 2 -->
+        <div class="vivid-card image-box" style="padding: 12px;">
+          <div class="photo-frame-wrapper aspect-4-3">
+            <img src="assets/demeter_amphitheatre_p2.png" alt="Gradins en escalier romain en pierre - Page 2" onerror="this.src='assets/demeter_amphitheatre_p2.jpg';">
+          </div>
+          <div style="padding-top: 12px; display: flex; flex-direction: column; flex: 1;">
+            <div style="color: var(--sec-accent); font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">PAGE 2 / GRADINS ROMAINS</div>
+            <div style="color: #F9FAFB; font-weight: 900; font-size: 1rem; margin-top: 2px;">Escalier &amp; Assises en Pierre</div>
+            <div style="font-size: 0.82rem; color: #F9FAFB; font-weight: 600; margin-top: 6px; line-height: 1.5;">Gradins en pierre disposés en demi-cercle surélevé pour une visibilité et durabilité optimales.</div>
+          </div>
+        </div>
+
+        <!-- Page 3 -->
+        <div class="vivid-card image-box" style="padding: 12px;">
+          <div class="photo-frame-wrapper aspect-4-3">
+            <img src="assets/demeter_amphitheatre_p3.png" alt="Architecture antique monumentale - Page 3" onerror="this.src='assets/demeter_amphitheatre_p3.jpg';">
+          </div>
+          <div style="padding-top: 12px; display: flex; flex-direction: column; flex: 1;">
+            <div style="color: var(--sec-accent); font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">PAGE 3 / SCÈNE MONUMENTALE</div>
+            <div style="color: #F9FAFB; font-weight: 900; font-size: 1rem; margin-top: 2px;">Fronton &amp; Colonnes Antiques</div>
+            <div style="font-size: 0.82rem; color: #F9FAFB; font-weight: 600; margin-top: 6px; line-height: 1.5;">Façade symétrique inspirée des temples romains, avec ouvertures latérales en arc cintré.</div>
+          </div>
+        </div>
+
+        <!-- Page 4 -->
+        <div class="vivid-card image-box" style="padding: 12px;">
+          <div class="photo-frame-wrapper aspect-4-3">
+            <img src="assets/demeter_amphitheatre_p4.png" alt="Impression générale & Synthèse - Page 4" onerror="this.src='assets/demeter_amphitheatre_p4.jpg';">
+          </div>
+          <div style="padding-top: 12px; display: flex; flex-direction: column; flex: 1;">
+            <div style="color: var(--sec-accent); font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">PAGE 4 / SYNTHÈSE</div>
+            <div style="color: #F9FAFB; font-weight: 900; font-size: 1rem; margin-top: 2px;">Synthèse &amp; Intégration</div>
+            <div style="font-size: 0.82rem; color: #F9FAFB; font-weight: 600; margin-top: 6px; line-height: 1.5;">Architecture théâtrale officielle, offrant des lignes monumentales pour l'accueil de spectacles.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCK 3 : ASSEMBLAGE SIGNATURES ARCHITECTURALES & ÉQUIPEMENTS DE LA PASSERELLE -->
+    <div style="margin-bottom: 3rem;" class="grid-2">
+      <!-- Sub-block A: Signatures Architecturales -->
+      <div style="background: var(--sec-card-bg); border: 3px solid var(--sec-accent); border-radius: var(--radius-lg); padding: 1.8rem; box-shadow: 0 16px 40px rgba(0,0,0,0.12); display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 0.95rem; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sec-accent); margin-bottom: 1.25rem;">
+          <i class="fa-solid fa-palette"></i> SIGNATURES ARCHITECTURALES : FAÇADE AJOURÉE &amp; VITRAUX
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.25rem; flex: 1;">
+          <div class="photo-frame-wrapper aspect-16-9 image-box">
+            <img src="assets/demeter_slide_2_facade.png" alt="Façade Ajourée C'Parc Déméter" onerror="this.src='assets/demeter_slide_2_facade.jpg';">
+          </div>
+          <div>
+            <h4 style="font-size: 1.15rem; font-weight: 900; color: #F9FAFB;"><i class="fa-solid fa-border-all" style="color: var(--sec-accent);"></i> Façade Ajourée</h4>
+            <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 4px;">
+              Clin d'œil au <strong>Cinéma Chartrains</strong> et au balcon de la <strong>Place Morard</strong> pour apporter transparence et lumière naturelle.
+            </p>
+          </div>
+
+          <div class="photo-frame-wrapper aspect-16-9 image-box" style="margin-top: 0.5rem;">
+            <img src="assets/demeter_slide_3_vitraux.png" alt="Vitraux de Chartres - C'Parc Déméter" onerror="this.src='assets/demeter_slide_3_vitraux.jpg';">
+          </div>
+          <div>
+            <h4 style="font-size: 1.15rem; font-weight: 900; color: #F9FAFB;"><i class="fa-solid fa-sun" style="color: var(--sec-accent);"></i> Vitraux de Chartres</h4>
+            <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 4px;">
+              Motifs lumineux inspirés de la rosace de la Cathédrale de Chartres et des formes botaniques du parc.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-block B: Équipements de la Passerelle / Pont -->
+      <div style="background: var(--sec-card-bg); border: 3px solid var(--sec-accent); border-radius: var(--radius-lg); padding: 1.8rem; box-shadow: 0 16px 40px rgba(0,0,0,0.12); display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-size: 0.95rem; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sec-accent); margin-bottom: 1.25rem;">
+          <i class="fa-solid fa-bolt"></i> ÉQUIPEMENTS DE LA PASSERELLE : BORNES SOLAIRES &amp; ÉCLAIRAGE
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.25rem; flex: 1;">
+          <div class="photo-frame-wrapper aspect-16-9 image-box">
+            <img src="assets/demeter_slide_4_bornes.png" alt="Bornes de recharge solaires C'Parc Déméter" onerror="this.src='assets/demeter_slide_4_bornes.jpg';">
+          </div>
+          <div>
+            <h4 style="font-size: 1.15rem; font-weight: 900; color: #F9FAFB;"><i class="fa-solid fa-charging-station" style="color: var(--sec-accent);"></i> Bornes Solaires &amp; Fidélité</h4>
+            <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 4px;">
+              Recharge pour mobilités douces alimentée par toit solaire. Système de points récompensés à la guinguette.
+            </p>
+          </div>
+
+          <div class="photo-frame-wrapper aspect-16-9 image-box" style="margin-top: 0.5rem;">
+            <img src="assets/demeter_slide_5_lumieres.png" alt="Éclairage intelligent sur le pont C'Parc Déméter" onerror="this.src='assets/demeter_slide_5_lumieres.jpg';">
+          </div>
+          <div>
+            <h4 style="font-size: 1.15rem; font-weight: 900; color: #F9FAFB;"><i class="fa-solid fa-lightbulb" style="color: var(--sec-accent);"></i> Éclairage Intelligent à Capteurs</h4>
+            <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 4px;">
+              Lumières LED activées au pas, gravées de symboles (armoiries de Chartres, soleil, arbres, barres des années 70).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCK 4 : INAUGURATION, HALLE DU MARCHÉ & TROPHÉE DES TALENTS 2025 (AVEC ARTICLE INTERACTIF INTÉGRÉ DIRECTEMENT) -->
+    <div style="margin-bottom: 2.5rem;">
+      <div style="font-size: 0.95rem; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sec-accent); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px;">
+        <i class="fa-solid fa-newspaper"></i> INAUGURATION &amp; TROPHÉE DES TALENTS 2025 (ARTICLE L'ÉCHO RÉPUBLICAIN)
+      </div>
+
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <!-- Inauguration Card -->
+        <div class="vivid-card image-box" style="padding: 12px;">
+          <div class="photo-frame-wrapper aspect-4-3">
+            <img src="assets/demeter_inauguration.png" alt="Inauguration officielle exposition Clos Pajot se réinvente" onerror="this.src='assets/demeter_project.jpg';">
+          </div>
+          <div style="padding-top: 12px;">
+            <div style="color: var(--sec-accent); font-weight: 900; font-size: 0.8rem; text-transform: uppercase;">PHOTO OFFICIELLE</div>
+            <div style="color: #F9FAFB; font-weight: 900; font-size: 1.05rem; margin-top: 2px;">Inauguration à la MPT</div>
+            <p class="vivid-card-desc" style="font-size: 0.82rem; margin-top: 4px;">Élèves du Lycée Jehan-de-Beauce présentant leurs maquettes &amp; bornes à la MPT de La Madeleine.</p>
+          </div>
+        </div>
+
+        <!-- Marché du Potager Card -->
+        <div class="vivid-card image-box" style="padding: 12px;">
+          <div class="photo-frame-wrapper aspect-4-3">
+            <img src="assets/demeter_marche.png" alt="Halle du marché potager place Billard" onerror="this.src='assets/demeter_project.jpg';">
+          </div>
+          <div style="padding-top: 12px;">
+            <div style="color: var(--sec-accent); font-weight: 900; font-size: 0.8rem; text-transform: uppercase;">AMÉNAGEMENT COMBO</div>
+            <div style="color: #F9FAFB; font-weight: 900; font-size: 1.05rem; margin-top: 2px;">Marché du Potager</div>
+            <p class="vivid-card-desc" style="font-size: 0.82rem; margin-top: 4px;">Halle couverte inspirée de la Place Billard à Chartres pour vendre la récolte du potager local.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN EXECUTIVE CARD: TROPHÉE DES TALENTS 2025 WITH INTEGRATED SCROLLABLE INTERACTIVE ARTICLE -->
+      <div class="vivid-card" style="padding: 1.8rem; border-left: 8px solid var(--sec-accent); background: #FFFFFF; box-shadow: 0 16px 44px rgba(0,0,0,0.14);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+          <div>
+            <div style="margin-bottom: 10px; background: #FFFFFF; padding: 6px 12px; border-radius: var(--radius-sm); border: 1px solid rgba(0,0,0,0.1); width: fit-content; display: inline-block;">
+              <img src="assets/logo_echo_republicain.png" alt="Logo L'Écho Républicain" style="height: 36px; object-fit: contain; display: block;">
+            </div>
+
+            <div style="font-size: 0.9rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 1.5px;">
+              <i class="fa-solid fa-award"></i> TROPHÉE DES TALENTS 2025
+            </div>
+            
+            <h3 class="vivid-card-title" style="font-size: 1.4rem; margin-top: 4px;">« Le Clos Pajot se réinvente »</h3>
+            
+            <p class="vivid-card-desc" style="font-size: 0.95rem; margin-top: 6px; line-height: 1.5;">
+              Projet transversal d'aménagement urbain par les élèves du <strong>Lycée Jehan-de-Beauce</strong> en partenariat avec la Ville de Chartres.
+            </p>
+          </div>
+
+          <a href="lecho_article.html" target="_blank" rel="noopener noreferrer" class="btn-vivid-blue" style="font-size: 0.85rem; padding: 10px 20px; text-decoration: none;">
+            Ouvrir dans un nouvel onglet <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <!-- INTEGRATED INTERACTIVE SCROLLABLE ARTICLE DIRECTLY INSIDE THE CARD -->
+        <div style="width: 100%; height: 580px; border-radius: var(--radius-md); overflow: hidden; border: 2px solid rgba(0,0,0,0.12); background: #F8FAFC; position: relative; margin-top: 0.5rem;">
+          <iframe src="lecho_article.html" style="width: 100%; height: 100%; border: none; display: block;" title="Article complet L'Écho Républicain - Lycée Jehan de Beauce Chartres"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 3 : ESPRIT ENTREPRENEURIAL & COMMERCE -->
+  <section class="modern-section" id="etape3">
+    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
+    <div class="step-number-tag">
+      <i class="fa-solid fa-chart-line"></i> ÉTAPE 3 / 4 — BUSINESS &amp; COMMERCE MULTI-SEGMENTS
+    </div>
+    <h2 class="section-hero-title">Reseller &amp; Sourcing International <highlight>(7 Ans d'Expérience)</highlight></h2>
+    <div class="section-hero-subtitle">
+      Gestion autonome complète d’une activité d'achat-revente multi-plateforme : réseau de fournisseurs mondiaux, analyse prédictive des cotes de marché, stratégie de pricing ultra-compétitif et distribution omnicanale multi-produits.
+    </div>
+
+    <!-- EXECUTIVE KPI SUMMARY BAR -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
+      <div class="vivid-card" style="padding: 1.25rem; text-align: center; border-top: 2px solid #3B82F6;">
+        <div style="font-size: 2.2rem; font-weight: 900; color: #60A5FA;">7 Ans</div>
+        <div style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: #F8FAFC; margin-top: 4px;">Expertise &amp; Veille Marché</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Anticipation algorithmique des tendances</div>
+      </div>
+      <div class="vivid-card" style="padding: 1.25rem; text-align: center; border-top: 2px solid #10B981;">
+        <div style="font-size: 2.2rem; font-weight: 900; color: #34D399;">-30% à -60%</div>
+        <div style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: #F8FAFC; margin-top: 4px;">Sous la Cote des Bourses</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Vente ultra-rapide garantie &amp; marge nette</div>
+      </div>
+      <div class="vivid-card" style="padding: 1.25rem; text-align: center; border-top: 2px solid #EC4899;">
+        <div style="font-size: 2.2rem; font-weight: 900; color: #F472B6;">0 Limite</div>
+        <div style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: #F8FAFC; margin-top: 4px;">Stockage &amp; Liquidité</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Achat ciblé 100% prédictif sans invendus</div>
+      </div>
+      <div class="vivid-card" style="padding: 1.25rem; text-align: center; border-top: 2px solid #8B5CF6;">
+        <div style="font-size: 2.2rem; font-weight: 900; color: #A78BFA;">Multi-Gamme</div>
+        <div style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: #F8FAFC; margin-top: 4px;">Catalogue Mode &amp; Luxe</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Sneakers, Sacs, Vestes, Casquettes, Tops</div>
+      </div>
+    </div>
+
+    <!-- NOUVEAU : LES 6 ENCADRÉS STRATÉGIQUES — L'ACTIVITÉ D'ACHAT-REVENTE DE A À Z -->
+    <div style="margin-bottom: 2.5rem;">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div style="font-size: 0.85rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 1.5px;">
+          <i class="fa-solid fa-arrows-spin"></i> CYCLE OPÉRATIONNEL COMPLET
+        </div>
+        <h3 style="font-size: 1.5rem; font-weight: 900; color: #F9FAFB; margin-top: 4px;">
+          Mon Activité d'Achat-Revente Expliquée <highlight>de A à Z</highlight>
+        </h3>
+        <p style="font-size: 0.9rem; color: #94A3B8; font-weight: 600; max-width: 750px; margin: 6px auto 0;">
+          Méthodologie rigoureuse en 6 étapes séquentielles : du sourcing international auprès de grossistes privés jusqu'à l'expédition sécurisée en carton avec protection intérieure soignée.
+        </p>
+      </div>
+
+      <div class="process-encadre-grid">
+        
+        <!-- ENCADRÉ 1: ÉTAPE A - SOURCING & FOURNISSEURS -->
+        <div class="process-encadre" style="--encadre-color: #0052FF; --encadre-bg: rgba(0, 82, 255, 0.08);">
+          <div>
+            <div class="encadre-top-bar">
+              <span class="encadre-step-pill"><i class="fa-solid fa-1"></i> Étape 1 / 6</span>
+              <span style="font-size: 0.75rem; font-weight: 800; color: #0052FF;"><i class="fa-solid fa-tag"></i> Sourcing &amp; Promos</span>
+            </div>
+            <div class="encadre-header">
+              <div class="encadre-step-num">A</div>
+              <div class="encadre-title">Sourcing Stratégique &amp; Avantages Clients</div>
+            </div>
+            <p class="encadre-desc">
+              Maximisation de la marge par <strong>l'accumulation de soldes, remises fidélité et codes promo cumulés</strong>, ainsi que le <strong>stockage hors saison</strong> (ex. achat de doudounes en soldes d'été pour revente en hiver à fort profit). Sourcing auprès de <strong>fournisseurs certifiés</strong> et veille instantanée via <strong>ProxCop</strong> (monitors automatisés, restocks rapides &amp; shock drops).
+            </p>
+          </div>
+          <div class="encadre-tag">
+            <i class="fa-solid fa-bolt"></i> ProxCop &amp; Fournisseurs Certifiés
+          </div>
+        </div>
+
+        <!-- ENCADRÉ 2: ÉTAPE B - AUTHENTIFICATION STRICTE -->
+        <div class="process-encadre" style="--encadre-color: #059669; --encadre-bg: rgba(5, 150, 105, 0.08);">
+          <div>
+            <div class="encadre-top-bar">
+              <span class="encadre-step-pill"><i class="fa-solid fa-2"></i> Étape 2 / 6</span>
+              <span style="font-size: 0.75rem; font-weight: 800; color: #059669;"><i class="fa-solid fa-shield-check"></i> Expertise</span>
+            </div>
+            <div class="encadre-header">
+              <div class="encadre-step-num">B</div>
+              <div class="encadre-title">Authentification &amp; Contrôle Qualité</div>
+            </div>
+            <p class="encadre-desc">
+              Protocole d'expertise en <strong>6 points de contrôle</strong> : inspection minutieuse des cuirs et matières, régularité des coutures intérieures, puces RFID, numéros de série de fabrication et <strong>passage sous lampe à rayons UV</strong> anti-contrefaçon.
+            </p>
+          </div>
+          <div class="encadre-tag">
+            <i class="fa-solid fa-shield-halved"></i> 100% Garanti &amp; Certifié
+          </div>
+        </div>
+
+        <!-- ENCADRÉ 3: ÉTAPE C - ANALYSE DATA PRÉDICTIVE -->
+        <div class="process-encadre" style="--encadre-color: #7C3AED; --encadre-bg: rgba(124, 58, 237, 0.08);">
+          <div>
+            <div class="encadre-top-bar">
+              <span class="encadre-step-pill"><i class="fa-solid fa-3"></i> Étape 3 / 6</span>
+              <span style="font-size: 0.75rem; font-weight: 800; color: #7C3AED;"><i class="fa-solid fa-chart-line"></i> Algorithme</span>
+            </div>
+            <div class="encadre-header">
+              <div class="encadre-step-num">C</div>
+              <div class="encadre-title">Data Cotes &amp; Modèle Prédictif</div>
+            </div>
+            <p class="encadre-desc">
+              Grâce à <strong>7 ans d'expérience du marché</strong>, j'analyse les carnets d'ordres (StockX, GOAT, Vestiaire Collective, Heat Mvmnt) et les volumes quotidiens. <strong>Zéro limite de stockage</strong> : j'achète uniquement quand la revente est garantie en moins de 72h.
+            </p>
+          </div>
+          <div class="encadre-tag">
+            <i class="fa-solid fa-chart-line"></i> Vitesse de Rotation &amp; Zéro Invendu
+          </div>
+        </div>
+
+        <!-- ENCADRÉ 4: ÉTAPE D - PRICING STRATÉGIQUE -->
+        <div class="process-encadre" style="--encadre-color: #D97706; --encadre-bg: rgba(217, 119, 6, 0.08);">
+          <div>
+            <div class="encadre-top-bar">
+              <span class="encadre-step-pill"><i class="fa-solid fa-4"></i> Étape 4 / 6</span>
+              <span style="font-size: 0.75rem; font-weight: 800; color: #D97706;"><i class="fa-solid fa-tags"></i> Arbitrage</span>
+            </div>
+            <div class="encadre-header">
+              <div class="encadre-step-num">D</div>
+              <div class="encadre-title">Pricing Compétitif (-30% à -60%)</div>
+            </div>
+            <p class="encadre-desc">
+              Revente systématique <strong>nettement inférieure aux bourses de resell</strong> tout en maintenant une <strong>marge nette directe de +35% à +150%</strong>. Les clients bénéficient d'un tarif imbattable sans frais annexes et le stock tourne en continu.
+            </p>
+          </div>
+          <div class="encadre-tag">
+            <i class="fa-solid fa-tag"></i> Arbitrage &amp; Marge Nette
+          </div>
+        </div>
+
+        <!-- ENCADRÉ 5: ÉTAPE E - DISTRIBUTION OMNICANALE -->
+        <div class="process-encadre" style="--encadre-color: #EC4899; --encadre-bg: rgba(236, 72, 153, 0.08);">
+          <div>
+            <div class="encadre-top-bar">
+              <span class="encadre-step-pill"><i class="fa-solid fa-5"></i> Étape 5 / 6</span>
+              <span style="font-size: 0.75rem; font-weight: 800; color: #EC4899;"><i class="fa-solid fa-store"></i> Omnicanal</span>
+            </div>
+            <div class="encadre-header">
+              <div class="encadre-step-num">E</div>
+              <div class="encadre-title">Distribution Omnicanale Ciblée</div>
+            </div>
+            <p class="encadre-desc">
+              Chaque pièce est orientée vers sa plateforme optimale : <strong>Bourses sneakers &amp; luxe</strong> (StockX, GOAT, Wethenew, Farfetch), <strong>Enchères live</strong> (Whatnot, Catawiki) ou <strong>Marketplaces grand public</strong> (Vinted, eBay, LeBonCoin, Etsy, Beebs).
+            </p>
+          </div>
+          <div class="encadre-tag">
+            <i class="fa-solid fa-store"></i> Multi-Plateformes Internationales
+          </div>
+        </div>
+
+        <!-- ENCADRÉ 6: ÉTAPE F - LOGISTIQUE & EXPÉDITIONS -->
+        <div class="process-encadre" style="--encadre-color: #0284C7; --encadre-bg: rgba(2, 132, 199, 0.08);">
+          <div>
+            <div class="encadre-top-bar">
+              <span class="encadre-step-pill"><i class="fa-solid fa-6"></i> Étape 6 / 6</span>
+              <span style="font-size: 0.75rem; font-weight: 800; color: #0284C7;"><i class="fa-solid fa-truck-fast"></i> 24h à 3 semaines</span>
+            </div>
+            <div class="encadre-header">
+              <div class="encadre-step-num">F</div>
+              <div class="encadre-title">Conditionnement &amp; Expédition Flexible</div>
+            </div>
+            <p class="encadre-desc">
+              Emballage soigné en carton d'expédition standard avec <strong>renfort intérieur en papier journal</strong> entre la boîte du produit et le colis pour absorber les chocs et préserver la boîte intacte. Expédition selon la demande (de <strong>24h à 3 semaines</strong>) via <strong>Chronopost, UPS, Colissimo Signature, Mondial Relay, Relais Colis, Jumingo et Packlink Pro</strong>.
+            </p>
+          </div>
+          <div class="encadre-tag">
+            <i class="fa-solid fa-box-open"></i> Renfort Intérieur &amp; Suivi en Direct
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DEEP DIVE SECTION 1 & 2 : SOURCING & MARKET ANALYSIS -->
+    <div style="margin-bottom: 2rem;" class="grid-2">
+      
+      <!-- CARD A: SOURCING STRATÉGIQUE & FOURNISSEURS CERTIFIÉS -->
+      <div class="vivid-card">
+        <div class="card-brand-watermarks">
+          <img src="assets/logo_whentocop.png" alt="WhenToCop">
+          <img src="assets/logo_snkrs.png" alt="SNKRS">
+          <img src="assets/logo_confirmed.jpg" alt="Adidas CONFIRMED">
+          <img src="assets/logo_bestsecret.png" alt="BestSecret">
+        </div>
+        <div>
+          <div class="vivid-card-icon" style="background: var(--sec-accent);"><i class="fa-solid fa-tags"></i></div>
+          <div style="font-size: 0.76rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 1px;">Pilier 1 • Approvisionnement &amp; Optimisation Marges</div>
+          <h3 class="vivid-card-title" style="margin-top: 4px;">Sourcing Stratégique, Cumul Promos &amp; Fournisseurs Certifiés</h3>
+          <p class="vivid-card-desc" style="font-size: 0.88rem; margin-bottom: 1rem;">
+            Affûtée sur <strong>7 années de pratique</strong>, ma stratégie d'achat repose sur l'optimisation maximale du coût d'acquisition et des circuits d'approvisionnement directs :
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem;">
+            <div style="background: rgba(0,0,0,0.03); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid var(--sec-accent);">
+              <strong>🏷️ Cumul Avantages Clients &amp; Codes Promo :</strong> Exploitation des soldes, remises fidélité et accumulation de codes promotionnels pour réduire drastiquement le prix d'achat et débloquer une marge nette maximale.
+            </div>
+            <div style="background: rgba(0,0,0,0.03); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #10B981;">
+              <strong>❄️ Stockage Saisonnier Stratégique (Arbitrage Hors Saison) :</strong> Achat d'articles en forte promotion hors saison (ex. doudounes et vestes d'hiver achetées à prix cassé en plein été) pour les stocker et les revendre en haute saison au plein tarif du marché.
+            </div>
+            <div style="background: rgba(0,0,0,0.03); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #25D366;">
+              <strong>📱 Fournisseurs Directs Certifiés (WhatsApp &amp; Telegram) :</strong> Réseau de contacts et grossistes de confiance fournissant des pièces 100% authentiques et certifiées avec accès prioritaire sur les arrivages.
+            </div>
+            <div style="background: rgba(0,0,0,0.03); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #6366F1;">
+              <strong>⚡ Veille Automatisée &amp; Alertes Drops via ProxCop :</strong> Utilisation avancée de <strong>ProxCop</strong> (cook group / suite d'outils d'alertes &amp; monitoring spécialisée sneakers et streetwear) pour capter en temps réel les restocks instantanés, les shock drops, les erreurs de prix (price errors) et les liens d'accès direct sur les sites marchands mondiaux.
+            </div>
+            <div style="background: rgba(0,0,0,0.03); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #D97706;">
+              <strong>📅 Suivi des Calendriers de Drops :</strong> Veille rigoureuse sur les dates et heures de sorties officielles (SNKRS, CONFIRMED, WhenToCop, ProxCop) pour acquérir les pièces ciblées dès leur mise en vente.
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px;">
+            <a href="https://proxcop.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" style="border-color: #6366F1;" title="ProxCop Alerts &amp; Monitoring"><svg viewBox="0 0 24 24" style="height:14px; width:14px; fill:#6366F1;"><path d="M13 2L3 14h8l-1 8 11-13h-8l1-7z"/></svg> ProxCop Alerts &amp; Monitors</a>
+            <a href="https://whentocop.fr/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="WhenToCop Calendrier"><img src="assets/logo_whentocop.png" alt="WhenToCop" style="height:14px;"> Calendrier WhenToCop?</a>
+            <a href="https://www.nike.com/launch" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Nike SNKRS"><img src="assets/logo_snkrs.png" alt="SNKRS" style="height:14px;"> SNKRS Drops</a>
+            <a href="https://www.adidas.fr/confirmed" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Adidas CONFIRMED"><img src="assets/logo_confirmed.jpg" alt="CONFIRMED" style="height:14px;"> CONFIRMED</a>
+            <a href="https://www.bestsecret.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="BestSecret VIP"><img src="assets/logo_bestsecret.png" alt="BestSecret" style="height:14px;"> BestSecret Soldes</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD B: ANALYSE DE MARCHÉ & DATA PRÉDICTIVE -->
+      <div class="vivid-card">
+        <div class="card-brand-watermarks">
+          <img src="assets/logo_stockx.png" alt="StockX">
+          <img src="assets/logo_goat.png" alt="GOAT">
+          <img src="assets/logo_hypebeast.jpg" alt="Hypebeast">
+          <img src="assets/logo_farfetch.png" alt="Farfetch">
+        </div>
+        <div>
+          <div class="vivid-card-icon" style="background: var(--sec-accent);"><i class="fa-solid fa-chart-simple"></i></div>
+          <div style="font-size: 0.76rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 1px;">Pilier 2 • Data, Cotes &amp; Analyse des Ventes</div>
+          <h3 class="vivid-card-title" style="margin-top: 4px;">Modèle Prédictif &amp; Analyse des Volumes</h3>
+          <p class="vivid-card-desc" style="font-size: 0.88rem; margin-bottom: 1rem;">
+            Je n'achète <strong>aucun article au hasard</strong>. Chaque transaction résulte d'un calcul prédictif de liquidité et d'une analyse rigoureuse des données de vente en direct :
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem;">
+            <div style="background: rgba(0,0,0,0.03); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid var(--sec-accent);">
+              <strong>📊 Monitoring des Cotes &amp; Indices de Liquidité :</strong> Analyse continue du carnet d'ordres (Ask/Bid) sur StockX, GOAT et Vestiaire Collective pour évaluer le volume exact de transactions quotidiennes.
+            </div>
+            <div style="background: rgba(0,0,0,0.03); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #7C3AED;">
+              <strong>🔍 Détection des Ruptures &amp; Hype Précoce :</strong> Croisement des leaks médias (Hypebeast, Highsnobiety), des annonces d'influenceurs et des quantités de tirage (stock allocation) pour mesurer la rareté réelle.
+            </div>
+            <div style="background: rgba(0,0,0,0.03); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #059669;">
+              <strong>⏱️ Vitesse de Rotation &amp; Zéro Limite de Stockage :</strong> Aucune contrainte d'espace ni plafond d'achat : j'investis massivement dès que le signal d'arbitrage est validé, avec l'assurance d'un écoulement sous 24h à 72h.
+            </div>
+            <div style="background: rgba(0,0,0,0.03); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #DC2626;">
+              <strong>🛡️ Authentification Rigoureuse en 6 Points :</strong> Contrôle systématique des matériaux, coutures internes, puces RFID, numéros de série, code-barres et réaction sous lampe UV anti-contrefaçon.
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px;">
+            <a href="https://stockx.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="StockX Live Data"><img src="assets/logo_stockx.png" alt="StockX" style="height:14px;"> StockX Market Data</a>
+            <a href="https://www.goat.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="GOAT Index"><img src="assets/logo_goat.png" alt="GOAT" style="height:14px;"> GOAT Analytics</a>
+            <a href="https://hypebeast.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Hypebeast Leaks"><img src="assets/logo_hypebeast.jpg" alt="Hypebeast" style="height:14px;"> Hypebeast</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- STRATÉGIE DE PRICING & SIMULATEUR LIVE -->
+    <div style="margin-bottom: 2rem;" class="grid-2">
+      
+      <!-- CARD C: STRATÉGIE PRICING & MODÈLE ÉCONOMIQUE -->
+      <div class="vivid-card">
+        <div class="card-watermark"><i class="fa-solid fa-coins"></i></div>
+        <div style="font-size: 0.76rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 1px;">
+          Pilier 3 • Pricing &amp; Rentabilité
+        </div>
+        <h3 class="vivid-card-title" style="margin-top: 4px;">Pourquoi Revendre 30% à 60% sous les Bourses Resell ?</h3>
+        <p class="vivid-card-desc" style="font-size: 0.88rem; margin-bottom: 1rem;">
+          Mon avantage concurrentiel repose sur un principe mathématique simple mais redoutable :
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem;">
+          <div style="background: rgba(0, 82, 255, 0.05); padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid rgba(0, 82, 255, 0.15);">
+            <strong>1. Achat au Prix Retail d'Origine :</strong> En achetant une paire ou un vêtement au tarif boutique (ex. <strong>120 €</strong>) ou via déstockage grossiste, mon coût d'acquisition est le plus bas possible.
+          </div>
+          <div style="background: rgba(0, 82, 255, 0.05); padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid rgba(0, 82, 255, 0.15);">
+            <strong>2. Positionnement Prix Attractif :</strong> Si la pièce cote 280 € sur StockX, je la propose à <strong>180 €</strong> (soit <strong>35% moins cher</strong>). L'acheteur économise 100 € et évite les frais de service des plateformes.
+          </div>
+          <div style="background: rgba(16, 185, 129, 0.08); padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.25);">
+            <strong>3. Triple Résultat :</strong> 
+            <ul style="margin-left: 1.2rem; margin-top: 4px;">
+              <li><strong>Vitesse d'écoulement record :</strong> L'annonce est la plus compétitive du marché.</li>
+              <li><strong>Marge nette garantie :</strong> +60 € de profit direct sur l'opération (<strong>+50% de ROI</strong>).</li>
+              <li><strong>Zéro trésorerie bloquée :</strong> Le capital est immédiatement réinjecté dans de nouvelles opportunités.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.25rem;">
+          <h4 style="font-size: 0.85rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase;">Simulateur Financier Interactif (Tapez ou Glissez) :</h4>
+          <p style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; margin-top: 2px;">Modifiez les montants ci-dessous pour calculer votre marge et votre retour sur investissement :</p>
+          
+          <div class="slider-group" style="margin-top: 10px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; font-weight: 800; color: #F9FAFB;">
+              <span>Prix d'Achat Retail / Fournisseur</span>
+              <div class="num-input-box">
+                <input type="text" id="inputBuy" value="120" inputmode="numeric" pattern="[0-9]*" title="Entrez un montant en chiffres">
+                <span>€</span>
+              </div>
+            </div>
+            <input type="range" id="sliderBuy" min="1" max="2000" value="120" style="width: 100%; accent-color: var(--sec-accent); margin-top: 6px;">
+
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; font-weight: 800; color: #F9FAFB; margin-top: 12px;">
+              <span>Prix de Revente Fixé</span>
+              <div class="num-input-box">
+                <input type="text" id="inputSell" value="180" inputmode="numeric" pattern="[0-9]*" title="Entrez un montant en chiffres">
+                <span>€</span>
+              </div>
+            </div>
+            <input type="range" id="sliderSell" min="1" max="5000" value="180" style="width: 100%; accent-color: var(--sec-accent); margin-top: 6px;">
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD D: RÉSULTATS FINANCIERS DU CALCULATEUR -->
+      <div class="vivid-card" style="display: flex; flex-direction: column; justify-content: space-around; align-items: center; text-align: center; background: var(--sec-soft);">
+        <div class="card-watermark"><i class="fa-solid fa-calculator"></i></div>
+        
+        <div style="width: 100%; padding: 10px 0;">
+          <div style="font-size: 0.85rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Bénéfice Net par Vente</div>
+          <div style="font-size: 3.2rem; font-weight: 900; color: #059669;" id="resProfit">+60 €</div>
+        </div>
+
+        <div style="width: 100%; border-top: 1px solid rgba(0,0,0,0.08); border-bottom: 1px solid rgba(0,0,0,0.08); padding: 15px 0;">
+          <div style="font-size: 0.85rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Marge Nette sur Prix de Vente</div>
+          <div style="font-size: 3.4rem; font-weight: 900; color: var(--sec-accent);" id="resMargin">33%</div>
+        </div>
+
+        <div style="width: 100%; padding: 10px 0;">
+          <div style="font-size: 0.85rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Retour sur Investissement (ROI)</div>
+          <div style="font-size: 3.4rem; font-weight: 900; color: var(--sec-accent);" id="resRoi">+50%</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CATALOGUE MULTI-PRODUITS & CANAUX DE DISTRIBUTION & LOGISTIQUE -->
+    <div style="margin-bottom: 2.5rem;" class="grid-2">
+      
+      <!-- CARD E: PORTFOLIO PRODUITS & MARQUES MULTI-CATÉGORIES -->
+      <div class="vivid-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="card-brand-watermarks">
+          <svg class="official-brand-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.44 2.05c-.32 0-.6.18-.73.46l-1.38 3.01-3.29.48c-.31.05-.57.25-.66.55-.09.3.01.62.24.84l2.38 2.32-.56 3.28c-.05.31.08.62.33.8.25.18.58.2.86.06L12.44 12.3l2.94 1.55c.28.15.61.12.86-.06.25-.18.38-.49.33-.8l-.56-3.28 2.38-2.32c.23-.22.33-.54.24-.84-.09-.3-.35-.5-.66-.55l-3.29-.48-1.38-3.01c-.13-.28-.41-.46-.73-.46z"/></svg>
+          <svg class="official-brand-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.71 6.3c-.45.54-5.38 6.22-10.42 10.37-3.23 2.66-6.19 3.82-8.33 3.82-1.89 0-3.08-.88-3.08-2.31 0-1.89 1.83-4.52 4.41-6.62.91-.74 1.84-1.39 2.72-1.92-1.9.96-3.83 2.47-5.01 4.02-.91 1.2-.84 2.21.18 2.21 1.48 0 4.14-1.28 7.37-3.9 5.25-4.26 10.87-9.59 11.51-9.98.53-.32 1.04.14.65.31z"/></svg>
+          <svg class="official-brand-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+        </div>
+        <div>
+          <div class="vivid-card-icon" style="background: var(--sec-accent);"><i class="fa-solid fa-tags"></i></div>
+          <div style="font-size: 0.76rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 1px;">Pilier 4 • Catalogue &amp; Segments de Produits</div>
+          <h3 class="vivid-card-title" style="margin-top: 4px;">Diversification Multi-Catégories &amp; Marques Phares</h3>
+          
+          <!-- Badges Typologies de Produits -->
+          <div style="background: rgba(124, 58, 237, 0.06); padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid rgba(124, 58, 237, 0.15); margin-bottom: 1rem;">
+            <div style="font-size: 0.76rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; margin-bottom: 6px;">
+              <i class="fa-solid fa-layer-group"></i> Gammes &amp; Typologies d'Articles Traitées :
+            </div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="background: rgba(124, 58, 237, 0.1); color: #F9FAFB; font-size: 0.75rem; font-weight: 800; padding: 4px 10px; border-radius: 99px; border: 1px solid rgba(124, 58, 237, 0.25); display: inline-flex; align-items: center; gap: 5px;"><i class="fa-solid fa-shoe-prints" style="color: var(--sec-accent);"></i> Chaussures &amp; Sneakers</span>
+              <span style="background: rgba(236, 72, 153, 0.1); color: #F9FAFB; font-size: 0.75rem; font-weight: 800; padding: 4px 10px; border-radius: 99px; border: 1px solid rgba(236, 72, 153, 0.25); display: inline-flex; align-items: center; gap: 5px;"><i class="fa-solid fa-bag-shopping" style="color: #EC4899;"></i> Sacs à main &amp; Maroquinerie</span>
+              <span style="background: rgba(59, 130, 246, 0.1); color: #F9FAFB; font-size: 0.75rem; font-weight: 800; padding: 4px 10px; border-radius: 99px; border: 1px solid rgba(59, 130, 246, 0.25); display: inline-flex; align-items: center; gap: 5px;"><i class="fa-solid fa-vest" style="color: #3B82F6;"></i> Vestes &amp; Doudounes</span>
+              <span style="background: rgba(16, 185, 129, 0.1); color: #F9FAFB; font-size: 0.75rem; font-weight: 800; padding: 4px 10px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.25); display: inline-flex; align-items: center; gap: 5px;"><i class="fa-solid fa-shirt" style="color: #10B981;"></i> T-shirts &amp; Tops</span>
+              <span style="background: rgba(217, 119, 6, 0.1); color: #F9FAFB; font-size: 0.75rem; font-weight: 800; padding: 4px 10px; border-radius: 99px; border: 1px solid rgba(217, 119, 6, 0.25); display: inline-flex; align-items: center; gap: 5px;"><i class="fa-solid fa-hat-wizard" style="color: #D97706;"></i> Casquettes &amp; Bonnets</span>
+              <span style="background: rgba(5, 150, 105, 0.1); color: #F9FAFB; font-size: 0.75rem; font-weight: 800; padding: 4px 10px; border-radius: 99px; border: 1px solid rgba(5, 150, 105, 0.25); display: inline-flex; align-items: center; gap: 5px;"><i class="fa-solid fa-glasses" style="color: #059669;"></i> Lunettes &amp; Écharpes</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <!-- Sneakers & Footwear -->
+            <div>
+              <div style="font-size: 0.76rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 0.5px;">Chaussures &amp; Sneakers</div>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px;">
+                <a href="https://www.nike.com/jordan" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Jordan"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#000;"><path d="M12.44 2.05c-.32 0-.6.18-.73.46l-1.38 3.01-3.29.48c-.31.05-.57.25-.66.55-.09.3.01.62.24.84l2.38 2.32-.56 3.28c-.05.31.08.62.33.8.25.18.58.2.86.06L12.44 12.3l2.94 1.55c.28.15.61.12.86-.06.25-.18.38-.49.33-.8l-.56-3.28 2.38-2.32c.23-.22.33-.54.24-.84-.09-.3-.35-.5-.66-.55l-3.29-.48-1.38-3.01c-.13-.28-.41-.46-.73-.46z"/></svg> Jordan</a>
+                <a href="https://www.nike.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Nike"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#000;"><path d="M21.71 6.3c-.45.54-5.38 6.22-10.42 10.37-3.23 2.66-6.19 3.82-8.33 3.82-1.89 0-3.08-.88-3.08-2.31 0-1.89 1.83-4.52 4.41-6.62.91-.74 1.84-1.39 2.72-1.92-1.9.96-3.83 2.47-5.01 4.02-.91 1.2-.84 2.21.18 2.21 1.48 0 4.14-1.28 7.37-3.9 5.25-4.26 10.87-9.59 11.51-9.98.53-.32 1.04.14.65.31z"/></svg> Nike</a>
+                <a href="https://www.adidas.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Adidas"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#000;"><path d="M22 20.5L13.8 6.5h-3.3l8.2 14H22zm-6.2 0L9.4 9.7H6.1l6.4 10.8h3.3zM9.5 20.5L5.1 13H1.8l4.4 7.5H9.5z"/></svg> Adidas</a>
+                <a href="https://www.adidas.com/yeezy" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Yeezy"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#000;"><path d="M4 4h4l4 6 4-6h4l-6 9v5h-4v-5L4 4z"/></svg> Yeezy</a>
+                <a href="https://www.newbalance.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel New Balance"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#E21A22;"><path d="M21.5 6h-4.3l-2.4 4.5h3.9L16.2 15h-3.8l-1.9 3.5h7.2c1.7 0 3-1.3 3-3V7.5c0-.8-.5-1.5-1.2-1.5zm-11 0H3.3c-.7 0-1.3.6-1.3 1.3v9.4c0 .7.6 1.3 1.3 1.3h4l5.4-12z"/></svg> New Balance</a>
+                <a href="https://www.asics.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Asics"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#001E62;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c-2.5 0-4-1.5-4-3.5 0-2.2 1.8-3.8 4.5-3.8 1.1 0 2.1.3 2.7.7v1.8c-.6-.4-1.4-.7-2.3-.7-1.4 0-2.3.8-2.3 1.9 0 1 .8 1.8 2.2 1.8.8 0 1.6-.3 2.2-.7v1.8c-.7.5-1.8.7-3 .7z"/></svg> Asics</a>
+                <a href="https://www.vans.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Vans"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#C8102E;"><path d="M2 9h4.5l2 6.5L11 9h11v2h-8.5l-2.5 7h-3L3.5 11H2V9z"/></svg> Vans</a>
+                <a href="https://www.ugg.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Ugg"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#000;"><circle cx="12" cy="12" r="10" fill="#000"/><text x="12" y="16" font-family="'Arial Black', sans-serif" font-weight="900" font-size="10" fill="#FFF" text-anchor="middle">UGG</text></svg> Ugg</a>
+              </div>
+            </div>
+
+            <!-- Streetwear & Culte -->
+            <div>
+              <div style="font-size: 0.76rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 0.5px;">Streetwear &amp; Hype Culte</div>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px;">
+                <a href="https://supreme.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" style="border-color: #DC2626;" title="Site officiel Supreme"><svg viewBox="0 0 80 28" style="height:14px; width:40px;"><rect width="80" height="28" rx="2" fill="#E53238"/><text x="40" y="20" font-family="'Futura', 'Arial Black', sans-serif" font-style="italic" font-weight="900" font-size="16" fill="#FFF" text-anchor="middle">Supreme</text></svg> Supreme</a>
+                <a href="https://www.off---white.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Off-White"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#000;"><path d="M3 3h4l5 5 5-5h4v4l-5 5 5 5v4h-4l-5-5-5 5H3v-4l5-5-5-5V3z"/></svg> Off-White</a>
+                <a href="https://crtz.xyz/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Corteiz"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#000;"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10.5 4.5-1 8-5.5 8-10.5V6l-8-4zm0 4a3 3 0 110 6 3 3 0 010-6zm-4 12c0-2.2 2.7-3.5 4-3.5s4 1.3 4 3.5H8z"/></svg> Corteiz</a>
+                <a href="https://shop.travisscott.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" style="border-color: #D97706;" title="Site officiel Travis Scott Cactus Jack"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#D97706;"><path d="M11 2h2v7h5v2h-5v3h4v2h-4v6h-2v-6H7v-2h4v-3H6V9h5V2z"/></svg> Travis Scott / Cactus Jack</a>
+                <a href="https://denimtears.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Denim Tears"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#000;"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg> Denim Tears</a>
+                <a href="https://www.chromehearts.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Chrome Hearts"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#000;"><path d="M10 2h4v7h7v4h-7v9h-4v-9H3V9h7V2z"/></svg> Chrome Hearts</a>
+              </div>
+            </div>
+
+            <!-- Luxe & Prêt-à-Porter Premium -->
+            <div>
+              <div style="font-size: 0.76rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 0.5px;">Luxe &amp; Prêt-à-Porter Premium</div>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px;">
+                <a href="https://www.prada.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Prada"><svg viewBox="0 0 24 24" style="height:14px; width:14px; fill:#000;"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg> Prada</a>
+                <a href="https://www.isabelmarant.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Isabel Marant"><svg viewBox="0 0 24 24" style="height:14px; width:14px; fill:#000;"><circle cx="12" cy="12" r="9" stroke="#000" stroke-width="2" fill="none"/><text x="12" y="16" font-family="'Didot', serif" font-weight="900" font-size="12" fill="#000" text-anchor="middle">IM</text></svg> Isabel Marant</a>
+                <a href="https://www.amiparis.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Ami Paris"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#EF4444;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> Ami Paris</a>
+                <a href="https://www.comme-des-garcons.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Comme des Garçons CDG"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#EF4444;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/><circle cx="9" cy="9" r="1.5" fill="#000"/><circle cx="15" cy="9" r="1.5" fill="#000"/><circle cx="8.5" cy="8.5" r="0.5" fill="#FFF"/><circle cx="14.5" cy="8.5" r="0.5" fill="#FFF"/></svg> Comme des Garçons (CDG)</a>
+                <a href="https://www.ralphlauren.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Ralph Lauren"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#0F172A;"><path d="M19 8c-.6 0-1.1-.3-1.5-.7L16 9l-1-2 1.5-1.5c-.3-.8-.3-1.6 0-2.3.4-.9 1.2-1.2 1.5-1.2h2v2l-1 1 2 2-2 1zm-7 5l-2-2-4 4 1.5 1.5 2.5-2.5v7h2v-5l2.5 2.5 1.5-1.5-4-4z"/></svg> Ralph Lauren</a>
+                <a href="https://www.lacoste.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Site officiel Lacoste"><svg viewBox="0 0 24 24" style="height:15px; width:15px; fill:#059669;"><path d="M22 12c-1.5 0-3-.5-4.2-1.3l-2.8 1.8c-1.8 1.2-4.2 1-5.8-.5L7.5 10.3c-.8-.7-1.9-1-2.9-.7L2 10.5V13l3-.5c.8-.1 1.6.1 2.2.6l1.8 1.6c2.2 2 5.5 2.2 8 .6l3.5-2.2c1.1.6 2.3.9 3.5.9V12z"/></svg> Lacoste</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD F: DISTRIBUTION OMNICANALE & INFRASTRUCTURE LOGISTIQUE -->
+      <div class="vivid-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="card-brand-watermarks">
+          <img src="assets/logo_chronopost.jpg" alt="Chronopost">
+          <img src="assets/logo_ups.png" alt="UPS">
+          <img src="assets/logo_relaiscolis.png" alt="Relais Colis">
+          <img src="assets/logo_jumingo.png" alt="Jumingo">
+          <img src="assets/logo_vinted.png" alt="Vinted">
+        </div>
+        <div>
+          <div class="vivid-card-icon" style="background: var(--sec-accent);"><i class="fa-solid fa-truck-fast"></i></div>
+          <div style="font-size: 0.76rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 1px;">Pilier 5 &amp; 6 • Distribution &amp; Logistique Adaptée</div>
+          <h3 class="vivid-card-title" style="margin-top: 4px;">Distribution Omnicanale &amp; Expéditions (24h à 3 semaines)</h3>
+          <p class="vivid-card-desc" style="font-size: 0.88rem; margin-bottom: 1.25rem;">
+            Chaque article est dirigé vers la plateforme à plus forte valeur perçue, puis expédié sous carton protecteur avec calage papier journal :
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <!-- Canaux de Vente Spécialisés & Enchères -->
+            <div>
+              <div style="font-size: 0.76rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 0.5px;">Bourses Resell &amp; Enchères Live</div>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px;">
+                <a href="https://stockx.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="StockX"><img src="assets/logo_stockx.png" alt="StockX" style="height:14px;"> StockX</a>
+                <a href="https://www.goat.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="GOAT"><img src="assets/logo_goat.png" alt="GOAT" style="height:14px;"> GOAT</a>
+                <a href="https://wethenew.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Wethenew"><img src="assets/logo_wethenew.png" alt="Wethenew" style="height:14px;"> Wethenew</a>
+                <a href="https://www.whatnot.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Whatnot"><img src="assets/logo_whatnot.png" alt="Whatnot" style="height:14px;"> Whatnot</a>
+                <a href="https://www.catawiki.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Catawiki"><img src="assets/logo_catawiki.png" alt="Catawiki" style="height:14px;"> Catawiki</a>
+                <a href="https://www.vestiairecollective.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Vestiaire Collective"><svg viewBox="0 0 24 24" style="height:14px; width:14px; fill:#EC4899;"><path d="M12 2L3 8l9 14 9-14-9-6zm0 3.3l5.8 3.9L12 17.5 6.2 9.2 12 5.3z"/></svg> Vestiaire Collective</a>
+              </div>
+            </div>
+
+            <!-- Canaux Directs Grand Public -->
+            <div>
+              <div style="font-size: 0.76rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 0.5px;">Marketplaces Direct-to-Consumer</div>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px;">
+                <a href="https://www.vinted.fr/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Vinted"><img src="assets/logo_vinted.png" alt="Vinted" style="height:14px;"> Vinted</a>
+                <a href="https://www.ebay.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="eBay"><img src="assets/logo_ebay.png" alt="eBay" style="height:14px;"> eBay</a>
+                <a href="https://www.leboncoin.fr/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="LeBonCoin"><img src="assets/logo_leboncoin.png" alt="LeBonCoin" style="height:14px;"> LeBonCoin</a>
+                <a href="https://www.etsy.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Etsy"><img src="assets/logo_etsy.png" alt="Etsy" style="height:14px;"> Etsy</a>
+                <a href="https://www.beebs.app/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Beebs"><img src="assets/logo_beebs.png" alt="Beebs" style="height:14px;"> Beebs</a>
+              </div>
+            </div>
+
+            <!-- Transporteurs Express & Suivis Sécurisés -->
+            <div>
+              <div style="font-size: 0.76rem; font-weight: 900; color: var(--sec-accent); text-transform: uppercase; letter-spacing: 0.5px;">Logistique, Calage Papier Journal &amp; Expéditions (24h à 3 sem.)</div>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px;">
+                <a href="https://www.chronopost.fr/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Chronopost Express"><img src="assets/logo_chronopost.jpg" alt="Chronopost" style="height:14px;"> Chronopost</a>
+                <a href="https://www.ups.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="UPS Express"><img src="assets/logo_ups.png" alt="UPS" style="height:14px;"> UPS International</a>
+                <a href="https://www.laposte.fr/colissimo" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Colissimo Signature"><svg viewBox="0 0 24 24" style="height:14px; width:14px; fill:#F59E0B;"><path d="M2 6h12v12H2V6zm14 2h4l2 3v7h-6V8zm-8 4l-3 3h6l-3-3z"/></svg> Colissimo</a>
+                <a href="https://www.relaiscolis.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Relais Colis"><img src="assets/logo_relaiscolis.png" alt="Relais Colis" style="height:14px;"> Relais Colis</a>
+                <a href="https://www.mondialrelay.fr/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Mondial Relay"><svg viewBox="0 0 24 24" style="height:14px; width:14px; fill:#EC4899;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm-2 9.5V7l2 2 2-2v4.5h-1.2v-2.1L12 10.2l-.8-.8v2.1H10z"/></svg> Mondial Relay</a>
+                <a href="https://www.jumingo.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Jumingo Shipping"><img src="assets/logo_jumingo.png" alt="Jumingo" style="height:14px;"> Jumingo</a>
+                <a href="https://www.packlink.fr/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Packlink Pro"><img src="assets/logo_packlink.jpg" alt="Packlink" style="height:14px;"> Packlink Pro</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ÉTAPE 4 : BÉNÉVOLAT & SUPPORT OPÉRATIONNEL — CIRCUIT ÉVÉNEMENTIEL -->
+  <section class="modern-section" id="etape4">
+    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
+    <div class="step-number-tag">
+      <i class="fa-solid fa-hands-holding-circle"></i> ÉTAPE 4 / 4 — ENGAGEMENT &amp; IMPACT TERRAIN
+    </div>
+    <h2 class="section-hero-title">
+      <span style="font-size: 0.85em; display: block; letter-spacing: 1px; color: #22D3EE; text-transform: uppercase; margin-bottom: 6px;">Bénévolat &amp; Circuit Associatif</span>
+      FESTIVALS HMONG • NOUVEL AN HMONG <highlight>&amp; ÉVÉNEMENTS CULTURELS</highlight>
+    </h2>
+    <div class="section-hero-subtitle">
+      Bénévolat opérationnel récurrent lors des <strong>Festivals Hmong, célébrations du Nouvel An Hmong et grands rassemblements événementiels</strong> à travers 7 villes clés en France (Depuis 2015).
+    </div>
+
+    <!-- EXECUTIVE KPI BAR BÉNÉVOLAT -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
+      <div class="vivid-card" style="padding: 1.25rem; text-align: center; border-top: 2px solid #06B6D4;">
+        <div style="font-size: 2.2rem; font-weight: 900; color: #22D3EE;">Depuis 2015</div>
+        <div style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: #F8FAFC; margin-top: 4px;">Engagement &amp; Fidélité</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">+10 ans de présence active sur le terrain</div>
+      </div>
+      <div class="vivid-card" style="padding: 1.25rem; text-align: center; border-top: 2px solid #3B82F6;">
+        <div style="font-size: 2.2rem; font-weight: 900; color: #60A5FA;">7 Villes Clés</div>
+        <div style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: #F8FAFC; margin-top: 4px;">Maillage Territorial</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Aubigny, Lyon, Nîmes, Orléans, Gien, Paris...</div>
+      </div>
+      <div class="vivid-card" style="padding: 1.25rem; text-align: center; border-top: 2px solid #10B981;">
+        <div style="font-size: 2.2rem; font-weight: 900; color: #34D399;">Milliers</div>
+        <div style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: #F8FAFC; margin-top: 4px;">De Visiteurs par Étape</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Rassemblements régionaux &amp; nationaux</div>
+      </div>
+      <div class="vivid-card" style="padding: 1.25rem; text-align: center; border-top: 2px solid #EC4899;">
+        <div style="font-size: 2.2rem; font-weight: 900; color: #F472B6;">Stars USA &amp; Asie</div>
+        <div style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: #F8FAFC; margin-top: 4px;">Accueil International</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">VIP, artistes &amp; personnalités diaspora</div>
+      </div>
+    </div>
+
+    <!-- GRILLE 1 : MAILLAGE TERRITORIAL & PROGRAMME DES FESTIVALS -->
+    <div style="margin-bottom: 2rem;" class="grid-2">
+      
+      <!-- CARD A: UN CIRCUIT RÉCURRENT SUR 7 VILLES CLÉS -->
+      <div class="vivid-card">
+        <div class="vivid-card-icon" style="background: #06B6D4;"><i class="fa-solid fa-map-location-dot"></i></div>
+        <div style="font-size: 0.76rem; font-weight: 900; color: #22D3EE; text-transform: uppercase; letter-spacing: 1px;">Pilier 1 • Maillage Territorial &amp; Envergure</div>
+        <h3 class="vivid-card-title" style="margin-top: 4px;">Un Circuit Récurrent sur 7 Villes Clés de France</h3>
+        <p class="vivid-card-desc" style="font-size: 0.88rem; margin-bottom: 1rem;">
+          Soutien bénévole et déploiement opérationnel lors des rendez-vous culturels annuels majeurs de la communauté :
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem;">
+          <div style="background: rgba(6, 182, 212, 0.08); padding: 10px 12px; border-radius: var(--radius-sm); border-left: 3px solid #06B6D4;">
+            <strong>📍 Les 7 Étapes Régionales &amp; Nationales :</strong>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px;">
+              <span class="brand-logo-pill" style="border-color: #06B6D4; background: rgba(6, 182, 212, 0.1);"><i class="fa-solid fa-location-dot" style="color: #22D3EE;"></i> Aubigny-sur-Nère</span>
+              <span class="brand-logo-pill" style="border-color: #06B6D4; background: rgba(6, 182, 212, 0.1);"><i class="fa-solid fa-location-dot" style="color: #22D3EE;"></i> Villefranche-sur-Saône</span>
+              <span class="brand-logo-pill" style="border-color: #06B6D4; background: rgba(6, 182, 212, 0.1);"><i class="fa-solid fa-location-dot" style="color: #22D3EE;"></i> Nîmes</span>
+              <span class="brand-logo-pill" style="border-color: #06B6D4; background: rgba(6, 182, 212, 0.1);"><i class="fa-solid fa-location-dot" style="color: #22D3EE;"></i> Orléans</span>
+              <span class="brand-logo-pill" style="border-color: #06B6D4; background: rgba(6, 182, 212, 0.1);"><i class="fa-solid fa-location-dot" style="color: #22D3EE;"></i> Gien</span>
+              <span class="brand-logo-pill" style="border-color: #06B6D4; background: rgba(6, 182, 212, 0.1);"><i class="fa-solid fa-location-dot" style="color: #22D3EE;"></i> Andrézieux-Bouthéon</span>
+              <span class="brand-logo-pill" style="border-color: #06B6D4; background: rgba(6, 182, 212, 0.1);"><i class="fa-solid fa-location-dot" style="color: #22D3EE;"></i> Paris &amp; Île-de-France</span>
+            </div>
+          </div>
+
+          <div style="background: rgba(255, 255, 255, 0.03); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #3B82F6;">
+            <strong>👥 Flux de Visiteurs Massifs :</strong> Événements d'envergure réunissant des milliers de participants, familles et délégations par édition, exigeant une coordination millimétrée.
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #10B981;">
+            <strong>⏳ Engagement Pérenne :</strong> Implication active et ininterrompue depuis 2015, démontrant fidélité, rigueur et sens du service collectif.
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD B: DIVERSITÉ DU PROGRAMME & ARTISTES INTERNATIONAUX -->
+      <div class="vivid-card">
+        <div class="vivid-card-icon" style="background: #EC4899;"><i class="fa-solid fa-star"></i></div>
+        <div style="font-size: 0.76rem; font-weight: 900; color: #F472B6; text-transform: uppercase; letter-spacing: 1px;">Pilier 2 • Scène, Compétitions &amp; VIPs</div>
+        <h3 class="vivid-card-title" style="margin-top: 4px;">Programme Multidisciplinaire &amp; Accueil de Stars Internationales</h3>
+        <p class="vivid-card-desc" style="font-size: 0.88rem; margin-bottom: 1rem;">
+          Gestion et support sur des manifestations complètes combinant tournois sportifs, scène artistique et accueil VIP :
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem;">
+          <div style="background: rgba(236, 72, 153, 0.08); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #EC4899;">
+            <strong>🏆 Compétitions Sportives :</strong> Organisation et logistique des tournois de football, volleyball, tennis de table (ping-pong) et pétanque.
+          </div>
+          <div style="background: rgba(124, 58, 237, 0.08); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #8B5CF6;">
+            <strong>👑 Scène, Concours &amp; Animation :</strong> Concours Miss &amp; Mister Hmong, concours de chant, de danse, de talents et animations scéniques en direct.
+          </div>
+          <div style="background: rgba(217, 119, 6, 0.08); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #D97706;">
+            <strong>🌟 Accueil d'Artistes Internationaux (USA &amp; Asie) :</strong> Soutien logistique à l'organisation pour la venue de personnalités et chanteurs majeurs de la diaspora : <em>David Yang, Ma Hmong, Chen Nyi, Destiny, Mub Lis, Kou Hang, Win Vang, Pagnia Xiong, Kristine Xiong, Xab Thoj, Cua Yaj, Luj Yaj, Pob Suav Yaj...</em>
+          </div>
+          <div style="background: rgba(16, 185, 129, 0.08); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #10B981;">
+            <strong>🏮 Traditions &amp; Gastronomie :</strong> Pratique du jeu traditionnel <em>Pov Pob</em>, stands de gastronomie asiatique et artisanat culturel.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GRILLE 2 : MISSIONS DE TERRAIN & ATOUTS DÉMONTRÉS -->
+    <div style="margin-bottom: 2.5rem;" class="grid-2">
+      
+      <!-- CARD C: MISSIONS OPÉRATIONNELLES DE TERRAIN -->
+      <div class="vivid-card">
+        <div class="vivid-card-icon" style="background: #3B82F6;"><i class="fa-solid fa-list-check"></i></div>
+        <div style="font-size: 0.76rem; font-weight: 900; color: #60A5FA; text-transform: uppercase; letter-spacing: 1px;">Pilier 3 • Missions de Terrain &amp; Aide Multiple</div>
+        <h3 class="vivid-card-title" style="margin-top: 4px;">Polyvalence Opérationnelle en Direct</h3>
+        <p class="vivid-card-desc" style="font-size: 0.88rem; margin-bottom: 1rem;">
+          Capacité d'intervention rapide sur tous les postes stratégiques de l'événement :
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem;">
+          <div style="background: rgba(59, 130, 246, 0.06); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #3B82F6;">
+            <strong>🍹 Vente, Bar &amp; Tenue de Caisse :</strong> Renfort au bar et sur les stands de restauration, gestion fluide des flux et du service lors des pics d'affluence, encaissement rapide.
+          </div>
+          <div style="background: rgba(6, 182, 212, 0.06); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #06B6D4;">
+            <strong>📢 Support Communication &amp; Accueil :</strong> Diffusion des visuels officiels, promotion locale et orientation chaleureuse du public, des familles et des délégations.
+          </div>
+          <div style="background: rgba(16, 185, 129, 0.06); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid #10B981;">
+            <strong>🏗️ Logistique &amp; Montage/Démontage :</strong> Participation aux réunions de cadrage en amont, installation des espaces (terrains sportifs, scène centrale, stands marchands) et remise en état des sites.
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD D: ATOUTS DÉMONTRÉS & SOFT SKILLS POUR BUSINESS SCHOOL -->
+      <div class="vivid-card" style="border-left: 4px solid #10B981;">
+        <div class="vivid-card-icon" style="background: #10B981;"><i class="fa-solid fa-trophy"></i></div>
+        <div style="font-size: 0.76rem; font-weight: 900; color: #34D399; text-transform: uppercase; letter-spacing: 1px;">Pilier 4 • Compétences Transversales &amp; Leadership</div>
+        <h3 class="vivid-card-title" style="margin-top: 4px;">Atouts Démontrés &amp; Soft Skills Valorables</h3>
+        <p class="vivid-card-desc" style="font-size: 0.88rem; margin-bottom: 1rem;">
+          Des qualités humaines et managériales directement applicables en école de commerce et en entreprise :
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem;">
+          <div style="background: rgba(16, 185, 129, 0.08); padding: 10px 12px; border-radius: var(--radius-sm); border-left: 3px solid #10B981;">
+            <strong>🤝 Esprit d'Équipe &amp; Entraide Permanente :</strong> Capacité à travailler en synergie étroite avec des équipes bénévoles intergénérationnelles sous forte intensité.
+          </div>
+          <div style="background: rgba(59, 130, 246, 0.08); padding: 10px 12px; border-radius: var(--radius-sm); border-left: 3px solid #3B82F6;">
+            <strong>⚡ Sang-froid &amp; Réactivité en Milieu Massif :</strong> Gestion du stress, réactivité immédiate face aux imprévus et sens aigu du service client face à des milliers de visiteurs.
+          </div>
+          <div style="background: rgba(212, 175, 55, 0.08); padding: 10px 12px; border-radius: var(--radius-sm); border-left: 3px solid #D4AF37;">
+            <strong>💎 Engagement Long Terme &amp; Fiabilité :</strong> Preuve concrète de maturité, de loyauté et de constance depuis plus de 10 ans au service de la collectivité.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- NOUVEAU BLOCK VIDÉOS : IMMERSION VIDÉO YOUTUBE ÉVÉNEMENTS & NOUVEL AN HMONG -->
+    <div style="margin-top: 2rem;">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div style="font-size: 0.82rem; font-weight: 900; color: #EF4444; text-transform: uppercase; letter-spacing: 1.5px;">
+          <i class="fa-brands fa-youtube"></i> IMMERSION VIDÉO &amp; COUVERTURE DES ÉVÉNEMENTS
+        </div>
+        <h3 style="font-size: 1.4rem; font-weight: 900; color: #F9FAFB; margin-top: 4px;">
+          Découvrir l'Ambiance &amp; l'Envergure des <highlight>Festivals Hmong en Vidéo</highlight>
+        </h3>
+        <p style="font-size: 0.88rem; color: #94A3B8; font-weight: 600; max-width: 680px; margin: 4px auto 0;">
+          Aperçu de l'effervescence, des rassemblements de milliers de visiteurs, des tournois sportifs et des scènes culturelles lors des célébrations du Nouvel An Hmong et festivals en France :
+        </p>
+      </div>
+
+      <div class="grid-2">
+        
+        <!-- Vidéo 1: Nouvel An Hmong Aubigny-sur-Nère -->
+        <div class="vivid-card" style="padding: 1rem; border-top: 3px solid #EF4444; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="background: rgba(239, 68, 68, 0.1); color: #EF4444; font-size: 0.74rem; font-weight: 900; padding: 3px 10px; border-radius: 99px; border: 1px solid rgba(239, 68, 68, 0.25);">
+                <i class="fa-brands fa-youtube"></i> Nouvel An Hmong
+              </span>
+              <span style="font-size: 0.75rem; color: #94A3B8; font-weight: 700;">Aubigny-sur-Nère</span>
+            </div>
+            <h4 style="color: #F9FAFB; font-size: 1.05rem; font-weight: 900; margin-bottom: 6px;">Célébrations &amp; Grand Rassemblement Annuel</h4>
+            <p style="color: #CBD5E1; font-size: 0.84rem; line-height: 1.5; margin-bottom: 12px;">
+              Immersion au cœur des festivités, des danses traditionnelles, du jeu Pov Pob et des milliers de visiteurs réunis pour le Nouvel An Hmong à Aubigny-sur-Nère.
+            </p>
+          </div>
+          
+          <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #000;">
+            <iframe 
+              src="https://www.youtube.com/embed/videoseries?list=PL2K918WbC89NqQW9F0S4rV8mD4J2zXf2v" 
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen 
+              title="Nouvel An Hmong Aubigny-sur-Nère Vidéo">
+            </iframe>
+          </div>
+
+          <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+            <a href="https://www.youtube.com/results?search_query=nouvel+an+hmong+aubigny+sur+nere" target="_blank" rel="noopener noreferrer" class="btn-vivid-blue" style="font-size: 0.78rem; padding: 6px 14px; background: #EF4444; border: none; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fa-brands fa-youtube"></i> Voir les reportages YouTube <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Vidéo 2: Festival Culturel & Compétitions Hmong -->
+        <div class="vivid-card" style="padding: 1rem; border-top: 3px solid #06B6D4; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="background: rgba(6, 182, 212, 0.1); color: #22D3EE; font-size: 0.74rem; font-weight: 900; padding: 3px 10px; border-radius: 99px; border: 1px solid rgba(6, 182, 212, 0.25);">
+                <i class="fa-solid fa-trophy"></i> Festival &amp; Tournois
+              </span>
+              <span style="font-size: 0.75rem; color: #94A3B8; font-weight: 700;">Circuit National</span>
+            </div>
+            <h4 style="color: #F9FAFB; font-size: 1.05rem; font-weight: 900; margin-bottom: 6px;">Tournois Sportifs, Scène &amp; Artistes</h4>
+            <p style="color: #CBD5E1; font-size: 0.84rem; line-height: 1.5; margin-bottom: 12px;">
+              Déroulement des compétitions de football, volleyball, pétanque, concours artistiques et concerts des stars invitées de la diaspora.
+            </p>
+          </div>
+          
+          <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #000;">
+            <iframe 
+              src="https://www.youtube.com/embed?listType=search&list=festival+hmong+france+sport+danse" 
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen 
+              title="Festival Culturel Hmong France Tournois et Scène">
+            </iframe>
+          </div>
+
+          <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+            <a href="https://www.youtube.com/results?search_query=festival+hmong+france" target="_blank" rel="noopener noreferrer" class="btn-vivid-blue" style="font-size: 0.78rem; padding: 6px 14px; background: #0891B2; border: none; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fa-brands fa-youtube"></i> Explorer le festival sur YouTube <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Off-Canvas Recruiter Shortlist Drawer -->
+  <div class="shortlist-drawer" id="shortlistDrawer">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 1.5rem;">
+      <div style="font-size: 1.05rem; font-weight: 800; color: #F9FAFB; letter-spacing: -0.01em;">
+        CONTACT / LUKA XIONG
+      </div>
+      <button id="shortlistClose" style="background: transparent; border: none; font-size: 1.5rem; color: #9CA3AF; cursor: pointer; padding: 4px 8px; transition: color 0.2s ease;">&times;</button>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 1.25rem;">
+      <div style="display: flex; align-items: center; gap: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px 14px; border-radius: var(--radius-md);">
+        <img src="assets/candidate_photo.jpg" alt="Luka Xiong" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.2);">
+        <div>
+          <div style="font-weight: 800; font-size: 1.05rem; color: #F9FAFB;">Luka Xiong</div>
+          <div style="font-size: 0.78rem; color: #38BDF8; font-weight: 600;">Bac STI2D Architecture (Jehan de Beauce)</div>
+        </div>
+      </div>
+
+      <!-- Detailed Social Media & Direct Channels -->
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <strong style="color: #9CA3AF; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px;">Réseaux &amp; Canaux Directs :</strong>
+        
+        <!-- LinkedIn Detail Card -->
+        <a href="https://www.linkedin.com/in/luka-xiong-8209503b0/" target="_blank" rel="noopener noreferrer" style="background: rgba(10, 102, 194, 0.08); border: 1px solid rgba(10, 102, 194, 0.25); padding: 12px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 36px; border-radius: 8px; background: #0A66C2; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+            <div>
+              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.88rem;">LinkedIn</div>
+              <div style="color: #9CA3AF; font-size: 0.74rem;">Réseau professionnel, parcours &amp; certifs</div>
+            </div>
+          </div>
+          <span style="color: #38BDF8; font-size: 0.78rem; font-weight: 600;">Profil <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
+        </a>
+
+        <!-- Instagram Detail Card -->
+        <a href="https://www.instagram.com/lukahmg/" target="_blank" rel="noopener noreferrer" style="background: rgba(225, 48, 108, 0.06); border: 1px solid rgba(225, 48, 108, 0.2); padding: 12px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #833AB4, #FD1D1D, #F56040); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div>
+              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.88rem;">Instagram</div>
+              <div style="color: #9CA3AF; font-size: 0.74rem;">@lukahmg • Contact direct &amp; Lifestyle</div>
+            </div>
+          </div>
+          <span style="color: #F472B6; font-size: 0.78rem; font-weight: 600;">@lukahmg <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- IN-PAGE LIGHTBOX POPUP MODAL WITH ZOOM CONTROLS -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" title="Fermer (Échap)">&times;</button>
+      
+      <div class="modal-image-container">
+        <img id="modalImage" src="" alt="Agrandissement Visuel">
+      </div>
+
+      <div class="modal-toolbar">
+        <button class="modal-zoom-btn" id="zoomOutBtn" title="Zoom arrière"><i class="fa-solid fa-minus"></i></button>
+        <button class="modal-zoom-btn" id="zoomResetBtn" style="width: auto; padding: 0 12px; border-radius: 99px; font-size: 0.8rem;" title="Réinitialiser zoom">100%</button>
+        <button class="modal-zoom-btn" id="zoomInBtn" title="Zoom avant"><i class="fa-solid fa-plus"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>
