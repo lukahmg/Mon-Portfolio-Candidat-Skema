@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   // --- SPA VIEW SWITCHER ROUTER ---
   const navLinks = document.querySelectorAll('.nav-item-link');
   const sections = document.querySelectorAll('.modern-section');
@@ -155,7 +155,7 @@
     const margin = sellVal > 0 ? Math.round((profit / sellVal) * 100) : 0;
     const roi = buyVal > 0 ? Math.round((profit / buyVal) * 100) : 0;
 
-    if (resProfit) resProfit.textContent = (profit >= 0 ? '+' : '') + profit + ' â‚¬';
+    if (resProfit) resProfit.textContent = (profit >= 0 ? '+' : '') + profit + ' €';
     if (resMargin) resMargin.textContent = margin + '%';
     if (resRoi) resRoi.textContent = (roi >= 0 ? '+' : '') + roi + '%';
   }

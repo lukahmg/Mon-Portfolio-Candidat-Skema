@@ -987,8 +987,14 @@ img {
   flex-shrink: 0;
 }
 
-.brand-logo-pill svg path[fill="#000"] {
+.brand-logo-pill svg path[fill="#000"],
+.brand-logo-pill svg path[fill="#0F172A"],
+.brand-logo-pill svg text[fill="#000"] {
   fill: #F8FAFC !important;
+}
+
+.brand-logo-pill svg circle[stroke="#000"] {
+  stroke: #F8FAFC !important;
 }
 
 /* Interactive Numeric Input Boxes for Financial Calculator */
@@ -1127,6 +1133,8 @@ img {
   font-weight: 700;
   padding: 5px 12px;
   border-radius: 99px;
+}
+
 /* Off-Canvas Recruiter Shortlist Contact Drawer */
 .shortlist-drawer {
   position: fixed;
@@ -1332,208 +1340,9 @@ img {
   transform: scale(1.1);
 }
 
-/* Interactive Brand & Platform Logo Badges with Direct Links */
-.brand-logo-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #FFFFFF;
-  color: #000000;
-  border: 1.5px solid rgba(0, 0, 0, 0.15);
-  padding: 6px 12px;
-  border-radius: var(--radius-full);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s var(--ease-smooth);
-  cursor: pointer;
-}
 
-.brand-logo-pill:hover {
-  transform: translateY(-3px) scale(1.05);
-  border-color: var(--sec-accent);
-  background: #000000;
-  color: #FFFFFF !important;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
-}
 
-.brand-logo-pill img, .brand-logo-pill svg, .brand-logo-pill i {
-  width: 16px;
-  height: 16px;
-  object-fit: contain;
-  flex-shrink: 0;
-  display: inline-block;
-  vertical-align: middle;
-}
 
-.brand-logo-pill:hover i {
-  color: #FFFFFF !important;
-}
-
-.brand-logo-pill:hover svg path[fill="#000"],
-.brand-logo-pill:hover svg path[fill="#0F172A"],
-.brand-logo-pill:hover svg text[fill="#000"] {
-  fill: #FFFFFF !important;
-}
-
-/* Interactive Numeric Input Boxes for Financial Calculator */
-.num-input-box {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: #FFFFFF;
-  border: 2px solid var(--sec-accent);
-  border-radius: var(--radius-sm);
-  padding: 4px 10px;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.num-input-box:focus-within {
-  border-color: #0052FF;
-  box-shadow: 0 0 0 3px rgba(0, 82, 255, 0.15);
-}
-
-.num-input-box input {
-  width: 70px;
-  border: none;
-  background: transparent;
-  font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: 900;
-  color: var(--sec-accent);
-  text-align: right;
-  outline: none;
-}
-
-.num-input-box span {
-  font-size: 0.9rem;
-  font-weight: 900;
-  color: var(--sec-accent);
-}
-
-/* Hide spin buttons */
-.num-input-box input::-webkit-outer-spin-button,
-.num-input-box input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.num-input-box input[type=number] {
-  -moz-appearance: textfield;
-}
-
-/* Executive Workflow Encadrés (De A à Z) - Clean Minimalist Studio Framing */
-.process-encadre-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-bottom: 2rem;
-}
-
-@media (max-width: 1024px) {
-  .process-encadre-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-}
-
-.process-encadre {
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-top: 3px solid var(--encadre-color, #2563EB);
-  border-radius: var(--radius-md);
-  padding: 1.35rem;
-  position: relative;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s var(--ease-smooth);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.process-encadre:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(0, 0, 0, 0.12);
-  border-top-color: var(--encadre-color, #2563EB);
-}
-
-.encadre-top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.encadre-step-pill {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 2px 8px;
-  border-radius: var(--radius-full);
-  background: rgba(0, 0, 0, 0.04);
-  color: #475569;
-}
-
-.encadre-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.encadre-step-num {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  background: #0F172A;
-  color: #FFF;
-  font-weight: 800;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.encadre-title {
-  font-size: 1rem;
-  font-weight: 800;
-  color: #F9FAFB;
-  line-height: 1.3;
-}
-
-.encadre-desc {
-  font-size: 0.84rem;
-  color: #CBD5E1;
-  line-height: 1.6;
-  font-weight: 500;
-  margin-top: 4px;
-}
-
-.encadre-desc strong {
-  color: #F9FAFB;
-  font-weight: 700;
-}
-
-.encadre-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.74rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-  margin-top: 12px;
-  width: fit-content;
-  background: rgba(255, 255, 255, 0.05);
-  color: #94A3B8;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
 
 /* ==========================================================================
    MOBILE & TABLET RESPONSIVE ENHANCEMENTS (SMOOTH SCROLL & FLUID TOUCH)
@@ -1682,3 +1491,25 @@ img {
 .brand-logo-pill {
   color: #F8FAFC !important;
 }
+
+/* Vivid Card Icon Pill Styling */
+.vivid-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+/* Ensure brand watermarks stay pinned without expanding card height */
+.card-brand-watermarks {
+  max-height: 80px;
+  overflow: hidden;
+}
+
