@@ -136,7 +136,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- SIMULATEUR RENTABILITÃ‰ RESELL (Ã‰tape 3) ---
+  // --- REUSABLE SECTION SUB-TABS (Ex: Étape 2 Déméter) ---
+  const sectionTabBtns = document.querySelectorAll('.section-tab-btn');
+  sectionTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const container = btn.closest('.modern-section') || btn.parentElement.parentElement;
+      const peerBtns = container.querySelectorAll('.section-tab-btn');
+      const peerPanes = container.querySelectorAll('.section-tab-pane');
+
+      peerBtns.forEach(b => b.classList.remove('active'));
+      peerPanes.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      const targetId = btn.getAttribute('data-tab');
+      const targetPane = document.getElementById(targetId);
+      if (targetPane) targetPane.classList.add('active');
+    });
+  });
+
+  // --- SIMULATEUR RENTABILITÉ RESELL (Étape 3) ---
   const inputBuy = document.getElementById('inputBuy');
   const sliderBuy = document.getElementById('sliderBuy');
   const inputSell = document.getElementById('inputSell');
