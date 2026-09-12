@@ -1127,18 +1127,72 @@ img {
   font-weight: 700;
   padding: 5px 12px;
   border-radius: 99px;
-  margin-top: 14px;
-  width: fit-content;
-  background: rgba(255, 255, 255, 0.06);
-  color: #CBD5E1;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Off-Canvas Recruiter Shortlist Contact Drawer */
+.shortlist-drawer {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.7);
+  z-index: 2500;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
 }
 
-.shortlist-drawer.active { right: 0; }
+.shortlist-drawer.open,
+.shortlist-drawer.active {
+  right: 0;
+}
 
-/* ==========================================================================
-   IN-PAGE LIGHTBOX POPUP MODAL SYSTEM (NO SCROLLBARS, SMOOTH CANVAS DRAG & ZOOM)
-   ========================================================================== */
+/* Floating Sticky Contact Button */
+.sticky-contact-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: #1F2937;
+  color: #F9FAFB;
+  padding: 12px 22px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.sticky-contact-btn:hover {
+  background: #374151;
+  border-color: #38BDF8;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.25);
+}
+
+@media (max-width: 768px) {
+  .shortlist-drawer {
+    max-width: 100%;
+    right: -100%;
+  }
+  .sticky-contact-btn {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 10px 18px;
+    font-size: 0.8rem;
+  }
+}
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -1481,15 +1535,150 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive adjustments */
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE ENHANCEMENTS (SMOOTH SCROLL & FLUID TOUCH)
+   ========================================================================== */
 @media (max-width: 1024px) {
-  .modern-header {
-    width: calc(100% - 2rem);
-    padding: 0 1rem;
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    height: auto !important;
+    -webkit-overflow-scrolling: touch;
   }
-  .modern-section { padding: 120px 1.5rem 60px 1.5rem; }
-  .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .hero-large-heading { font-size: 3.2rem; }
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .nav-links-container { display: none; }
+
+  .modern-header {
+    width: calc(100% - 1.5rem);
+    top: 0.75rem;
+    padding: 0 0.85rem;
+    height: 54px;
+  }
+
+  .nav-links-wrapper {
+    overflow-x: auto;
+    max-width: calc(100% - 160px);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-links-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links-container {
+    display: flex !important;
+    gap: 2px;
+    padding: 2px;
+  }
+
+  .nav-item-link {
+    padding: 5px 9px;
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .modern-section {
+    padding: 85px 1rem 70px 1rem !important;
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Release hero lock on mobile so user can freely scroll up and down */
+  #hero.active-view {
+    height: auto !important;
+    max-height: none !important;
+    min-height: 100vh !important;
+    overflow: visible !important;
+    padding: 85px 1rem 60px 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  .central-universe-container {
+    min-height: auto !important;
+    height: auto !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    padding-top: 1rem !important;
+  }
+
+  .center-profile-core {
+    padding: 1.5rem 1.25rem !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .center-core-title {
+    font-size: 1.6rem !important;
+  }
+
+  .section-hero-title {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .section-hero-subtitle {
+    font-size: 0.9rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .orbit-ring {
+    display: none !important;
+  }
+
+  .orbit-node {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-bottom: 0.5rem;
+    padding: 0.9rem 1rem !important;
+  }
+
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .vivid-card {
+    padding: 1.25rem !important;
+  }
+
+  .vivid-card p, .vivid-card-desc, .encadre-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    color: #E2E8F0 !important;
+  }
+
+  .tab-controls {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+
+  .tab-btn {
+    flex: 1 1 calc(50% - 6px) !important;
+    padding: 8px 10px !important;
+    font-size: 0.76rem !important;
+    text-align: center !important;
+  }
+}
+
+/* Universal text contrast and compact spacing enforcement */
+.vivid-card strong, 
+.process-encadre strong,
+.vivid-card b {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+.vivid-card p,
+.vivid-card-desc,
+.encadre-desc {
+  color: #CBD5E1 !important;
+}
+
+.brand-logo-pill {
+  color: #F8FAFC !important;
 }
