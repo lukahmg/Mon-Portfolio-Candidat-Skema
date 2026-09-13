@@ -98,6 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const linktreeContactBtn = document.getElementById('linktreeContactBtn');
+  if (linktreeContactBtn) {
+    linktreeContactBtn.addEventListener('click', openShortlist);
+  }
+
   // --- PURE BLURRED LIGHTBOX MODAL WITH TOUCH PINCH-TO-ZOOM ---
   const modalOverlay = document.getElementById('modalOverlay');
   const modalImageContainer = document.getElementById('modalImageContainer');

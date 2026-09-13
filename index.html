@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=23.0">
+  <link rel="stylesheet" href="styles.css?v=26.0">
   
   <!-- Chart.js Library -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -42,7 +42,8 @@
     <!-- Desktop Navigation Links -->
     <div class="nav-links-wrapper">
       <ul class="nav-links-container">
-        <li><a href="#hero" class="nav-item-link active"><i class="fa-solid fa-house"></i> Accueil</a></li>
+        <li><a href="#intro" class="nav-item-link active"><i class="fa-solid fa-address-card"></i> Bio &amp; Liens</a></li>
+        <li><a href="#hero" class="nav-item-link"><i class="fa-solid fa-compass"></i> Portfolio Hub</a></li>
         <li><a href="#etape1" class="nav-item-link"><i class="fa-solid fa-certificate"></i> 1. LVMH</a></li>
         <li><a href="#etape2" class="nav-item-link"><i class="fa-solid fa-building-user"></i> 2. Déméter</a></li>
         <li><a href="#etape3" class="nav-item-link"><i class="fa-solid fa-chart-line"></i> 3. Reseller</a></li>
@@ -79,11 +80,20 @@
       </div>
 
       <nav class="mobile-nav-menu">
-        <a href="#hero" class="mobile-nav-item active">
-          <div class="mobile-nav-icon"><i class="fa-solid fa-house"></i></div>
+        <a href="#intro" class="mobile-nav-item active">
+          <div class="mobile-nav-icon" style="color: #60A5FA; background: rgba(96, 165, 250, 0.12);"><i class="fa-solid fa-address-card"></i></div>
           <div class="mobile-nav-info">
-            <span class="mobile-nav-title">Accueil</span>
-            <span class="mobile-nav-subtitle">Hub Central &amp; Profil</span>
+            <span class="mobile-nav-title">Bio &amp; Liens Rapides</span>
+            <span class="mobile-nav-subtitle">Page Linktree &amp; Contacts Directs</span>
+          </div>
+          <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+        </a>
+
+        <a href="#hero" class="mobile-nav-item">
+          <div class="mobile-nav-icon"><i class="fa-solid fa-compass"></i></div>
+          <div class="mobile-nav-info">
+            <span class="mobile-nav-title">Hub Portfolio Interactif</span>
+            <span class="mobile-nav-subtitle">Constellation des 4 Univers</span>
           </div>
           <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
         </a>
@@ -138,8 +148,148 @@
     <i class="fa-solid fa-user-check"></i> Contact Luka Xiong
   </button>
 
+  <!-- INTRO LINKTREE PROFILE & CONTACTS LANDING SECTION -->
+  <section class="modern-section active-view" id="intro">
+    <div class="linktree-dashboard-container">
+      
+      <!-- Left Column: Executive Identity, Bio & Grand CTA Portfolio Button -->
+      <div class="linktree-left-panel">
+        <div class="linktree-avatar-wrap">
+          <img src="assets/candidate_photo.jpg" alt="Luka Xiong" class="linktree-avatar image-box">
+          <div class="linktree-online-badge" title="Disponible pour échange"></div>
+        </div>
+
+        <div class="linktree-meta-block">
+          <div class="skema-tag" style="margin-bottom: 6px;">
+            <i class="fa-solid fa-graduation-cap"></i> Candidat BBA • SKEMA Business School
+          </div>
+          <h1 class="linktree-name">LUKA XIONG</h1>
+          <div class="linktree-subtitle">
+            Bac STI2D Architecture (Chartres) • Certifié INSIDE LVMH
+          </div>
+        </div>
+
+        <p class="linktree-bio">
+          "Allier la rigueur technique de l'architecture, 7 ans d'expérience commerciale sur le terrain et l'exigence du luxe pour réussir à SKEMA Business School."
+        </p>
+
+        <!-- Main Featured Action: Access Portfolio Button -->
+        <a href="#hero" class="linktree-portfolio-cta">
+          <div class="cta-left">
+            <span class="cta-pulse-icon"><i class="fa-solid fa-compass"></i></span>
+            <div class="cta-text-wrap">
+              <span class="cta-label">DOSSIER DE CANDIDATURE OFFICIEL</span>
+              <span class="cta-title">Accéder au Portfolio Interactif</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-right cta-arrow"></i>
+        </a>
+
+        <!-- Desktop Quick Highlights Pill Grid -->
+        <div class="intro-highlights-grid">
+          <div class="highlight-mini-pill">
+            <i class="fa-solid fa-award" style="color: #D4AF37;"></i> 3 Certificats LVMH
+          </div>
+          <div class="highlight-mini-pill">
+            <i class="fa-solid fa-compass-drafting" style="color: #10B981;"></i> Projet Déméter
+          </div>
+          <div class="highlight-mini-pill">
+            <i class="fa-solid fa-chart-line" style="color: #3B82F6;"></i> 7 Ans Achat-Revente
+          </div>
+          <div class="highlight-mini-pill">
+            <i class="fa-solid fa-users" style="color: #EF4444;"></i> Bénévolat Hmong
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Direct Links & Contacts Bento Grid -->
+      <div class="linktree-right-panel">
+        <div class="linktree-section-header">
+          <span class="linktree-section-label">Coordonnées &amp; Canaux Directs</span>
+          <span class="linktree-badge-pro"><i class="fa-solid fa-circle-check" style="color: #10B981;"></i> Profils Officiels</span>
+        </div>
+
+        <!-- 1. LinkedIn -->
+        <a href="https://www.linkedin.com/in/luka-xiong-8209503b0/" target="_blank" rel="noopener noreferrer" class="linktree-link-card card-linkedin">
+          <div class="link-card-left">
+            <div class="link-icon-box" style="background: #0A66C2; color: #FFF;">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+            <div class="link-info">
+              <span class="link-title">LinkedIn Professionnel</span>
+              <span class="link-sub">Parcours, compétences &amp; certifications</span>
+            </div>
+          </div>
+          <span class="link-action-pill">Profil <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <!-- 2. Email Pro Proton -->
+        <a href="mailto:luka.xiong@proton.me" class="linktree-link-card card-proton">
+          <div class="link-card-left">
+            <div class="link-icon-box" style="background: #6D4AFF; color: #FFF;">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="link-info">
+              <span class="link-title">Email Pro : luka.xiong@proton.me</span>
+              <span class="link-sub">Messagerie sécurisée • Réponse rapide</span>
+            </div>
+          </div>
+          <span class="link-action-pill" style="color: #A78BFA; border-color: rgba(109, 74, 255, 0.4);">Écrire <i class="fa-solid fa-paper-plane"></i></span>
+        </a>
+
+        <!-- 3. Instagram -->
+        <a href="https://www.instagram.com/lukahmg/" target="_blank" rel="noopener noreferrer" class="linktree-link-card card-instagram">
+          <div class="link-card-left">
+            <div class="link-icon-box" style="background: linear-gradient(135deg, #833AB4, #FD1D1D, #F56040); color: #FFF;">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div class="link-info">
+              <span class="link-title">Instagram (@lukahmg)</span>
+              <span class="link-sub">Lifestyle, coulisses &amp; contact</span>
+            </div>
+          </div>
+          <span class="link-action-pill" style="color: #F472B6; border-color: rgba(225, 48, 108, 0.4);">@lukahmg <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <!-- 4. Facebook -->
+        <a href="https://www.facebook.com/lukahmg?locale=fr_FR" target="_blank" rel="noopener noreferrer" class="linktree-link-card card-facebook">
+          <div class="link-card-left">
+            <div class="link-icon-box" style="background: #1877F2; color: #FFF;">
+              <i class="fa-brands fa-facebook-f"></i>
+            </div>
+            <div class="link-info">
+              <span class="link-title">Facebook (Luka Xiong)</span>
+              <span class="link-sub">Réseau personnel &amp; associatif</span>
+            </div>
+          </div>
+          <span class="link-action-pill" style="color: #60A5FA; border-color: rgba(24, 119, 242, 0.4);">Profil <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+        <!-- 5. Shortlist Drawer Trigger -->
+        <button class="linktree-link-card card-contact-trigger" id="linktreeContactBtn" style="width: 100%; border: 1px solid rgba(185, 28, 28, 0.25); font-family: inherit; text-align: left; cursor: pointer;">
+          <div class="link-card-left">
+            <div class="link-icon-box" style="background: #B91C1C; color: #FFF;">
+              <i class="fa-solid fa-id-card"></i>
+            </div>
+            <div class="link-info">
+              <span class="link-title">Fiche Recruteur &amp; Entretien</span>
+              <span class="link-sub">Ouvrir le panneau récapitulatif</span>
+            </div>
+          </div>
+          <span class="link-action-pill" style="color: #FCA5A5; border-color: rgba(185, 28, 28, 0.4);">Ouvrir <i class="fa-solid fa-sliders"></i></span>
+        </button>
+
+        <!-- Discrete Footer Note -->
+        <div class="linktree-footer">
+          <span>Portfolio Officiel Luka Xiong • Candidature BBA SKEMA Business School</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- HERO CENTRAL ORBIT HUB SECTION -->
-  <section class="modern-section active-view" id="hero">
+  <section class="modern-section" id="hero">
     <div class="central-universe-container">
       
       <!-- BACKGROUND ORBITAL RINGS & CONSTELLATION -->
@@ -166,7 +316,15 @@
           <!-- Social Quick Links -->
           <div class="center-social-bar">
             <a href="https://www.linkedin.com/in/luka-xiong-8209503b0/" target="_blank" rel="noopener noreferrer" class="orbit-social-link" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:luka.xiong@proton.me" class="orbit-social-link" title="Email Pro Proton (luka.xiong@proton.me)"><i class="fa-solid fa-envelope"></i></a>
             <a href="https://www.instagram.com/lukahmg/" target="_blank" rel="noopener noreferrer" class="orbit-social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/lukahmg?locale=fr_FR" target="_blank" rel="noopener noreferrer" class="orbit-social-link" title="Facebook (Luka Xiong)"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+
+          <div style="margin-top: 12px;">
+            <a href="#intro" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.76rem; font-weight: 700; color: #94A3B8; text-decoration: none; padding: 5px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 99px; transition: all 0.2s ease;">
+              <i class="fa-solid fa-address-card" style="color: #60A5FA;"></i> Voir ma page Bio &amp; Contacts (Linktree)
+            </a>
           </div>
         </div>
       </div>
@@ -1289,6 +1447,20 @@
           <span style="color: #60A5FA; font-size: 0.78rem; font-weight: 600;">Profil <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
         </a>
 
+        <!-- Proton Mail Detail Card -->
+        <a href="mailto:luka.xiong@proton.me" style="background: rgba(109, 74, 255, 0.08); border: 1px solid rgba(109, 74, 255, 0.25); padding: 12px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 36px; border-radius: 8px; background: #6D4AFF; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.88rem;">Email Pro (Proton)</div>
+              <div style="color: #9CA3AF; font-size: 0.74rem;">luka.xiong@proton.me</div>
+            </div>
+          </div>
+          <span style="color: #A78BFA; font-size: 0.78rem; font-weight: 600;">Écrire <i class="fa-solid fa-paper-plane" style="font-size: 0.7rem;"></i></span>
+        </a>
+
         <!-- Instagram Detail Card -->
         <a href="https://www.instagram.com/lukahmg/" target="_blank" rel="noopener noreferrer" style="background: rgba(225, 48, 108, 0.06); border: 1px solid rgba(225, 48, 108, 0.2); padding: 12px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
           <div style="display: flex; align-items: center; gap: 12px;">
@@ -1301,6 +1473,20 @@
             </div>
           </div>
           <span style="color: #F472B6; font-size: 0.78rem; font-weight: 600;">@lukahmg <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
+        </a>
+
+        <!-- Facebook Detail Card -->
+        <a href="https://www.facebook.com/lukahmg?locale=fr_FR" target="_blank" rel="noopener noreferrer" style="background: rgba(24, 119, 242, 0.08); border: 1px solid rgba(24, 119, 242, 0.25); padding: 12px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 36px; border-radius: 8px; background: #1877F2; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+              <i class="fa-brands fa-facebook-f"></i>
+            </div>
+            <div>
+              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.88rem;">Facebook (Luka Xiong)</div>
+              <div style="color: #9CA3AF; font-size: 0.74rem;">Luka Xiong • Contact &amp; Réseau</div>
+            </div>
+          </div>
+          <span style="color: #60A5FA; font-size: 0.78rem; font-weight: 600;">Profil <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
         </a>
       </div>
     </div>
