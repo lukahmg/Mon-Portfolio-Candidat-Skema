@@ -6,24 +6,26 @@
   <title>Luka Xiong | Portfolio — Candidature SKEMA Business School</title>
   <meta name="description" content="Portfolio officiel de Luka Xiong — Étudiant et jeune bachelier d'un Bac STI2D Architecture, passionné par le commerce.">
   
-  <!-- Google Fonts & Font Awesome Icons -->
+  <!-- DNS Prefetch & Google Fonts -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=44.0">
-  <script src="translations.js?v=44.0"></script>
+  <!-- Custom Stylesheet & Defer Translation Engine -->
+  <link rel="stylesheet" href="styles.css?v=50.0">
+  <script defer src="translations.js?v=50.0"></script>
 </head>
-<body>
+<body class="on-intro">
 
   <!-- Interactive Animated Reactive Canvas Background -->
   <canvas id="bgCanvas"></canvas>
 
   <!-- Modern Animated Floating Header Navbar -->
-  <header class="modern-header">
-    <a href="#hero" class="brand-title-badge">
+  <header class="modern-header header-hidden">
+    <a href="#intro" class="brand-title-badge">
       <img src="assets/candidate_photo.jpg" alt="Luka Xiong" class="header-avatar-mini">
       <div class="brand-text-group">
         <span class="brand-name">LUKA XIONG</span>
@@ -34,11 +36,11 @@
     <!-- Desktop Navigation Links -->
     <div class="nav-links-wrapper">
       <ul class="nav-links-container">
-        <li><a href="#intro" class="nav-item-link active"><i class="fa-solid fa-address-card"></i> <span data-i18n="nav.bio">Bio &amp; Liens</span></a></li>
-        <li><a href="#hero" class="nav-item-link"><i class="fa-solid fa-compass"></i> <span data-i18n="nav.hub">Portfolio Hub</span></a></li>
+        <li><a href="#intro" class="nav-item-link active"><i class="fa-solid fa-house"></i> <span data-i18n="nav.bio">Accueil</span></a></li>
+        <li><a href="#hero" class="nav-item-link"><i class="fa-solid fa-compass"></i> <span data-i18n="nav.hub">Hub Portfolio</span></a></li>
         <li><a href="#etape1" class="nav-item-link"><i class="fa-solid fa-certificate"></i> <span data-i18n="nav.lvmh">1. LVMH</span></a></li>
         <li><a href="#etape2" class="nav-item-link"><i class="fa-solid fa-building-user"></i> <span data-i18n="nav.demeter">2. Déméter</span></a></li>
-        <li><a href="#etape3" class="nav-item-link"><i class="fa-solid fa-chart-line"></i> <span data-i18n="nav.resell">3. Reseller</span></a></li>
+        <li><a href="#etape3" class="nav-item-link"><i class="fa-solid fa-chart-line"></i> <span data-i18n="nav.resell">3. Personal Shopper</span></a></li>
         <li><a href="#etape4" class="nav-item-link"><i class="fa-solid fa-hands-holding-circle"></i> <span data-i18n="nav.hmong">4. Festivals Hmong</span></a></li>
       </ul>
     </div>
@@ -90,19 +92,19 @@
 
       <nav class="mobile-nav-menu">
         <a href="#intro" class="mobile-nav-item active">
-          <div class="mobile-nav-icon" style="color: #60A5FA; background: rgba(96, 165, 250, 0.12);"><i class="fa-solid fa-address-card"></i></div>
+          <div class="mobile-nav-icon" style="color: #60A5FA; background: rgba(96, 165, 250, 0.12);"><i class="fa-solid fa-house"></i></div>
           <div class="mobile-nav-info">
-            <span class="mobile-nav-title" data-i18n="mobile.bio_title">Bio &amp; Liens Rapides</span>
-            <span class="mobile-nav-subtitle" data-i18n="mobile.bio_sub">Page Linktree &amp; Contacts Directs</span>
+            <span class="mobile-nav-title" data-i18n="mobile.bio_title">Accueil &amp; Profil</span>
+            <span class="mobile-nav-subtitle" data-i18n="mobile.bio_sub">Page de présentation &amp; coordonnées</span>
           </div>
           <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
         </a>
 
         <a href="#hero" class="mobile-nav-item">
-          <div class="mobile-nav-icon"><i class="fa-solid fa-compass"></i></div>
+          <div class="mobile-nav-icon" style="color: #EF4444; background: rgba(239, 68, 68, 0.12);"><i class="fa-solid fa-compass"></i></div>
           <div class="mobile-nav-info">
             <span class="mobile-nav-title" data-i18n="mobile.hub_title">Hub Portfolio Interactif</span>
-            <span class="mobile-nav-subtitle" data-i18n="mobile.hub_sub">Constellation des 4 Univers</span>
+            <span class="mobile-nav-subtitle" data-i18n="mobile.hub_sub">Univers orbital &amp; les 4 Piliers</span>
           </div>
           <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
         </a>
@@ -128,8 +130,8 @@
         <a href="#etape3" class="mobile-nav-item">
           <div class="mobile-nav-icon" style="color: #3B82F6; background: rgba(59, 130, 246, 0.12);"><i class="fa-solid fa-chart-line"></i></div>
           <div class="mobile-nav-info">
-            <span class="mobile-nav-title" data-i18n="mobile.resell_title">3. Achat-Revente</span>
-            <span class="mobile-nav-subtitle" data-i18n="mobile.resell_sub">7 ans de terrain • Esprit d'Entreprise</span>
+            <span class="mobile-nav-title" data-i18n="mobile.resell_title">3. Personal Shopper</span>
+            <span class="mobile-nav-subtitle" data-i18n="mobile.resell_sub">7 Ans Sourcing Mondial • Zéro Invendu</span>
           </div>
           <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
         </a>
@@ -157,11 +159,11 @@
     <i class="fa-solid fa-file-pdf"></i> <span data-i18n="sticky.cv_btn">CV &amp; Contact</span>
   </button>
 
-  <!-- INTRO LINKTREE PROFILE & CONTACTS LANDING SECTION -->
+  <!-- INTRO LANDING SECTION (WITHOUT TOP NAVBAR) -->
   <section class="modern-section active-view" id="intro">
     <div class="linktree-dashboard-container">
       
-      <!-- Left Column: Executive Identity, Bio & Grand CTA Portfolio Button -->
+      <!-- Left Panel: Profile Identity & Big CTA -->
       <div class="linktree-left-panel">
         <div class="linktree-avatar-wrap">
           <img src="assets/candidate_photo.jpg" alt="Luka Xiong" class="linktree-avatar">
@@ -169,129 +171,157 @@
         </div>
 
         <div class="linktree-meta-block">
-          <div class="skema-tag" style="margin-bottom: 6px;">
+          <div class="skema-tag" style="margin-bottom: 4px;">
             <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="intro.skema_tag">Candidat BBA • SKEMA Business School</span>
           </div>
           <h1 class="linktree-name">LUKA XIONG</h1>
           <div class="linktree-subtitle" data-i18n="intro.subtitle">
-            Bac STI2D Architecture (Chartres) • Certifié INSIDE LVMH
+            Bâtisseur &amp; Négociateur Terrain • Bac STI2D Architecture &amp; Certifié INSIDE LVMH
           </div>
         </div>
 
-        <p class="linktree-bio" data-i18n="intro.bio">
-          "Étudiant et jeune bachelier d'un Bac STI2D Architecture, passionné par le commerce."
-        </p>
+        <div class="linktree-bio" data-i18n="intro.bio">
+          "Bachelier STI2D Architecture, j'exerce depuis 7 ans une activité de Personal Shopper international en flux tendus (zéro invendu). Passionné par le luxe et le commerce, je candidate à SKEMA Business School."
+        </div>
 
-        <!-- Main Featured Action: Access Portfolio Button -->
-        <a href="#hero" class="linktree-portfolio-cta">
+        <!-- BIG CTA: ACCESS PORTFOLIO HUB -->
+        <a href="#hero" class="linktree-portfolio-cta" id="ctaAccessPortfolio">
           <div class="cta-left">
-            <span class="cta-pulse-icon"><i class="fa-solid fa-compass"></i></span>
+            <div class="cta-pulse-icon">
+              <i class="fa-solid fa-compass"></i>
+            </div>
             <div class="cta-text-wrap">
               <span class="cta-label" data-i18n="intro.cta_label">DOSSIER DE CANDIDATURE OFFICIEL</span>
               <span class="cta-title" data-i18n="intro.cta_title">Accéder au Portfolio Interactif</span>
             </div>
           </div>
-          <i class="fa-solid fa-arrow-right cta-arrow"></i>
+          <div class="cta-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
         </a>
 
-        <!-- Desktop Quick Highlights Pill Grid -->
+        <!-- 4 Highlights Mini-Pills -->
         <div class="intro-highlights-grid">
-          <div class="highlight-mini-pill">
-            <i class="fa-solid fa-award" style="color: #D4AF37;"></i> <span data-i18n="intro.pill_lvmh">3 Certificats LVMH</span>
+          <div class="highlight-mini-pill" style="border-left: 3px solid #F59E0B;">
+            <i class="fa-solid fa-certificate" style="color: #F59E0B;"></i>
+            <span data-i18n="intro.pill_lvmh">3 Certificats LVMH</span>
           </div>
-          <div class="highlight-mini-pill">
-            <i class="fa-solid fa-compass-drafting" style="color: #10B981;"></i> <span data-i18n="intro.pill_demeter">Projet Déméter</span>
+          <div class="highlight-mini-pill" style="border-left: 3px solid #10B981;">
+            <i class="fa-solid fa-building-user" style="color: #10B981;"></i>
+            <span data-i18n="intro.pill_demeter">Projet Déméter</span>
           </div>
-          <div class="highlight-mini-pill">
-            <i class="fa-solid fa-chart-line" style="color: #3B82F6;"></i> <span data-i18n="intro.pill_resell">7 Ans Achat-Revente</span>
+          <div class="highlight-mini-pill" style="border-left: 3px solid #3B82F6;">
+            <i class="fa-solid fa-chart-line" style="color: #60A5FA;"></i>
+            <span data-i18n="intro.pill_resell">7 Ans Personal Shopper</span>
           </div>
-          <div class="highlight-mini-pill">
-            <i class="fa-solid fa-users" style="color: #EF4444;"></i> <span data-i18n="intro.pill_hmong">Bénévolat Hmong</span>
+          <div class="highlight-mini-pill" style="border-left: 3px solid #EF4444;">
+            <i class="fa-solid fa-hands-holding-circle" style="color: #F87171;"></i>
+            <span data-i18n="intro.pill_hmong">Bénévolat Hmong</span>
           </div>
         </div>
       </div>
 
-      <!-- Right Column: Interactive Direct Links & Contacts Bento Grid -->
+      <!-- Right Panel: Channels, Social Links & Language Switcher -->
       <div class="linktree-right-panel">
+        
         <div class="linktree-section-header">
           <span class="linktree-section-label" data-i18n="intro.links_header">Coordonnées &amp; Canaux Directs</span>
-          <span class="linktree-badge-pro"><i class="fa-solid fa-circle-check" style="color: #10B981;"></i> <span data-i18n="intro.badge_pro">Profils Officiels</span></span>
+          <!-- In-Page Language Switcher on Intro Landing (since navbar is hidden) -->
+          <div class="lang-switcher" id="introLangSwitcher" role="group" aria-label="Langue">
+            <button type="button" class="lang-btn active" data-lang="fr" title="Français">FR</button>
+            <button type="button" class="lang-btn" data-lang="en" title="English">EN</button>
+            <button type="button" class="lang-btn" data-lang="es" title="Español">ES</button>
+          </div>
         </div>
 
-        <!-- 1. LinkedIn -->
-        <a href="https://www.linkedin.com/in/luka-xiong-8209503b0/" target="_blank" rel="noopener noreferrer" class="linktree-link-card card-linkedin">
-          <div class="link-card-left">
-            <div class="link-icon-box" style="background: #0A66C2; color: #FFF;">
-              <i class="fa-brands fa-linkedin-in"></i>
+        <div class="linktree-links-list">
+          
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/luka-xiong-8209503b0/" target="_blank" rel="noopener noreferrer" class="linktree-link-card">
+            <div class="link-card-left">
+              <div class="link-icon-box" style="background: rgba(10, 102, 194, 0.15); color: #0A66C2; border: 1px solid rgba(10, 102, 194, 0.3);">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+              <div class="link-info">
+                <span class="link-title" data-i18n="intro.link_linkedin_title">LinkedIn Professionnel</span>
+                <span class="link-sub" data-i18n="intro.link_linkedin_sub">Parcours, compétences &amp; certifications</span>
+              </div>
             </div>
-            <div class="link-info">
-              <span class="link-title" data-i18n="intro.link_linkedin_title">LinkedIn Professionnel</span>
-              <span class="link-sub" data-i18n="intro.link_linkedin_sub">Parcours, compétences &amp; certifications</span>
+            <div class="link-action-pill">
+              <span data-i18n="intro.link_linkedin_btn">Profil</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </div>
+          </a>
+
+          <!-- Email Proton -->
+          <a href="mailto:luka.xiong@proton.me" class="linktree-link-card selectable-copy">
+            <div class="link-card-left">
+              <div class="link-icon-box" style="background: rgba(109, 74, 255, 0.15); color: #8F75FF; border: 1px solid rgba(109, 74, 255, 0.3);">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="link-info">
+                <span class="link-title" data-i18n="intro.link_proton_title">Email Pro: luka.xiong@proton.me</span>
+                <span class="link-sub" data-i18n="intro.link_proton_sub">Messagerie sécurisée • Réponse rapide</span>
+              </div>
+            </div>
+            <div class="link-action-pill">
+              <span data-i18n="intro.link_proton_btn">Écrire</span> <i class="fa-solid fa-paper-plane"></i>
+            </div>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/lukahmg/" target="_blank" rel="noopener noreferrer" class="linktree-link-card">
+            <div class="link-card-left">
+              <div class="link-icon-box" style="background: rgba(225, 48, 108, 0.15); color: #E1306C; border: 1px solid rgba(225, 48, 108, 0.3);">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="link-info">
+                <span class="link-title" data-i18n="intro.link_insta_title">Instagram (@lukahmg)</span>
+                <span class="link-sub" data-i18n="intro.link_insta_sub">Coulisses, univers &amp; contact</span>
+              </div>
+            </div>
+            <div class="link-action-pill">
+              <span data-i18n="intro.link_insta_btn">@lukahmg</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </div>
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/lukahmg?locale=fr_FR" target="_blank" rel="noopener noreferrer" class="linktree-link-card">
+            <div class="link-card-left">
+              <div class="link-icon-box" style="background: rgba(244, 67, 54, 0.15); color: #1877F2; border: 1px solid rgba(24, 119, 242, 0.3);">
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+              <div class="link-info">
+                <span class="link-title" data-i18n="intro.link_fb_title">Facebook (Luka Xiong)</span>
+                <span class="link-sub" data-i18n="intro.link_fb_sub">Réseau personnel &amp; associatif</span>
+              </div>
+            </div>
+            <div class="link-action-pill">
+              <span data-i18n="intro.link_fb_btn">Profil</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </div>
+          </a>
+
+          <!-- CV Trigger Card -->
+          <div class="linktree-link-card" id="linktreeContactBtn" style="cursor: pointer;">
+            <div class="link-card-left">
+              <div class="link-icon-box" style="background: rgba(185, 28, 28, 0.2); color: #EF4444; border: 1px solid rgba(185, 28, 28, 0.4);">
+                <i class="fa-solid fa-file-pdf"></i>
+              </div>
+              <div class="link-info">
+                <span class="link-title" data-i18n="intro.link_cv_title">Curriculum Vitae (Mes CV)</span>
+                <span class="link-sub" data-i18n="intro.link_cv_sub">Télécharger &amp; consulter mes CV officiels (FR / EN / ES)</span>
+              </div>
+            </div>
+            <div class="link-action-pill" style="background: rgba(185, 28, 28, 0.2); color: #FCA5A5; border-color: rgba(185, 28, 28, 0.4);">
+              <span data-i18n="intro.link_cv_btn">Consulter</span> <i class="fa-solid fa-arrow-right"></i>
             </div>
           </div>
-          <span class="link-action-pill"><span data-i18n="intro.link_linkedin_btn">Profil</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
 
-        <!-- 2. Email Pro Proton -->
-        <a href="mailto:luka.xiong@proton.me" class="linktree-link-card card-proton">
-          <div class="link-card-left">
-            <div class="link-icon-box" style="background: #6D4AFF; color: #FFF;">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div class="link-info">
-              <span class="link-title" data-i18n="intro.link_proton_title">Email Pro : luka.xiong@proton.me</span>
-              <span class="link-sub" data-i18n="intro.link_proton_sub">Messagerie sécurisée • Réponse rapide</span>
-            </div>
-          </div>
-          <span class="link-action-pill" style="color: #A78BFA; border-color: rgba(109, 74, 255, 0.4);"><span data-i18n="intro.link_proton_btn">Écrire</span> <i class="fa-solid fa-paper-plane"></i></span>
-        </a>
-
-        <!-- 3. Instagram -->
-        <a href="https://www.instagram.com/lukahmg/" target="_blank" rel="noopener noreferrer" class="linktree-link-card card-instagram">
-          <div class="link-card-left">
-            <div class="link-icon-box" style="background: linear-gradient(135deg, #833AB4, #FD1D1D, #F56040); color: #FFF;">
-              <i class="fa-brands fa-instagram"></i>
-            </div>
-            <div class="link-info">
-              <span class="link-title" data-i18n="intro.link_insta_title">Instagram (@lukahmg)</span>
-              <span class="link-sub" data-i18n="intro.link_insta_sub">Lifestyle, coulisses &amp; contact</span>
-            </div>
-          </div>
-          <span class="link-action-pill" style="color: #F472B6; border-color: rgba(225, 48, 108, 0.4);">@lukahmg <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-
-        <!-- 4. Facebook -->
-        <a href="https://www.facebook.com/lukahmg?locale=fr_FR" target="_blank" rel="noopener noreferrer" class="linktree-link-card card-facebook">
-          <div class="link-card-left">
-            <div class="link-icon-box" style="background: #1877F2; color: #FFF;">
-              <i class="fa-brands fa-facebook-f"></i>
-            </div>
-            <div class="link-info">
-              <span class="link-title" data-i18n="intro.link_fb_title">Facebook (Luka Xiong)</span>
-              <span class="link-sub" data-i18n="intro.link_fb_sub">Réseau personnel &amp; associatif</span>
-            </div>
-          </div>
-          <span class="link-action-pill" style="color: #60A5FA; border-color: rgba(24, 119, 242, 0.4);">Profil <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
-
-        <!-- 5. CV & Curriculum Vitae Trigger -->
-        <button class="linktree-link-card card-contact-trigger" id="linktreeContactBtn" style="width: 100%; border: 1px solid rgba(185, 28, 28, 0.35); font-family: inherit; text-align: left; cursor: pointer; background: rgba(185, 28, 28, 0.08);">
-          <div class="link-card-left">
-            <div class="link-icon-box" style="background: #B91C1C; color: #FFF;">
-              <i class="fa-solid fa-file-pdf"></i>
-            </div>
-            <div class="link-info">
-              <span class="link-title" data-i18n="intro.link_cv_title">Curriculum Vitae (Mes CV)</span>
-              <span class="link-sub" data-i18n="intro.link_cv_sub">Télécharger &amp; consulter mes CV (FR / EN / ES)</span>
-            </div>
-          </div>
-          <span class="link-action-pill" style="color: #FCA5A5; border-color: rgba(185, 28, 28, 0.4);"><span data-i18n="intro.link_cv_btn">Consulter</span> <i class="fa-solid fa-download"></i></span>
-        </button>
-
-        <!-- Discrete Footer Note -->
-        <div class="linktree-footer">
-          <span data-i18n="intro.footer_note">Portfolio Officiel Luka Xiong • Candidature BBA SKEMA Business School</span>
         </div>
+
+        <div class="linktree-footer" data-i18n="intro.footer_note">
+          Portfolio Officiel Luka Xiong • Candidature BBA SKEMA Business School
+        </div>
+
       </div>
 
     </div>
@@ -300,6 +330,7 @@
   <!-- HERO CENTRAL ORBIT HUB SECTION -->
   <section class="modern-section" id="hero">
     <div class="central-universe-container">
+      <a href="#intro" class="back-to-hub-btn" style="position: absolute; top: 1.5rem; left: 1.5rem; z-index: 100;"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.back_to_intro">Retour à l'accueil</span></a>
       
       <!-- ELEGANT EXECUTIVE SKEMA ORBITAL SYSTEM -->
       <div class="skema-orbit-system" id="skemaOrbitSystem">
@@ -369,13 +400,13 @@
         </div>
       </a>
 
-      <!-- Node 3: RESELLER (Bottom Left) -->
+      <!-- Node 3: PERSONAL SHOPPER (Bottom Left) -->
       <a href="#etape3" class="orbit-node node-resell">
         <div class="node-icon"><i class="fa-solid fa-chart-line"></i></div>
         <div class="node-text-wrap">
-          <span class="node-tag" data-i18n="hero.node3_tag">3. ESPRIT D'ENTREPRISE</span>
-          <span class="node-title" data-i18n="hero.node3_title">Achat-Revente</span>
-          <span class="node-desc" data-i18n="hero.node3_desc">7 Ans Terrain • SKEMA Ventures</span>
+          <span class="node-tag" data-i18n="hero.node3_tag">3. COMMERCE &amp; SOURCING MONDIAL</span>
+          <span class="node-title" data-i18n="hero.node3_title">Personal Shopper</span>
+          <span class="node-desc" data-i18n="hero.node3_desc">7 Ans Terrain • Zéro Invendu</span>
         </div>
       </a>
 
@@ -394,7 +425,7 @@
 
   <!-- ÉTAPE 1 : CERTIFICATIONS PROFESSIONNELLES INSIDE LVMH -->
   <section class="modern-section" id="etape1">
-    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.back_to_hub">Retour à l'accueil</span></a>
+    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.back_to_hub">Retour au Hub Portfolio</span></a>
     <div class="skema-tag">
       <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="lvmh.skema_tag">Synergie SKEMA • Filières Global Management &amp; Luxe</span>
     </div>
@@ -613,9 +644,9 @@
     </div>
   </section>
 
-  <!-- ÉTAPE 2 : PROJET SCOLAIRE STI2D ARCHITECTURE (C'PARC DÉMÉTER - JEHAN DE BEAUCE) -->
+  <!-- ÉTAPE 2 : PROJET D'ARCHITECTURE C'PARC DÉMÉTER -->
   <section class="modern-section" id="etape2">
-    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.back_to_hub">Retour à l'accueil</span></a>
+    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.back_to_hub">Retour au Hub Portfolio</span></a>
     <div class="skema-tag">
       <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="demeter.skema_tag">Synergie SKEMA • Transition Durable &amp; Éco-Conception</span>
     </div>
@@ -865,7 +896,7 @@
           </div>
           <div class="vivid-card card-demeter image-box" style="padding: 14px;">
             <div class="photo-frame-wrapper aspect-4-3">
-              <img loading="lazy" decoding="async" src="assets/demeter_amphitheatre_p4.png" alt="Amphithéâtre - Page 4" onerror="this.src='assets/demeter_amphitheatre_p4.jpg';">
+              <img loading="lazy" decoding="async" src="assets/demeter_amphitheatre_p4.jpg" alt="Amphithéâtre - Page 4" onerror="this.src='assets/demeter_amphitheatre_p4.png';">
             </div>
             <div style="padding-top: 10px;">
               <span style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 4</span>
@@ -1021,39 +1052,102 @@
 
   <!-- ÉTAPE 3 : ESPRIT ENTREPRENEURIAL & COMMERCE -->
   <section class="modern-section" id="etape3">
-    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.back_to_hub">Retour à l'accueil</span></a>
+    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.back_to_hub">Retour au Hub Portfolio</span></a>
     <div class="skema-tag">
       <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="resell.skema_tag">Synergie SKEMA • Esprit Pionnier &amp; Entrepreneuriat (SKEMA Ventures)</span>
     </div>
     <div class="step-number-tag">
-      <i class="fa-solid fa-chart-line" style="color: #3B82F6;"></i> <span data-i18n="resell.step_tag">ÉTAPE 3 / 4 — COMMERCE, ACHAT-REVENTE &amp; LOGISTIQUE</span>
+      <i class="fa-solid fa-chart-line" style="color: #3B82F6;"></i> <span data-i18n="resell.step_tag">ÉTAPE 3 / 4 — PERSONAL SHOPPER, SOURCING MONDIAL &amp; LOGISTIQUE</span>
     </div>
-    <h2 class="section-hero-title"><span data-i18n="resell.title">Achat-Revente &amp; Commerce Indépendant</span> <highlight class="cobalt" data-i18n="resell.title_highlight">(7 Ans d'Expérience)</highlight></h2>
+    <h2 class="section-hero-title"><span data-i18n="resell.title">Personal Shopper &amp; Sourcing International</span> <highlight class="cobalt" data-i18n="resell.title_highlight">(7 Ans d'Activité • Zéro Invendu)</highlight></h2>
     <div class="section-hero-subtitle" data-i18n="resell.subtitle">
-      Activité commerciale autonome depuis 2017 : sourcing d'opportunités, certification d'authenticité, revente rapide sous le prix du marché et logistique d'expédition sécurisée.
+      Service de conciergerie et de sourcing à la demande : recherche d'articles de mode, vestes et sneakers collectors introuvables via un réseau mondial de fournisseurs. Achats déclenchés sur commande client ferme (zéro risque financier) et expédition directe sécurisée sans stockage physique.
     </div>
 
     <!-- EXECUTIVE KPI SUMMARY BAR -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
       <div class="vivid-card card-resell" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi1_title">7 Ans</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi1_sub">Expérience Terrain</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi1_desc">Activité continue et autonome depuis 2017</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi1_title">Personal Shopper</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi1_sub">Service Sur-Mesure</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi1_desc">Recherche active de pièces sold-out ou introuvables</div>
       </div>
       <div class="vivid-card card-resell" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi2_title">-30% à -60%</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi2_sub">Sous la Cote Marché</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi2_desc">Garantie de revente éclair &amp; marge saine</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi2_title">Réseau Mondial</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi2_sub">Fournisseurs Vérifiés</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi2_desc">Sourcing direct Europe, USA, Asie</div>
       </div>
       <div class="vivid-card card-resell" style="padding: 1.5rem; text-align: center;">
         <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi3_title">0 Invendu</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi3_sub">Zéro Stock Dormant</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi3_desc">Rotation continue du capital financier</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi3_sub">Zéro Risque Financier</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi3_desc">J'achète car le client est déjà engagé</div>
       </div>
       <div class="vivid-card card-resell" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi4_title">100% Opportuniste</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi4_sub">Toutes Marques</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi4_desc">Sneakers, mode, vestes, pièces collectors</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi4_title">0 Stockage</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi4_sub">Flux Tendu Direct</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi4_desc">Expédition immédiate chez le client via DHL</div>
+      </div>
+    </div>
+
+    <!-- DEDICATED PERSONAL SHOPPER & SOURCING MONDIAL STRATEGIC CARD -->
+    <div class="vivid-card card-resell" style="padding: 2.2rem; margin-bottom: 2.5rem; border: 1px solid rgba(96, 165, 250, 0.3); background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 58, 138, 0.25));">
+      <div class="card-brand-watermarks">
+        <i class="fa-solid fa-globe" style="font-size: 4rem; opacity: 0.08; color: #FFFFFF;"></i>
+        <i class="fa-solid fa-dolly" style="font-size: 4rem; opacity: 0.08; color: #FFFFFF;"></i>
+        <i class="fa-solid fa-shield-halved" style="font-size: 4rem; opacity: 0.08; color: #FFFFFF;"></i>
+      </div>
+
+      <div style="font-size: 0.82rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
+        <i class="fa-solid fa-user-tag"></i> <span data-i18n="resell.ps_badge">Le Cœur de Mon Activité : Le Personal Shopping</span>
+      </div>
+      <h3 class="vivid-card-title" style="font-size: 1.6rem; margin-bottom: 0.8rem;" data-i18n="resell.ps_title">
+        Trouver l'Introuvable : Un Modèle Agile à Zéro Invendu &amp; Zéro Stockage
+      </h3>
+
+      <!-- Core Master Quote of the Personal Shopper model -->
+      <div style="background: rgba(59, 130, 246, 0.12); border-left: 4px solid #3B82F6; padding: 18px 22px; border-radius: var(--radius-sm); margin-bottom: 1.8rem;">
+        <p style="margin: 0; font-size: 1.02rem; color: #F9FAFB; font-weight: 600; line-height: 1.7;">
+          <i class="fa-solid fa-quote-left" style="color: #60A5FA; margin-right: 10px;"></i>
+          <span data-i18n="resell.ps_quote">Je suis Personal Shopper : je me mets à la disposition de clients qui cherchent un produit introuvable ou sold-out. Grâce à mon réseau de fournisseurs et revendeurs fiables à travers le monde, je le trouve au prix juste, certifie son authenticité et l'expédie directement. J'achète parce que j'ai déjà un client acheteur : je ne perds aucun sou et je n'ai aucun stockage dormant chez moi.</span>
+        </p>
+      </div>
+
+      <!-- 4 Concrete Action Steps Grid -->
+      <div class="grid-4" style="gap: 1.25rem;">
+        <div class="insight-bullet" style="flex-direction: column; gap: 8px; padding: 18px;">
+          <div style="font-size: 1rem; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-clipboard-check" style="color: #60A5FA;"></i> <span data-i18n="resell.ps_step1_title">1. Demande &amp; Mandat Client</span>
+          </div>
+          <p style="font-size: 0.86rem; color: #CBD5E1; line-height: 1.5; margin: 0;" data-i18n="resell.ps_step1_desc">
+            Le client m'exprime sa recherche précise (modèle sold-out, taille, coloris). Le budget et la commande sont confirmés avant tout achat.
+          </p>
+        </div>
+
+        <div class="insight-bullet" style="flex-direction: column; gap: 8px; padding: 18px;">
+          <div style="font-size: 1rem; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-network-wired" style="color: #60A5FA;"></i> <span data-i18n="resell.ps_step2_title">2. Activation du Réseau Mondial</span>
+          </div>
+          <p style="font-size: 0.86rem; color: #CBD5E1; line-height: 1.5; margin: 0;" data-i18n="resell.ps_step2_desc">
+            Je sollicite instantanément mes fournisseurs et contacts de confiance en Europe, aux États-Unis et en Asie pour localiser la pièce au meilleur prix.
+          </p>
+        </div>
+
+        <div class="insight-bullet" style="flex-direction: column; gap: 8px; padding: 18px;">
+          <div style="font-size: 1rem; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-magnifying-glass" style="color: #60A5FA;"></i> <span data-i18n="resell.ps_step3_title">3. Contrôle &amp; Authentification UV</span>
+          </div>
+          <p style="font-size: 0.86rem; color: #CBD5E1; line-height: 1.5; margin: 0;" data-i18n="resell.ps_step3_desc">
+            Inspection rigoureuse de la pièce : coutures, étiquettes RFID, cuirs et passage sous lampe UV anti-contrefaçon.
+          </p>
+        </div>
+
+        <div class="insight-bullet" style="flex-direction: column; gap: 8px; padding: 18px;">
+          <div style="font-size: 1rem; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-truck-fast" style="color: #60A5FA;"></i> <span data-i18n="resell.ps_step4_title">4. Expédition Directe Sans Stockage</span>
+          </div>
+          <p style="font-size: 0.86rem; color: #CBD5E1; line-height: 1.5; margin: 0;" data-i18n="resell.ps_step4_desc">
+            Aucun stock n'encombre mon domicile : la commande est conditionnée de façon blindée et expédiée immédiatement au client via DHL Express / Chronopost.
+          </p>
+        </div>
       </div>
     </div>
 
@@ -1623,7 +1717,7 @@
 
   <!-- ÉTAPE 4 : BÉNÉVOLAT & SUPPORT OPÉRATIONNEL — CIRCUIT ÉVÉNEMENTIEL -->
   <section class="modern-section" id="etape4">
-    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.back_to_hub">Retour à l'accueil</span></a>
+    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.back_to_hub">Retour au Hub Portfolio</span></a>
     <div class="skema-tag">
       <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="hmong.skema_tag">Synergie SKEMA • "At Home Worldwide" &amp; Diversité Internationale</span>
     </div>
@@ -1963,7 +2057,7 @@
               <i class="fa-solid fa-phone"></i>
             </div>
             <div>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">+33 6 29 45 21 03</div>
+              <div class="selectable-copy" style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">+33 6 29 45 21 03</div>
               <div style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.call_label">Appel / SMS direct</div>
             </div>
           </div>
@@ -1978,7 +2072,7 @@
             </div>
             <div>
               <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">Email Pro (Proton)</div>
-              <div style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.email_label">luka.xiong@proton.me</div>
+              <div class="selectable-copy" style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.email_label">luka.xiong@proton.me</div>
             </div>
           </div>
           <span style="color: #A78BFA; font-size: 0.76rem; font-weight: 600;"><span data-i18n="drawer.email_btn">Écrire</span> <i class="fa-solid fa-paper-plane" style="font-size: 0.7rem;"></i></span>
@@ -2051,6 +2145,6 @@
   </div>
 
   <!-- Custom Script -->
-  <script src="script.js?v=44.0"></script>
+  <script src="script.js?v=50.0"></script>
 </body>
 </html>

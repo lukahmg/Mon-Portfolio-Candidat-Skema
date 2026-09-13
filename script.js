@@ -78,38 +78,111 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.setPortfolioLanguage = setLanguage;
 
-  // --- SPA VIEW SWITCHER ROUTER ---
+  // --- SPA VIEW SWITCHER ROUTER (120HZ ULTRA-FLUID APP-LIKE MOTION) ---
   const navLinks = document.querySelectorAll('.nav-item-link');
   const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
   const sections = document.querySelectorAll('.modern-section');
+
+  let switchTimeout = null;
 
   function switchActiveView(targetId) {
     const targetSection = document.getElementById(targetId);
     if (!targetSection) return;
 
+    const currentActive = document.querySelector('.modern-section.active-view');
+    if (currentActive === targetSection && !currentActive.classList.contains('is-leaving')) {
+      return;
+    }
+
+    // Instant update of navigation markers for reactive tactile feel
     navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${targetId}`) {
-        link.classList.add('active');
-      }
+      link.classList.toggle('active', link.getAttribute('href') === `#${targetId}`);
     });
 
     mobileNavItems.forEach(item => {
-      item.classList.remove('active');
-      if (item.getAttribute('href') === `#${targetId}`) {
-        item.classList.add('active');
-      }
+      item.classList.toggle('active', item.getAttribute('href') === `#${targetId}`);
     });
 
-    sections.forEach(sec => {
-      sec.classList.remove('active-view');
-    });
-
-    targetSection.classList.add('active-view');
-    window.scrollTo({ top: 0, behavior: 'instant' });
     if (typeof updateBackgroundTheme === 'function') {
       updateBackgroundTheme(targetId);
     }
+
+    const stickyBtn = document.getElementById('btnShortlistFloating');
+    const header = document.querySelector('.modern-header');
+    if (targetId === 'intro') {
+      if (stickyBtn) stickyBtn.style.display = 'none';
+      if (header) header.classList.add('header-hidden');
+      document.body.classList.add('on-intro');
+    } else {
+      if (stickyBtn) stickyBtn.style.display = 'flex';
+      if (header) header.classList.remove('header-hidden');
+      document.body.classList.remove('on-intro');
+    }
+
+    if (switchTimeout) {
+      clearTimeout(switchTimeout);
+      switchTimeout = null;
+    }
+
+    if (currentActive && currentActive !== targetSection) {
+      currentActive.classList.add('is-leaving');
+      switchTimeout = setTimeout(() => {
+        sections.forEach(sec => sec.classList.remove('active-view', 'is-leaving'));
+        targetSection.classList.add('active-view');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        if (typeof window.triggerMobileRender === 'function') {
+          window.triggerMobileRender();
+        }
+      }, 150);
+    } else {
+      sections.forEach(sec => sec.classList.remove('active-view', 'is-leaving'));
+      targetSection.classList.add('active-view');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      if (typeof window.triggerMobileRender === 'function') {
+        window.triggerMobileRender();
+      }
+    }
+  }
+
+  // --- ANTI-TOUCH-TO-SEARCH & SELECTION SHIELD ---
+  // Completely eliminates unwanted Android/browser popups ("Recherche Google" / text copy bubbles)
+  document.addEventListener('selectionchange', () => {
+    const selection = window.getSelection();
+    if (selection && selection.toString().trim().length > 0) {
+      const anchor = selection.anchorNode;
+      const parent = anchor?.nodeType === 1 ? anchor : anchor?.parentElement;
+      if (!parent?.closest('.selectable-copy')) {
+        selection.removeAllRanges();
+      }
+    }
+  });
+
+  document.addEventListener('touchend', (e) => {
+    if (!e.target.closest('.selectable-copy')) {
+      const sel = window.getSelection();
+      if (sel && sel.rangeCount > 0) {
+        sel.removeAllRanges();
+      }
+    }
+  }, { passive: true });
+
+  // --- DISCREET CARD SPOTLIGHT INTERACTION (LINEAR / APPLE STYLE) ---
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    let lastMoveTime = 0;
+    document.addEventListener('mousemove', (e) => {
+      const now = performance.now();
+      if (now - lastMoveTime < 14) return; // ~70-120fps sync throttle
+      lastMoveTime = now;
+
+      const card = e.target.closest('.vivid-card, .linktree-link-card, .orbit-node');
+      if (card) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--spot-x', `${x}px`);
+        card.style.setProperty('--spot-y', `${y}px`);
+      }
+    }, { passive: true });
   }
 
   // --- MOBILE NAVIGATION 3-BAR TOGGLE & POPUP SHEET ---
@@ -179,6 +252,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   if (btnShortlistFloating) {
+    // Initial state: hide redundant floating button and navbar on intro landing page
+    const initialActive = document.querySelector('.modern-section.active-view');
+    const header = document.querySelector('.modern-header');
+    if (initialActive && initialActive.id === 'intro') {
+      btnShortlistFloating.style.display = 'none';
+      if (header) header.classList.add('header-hidden');
+      document.body.classList.add('on-intro');
+    }
+
     btnShortlistFloating.addEventListener('click', (e) => {
       e.stopPropagation();
       openShortlist();
@@ -727,20 +809,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let isLoopRunning = false;
+    let animFrameId = null;
+
     function animateBackground() {
+      if (document.hidden) {
+        isLoopRunning = false;
+        return;
+      }
+
       if (isMobile) {
         if (transitionFrames > 0) {
           renderFrame();
           transitionFrames--;
-          requestAnimationFrame(animateBackground);
+          animFrameId = requestAnimationFrame(animateBackground);
         } else {
           isLoopRunning = false;
         }
       } else {
-        requestAnimationFrame(animateBackground);
         renderFrame();
+        animFrameId = requestAnimationFrame(animateBackground);
       }
     }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        if (animFrameId) cancelAnimationFrame(animFrameId);
+        isLoopRunning = false;
+      } else {
+        if (!isLoopRunning) {
+          isLoopRunning = true;
+          animFrameId = requestAnimationFrame(animateBackground);
+        }
+      }
+    });
 
     function triggerMobileRender() {
       transitionFrames = 30;
