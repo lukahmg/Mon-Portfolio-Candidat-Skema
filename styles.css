@@ -2267,11 +2267,15 @@ img {
   touch-action: none;
   user-select: none;
   -webkit-user-select: none;
+  padding: 1.25rem;
+  box-sizing: border-box;
 }
 
 #modalImage {
-  max-width: 94vw;
-  max-height: 88vh;
+  max-width: min(92vw, 100%);
+  max-height: min(88vh, 100%);
+  width: auto;
+  height: auto;
   object-fit: contain;
   border-radius: var(--radius-md);
   box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
