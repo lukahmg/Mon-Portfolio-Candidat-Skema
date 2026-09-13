@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=36.0">
+  <link rel="stylesheet" href="styles.css?v=37.0">
 </head>
 <body>
 
@@ -1647,13 +1647,24 @@
   <div class="modal-overlay" id="modalOverlay">
     <button class="modal-close" id="modalClose" aria-label="Fermer l'image" title="Fermer (Échap)">&times;</button>
     <div class="modal-content">
+      <div class="modal-spinner" id="modalSpinner" style="display: none; align-items: center; justify-content: center; min-height: 200px;">
+        <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2.5rem; color: #60A5FA;"></i>
+      </div>
       <div class="modal-image-container" id="modalImageContainer">
-        <img id="modalImage" src="" alt="Agrandissement Visuel">
+        <img id="modalImage" src="" alt="Agrandissement Visuel" style="opacity: 0; transition: opacity 0.2s ease;">
+      </div>
+      <div class="modal-fallback" id="modalFallback" style="display: none; text-align: center; color: #F9FAFB; padding: 2rem; background: rgba(17, 24, 39, 0.95); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; max-width: 440px; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.8);">
+        <i class="fa-solid fa-file-pdf" style="font-size: 3rem; color: #EF4444; margin-bottom: 1rem;"></i>
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">Document Officiel Prêt</h3>
+        <p style="color: #9CA3AF; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.25rem;">L'aperçu haute résolution peut être consulté ou téléchargé directement :</p>
+        <a id="modalFallbackLink" href="#" target="_blank" class="btn-cv-dl" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; font-size: 0.9rem; border-radius: 99px; text-decoration: none; background: #B91C1C; color: #FFF; font-weight: 700; box-shadow: 0 6px 20px rgba(185, 28, 28, 0.4);">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir le Document PDF
+        </a>
       </div>
     </div>
   </div>
 
   <!-- Custom Script -->
-  <script src="script.js?v=36.0"></script>
+  <script src="script.js?v=37.0"></script>
 </body>
 </html>

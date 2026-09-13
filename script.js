@@ -187,15 +187,73 @@ document.addEventListener('DOMContentLoaded', () => {
     applyImageTransform(smooth);
   }
 
+  const modalSpinner = document.getElementById('modalSpinner');
+  const modalFallback = document.getElementById('modalFallback');
+  const modalFallbackLink = document.getElementById('modalFallbackLink');
+
+  const fallbackMap = {
+    'assets/cv_luka_fr_hd.png': 'assets/cv_luka_fr.png',
+    'assets/cv_luka_uk_hd.png': 'assets/cv_luka_en.png',
+    'assets/cv_luka_usa_hd.png': 'assets/cv_luka_en.png',
+    'assets/cv_luka_es_hd.png': 'assets/cv_luka_es.png',
+    'assets/certificat_clos_pajot_hd.jpg': 'assets/certificat_clos_pajot_hd.png'
+  };
+
+  const pdfMap = {
+    'assets/cv_luka_fr_hd.png': 'assets/CV_Luka_XIONG_SKEMA.pdf',
+    'assets/cv_luka_uk_hd.png': 'assets/CV_Luka_XIONG_UK.pdf',
+    'assets/cv_luka_usa_hd.png': 'assets/CV_Luka_XIONG_USA.pdf',
+    'assets/cv_luka_es_hd.png': 'assets/CV_Luka_XIONG_ES.pdf',
+    'assets/lvmh_cert_1_hd.png': 'assets/certificat_lvmh_creation_operations.pdf',
+    'assets/lvmh_cert_2_hd.png': 'assets/certificat_lvmh_creation_retail.pdf',
+    'assets/lvmh_cert_3_hd.png': 'assets/certificat_lvmh_operations_retail.pdf',
+    'assets/certificat_clos_pajot_hd.jpg': 'assets/certificat_participation_clos_pajot.pdf'
+  };
+
+  function showModalImage(imgSrc) {
+    if (!modalOverlay || !modalImage || !imgSrc) return;
+
+    if (modalSpinner) modalSpinner.style.display = 'flex';
+    if (modalFallback) modalFallback.style.display = 'none';
+    modalImage.style.display = 'block';
+    modalImage.style.opacity = '0';
+    resetModalImage(false);
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    let attemptedFallback = false;
+
+    modalImage.onload = () => {
+      if (modalSpinner) modalSpinner.style.display = 'none';
+      modalImage.style.opacity = '1';
+    };
+
+    modalImage.onerror = () => {
+      if (!attemptedFallback && fallbackMap[imgSrc]) {
+        attemptedFallback = true;
+        modalImage.src = fallbackMap[imgSrc];
+      } else {
+        if (modalSpinner) modalSpinner.style.display = 'none';
+        modalImage.style.display = 'none';
+        if (modalFallback && modalFallbackLink) {
+          modalFallbackLink.href = pdfMap[imgSrc] || imgSrc;
+          modalFallback.style.display = 'block';
+        }
+      }
+    };
+
+    modalImage.src = imgSrc;
+  }
+
   document.querySelectorAll('.image-box img, .clickable-proof img, .clickable-proof').forEach(item => {
     item.style.cursor = 'zoom-in';
     item.addEventListener('click', (e) => {
-      const imgSrc = item.dataset.img || (item.tagName === 'IMG' ? item.src : item.querySelector('img')?.src);
-      if (imgSrc && modalOverlay && modalImage) {
-        modalImage.src = imgSrc;
-        resetModalImage(false);
-        modalOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
+      e.stopPropagation();
+      const targetElement = e.target.closest('.clickable-proof, .image-box img');
+      const targetItem = targetElement || item;
+      const imgSrc = targetItem.dataset?.img || (targetItem.tagName === 'IMG' ? targetItem.src : targetItem.querySelector('img')?.src);
+      if (imgSrc) {
+        showModalImage(imgSrc);
       }
     });
   });
