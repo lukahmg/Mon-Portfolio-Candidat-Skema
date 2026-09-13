@@ -60,17 +60,17 @@ body {
   background: var(--bg-primary);
 }
 
-/* Subtle Professional Ambient Blur Background */
+/* Futuristic Reactive Hologram Canvas Background */
 #bgCanvas {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
-  filter: blur(140px);
-  opacity: 0.25;
+  opacity: 0.85;
+  transition: opacity 0.5s ease;
 }
 
 /* ==========================================================================
@@ -803,6 +803,9 @@ body {
 /* ==========================================================================
    CENTRAL ORBIT HUB UNIVERSE (LUKA AT CENTER, THEMES DISPERSED AROUND)
    ========================================================================== */
+/* ==========================================================================
+   ELEGANT EXECUTIVE SKEMA ORBITAL SYSTEM
+   ========================================================================== */
 .central-universe-container {
   position: relative;
   width: 100%;
@@ -812,30 +815,125 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  perspective: 1000px;
 }
 
-/* Background Orbital Rings */
-.orbit-ring {
+.skema-orbit-system {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 820px;
+  height: 820px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+.skema-orbit-ring {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   pointer-events: none;
-  border: 1px dashed rgba(255, 255, 255, 0.12);
 }
 
-.orbit-ring-1 {
-  width: 620px;
-  height: 620px;
-  animation: rotateSlowOrbit 60s linear infinite;
+/* Outer Hairline Ring - Discreet SKEMA Geometry */
+.ring-large {
+  width: 800px;
+  height: 800px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  animation: rotateSlowOrbit 140s linear infinite;
 }
 
-.orbit-ring-2 {
-  width: 900px;
-  height: 900px;
-  border-color: rgba(255, 255, 255, 0.06);
-  animation: rotateSlowOrbitReverse 80s linear infinite;
+.ring-large::before,
+.ring-large::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 3px;
+  background: rgba(185, 28, 28, 0.5);
+  border-radius: 2px;
+}
+
+.ring-large::after {
+  top: auto;
+  bottom: -2px;
+}
+
+/* Middle Dashed Ring - Elegant SKEMA Red Accent */
+.ring-dashed {
+  width: 640px;
+  height: 640px;
+  border: 1px dashed rgba(185, 28, 28, 0.18);
+  animation: rotateSlowOrbitReverse 100s linear infinite;
+}
+
+/* Inner Subtle Ring */
+.ring-medium {
+  width: 480px;
+  height: 480px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  animation: rotateSlowOrbit 80s linear infinite;
+}
+
+/* Soft Executive Carmine Core Glow */
+.skema-core-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(185, 28, 28, 0.08) 0%, rgba(15, 23, 42, 0) 70%);
+  filter: blur(28px);
+  pointer-events: none;
+  animation: subtleAuraBreath 8s ease-in-out infinite alternate;
+}
+
+@keyframes subtleAuraBreath {
+  0% { transform: translate(-50%, -50%) scale(0.94); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(1.06); opacity: 0.9; }
+}
+
+/* Discreet Orbiting Satellites */
+.skema-satellite {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-top: -3px;
+  margin-left: -3px;
+}
+
+.sat-1 {
+  background: #B91C1C;
+  box-shadow: 0 0 10px rgba(185, 28, 28, 0.6);
+  animation: skemaOrbitMotion1 38s linear infinite;
+}
+
+.sat-2 {
+  background: rgba(226, 232, 240, 0.6);
+  box-shadow: 0 0 8px rgba(226, 232, 240, 0.4);
+  animation: skemaOrbitMotion2 55s linear infinite;
+}
+
+@keyframes skemaOrbitMotion1 {
+  0% { transform: rotate(0deg) translateX(320px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(320px) rotate(-360deg); }
+}
+
+@keyframes skemaOrbitMotion2 {
+  0% { transform: rotate(360deg) translateX(400px) rotate(-360deg); }
+  100% { transform: rotate(0deg) translateX(400px) rotate(0deg); }
 }
 
 @keyframes rotateSlowOrbit {
@@ -2316,6 +2414,7 @@ img {
     margin-bottom: 1.5rem !important;
   }
 
+  .skema-orbit-system,
   .orbit-ring {
     display: none !important;
   }

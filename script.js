@@ -28,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     targetSection.classList.add('active-view');
     window.scrollTo({ top: 0, behavior: 'instant' });
+    if (typeof updateBackgroundTheme === 'function') {
+      updateBackgroundTheme(targetId);
+    }
   }
 
   // --- MOBILE NAVIGATION 3-BAR TOGGLE & POPUP SHEET ---
@@ -346,4 +349,187 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   calculateProfit();
+
+  // ==========================================================================
+  // ==========================================================================
+  // ELEGANT EXECUTIVE SKEMA ORBITAL SYSTEM & DISCREET AMBIENT BACKGROUND
+  // ==========================================================================
+  const bgCanvas = document.getElementById('bgCanvas');
+  const skemaOrbitSystem = document.getElementById('skemaOrbitSystem');
+
+  // Executive SKEMA & Theme Color Profiles (Discreet, refined, academic excellence)
+  const sectionThemes = {
+    intro: {
+      primaryColor: [185, 28, 28],    // SKEMA Carmine Red
+      secondaryColor: [30, 41, 59],   // Executive Slate
+      speed: 0.45,
+      camTargetX: 0,
+      camTargetY: 0
+    },
+    hero: {
+      primaryColor: [185, 28, 28],    // SKEMA Carmine Red
+      secondaryColor: [15, 23, 42],   // Deep Midnight Slate
+      speed: 0.5,
+      camTargetX: 0,
+      camTargetY: -20
+    },
+    etape1: {
+      primaryColor: [212, 175, 55],   // LVMH Champagne Gold
+      secondaryColor: [30, 41, 59],   // Deep Slate
+      speed: 0.4,
+      camTargetX: -60,
+      camTargetY: -30
+    },
+    etape2: {
+      primaryColor: [16, 185, 129],   // Déméter Eco Emerald
+      secondaryColor: [15, 23, 42],   // Forest Slate
+      speed: 0.4,
+      camTargetX: 60,
+      camTargetY: -30
+    },
+    etape3: {
+      primaryColor: [59, 130, 246],   // Reseller Executive Cobalt
+      secondaryColor: [15, 23, 42],   // Deep Slate
+      speed: 0.5,
+      camTargetX: -60,
+      camTargetY: 30
+    },
+    etape4: {
+      primaryColor: [185, 28, 28],    // SKEMA Carmine Red
+      secondaryColor: [30, 41, 59],   // Midnight Slate
+      speed: 0.45,
+      camTargetX: 60,
+      camTargetY: 30
+    }
+  };
+
+  let currentTheme = {
+    primaryColor: [185, 28, 28],
+    secondaryColor: [30, 41, 59],
+    speed: 0.45,
+    camTargetX: 0,
+    camTargetY: 0
+  };
+  let targetTheme = { ...sectionThemes.intro };
+
+  let camCurrentX = 0;
+  let camCurrentY = 0;
+  let mouseX = 0;
+  let mouseY = 0;
+  let targetTiltX = 0;
+  let targetTiltY = 0;
+  let currentTiltX = 0;
+  let currentTiltY = 0;
+
+  function updateBackgroundTheme(targetId) {
+    if (sectionThemes[targetId]) {
+      targetTheme = sectionThemes[targetId];
+    }
+  }
+  window.updateBackgroundTheme = updateBackgroundTheme;
+
+  if (bgCanvas) {
+    const ctx = bgCanvas.getContext('2d');
+    let width = (bgCanvas.width = window.innerWidth);
+    let height = (bgCanvas.height = window.innerHeight);
+
+    window.addEventListener('resize', () => {
+      width = bgCanvas.width = window.innerWidth;
+      height = bgCanvas.height = window.innerHeight;
+    });
+
+    // Discreet ambient stardust particles
+    const particles = [];
+    const maxParticles = 32;
+    for (let i = 0; i < maxParticles; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        radius: Math.random() * 1.2 + 0.8,
+        alpha: Math.random() * 0.25 + 0.1
+      });
+    }
+
+    // Helper: Linear interpolation
+    function lerp(start, end, amt) {
+      return start + (end - start) * amt;
+    }
+
+    // Discreet micro-tilt with mouse (subtle 3D elegance)
+    window.addEventListener('mousemove', (e) => {
+      mouseX = (e.clientX / width) * 2 - 1;
+      mouseY = (e.clientY / height) * 2 - 1;
+      targetTiltX = -mouseY * 2.5; // Subtle tilt in degrees
+      targetTiltY = mouseX * 2.5;
+    });
+
+    function animateBackground() {
+      requestAnimationFrame(animateBackground);
+
+      // Smooth color and camera interpolation
+      currentTheme.primaryColor[0] = lerp(currentTheme.primaryColor[0], targetTheme.primaryColor[0], 0.04);
+      currentTheme.primaryColor[1] = lerp(currentTheme.primaryColor[1], targetTheme.primaryColor[1], 0.04);
+      currentTheme.primaryColor[2] = lerp(currentTheme.primaryColor[2], targetTheme.primaryColor[2], 0.04);
+
+      currentTheme.secondaryColor[0] = lerp(currentTheme.secondaryColor[0], targetTheme.secondaryColor[0], 0.04);
+      currentTheme.secondaryColor[1] = lerp(currentTheme.secondaryColor[1], targetTheme.secondaryColor[1], 0.04);
+      currentTheme.secondaryColor[2] = lerp(currentTheme.secondaryColor[2], targetTheme.secondaryColor[2], 0.04);
+
+      camCurrentX = lerp(camCurrentX, targetTheme.camTargetX + mouseX * 15, 0.03);
+      camCurrentY = lerp(camCurrentY, targetTheme.camTargetY + mouseY * 15, 0.03);
+
+      currentTiltX = lerp(currentTiltX, targetTiltX, 0.06);
+      currentTiltY = lerp(currentTiltY, targetTiltY, 0.06);
+
+      // Apply subtle micro-tilt to SKEMA Orbital System in Hero
+      if (skemaOrbitSystem) {
+        skemaOrbitSystem.style.transform = `translate(-50%, -50%) perspective(1000px) rotateX(${currentTiltX}deg) rotateY(${currentTiltY}deg)`;
+      }
+
+      ctx.clearRect(0, 0, width, height);
+
+      const pR = Math.round(currentTheme.primaryColor[0]);
+      const pG = Math.round(currentTheme.primaryColor[1]);
+      const pB = Math.round(currentTheme.primaryColor[2]);
+
+      const sR = Math.round(currentTheme.secondaryColor[0]);
+      const sG = Math.round(currentTheme.secondaryColor[1]);
+      const sB = Math.round(currentTheme.secondaryColor[2]);
+
+      // Soft, discreet executive ambient glow
+      const centerX = width / 2 + camCurrentX;
+      const centerY = height / 2 + camCurrentY;
+      const gradient = ctx.createRadialGradient(centerX, centerY, 80, centerX, centerY, Math.max(width, height) * 0.65);
+      gradient.addColorStop(0, `rgba(${pR}, ${pG}, ${pB}, 0.06)`);
+      gradient.addColorStop(0.5, `rgba(${sR}, ${sG}, ${sB}, 0.02)`);
+      gradient.addColorStop(1, 'rgba(11, 15, 25, 0)');
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, width, height);
+
+      // Render discreet stardust specks
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx * targetTheme.speed;
+        p.y += p.vy * targetTheme.speed;
+
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+
+        const drawX = p.x + camCurrentX * 0.2;
+        const drawY = p.y + camCurrentY * 0.2;
+
+        ctx.beginPath();
+        ctx.arc(drawX, drawY, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
+        ctx.fill();
+      }
+    }
+
+    animateBackground();
+  }
 });
