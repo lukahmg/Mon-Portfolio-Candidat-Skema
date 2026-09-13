@@ -451,8 +451,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'assets/cv_luka_fr_hd.png': 'assets/cv_luka_fr.png',
     'assets/cv_luka_uk_hd.png': 'assets/cv_luka_en.png',
     'assets/cv_luka_usa_hd.png': 'assets/cv_luka_en.png',
-    'assets/cv_luka_es_hd.png': 'assets/cv_luka_es.png',
-    'assets/certificat_clos_pajot_hd.jpg': 'assets/certificat_clos_pajot_hd.png'
+    'assets/cv_luka_es_hd.png': 'assets/cv_luka_es.png'
   };
 
   const pdfMap = {
