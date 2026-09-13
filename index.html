@@ -15,13 +15,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Stylesheet & Defer Translation Engine -->
-  <link rel="stylesheet" href="styles.css?v=50.0">
-  <script defer src="translations.js?v=50.0"></script>
+  <link rel="stylesheet" href="styles.css?v=51.0">
+  <script defer src="translations.js?v=51.0"></script>
 </head>
 <body class="on-intro">
 
   <!-- Interactive Animated Reactive Canvas Background -->
   <canvas id="bgCanvas"></canvas>
+
+  <!-- Laser Sweep Shimmer Line for Multilingual Transitions -->
+  <div id="langSweepBar" class="lang-sweep-bar" aria-hidden="true"></div>
+
+  <!-- Executive HUD Floating Language Feedback Toast -->
+  <div id="langHudPill" class="lang-hud-pill" aria-hidden="true">
+    <i class="fa-solid fa-globe lang-hud-icon"></i>
+    <span class="lang-hud-label" id="langHudLabel">Français (FR)</span>
+    <span class="lang-hud-status" data-i18n="lang.active">Actif</span>
+  </div>
 
   <!-- Modern Animated Floating Header Navbar -->
   <header class="modern-header header-hidden">
@@ -40,7 +50,7 @@
         <li><a href="#hero" class="nav-item-link"><i class="fa-solid fa-compass"></i> <span data-i18n="nav.hub">Hub Portfolio</span></a></li>
         <li><a href="#etape1" class="nav-item-link"><i class="fa-solid fa-certificate"></i> <span data-i18n="nav.lvmh">1. LVMH</span></a></li>
         <li><a href="#etape2" class="nav-item-link"><i class="fa-solid fa-building-user"></i> <span data-i18n="nav.demeter">2. Déméter</span></a></li>
-        <li><a href="#etape3" class="nav-item-link"><i class="fa-solid fa-chart-line"></i> <span data-i18n="nav.resell">3. Personal Shopper</span></a></li>
+        <li><a href="#etape3" class="nav-item-link"><i class="fa-solid fa-chart-line"></i> <span data-i18n="nav.resell">3. Reseller</span></a></li>
         <li><a href="#etape4" class="nav-item-link"><i class="fa-solid fa-hands-holding-circle"></i> <span data-i18n="nav.hmong">4. Festivals Hmong</span></a></li>
       </ul>
     </div>
@@ -130,7 +140,7 @@
         <a href="#etape3" class="mobile-nav-item">
           <div class="mobile-nav-icon" style="color: #3B82F6; background: rgba(59, 130, 246, 0.12);"><i class="fa-solid fa-chart-line"></i></div>
           <div class="mobile-nav-info">
-            <span class="mobile-nav-title" data-i18n="mobile.resell_title">3. Personal Shopper</span>
+            <span class="mobile-nav-title" data-i18n="mobile.resell_title">3. Reseller</span>
             <span class="mobile-nav-subtitle" data-i18n="mobile.resell_sub">7 Ans Sourcing Mondial • Zéro Invendu</span>
           </div>
           <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
@@ -181,7 +191,7 @@
         </div>
 
         <div class="linktree-bio" data-i18n="intro.bio">
-          "Bachelier STI2D Architecture, j'exerce depuis 7 ans une activité de Personal Shopper international en flux tendus (zéro invendu). Passionné par le luxe et le commerce, je candidate à SKEMA Business School."
+          "Bachelier STI2D Architecture, j'exerce depuis 7 ans en tant que Reseller international en flux tendus (zéro invendu). Passionné par le luxe et le commerce, je candidate à SKEMA Business School."
         </div>
 
         <!-- BIG CTA: ACCESS PORTFOLIO HUB -->
@@ -212,7 +222,7 @@
           </div>
           <div class="highlight-mini-pill" style="border-left: 3px solid #3B82F6;">
             <i class="fa-solid fa-chart-line" style="color: #60A5FA;"></i>
-            <span data-i18n="intro.pill_resell">7 Ans Personal Shopper</span>
+            <span data-i18n="intro.pill_resell">7 Ans Reseller</span>
           </div>
           <div class="highlight-mini-pill" style="border-left: 3px solid #EF4444;">
             <i class="fa-solid fa-hands-holding-circle" style="color: #F87171;"></i>
@@ -400,12 +410,12 @@
         </div>
       </a>
 
-      <!-- Node 3: PERSONAL SHOPPER (Bottom Left) -->
+      <!-- Node 3: RESELLER (Bottom Left) -->
       <a href="#etape3" class="orbit-node node-resell">
         <div class="node-icon"><i class="fa-solid fa-chart-line"></i></div>
         <div class="node-text-wrap">
           <span class="node-tag" data-i18n="hero.node3_tag">3. COMMERCE &amp; SOURCING MONDIAL</span>
-          <span class="node-title" data-i18n="hero.node3_title">Personal Shopper</span>
+          <span class="node-title" data-i18n="hero.node3_title">Reseller</span>
           <span class="node-desc" data-i18n="hero.node3_desc">7 Ans Terrain • Zéro Invendu</span>
         </div>
       </a>
@@ -1057,17 +1067,17 @@
       <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="resell.skema_tag">Synergie SKEMA • Esprit Pionnier &amp; Entrepreneuriat (SKEMA Ventures)</span>
     </div>
     <div class="step-number-tag">
-      <i class="fa-solid fa-chart-line" style="color: #3B82F6;"></i> <span data-i18n="resell.step_tag">ÉTAPE 3 / 4 — PERSONAL SHOPPER, SOURCING MONDIAL &amp; LOGISTIQUE</span>
+      <i class="fa-solid fa-chart-line" style="color: #3B82F6;"></i> <span data-i18n="resell.step_tag">ÉTAPE 3 / 4 — RESELLER, SOURCING MONDIAL &amp; LOGISTIQUE</span>
     </div>
-    <h2 class="section-hero-title"><span data-i18n="resell.title">Personal Shopper &amp; Sourcing International</span> <highlight class="cobalt" data-i18n="resell.title_highlight">(7 Ans d'Activité • Zéro Invendu)</highlight></h2>
+    <h2 class="section-hero-title"><span data-i18n="resell.title">Reseller &amp; Sourcing International</span> <highlight class="cobalt" data-i18n="resell.title_highlight">(7 Ans d'Activité • Zéro Invendu)</highlight></h2>
     <div class="section-hero-subtitle" data-i18n="resell.subtitle">
-      Service de conciergerie et de sourcing à la demande : recherche d'articles de mode, vestes et sneakers collectors introuvables via un réseau mondial de fournisseurs. Achats déclenchés sur commande client ferme (zéro risque financier) et expédition directe sécurisée sans stockage physique.
+      Service de sourcing et d'achat-revente à la demande : recherche d'articles de mode, vestes et sneakers collectors introuvables via un réseau mondial de fournisseurs. Achats déclenchés sur commande client ferme (zéro risque financier) et expédition directe sécurisée sans stockage physique.
     </div>
 
     <!-- EXECUTIVE KPI SUMMARY BAR -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
       <div class="vivid-card card-resell" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi1_title">Personal Shopper</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi1_title">Reseller</div>
         <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi1_sub">Service Sur-Mesure</div>
         <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi1_desc">Recherche active de pièces sold-out ou introuvables</div>
       </div>
@@ -1088,7 +1098,7 @@
       </div>
     </div>
 
-    <!-- DEDICATED PERSONAL SHOPPER & SOURCING MONDIAL STRATEGIC CARD -->
+    <!-- DEDICATED RESELLER & SOURCING MONDIAL STRATEGIC CARD -->
     <div class="vivid-card card-resell" style="padding: 2.2rem; margin-bottom: 2.5rem; border: 1px solid rgba(96, 165, 250, 0.3); background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 58, 138, 0.25));">
       <div class="card-brand-watermarks">
         <i class="fa-solid fa-globe" style="font-size: 4rem; opacity: 0.08; color: #FFFFFF;"></i>
@@ -1097,17 +1107,17 @@
       </div>
 
       <div style="font-size: 0.82rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
-        <i class="fa-solid fa-user-tag"></i> <span data-i18n="resell.ps_badge">Le Cœur de Mon Activité : Le Personal Shopping</span>
+        <i class="fa-solid fa-user-tag"></i> <span data-i18n="resell.ps_badge">Le Cœur de Mon Activité : Le Resell &amp; Sourcing Sur-Mesure</span>
       </div>
       <h3 class="vivid-card-title" style="font-size: 1.6rem; margin-bottom: 0.8rem;" data-i18n="resell.ps_title">
         Trouver l'Introuvable : Un Modèle Agile à Zéro Invendu &amp; Zéro Stockage
       </h3>
 
-      <!-- Core Master Quote of the Personal Shopper model -->
+      <!-- Core Master Quote of the Reseller model -->
       <div style="background: rgba(59, 130, 246, 0.12); border-left: 4px solid #3B82F6; padding: 18px 22px; border-radius: var(--radius-sm); margin-bottom: 1.8rem;">
         <p style="margin: 0; font-size: 1.02rem; color: #F9FAFB; font-weight: 600; line-height: 1.7;">
           <i class="fa-solid fa-quote-left" style="color: #60A5FA; margin-right: 10px;"></i>
-          <span data-i18n="resell.ps_quote">Je suis Personal Shopper : je me mets à la disposition de clients qui cherchent un produit introuvable ou sold-out. Grâce à mon réseau de fournisseurs et revendeurs fiables à travers le monde, je le trouve au prix juste, certifie son authenticité et l'expédie directement. J'achète parce que j'ai déjà un client acheteur : je ne perds aucun sou et je n'ai aucun stockage dormant chez moi.</span>
+          <span data-i18n="resell.ps_quote">Je suis Reseller et Personal Shopper : je me mets à la disposition de clients qui cherchent un produit introuvable ou sold-out. Grâce à mon réseau de fournisseurs et revendeurs fiables à travers le monde, je le trouve au prix juste, certifie son authenticité et l'expédie directement. C'est grâce à ça que je n'ai aucun invendu : j'achète parce que j'ai déjà un client acheteur, donc je ne perds aucun sou et j'ai 0 stockage chez moi vu que je l'envoie directement chez le client.</span>
         </p>
       </div>
 
@@ -2145,6 +2155,6 @@
   </div>
 
   <!-- Custom Script -->
-  <script src="script.js?v=50.0"></script>
+  <script src="script.js?v=51.0"></script>
 </body>
 </html>

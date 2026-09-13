@@ -1,8 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // --- MULTILINGUAL ENGINE (FR / EN / ES) ---
+  // --- MULTILINGUAL ENGINE (FR / EN / ES) WITH HIGH-TECH FLUID TRANSITIONS ---
   const langButtons = document.querySelectorAll('.lang-btn');
+  const langSweepBar = document.getElementById('langSweepBar');
+  const langHudPill = document.getElementById('langHudPill');
+  const langHudFlag = document.getElementById('langHudFlag');
+  const langHudLabel = document.getElementById('langHudLabel');
+  let isLangTransitioning = false;
+  let hudTimeout = null;
 
-  function setLanguage(lang) {
+  const LANG_META = {
+    fr: { label: 'Français (FR)' },
+    en: { label: 'English (EN)' },
+    es: { label: 'Español (ES)' }
+  };
+
+  function showLangHud(lang) {
+    if (!langHudPill) return;
+    const meta = LANG_META[lang] || { label: lang.toUpperCase() };
+    if (langHudLabel) langHudLabel.textContent = meta.label;
+
+    langHudPill.classList.remove('is-visible');
+    void langHudPill.offsetWidth; // trigger reflow
+    langHudPill.classList.add('is-visible');
+
+    if (hudTimeout) clearTimeout(hudTimeout);
+    hudTimeout = setTimeout(() => {
+      langHudPill.classList.remove('is-visible');
+    }, 1100);
+  }
+
+  function triggerLaserSweep() {
+    if (!langSweepBar) return;
+    langSweepBar.classList.remove('sweeping');
+    void langSweepBar.offsetWidth; // trigger reflow
+    langSweepBar.classList.add('sweeping');
+  }
+
+  function applyTranslations(lang) {
     if (!window.PORTFOLIO_TRANSLATIONS || !window.PORTFOLIO_TRANSLATIONS[lang]) {
       console.warn('Portfolio translations not available for language:', lang);
       return;
@@ -59,12 +93,73 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function setLanguage(targetLang, clickedBtn = null) {
+    if (!window.PORTFOLIO_TRANSLATIONS || !window.PORTFOLIO_TRANSLATIONS[targetLang]) return;
+    const currentLang = document.documentElement.lang || 'fr';
+
+    // If already active language, trigger tactile pulse & confirm HUD
+    if (currentLang === targetLang) {
+      if (clickedBtn) {
+        clickedBtn.classList.remove('lang-btn-pulse');
+        void clickedBtn.offsetWidth;
+        clickedBtn.classList.add('lang-btn-pulse');
+      }
+      showLangHud(targetLang);
+      return;
+    }
+
+    if (isLangTransitioning) return;
+    isLangTransitioning = true;
+
+    // 1. Tactile feedback on button and switchers
+    if (clickedBtn) {
+      clickedBtn.classList.remove('lang-btn-pulse');
+      void clickedBtn.offsetWidth;
+      clickedBtn.classList.add('lang-btn-pulse');
+    }
+    const switchers = document.querySelectorAll('.lang-switcher');
+    switchers.forEach(s => s.classList.add('is-switching'));
+
+    // 2. Cinematic visual effects: laser sweep & floating HUD pill
+    triggerLaserSweep();
+    showLangHud(targetLang);
+
+    // 3. Select translatable view containers for micro-blur & fade
+    const transitionTargets = document.querySelectorAll(
+      '#intro .linktree-dashboard-container, .modern-section.active-view, .modern-header .brand-text-group, .modern-header .nav-links-wrapper, .modern-header .header-contact-btn, .mobile-nav-pane'
+    );
+
+    transitionTargets.forEach(el => {
+      el.classList.add('lang-target', 'lang-phase-out');
+      el.classList.remove('lang-phase-in');
+    });
+
+    // 4. Midpoint: Update all texts while elements are blurred & softened (120ms)
+    setTimeout(() => {
+      applyTranslations(targetLang);
+
+      transitionTargets.forEach(el => {
+        el.classList.remove('lang-phase-out');
+        el.classList.add('lang-phase-in');
+      });
+
+      // 5. Completion & cleanup (after spring reveal 240ms)
+      setTimeout(() => {
+        transitionTargets.forEach(el => {
+          el.classList.remove('lang-phase-in', 'lang-target');
+        });
+        switchers.forEach(s => s.classList.remove('is-switching'));
+        isLangTransitioning = false;
+      }, 240);
+    }, 120);
+  }
+
   langButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       const lang = btn.getAttribute('data-lang');
-      if (lang) setLanguage(lang);
+      if (lang) setLanguage(lang, btn);
     });
   });
 
@@ -74,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
     savedLang = localStorage.getItem('luka_portfolio_lang') || 'fr';
   } catch (e) {}
   if (savedLang && savedLang !== 'fr') {
-    setLanguage(savedLang);
+    applyTranslations(savedLang);
   }
   window.setPortfolioLanguage = setLanguage;
 
