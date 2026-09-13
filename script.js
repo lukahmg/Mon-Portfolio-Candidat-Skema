@@ -85,17 +85,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openShortlist() {
     if (shortlistDrawer) shortlistDrawer.classList.add('open');
+    document.body.classList.add('shortlist-open');
   }
 
   function closeShortlist() {
     if (shortlistDrawer) shortlistDrawer.classList.remove('open');
+    document.body.classList.remove('shortlist-open');
   }
 
-  if (btnShortlist) btnShortlist.addEventListener('click', openShortlist);
-  if (btnShortlistFloating) btnShortlistFloating.addEventListener('click', openShortlist);
-  if (shortlistClose) shortlistClose.addEventListener('click', closeShortlist);
+  if (btnShortlist) {
+    btnShortlist.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openShortlist();
+    });
+  }
+  if (btnShortlistFloating) {
+    btnShortlistFloating.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openShortlist();
+    });
+  }
+  if (shortlistClose) {
+    shortlistClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeShortlist();
+    });
+  }
   if (btnMobileContact) {
-    btnMobileContact.addEventListener('click', () => {
+    btnMobileContact.addEventListener('click', (e) => {
+      e.stopPropagation();
       closeMobileNav();
       openShortlist();
     });
@@ -103,8 +121,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const linktreeContactBtn = document.getElementById('linktreeContactBtn');
   if (linktreeContactBtn) {
-    linktreeContactBtn.addEventListener('click', openShortlist);
+    linktreeContactBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openShortlist();
+    });
   }
+
+  const heroCvBtn = document.getElementById('heroCvBtn');
+  if (heroCvBtn) {
+    heroCvBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openShortlist();
+    });
+  }
+
+  // Close shortlist drawer when clicking outside
+  document.addEventListener('click', (e) => {
+    if (shortlistDrawer && shortlistDrawer.classList.contains('open')) {
+      const isInsideDrawer = shortlistDrawer.contains(e.target);
+      const isModal = e.target.closest('#modalOverlay');
+      if (!isInsideDrawer && !isModal) {
+        closeShortlist();
+      }
+    }
+  });
+
+  // Close shortlist drawer on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      if (shortlistDrawer && shortlistDrawer.classList.contains('open')) {
+        closeShortlist();
+      }
+    }
+  });
 
   // --- PURE BLURRED LIGHTBOX MODAL WITH TOUCH PINCH-TO-ZOOM ---
   const modalOverlay = document.getElementById('modalOverlay');
@@ -141,9 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.image-box img, .clickable-proof img, .clickable-proof').forEach(item => {
     item.style.cursor = 'zoom-in';
     item.addEventListener('click', (e) => {
-      const img = item.tagName === 'IMG' ? item : item.querySelector('img');
-      if (img && modalOverlay && modalImage) {
-        modalImage.src = img.src;
+      const imgSrc = item.dataset.img || (item.tagName === 'IMG' ? item.src : item.querySelector('img')?.src);
+      if (imgSrc && modalOverlay && modalImage) {
+        modalImage.src = imgSrc;
         resetModalImage(false);
         modalOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -424,6 +473,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateBackgroundTheme(targetId) {
     if (sectionThemes[targetId]) {
       targetTheme = sectionThemes[targetId];
+      if (typeof window.triggerMobileRender === 'function') {
+        window.triggerMobileRender();
+      }
     }
   }
   window.updateBackgroundTheme = updateBackgroundTheme;
@@ -457,35 +509,40 @@ document.addEventListener('DOMContentLoaded', () => {
       return start + (end - start) * amt;
     }
 
-    // Discreet micro-tilt with mouse (subtle 3D elegance)
-    window.addEventListener('mousemove', (e) => {
-      mouseX = (e.clientX / width) * 2 - 1;
-      mouseY = (e.clientY / height) * 2 - 1;
-      targetTiltX = -mouseY * 2.5; // Subtle tilt in degrees
-      targetTiltY = mouseX * 2.5;
-    });
+    const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window);
+    let transitionFrames = 30;
 
-    function animateBackground() {
-      requestAnimationFrame(animateBackground);
+    // Discreet micro-tilt with mouse (subtle 3D elegance - desktop only)
+    if (!isMobile) {
+      window.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX / width) * 2 - 1;
+        mouseY = (e.clientY / height) * 2 - 1;
+        targetTiltX = -mouseY * 2.5;
+        targetTiltY = mouseX * 2.5;
+      }, { passive: true });
+    }
 
+    function renderFrame() {
       // Smooth color and camera interpolation
-      currentTheme.primaryColor[0] = lerp(currentTheme.primaryColor[0], targetTheme.primaryColor[0], 0.04);
-      currentTheme.primaryColor[1] = lerp(currentTheme.primaryColor[1], targetTheme.primaryColor[1], 0.04);
-      currentTheme.primaryColor[2] = lerp(currentTheme.primaryColor[2], targetTheme.primaryColor[2], 0.04);
+      const lerpSpeed = isMobile ? 0.15 : 0.04;
+      currentTheme.primaryColor[0] = lerp(currentTheme.primaryColor[0], targetTheme.primaryColor[0], lerpSpeed);
+      currentTheme.primaryColor[1] = lerp(currentTheme.primaryColor[1], targetTheme.primaryColor[1], lerpSpeed);
+      currentTheme.primaryColor[2] = lerp(currentTheme.primaryColor[2], targetTheme.primaryColor[2], lerpSpeed);
 
-      currentTheme.secondaryColor[0] = lerp(currentTheme.secondaryColor[0], targetTheme.secondaryColor[0], 0.04);
-      currentTheme.secondaryColor[1] = lerp(currentTheme.secondaryColor[1], targetTheme.secondaryColor[1], 0.04);
-      currentTheme.secondaryColor[2] = lerp(currentTheme.secondaryColor[2], targetTheme.secondaryColor[2], 0.04);
+      currentTheme.secondaryColor[0] = lerp(currentTheme.secondaryColor[0], targetTheme.secondaryColor[0], lerpSpeed);
+      currentTheme.secondaryColor[1] = lerp(currentTheme.secondaryColor[1], targetTheme.secondaryColor[1], lerpSpeed);
+      currentTheme.secondaryColor[2] = lerp(currentTheme.secondaryColor[2], targetTheme.secondaryColor[2], lerpSpeed);
 
-      camCurrentX = lerp(camCurrentX, targetTheme.camTargetX + mouseX * 15, 0.03);
-      camCurrentY = lerp(camCurrentY, targetTheme.camTargetY + mouseY * 15, 0.03);
+      if (!isMobile) {
+        camCurrentX = lerp(camCurrentX, targetTheme.camTargetX + mouseX * 15, 0.03);
+        camCurrentY = lerp(camCurrentY, targetTheme.camTargetY + mouseY * 15, 0.03);
 
-      currentTiltX = lerp(currentTiltX, targetTiltX, 0.06);
-      currentTiltY = lerp(currentTiltY, targetTiltY, 0.06);
+        currentTiltX = lerp(currentTiltX, targetTiltX, 0.06);
+        currentTiltY = lerp(currentTiltY, targetTiltY, 0.06);
 
-      // Apply subtle micro-tilt to SKEMA Orbital System in Hero
-      if (skemaOrbitSystem) {
-        skemaOrbitSystem.style.transform = `translate(-50%, -50%) perspective(1000px) rotateX(${currentTiltX}deg) rotateY(${currentTiltY}deg)`;
+        if (skemaOrbitSystem) {
+          skemaOrbitSystem.style.transform = `translate(-50%, -50%) perspective(1000px) rotateX(${currentTiltX}deg) rotateY(${currentTiltY}deg)`;
+        }
       }
 
       ctx.clearRect(0, 0, width, height);
@@ -499,8 +556,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const sB = Math.round(currentTheme.secondaryColor[2]);
 
       // Soft, discreet executive ambient glow
-      const centerX = width / 2 + camCurrentX;
-      const centerY = height / 2 + camCurrentY;
+      const centerX = width / 2 + (isMobile ? 0 : camCurrentX);
+      const centerY = height / 2 + (isMobile ? 0 : camCurrentY);
       const gradient = ctx.createRadialGradient(centerX, centerY, 80, centerX, centerY, Math.max(width, height) * 0.65);
       gradient.addColorStop(0, `rgba(${pR}, ${pG}, ${pB}, 0.06)`);
       gradient.addColorStop(0.5, `rgba(${sR}, ${sG}, ${sB}, 0.02)`);
@@ -509,27 +566,55 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, width, height);
 
-      // Render discreet stardust specks
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        p.x += p.vx * targetTheme.speed;
-        p.y += p.vy * targetTheme.speed;
+      // Render discreet stardust specks on desktop
+      if (!isMobile) {
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx * targetTheme.speed;
+          p.y += p.vy * targetTheme.speed;
 
-        if (p.x < 0) p.x = width;
-        if (p.x > width) p.x = 0;
-        if (p.y < 0) p.y = height;
-        if (p.y > height) p.y = 0;
+          if (p.x < 0) p.x = width;
+          if (p.x > width) p.x = 0;
+          if (p.y < 0) p.y = height;
+          if (p.y > height) p.y = 0;
 
-        const drawX = p.x + camCurrentX * 0.2;
-        const drawY = p.y + camCurrentY * 0.2;
+          const drawX = p.x + camCurrentX * 0.2;
+          const drawY = p.y + camCurrentY * 0.2;
 
-        ctx.beginPath();
-        ctx.arc(drawX, drawY, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
-        ctx.fill();
+          ctx.beginPath();
+          ctx.arc(drawX, drawY, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
+          ctx.fill();
+        }
       }
     }
 
+    let isLoopRunning = false;
+    function animateBackground() {
+      if (isMobile) {
+        if (transitionFrames > 0) {
+          renderFrame();
+          transitionFrames--;
+          requestAnimationFrame(animateBackground);
+        } else {
+          isLoopRunning = false;
+        }
+      } else {
+        requestAnimationFrame(animateBackground);
+        renderFrame();
+      }
+    }
+
+    function triggerMobileRender() {
+      transitionFrames = 30;
+      if (!isLoopRunning) {
+        isLoopRunning = true;
+        animateBackground();
+      }
+    }
+    window.triggerMobileRender = triggerMobileRender;
+
+    isLoopRunning = true;
     animateBackground();
   }
 });

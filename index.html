@@ -13,18 +13,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=31.0">
-  
-  <!-- Chart.js Library -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css?v=35.0">
 </head>
 <body>
-
-  <!-- Fullscreen Immersive Artistic Theme Transition Layer -->
-  <div id="artisticTransitionOverlay" class="art-transition-overlay">
-    <canvas id="transitionCanvas"></canvas>
-    <div id="transitionContent" class="transition-content"></div>
-  </div>
 
   <!-- Interactive Animated Reactive Canvas Background -->
   <canvas id="bgCanvas"></canvas>
@@ -53,7 +44,7 @@
 
     <!-- Desktop Contact Button -->
     <button class="btn-vivid-blue header-contact-btn" id="btnShortlist">
-      <i class="fa-solid fa-paper-plane"></i> Contact
+      <i class="fa-solid fa-file-pdf"></i> CV &amp; Contact
     </button>
 
     <!-- Mobile 3-Bar Hamburger Toggle Button -->
@@ -137,15 +128,15 @@
 
       <div class="mobile-nav-footer">
         <button class="btn-mobile-contact" id="btnMobileContact">
-          <i class="fa-solid fa-paper-plane"></i> Contacter Luka Xiong
+          <i class="fa-solid fa-file-pdf"></i> Consulter mes CV &amp; Contact
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Sticky Bottom Floating Contact Button -->
+  <!-- Sticky Bottom Floating Contact & CV Button -->
   <button class="sticky-contact-btn" id="btnShortlistFloating">
-    <i class="fa-solid fa-user-check"></i> Contact Luka Xiong
+    <i class="fa-solid fa-file-pdf"></i> CV &amp; Contact
   </button>
 
   <!-- INTRO LINKTREE PROFILE & CONTACTS LANDING SECTION -->
@@ -265,18 +256,18 @@
           <span class="link-action-pill" style="color: #60A5FA; border-color: rgba(24, 119, 242, 0.4);">Profil <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </a>
 
-        <!-- 5. Shortlist Drawer Trigger -->
-        <button class="linktree-link-card card-contact-trigger" id="linktreeContactBtn" style="width: 100%; border: 1px solid rgba(185, 28, 28, 0.25); font-family: inherit; text-align: left; cursor: pointer;">
+        <!-- 5. CV & Curriculum Vitae Trigger -->
+        <button class="linktree-link-card card-contact-trigger" id="linktreeContactBtn" style="width: 100%; border: 1px solid rgba(185, 28, 28, 0.35); font-family: inherit; text-align: left; cursor: pointer; background: rgba(185, 28, 28, 0.08);">
           <div class="link-card-left">
             <div class="link-icon-box" style="background: #B91C1C; color: #FFF;">
-              <i class="fa-solid fa-id-card"></i>
+              <i class="fa-solid fa-file-pdf"></i>
             </div>
             <div class="link-info">
-              <span class="link-title">Fiche Recruteur &amp; Entretien</span>
-              <span class="link-sub">Ouvrir le panneau récapitulatif</span>
+              <span class="link-title">Curriculum Vitae (Mes CV)</span>
+              <span class="link-sub">Télécharger &amp; consulter mes CV (FR / EN / ES)</span>
             </div>
           </div>
-          <span class="link-action-pill" style="color: #FCA5A5; border-color: rgba(185, 28, 28, 0.4);">Ouvrir <i class="fa-solid fa-sliders"></i></span>
+          <span class="link-action-pill" style="color: #FCA5A5; border-color: rgba(185, 28, 28, 0.4);">Consulter <i class="fa-solid fa-download"></i></span>
         </button>
 
         <!-- Discrete Footer Note -->
@@ -327,9 +318,12 @@
             <a href="https://www.facebook.com/lukahmg?locale=fr_FR" target="_blank" rel="noopener noreferrer" class="orbit-social-link" title="Facebook (Luka Xiong)"><i class="fa-brands fa-facebook-f"></i></a>
           </div>
 
-          <div style="margin-top: 12px;">
-            <a href="#intro" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.76rem; font-weight: 700; color: #94A3B8; text-decoration: none; padding: 5px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 99px; transition: all 0.2s ease;">
-              <i class="fa-solid fa-address-card" style="color: #60A5FA;"></i> Voir ma page Bio &amp; Contacts (Linktree)
+          <div style="margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
+            <button type="button" id="heroCvBtn" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 700; color: #FFFFFF; text-decoration: none; padding: 6px 16px; background: #B91C1C; border: 1px solid rgba(255,255,255,0.2); border-radius: 99px; cursor: pointer; box-shadow: 0 4px 12px rgba(185, 28, 28, 0.4); transition: all 0.2s ease;">
+              <i class="fa-solid fa-file-pdf"></i> Consulter mes CV (PDF)
+            </button>
+            <a href="#intro" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.76rem; font-weight: 700; color: #94A3B8; text-decoration: none; padding: 6px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 99px; transition: all 0.2s ease;">
+              <i class="fa-solid fa-address-card" style="color: #60A5FA;"></i> Bio &amp; Liens
             </a>
           </div>
         </div>
@@ -402,33 +396,78 @@
       </div>
 
       <div class="grid-3">
-        <div class="vivid-card card-lvmh image-box" style="padding: 16px;">
-          <div class="photo-frame-wrapper aspect-16-9">
-            <img src="assets/lvmh_cert_1.svg" alt="Certificat Officiel LVMH Operations & Retail - Luka Xiong">
+        <!-- 1. Creation & Branding, Operations & Supply Chain -->
+        <div class="vivid-card card-lvmh image-box" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="photo-frame-wrapper aspect-16-9 clickable-proof" data-img="assets/lvmh_cert_1_hd.png" style="cursor: zoom-in;" title="Cliquez pour agrandir en HD">
+              <img loading="lazy" decoding="async" src="assets/lvmh_cert_1_hd.png" alt="Certificat Officiel LVMH Creation & Operations - Luka Xiong">
+            </div>
+            <div style="padding: 12px 4px 4px 4px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 1</span>
+                <span style="color: #94A3B8; font-size: 0.7rem; font-weight: 600;"><i class="fa-solid fa-calendar-check" style="color: #D4AF37;"></i> 10/12/2025</span>
+              </div>
+              <div style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;">Creation &amp; Branding, Operations &amp; Supply Chain</div>
+              <div style="color: #64748B; font-size: 0.68rem; margin-top: 4px; font-family: monospace;">ID: a361674b-f0f9-4cda...</div>
+            </div>
           </div>
-          <div style="padding: 14px 4px 4px 4px;">
-            <span style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 3px 10px; border-radius: 99px; font-size: 0.72rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 1</span>
-            <div style="color: #F9FAFB; font-weight: 800; font-size: 0.95rem; margin-top: 8px; line-height: 1.35;">Operations &amp; Supply Chain, Retail &amp; Customer Experience</div>
+          <div style="display: flex; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);">
+            <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/lvmh_cert_1_hd.png" style="flex: 1; padding: 6px 10px; font-size: 0.74rem;">
+              <i class="fa-solid fa-eye"></i> Aperçu HD
+            </button>
+            <a href="assets/certificat_lvmh_creation_operations.pdf" target="_blank" download="Certificat_LVMH_Creation_Operations_Luka_Xiong.pdf" class="btn-cv-dl" style="background: rgba(212, 175, 55, 0.2); border-color: #D4AF37; color: #FFFFFF !important; padding: 6px 10px; font-size: 0.74rem;" title="Télécharger le PDF officiel">
+              <i class="fa-solid fa-download"></i> PDF
+            </a>
           </div>
         </div>
 
-        <div class="vivid-card card-lvmh image-box" style="padding: 16px;">
-          <div class="photo-frame-wrapper aspect-16-9">
-            <img src="assets/lvmh_cert_2.svg" alt="Certificat Officiel LVMH Creation & Retail - Luka Xiong">
+        <!-- 2. Creation & Branding, Retail & Customer Experience -->
+        <div class="vivid-card card-lvmh image-box" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="photo-frame-wrapper aspect-16-9 clickable-proof" data-img="assets/lvmh_cert_2_hd.png" style="cursor: zoom-in;" title="Cliquez pour agrandir en HD">
+              <img loading="lazy" decoding="async" src="assets/lvmh_cert_2_hd.png" alt="Certificat Officiel LVMH Creation & Retail - Luka Xiong">
+            </div>
+            <div style="padding: 12px 4px 4px 4px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 2</span>
+                <span style="color: #94A3B8; font-size: 0.7rem; font-weight: 600;"><i class="fa-solid fa-calendar-check" style="color: #D4AF37;"></i> 05/07/2026</span>
+              </div>
+              <div style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;">Creation &amp; Branding, Retail &amp; Customer Experience</div>
+              <div style="color: #64748B; font-size: 0.68rem; margin-top: 4px; font-family: monospace;">ID: 3e78050c-1c9d-4a4c...</div>
+            </div>
           </div>
-          <div style="padding: 14px 4px 4px 4px;">
-            <span style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 3px 10px; border-radius: 99px; font-size: 0.72rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 2</span>
-            <div style="color: #F9FAFB; font-weight: 800; font-size: 0.95rem; margin-top: 8px; line-height: 1.35;">Creation &amp; Branding, Retail &amp; Customer Experience</div>
+          <div style="display: flex; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);">
+            <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/lvmh_cert_2_hd.png" style="flex: 1; padding: 6px 10px; font-size: 0.74rem;">
+              <i class="fa-solid fa-eye"></i> Aperçu HD
+            </button>
+            <a href="assets/certificat_lvmh_creation_retail.pdf" target="_blank" download="Certificat_LVMH_Creation_Retail_Luka_Xiong.pdf" class="btn-cv-dl" style="background: rgba(212, 175, 55, 0.2); border-color: #D4AF37; color: #FFFFFF !important; padding: 6px 10px; font-size: 0.74rem;" title="Télécharger le PDF officiel">
+              <i class="fa-solid fa-download"></i> PDF
+            </a>
           </div>
         </div>
 
-        <div class="vivid-card card-lvmh image-box" style="padding: 16px;">
-          <div class="photo-frame-wrapper aspect-16-9">
-            <img src="assets/lvmh_cert_3.svg" alt="Certificat Officiel LVMH Creation & Operations - Luka Xiong">
+        <!-- 3. Operations & Supply Chain, Retail & Customer Experience -->
+        <div class="vivid-card card-lvmh image-box" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="photo-frame-wrapper aspect-16-9 clickable-proof" data-img="assets/lvmh_cert_3_hd.png" style="cursor: zoom-in;" title="Cliquez pour agrandir en HD">
+              <img loading="lazy" decoding="async" src="assets/lvmh_cert_3_hd.png" alt="Certificat Officiel LVMH Operations & Retail - Luka Xiong">
+            </div>
+            <div style="padding: 12px 4px 4px 4px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 3</span>
+                <span style="color: #94A3B8; font-size: 0.7rem; font-weight: 600;"><i class="fa-solid fa-calendar-check" style="color: #D4AF37;"></i> 05/07/2026</span>
+              </div>
+              <div style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;">Operations &amp; Supply Chain, Retail &amp; Customer Experience</div>
+              <div style="color: #64748B; font-size: 0.68rem; margin-top: 4px; font-family: monospace;">ID: a361674b-f0f9-4cda...</div>
+            </div>
           </div>
-          <div style="padding: 14px 4px 4px 4px;">
-            <span style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 3px 10px; border-radius: 99px; font-size: 0.72rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 3</span>
-            <div style="color: #F9FAFB; font-weight: 800; font-size: 0.95rem; margin-top: 8px; line-height: 1.35;">Creation &amp; Branding, Operations &amp; Supply Chain</div>
+          <div style="display: flex; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);">
+            <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/lvmh_cert_3_hd.png" style="flex: 1; padding: 6px 10px; font-size: 0.74rem;">
+              <i class="fa-solid fa-eye"></i> Aperçu HD
+            </button>
+            <a href="assets/certificat_lvmh_operations_retail.pdf" target="_blank" download="Certificat_LVMH_Operations_Retail_Luka_Xiong.pdf" class="btn-cv-dl" style="background: rgba(212, 175, 55, 0.2); border-color: #D4AF37; color: #FFFFFF !important; padding: 6px 10px; font-size: 0.74rem;" title="Télécharger le PDF officiel">
+              <i class="fa-solid fa-download"></i> PDF
+            </a>
           </div>
         </div>
       </div>
@@ -626,7 +665,7 @@
           <div class="vivid-card card-demeter image-box" style="padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div class="photo-frame-wrapper aspect-16-9">
-                <img src="assets/maquette_passerelle_vitraux.jpg" alt="Maquette physique de la passerelle écologique avec vitraux colorés et toiture solaire">
+                <img loading="lazy" decoding="async" src="assets/maquette_passerelle_vitraux.jpg" alt="Maquette physique de la passerelle écologique avec vitraux colorés et toiture solaire">
               </div>
               <div style="padding-top: 14px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px;">
@@ -656,7 +695,7 @@
           <div class="vivid-card card-demeter image-box" style="padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div class="photo-frame-wrapper aspect-16-9">
-                <img src="assets/maquette_bancs_bassin.jpg" alt="Maquette physique du bassin d'eau, banc circulaire d'ombrage et racks à vélo">
+                <img loading="lazy" decoding="async" src="assets/maquette_bancs_bassin.jpg" alt="Maquette physique du bassin d'eau, banc circulaire d'ombrage et racks à vélo">
               </div>
               <div style="padding-top: 14px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px;">
@@ -689,7 +728,7 @@
           <div class="vivid-card card-demeter image-box" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div class="photo-frame-wrapper aspect-4-3">
-                <img src="assets/maquette_guinguette.jpg" alt="Maquette physique La Guinguette terrasse en bois et auvent">
+                <img loading="lazy" decoding="async" src="assets/maquette_guinguette.jpg" alt="Maquette physique La Guinguette terrasse en bois et auvent">
               </div>
               <div style="padding-top: 12px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px;">
@@ -711,7 +750,7 @@
           <div class="vivid-card card-demeter image-box" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div class="photo-frame-wrapper aspect-4-3">
-                <img src="assets/maquette_amphitheatre.jpg" alt="Maquette physique amphithéâtre de verdure et scène de spectacle">
+                <img loading="lazy" decoding="async" src="assets/maquette_amphitheatre.jpg" alt="Maquette physique amphithéâtre de verdure et scène de spectacle">
               </div>
               <div style="padding-top: 12px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px;">
@@ -733,7 +772,7 @@
           <div class="vivid-card card-demeter image-box" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div class="photo-frame-wrapper aspect-4-3">
-                <img src="assets/maquette_kiosque_belvedere.jpg" alt="Maquette physique kiosque belvédère octogonal et plan de masse Clos Pajot">
+                <img loading="lazy" decoding="async" src="assets/maquette_kiosque_belvedere.jpg" alt="Maquette physique kiosque belvédère octogonal et plan de masse Clos Pajot">
               </div>
               <div style="padding-top: 12px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px;">
@@ -766,7 +805,7 @@
           <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(16, 185, 129, 0.3);">Dossier Officiel</span>
         </div>
         <div class="photo-frame-wrapper aspect-banner image-box">
-          <img src="assets/demeter_slide_1_cover.jpg" alt="Page de couverture officielle Projet C'Parc Déméter La Madeleine Chartres" onerror="this.src='assets/demeter_slide_1_cover.png';">
+          <img loading="lazy" decoding="async" src="assets/demeter_slide_1_cover.jpg" alt="Page de couverture officielle Projet C'Parc Déméter La Madeleine Chartres" onerror="this.src='assets/demeter_slide_1_cover.png';">
         </div>
       </div>
 
@@ -781,7 +820,7 @@
         <div class="grid-4">
           <div class="vivid-card card-demeter image-box" style="padding: 14px;">
             <div class="photo-frame-wrapper aspect-4-3">
-              <img src="assets/demeter_amphitheatre_p1.png" alt="Amphithéâtre - Page 1" onerror="this.src='assets/demeter_amphitheatre_p1.jpg';">
+              <img loading="lazy" decoding="async" src="assets/demeter_amphitheatre_p1.png" alt="Amphithéâtre - Page 1" onerror="this.src='assets/demeter_amphitheatre_p1.jpg';">
             </div>
             <div style="padding-top: 10px;">
               <span style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 1</span>
@@ -790,7 +829,7 @@
           </div>
           <div class="vivid-card card-demeter image-box" style="padding: 14px;">
             <div class="photo-frame-wrapper aspect-4-3">
-              <img src="assets/demeter_amphitheatre_p2.png" alt="Amphithéâtre - Page 2" onerror="this.src='assets/demeter_amphitheatre_p2.jpg';">
+              <img loading="lazy" decoding="async" src="assets/demeter_amphitheatre_p2.png" alt="Amphithéâtre - Page 2" onerror="this.src='assets/demeter_amphitheatre_p2.jpg';">
             </div>
             <div style="padding-top: 10px;">
               <span style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 2</span>
@@ -799,7 +838,7 @@
           </div>
           <div class="vivid-card card-demeter image-box" style="padding: 14px;">
             <div class="photo-frame-wrapper aspect-4-3">
-              <img src="assets/demeter_amphitheatre_p3.png" alt="Amphithéâtre - Page 3" onerror="this.src='assets/demeter_amphitheatre_p3.jpg';">
+              <img loading="lazy" decoding="async" src="assets/demeter_amphitheatre_p3.png" alt="Amphithéâtre - Page 3" onerror="this.src='assets/demeter_amphitheatre_p3.jpg';">
             </div>
             <div style="padding-top: 10px;">
               <span style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 3</span>
@@ -808,7 +847,7 @@
           </div>
           <div class="vivid-card card-demeter image-box" style="padding: 14px;">
             <div class="photo-frame-wrapper aspect-4-3">
-              <img src="assets/demeter_amphitheatre_p4.png" alt="Amphithéâtre - Page 4" onerror="this.src='assets/demeter_amphitheatre_p4.jpg';">
+              <img loading="lazy" decoding="async" src="assets/demeter_amphitheatre_p4.png" alt="Amphithéâtre - Page 4" onerror="this.src='assets/demeter_amphitheatre_p4.jpg';">
             </div>
             <div style="padding-top: 10px;">
               <span style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 4</span>
@@ -827,10 +866,10 @@
           <h4 style="color: #F9FAFB; font-size: 1.15rem; font-weight: 800; margin-bottom: 12px;">Façade Ajourée &amp; Vitraux de Chartres</h4>
           <div class="grid-2" style="gap: 10px;">
             <div class="photo-frame-wrapper aspect-4-3 image-box">
-              <img src="assets/demeter_slide_2_facade.png" alt="Façade Ajourée" onerror="this.src='assets/demeter_slide_2_facade.jpg';">
+              <img loading="lazy" decoding="async" src="assets/demeter_slide_2_facade.png" alt="Façade Ajourée" onerror="this.src='assets/demeter_slide_2_facade.jpg';">
             </div>
             <div class="photo-frame-wrapper aspect-4-3 image-box">
-              <img src="assets/demeter_slide_3_vitraux.png" alt="Vitraux de Chartres" onerror="this.src='assets/demeter_slide_3_vitraux.jpg';">
+              <img loading="lazy" decoding="async" src="assets/demeter_slide_3_vitraux.png" alt="Vitraux de Chartres" onerror="this.src='assets/demeter_slide_3_vitraux.jpg';">
             </div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
@@ -852,10 +891,10 @@
           <h4 style="color: #F9FAFB; font-size: 1.15rem; font-weight: 800; margin-bottom: 12px;">Bornes Solaires &amp; Éclairage Intelligent</h4>
           <div class="grid-2" style="gap: 10px;">
             <div class="photo-frame-wrapper aspect-4-3 image-box">
-              <img src="assets/demeter_slide_4_bornes.png" alt="Bornes Solaires" onerror="this.src='assets/demeter_slide_4_bornes.jpg';">
+              <img loading="lazy" decoding="async" src="assets/demeter_slide_4_bornes.png" alt="Bornes Solaires" onerror="this.src='assets/demeter_slide_4_bornes.jpg';">
             </div>
             <div class="photo-frame-wrapper aspect-4-3 image-box">
-              <img src="assets/demeter_slide_5_lumieres.png" alt="Éclairage Intelligent" onerror="this.src='assets/demeter_slide_5_lumieres.jpg';">
+              <img loading="lazy" decoding="async" src="assets/demeter_slide_5_lumieres.png" alt="Éclairage Intelligent" onerror="this.src='assets/demeter_slide_5_lumieres.jpg';">
             </div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
@@ -879,7 +918,7 @@
       <div class="grid-2" style="margin-bottom: 1.75rem;">
         <div class="vivid-card card-demeter image-box" style="padding: 18px;">
           <div class="photo-frame-wrapper aspect-16-9">
-            <img src="assets/demeter_inauguration.png" alt="Inauguration officielle exposition Clos Pajot se réinvente" onerror="this.src='assets/demeter_project.jpg';">
+            <img loading="lazy" decoding="async" src="assets/demeter_inauguration.png" alt="Inauguration officielle exposition Clos Pajot se réinvente" onerror="this.src='assets/demeter_project.jpg';">
           </div>
           <div style="padding-top: 12px;">
             <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; font-weight: 800; font-size: 0.74rem; text-transform: uppercase; padding: 2px 10px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.3);">Vernissage Officiel</span>
@@ -890,7 +929,7 @@
 
         <div class="vivid-card card-demeter image-box" style="padding: 18px;">
           <div class="photo-frame-wrapper aspect-16-9">
-            <img src="assets/demeter_marche.png" alt="Halle du marché potager place Billard" onerror="this.src='assets/demeter_project.jpg';">
+            <img loading="lazy" decoding="async" src="assets/demeter_marche.png" alt="Halle du marché potager place Billard" onerror="this.src='assets/demeter_project.jpg';">
           </div>
           <div style="padding-top: 12px;">
             <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; font-weight: 800; font-size: 0.74rem; text-transform: uppercase; padding: 2px 10px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.3);">Espace Partagé</span>
@@ -905,7 +944,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
           <div>
             <div style="margin-bottom: 10px; background: rgba(255, 255, 255, 0.95); padding: 6px 14px; border-radius: var(--radius-sm); width: fit-content; display: inline-block;">
-              <img src="assets/logo_echo_republicain.png" alt="Logo L'Écho Républicain" style="height: 32px; object-fit: contain; display: block;">
+              <img loading="lazy" decoding="async" src="assets/logo_echo_republicain.png" alt="Logo L'Écho Républicain" style="height: 32px; object-fit: contain; display: block;">
             </div>
             <div style="font-size: 0.82rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 1px;">
               <i class="fa-solid fa-award"></i> Trophée des Talents 2025 • L'Écho Républicain
@@ -939,15 +978,18 @@
             </p>
           </div>
 
-          <a href="assets/certificat_participation_clos_pajot.pdf" target="_blank" rel="noopener noreferrer" class="btn-vivid-blue" style="font-size: 0.85rem; padding: 10px 18px; text-decoration: none; background: rgba(212, 175, 55, 0.2); border-color: #D4AF37; color: #FFFFFF;">
-            <i class="fa-solid fa-file-pdf"></i> Ouvrir le PDF Officiel <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button type="button" class="btn-vivid-blue clickable-proof" data-img="assets/certificat_clos_pajot_hd.jpg" style="font-size: 0.85rem; padding: 10px 18px; background: rgba(212, 175, 55, 0.22); border-color: #D4AF37; color: #FFFFFF; cursor: pointer;">
+              <i class="fa-solid fa-eye"></i> Aperçu Immédiat (HD)
+            </button>
+            <a href="assets/certificat_participation_clos_pajot.pdf" target="_blank" download="certificat_participation_clos_pajot.pdf" class="btn-vivid-blue" style="font-size: 0.85rem; padding: 10px 18px; text-decoration: none; background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.2); color: #CBD5E1;">
+              <i class="fa-solid fa-download"></i> Télécharger PDF
+            </a>
+          </div>
         </div>
 
-        <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.25); background: #FFFFFF; max-width: 700px; margin: 0 auto;">
-          <a href="assets/certificat_participation_clos_pajot.pdf" target="_blank" title="Agrandir le certificat">
-            <img src="assets/certificat_chartres.svg" alt="Certificat officiel Clos Pajot" style="width: 100%; height: auto; display: block;">
-          </a>
+        <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.25); background: #FFFFFF; max-width: 700px; margin: 0 auto; cursor: zoom-in;" class="clickable-proof" data-img="assets/certificat_clos_pajot_hd.jpg" title="Cliquez pour agrandir le certificat en haute définition">
+          <img src="assets/certificat_chartres.svg" alt="Certificat officiel Clos Pajot" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async">
         </div>
         
         <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 0.82rem; color: #94A3B8;">
@@ -1282,40 +1324,40 @@
         </div>
       </div>
 
-      <!-- CARTE 2: RAYONNEMENT CULTUREL, ARTISTES & QUALITÉS HUMAINES -->
+      <!-- CARTE 2: ACCUEIL, ENTRAIDE & EXPÉRIENCE HUMAINE -->
       <div class="vivid-card card-benevolat" style="padding: 2.2rem; display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <div style="font-size: 0.82rem; font-weight: 800; color: #FB7185; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
-            <i class="fa-solid fa-heart"></i> Pilier 2 • Culture &amp; Leadership Humain
+            <i class="fa-solid fa-handshake-angle"></i> Pilier 2 • Accueil, Échange &amp; Solidarité
           </div>
           <h3 class="vivid-card-title" style="font-size: 1.35rem; margin-bottom: 0.8rem;">
-            Accueil International &amp; Savoir-Être Collectif
+            Accueillir, Aider et Travailler en Équipe
           </h3>
           <p class="vivid-card-desc" style="font-size: 0.95rem; margin-bottom: 1.25rem;">
-            Une école de vie sur le terrain qui forge la maturité, l'adaptabilité et l'intelligence relationnelle :
+            Ce que ces événements m'ont appris au contact direct du public et des différentes générations :
           </p>
 
           <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 1.25rem;">
             <div style="font-size: 0.78rem; font-weight: 800; color: #FB7185; text-transform: uppercase; margin-bottom: 6px;">
-              <i class="fa-solid fa-star"></i> Accueil d'Artistes Internationaux (USA &amp; Asie) :
+              <i class="fa-solid fa-star"></i> Accueil des invités et artistes (USA &amp; Asie) :
             </div>
             <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin: 0;">
-              Coordination logistique pour les chanteurs et personnalités invités : prise en charge, loges, coulisses et gestion du planning scène.
+              Aider à recevoir les artistes et chanteurs venus pour le festival : les orienter, veiller à ce qu'ils ne manquent de rien dans les coulisses et faire le lien avec l'équipe qui gère la scène.
             </p>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem;">
             <div class="insight-bullet" style="padding: 12px 16px;">
               <i class="fa-solid fa-people-group" style="color: #E11D48;"></i>
-              <div><strong>Esprit d'Équipe &amp; Entraide :</strong> Collaboration fluide avec des équipes intergénérationnelles sous forte intensité.</div>
+              <div><strong>Entraide entre générations :</strong> Travailler main dans la main avec les anciens comme avec les plus jeunes, écouter les conseils et rester solidaire quand il y a du monde.</div>
             </div>
             <div class="insight-bullet" style="padding: 12px 16px;">
               <i class="fa-solid fa-bolt-lightning" style="color: #E11D48;"></i>
-              <div><strong>Calme &amp; Sang-Froid :</strong> Résolution instantanée des imprévus opérationnels en maintenant toujours le sourire et le service.</div>
+              <div><strong>Sens de la débrouille :</strong> Savoir réagir vite et calmement face à un imprévu, toujours avec le sourire et le sens de l'accueil.</div>
             </div>
             <div class="insight-bullet" style="padding: 12px 16px;">
               <i class="fa-solid fa-gem" style="color: #E11D48;"></i>
-              <div><strong>Constance &amp; Fidélité :</strong> Plus de 10 ans d'engagement sans interruption, preuve tangible de fiabilité et de loyauté.</div>
+              <div><strong>Un engagement sur la durée :</strong> Revenir chaque année depuis plus de 10 ans pour donner un coup de main et faire vivre la communauté.</div>
             </div>
           </div>
         </div>
@@ -1360,6 +1402,7 @@
           <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.12); background: #000; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
             <iframe 
               src="https://www.youtube-nocookie.com/embed/C3WvrLced94" 
+              loading="lazy"
               style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
               allowfullscreen 
@@ -1395,6 +1438,7 @@
           <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.12); background: #000; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
             <iframe 
               src="https://www.youtube-nocookie.com/embed/vKfPg94vR6A" 
+              loading="lazy"
               style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
               allowfullscreen 
@@ -1416,83 +1460,184 @@
     </div>
   </section>
 
-  <!-- Off-Canvas Recruiter Shortlist Drawer -->
+  <!-- Off-Canvas CV & Contact Drawer -->
   <div class="shortlist-drawer" id="shortlistDrawer">
-    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 1.5rem;">
-      <div style="font-size: 1.05rem; font-weight: 800; color: #F9FAFB; letter-spacing: -0.01em;">
-        CONTACT / LUKA XIONG
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 1.25rem;">
+      <div style="font-size: 1.05rem; font-weight: 800; color: #F9FAFB; letter-spacing: -0.01em; display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-file-lines" style="color: #EF4444;"></i> MES CV &amp; CONTACT
       </div>
-      <button id="shortlistClose" style="background: transparent; border: none; font-size: 1.5rem; color: #9CA3AF; cursor: pointer; padding: 4px 8px; transition: color 0.2s ease;">&times;</button>
+      <button id="shortlistClose" style="background: transparent; border: none; font-size: 1.5rem; color: #9CA3AF; cursor: pointer; padding: 4px 8px; transition: color 0.2s ease;" aria-label="Fermer le panneau">&times;</button>
     </div>
 
     <div style="flex: 1; display: flex; flex-direction: column; gap: 1.25rem;">
+      <!-- Candidate Quick Card -->
       <div style="display: flex; align-items: center; gap: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px 14px; border-radius: var(--radius-md);">
-        <img src="assets/candidate_photo.jpg" alt="Luka Xiong" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.2);">
+        <img src="assets/candidate_photo.jpg" alt="Luka Xiong" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.2);">
         <div>
-          <div style="font-weight: 800; font-size: 1.05rem; color: #F9FAFB;">Luka Xiong</div>
-          <div style="font-size: 0.78rem; color: #FCA5A5; font-weight: 700;"><i class="fa-solid fa-graduation-cap"></i> Candidat SKEMA Business School</div>
-          <div style="font-size: 0.74rem; color: #9CA3AF; font-weight: 500;">Bac STI2D Architecture (Chartres)</div>
+          <div style="font-weight: 800; font-size: 1rem; color: #F9FAFB;">Luka Xiong</div>
+          <div style="font-size: 0.74rem; color: #FCA5A5; font-weight: 700;"><i class="fa-solid fa-graduation-cap"></i> Candidat BBA • SKEMA Business School</div>
+          <div style="font-size: 0.72rem; color: #9CA3AF; font-weight: 500;">Bac STI2D Architecture (Chartres)</div>
+        </div>
+      </div>
+
+      <!-- CV Section -->
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <strong style="color: #F9FAFB; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.8px;">
+            <i class="fa-solid fa-file-pdf" style="color: #EF4444;"></i> Mes CV à disposition (PDF) :
+          </strong>
+          <span style="font-size: 0.68rem; color: #10B981; font-weight: 700; background: rgba(16, 185, 129, 0.12); padding: 2px 8px; border-radius: 99px;">PDF Officiels</span>
+        </div>
+
+        <!-- 1. CV Français (SKEMA) -->
+        <div class="cv-card-item">
+          <div class="cv-card-top">
+            <div class="cv-flag-icon">🇫🇷</div>
+            <div class="cv-card-meta">
+              <div class="cv-title">CV Français — SKEMA BBA</div>
+              <div class="cv-sub">Bac STI2D Architecture • LVMH • 7 ans Achat-Revente</div>
+            </div>
+          </div>
+          <div class="cv-card-actions">
+            <a href="assets/CV_Luka_XIONG_SKEMA.pdf" target="_blank" download="CV_Luka_XIONG_SKEMA.pdf" class="btn-cv-dl">
+              <i class="fa-solid fa-download"></i> Télécharger PDF
+            </a>
+            <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/cv_luka_fr_hd.png" title="Aperçu du CV Français">
+              <i class="fa-solid fa-eye"></i> Aperçu
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. CV Anglais UK -->
+        <div class="cv-card-item">
+          <div class="cv-card-top">
+            <div class="cv-flag-icon">🇬🇧</div>
+            <div class="cv-card-meta">
+              <div class="cv-title">CV English — UK Format</div>
+              <div class="cv-sub">Junior International Trade Candidate</div>
+            </div>
+          </div>
+          <div class="cv-card-actions">
+            <a href="assets/CV_Luka_XIONG_UK.pdf" target="_blank" download="CV_Luka_XIONG_UK.pdf" class="btn-cv-dl">
+              <i class="fa-solid fa-download"></i> Télécharger PDF
+            </a>
+            <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/cv_luka_uk_hd.png" title="Aperçu du CV Anglais UK">
+              <i class="fa-solid fa-eye"></i> Aperçu
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. CV Anglais USA -->
+        <div class="cv-card-item">
+          <div class="cv-card-top">
+            <div class="cv-flag-icon">🇺🇸</div>
+            <div class="cv-card-meta">
+              <div class="cv-title">CV English — USA Resume</div>
+              <div class="cv-sub">International Trade Candidate • US Format</div>
+            </div>
+          </div>
+          <div class="cv-card-actions">
+            <a href="assets/CV_Luka_XIONG_USA.pdf" target="_blank" download="CV_Luka_XIONG_USA.pdf" class="btn-cv-dl">
+              <i class="fa-solid fa-download"></i> Télécharger PDF
+            </a>
+            <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/cv_luka_usa_hd.png" title="Aperçu du CV Américain (USA)">
+              <i class="fa-solid fa-eye"></i> Aperçu
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. CV Espagnol -->
+        <div class="cv-card-item">
+          <div class="cv-card-top">
+            <div class="cv-flag-icon">🇪🇸</div>
+            <div class="cv-card-meta">
+              <div class="cv-title">CV Español — Internacional</div>
+              <div class="cv-sub">Comercio Internacional • B2B &amp; Prospección</div>
+            </div>
+          </div>
+          <div class="cv-card-actions">
+            <a href="assets/CV_Luka_XIONG_ES.pdf" target="_blank" download="CV_Luka_XIONG_ES.pdf" class="btn-cv-dl">
+              <i class="fa-solid fa-download"></i> Télécharger PDF
+            </a>
+            <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/cv_luka_es_hd.png" title="Aperçu du CV Espagnol">
+              <i class="fa-solid fa-eye"></i> Aperçu
+            </button>
+          </div>
         </div>
       </div>
 
       <!-- Detailed Social Media & Direct Channels -->
-      <div style="display: flex; flex-direction: column; gap: 12px;">
-        <strong style="color: #9CA3AF; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px;">Réseaux &amp; Canaux Directs :</strong>
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 0.25rem; padding-top: 0.9rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <strong style="color: #9CA3AF; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px;">Coordonnées Directes :</strong>
         
-        <!-- LinkedIn Detail Card -->
-        <a href="https://www.linkedin.com/in/luka-xiong-8209503b0/" target="_blank" rel="noopener noreferrer" style="background: rgba(10, 102, 194, 0.08); border: 1px solid rgba(10, 102, 194, 0.25); padding: 12px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
+        <!-- Phone Detail Card -->
+        <a href="tel:+33629452103" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 36px; height: 36px; border-radius: 8px; background: #0A66C2; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
-              <i class="fa-brands fa-linkedin-in"></i>
+            <div style="width: 32px; height: 32px; border-radius: 8px; background: #10B981; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
+              <i class="fa-solid fa-phone"></i>
             </div>
             <div>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.88rem;">LinkedIn</div>
-              <div style="color: #9CA3AF; font-size: 0.74rem;">Réseau professionnel, parcours &amp; certifs</div>
+              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">+33 6 29 45 21 03</div>
+              <div style="color: #9CA3AF; font-size: 0.72rem;">Appel / SMS direct</div>
             </div>
           </div>
-          <span style="color: #60A5FA; font-size: 0.78rem; font-weight: 600;">Profil <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
+          <span style="color: #34D399; font-size: 0.76rem; font-weight: 600;">Appeler <i class="fa-solid fa-phone-volume" style="font-size: 0.7rem;"></i></span>
         </a>
 
         <!-- Proton Mail Detail Card -->
-        <a href="mailto:luka.xiong@proton.me" style="background: rgba(109, 74, 255, 0.08); border: 1px solid rgba(109, 74, 255, 0.25); padding: 12px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
+        <a href="mailto:luka.xiong@proton.me" style="background: rgba(109, 74, 255, 0.08); border: 1px solid rgba(109, 74, 255, 0.25); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 36px; height: 36px; border-radius: 8px; background: #6D4AFF; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+            <div style="width: 32px; height: 32px; border-radius: 8px; background: #6D4AFF; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
               <i class="fa-solid fa-envelope"></i>
             </div>
             <div>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.88rem;">Email Pro (Proton)</div>
-              <div style="color: #9CA3AF; font-size: 0.74rem;">luka.xiong@proton.me</div>
+              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">Email Pro (Proton)</div>
+              <div style="color: #9CA3AF; font-size: 0.72rem;">luka.xiong@proton.me</div>
             </div>
           </div>
-          <span style="color: #A78BFA; font-size: 0.78rem; font-weight: 600;">Écrire <i class="fa-solid fa-paper-plane" style="font-size: 0.7rem;"></i></span>
+          <span style="color: #A78BFA; font-size: 0.76rem; font-weight: 600;">Écrire <i class="fa-solid fa-paper-plane" style="font-size: 0.7rem;"></i></span>
+        </a>
+
+        <!-- LinkedIn Detail Card -->
+        <a href="https://www.linkedin.com/in/luka-xiong-8209503b0/" target="_blank" rel="noopener noreferrer" style="background: rgba(10, 102, 194, 0.08); border: 1px solid rgba(10, 102, 194, 0.25); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 32px; height: 32px; border-radius: 8px; background: #0A66C2; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+            <div>
+              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">LinkedIn</div>
+              <div style="color: #9CA3AF; font-size: 0.72rem;">Luka Xiong • Parcours &amp; Certifications</div>
+            </div>
+          </div>
+          <span style="color: #60A5FA; font-size: 0.76rem; font-weight: 600;">Profil <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
         </a>
 
         <!-- Instagram Detail Card -->
-        <a href="https://www.instagram.com/lukahmg/" target="_blank" rel="noopener noreferrer" style="background: rgba(225, 48, 108, 0.06); border: 1px solid rgba(225, 48, 108, 0.2); padding: 12px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
+        <a href="https://www.instagram.com/lukahmg/" target="_blank" rel="noopener noreferrer" style="background: rgba(225, 48, 108, 0.06); border: 1px solid rgba(225, 48, 108, 0.2); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #833AB4, #FD1D1D, #F56040); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+            <div style="width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, #833AB4, #FD1D1D, #F56040); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
               <i class="fa-brands fa-instagram"></i>
             </div>
             <div>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.88rem;">Instagram</div>
-              <div style="color: #9CA3AF; font-size: 0.74rem;">@lukahmg • Contact direct &amp; Lifestyle</div>
+              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">Instagram</div>
+              <div style="color: #9CA3AF; font-size: 0.72rem;">@lukahmg • Contact direct &amp; Lifestyle</div>
             </div>
           </div>
-          <span style="color: #F472B6; font-size: 0.78rem; font-weight: 600;">@lukahmg <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
+          <span style="color: #F472B6; font-size: 0.76rem; font-weight: 600;">@lukahmg <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
         </a>
 
         <!-- Facebook Detail Card -->
-        <a href="https://www.facebook.com/lukahmg?locale=fr_FR" target="_blank" rel="noopener noreferrer" style="background: rgba(24, 119, 242, 0.08); border: 1px solid rgba(24, 119, 242, 0.25); padding: 12px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
+        <a href="https://www.facebook.com/lukahmg?locale=fr_FR" target="_blank" rel="noopener noreferrer" style="background: rgba(24, 119, 242, 0.08); border: 1px solid rgba(24, 119, 242, 0.25); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 36px; height: 36px; border-radius: 8px; background: #1877F2; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+            <div style="width: 32px; height: 32px; border-radius: 8px; background: #1877F2; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
               <i class="fa-brands fa-facebook-f"></i>
             </div>
             <div>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.88rem;">Facebook (Luka Xiong)</div>
-              <div style="color: #9CA3AF; font-size: 0.74rem;">Luka Xiong • Contact &amp; Réseau</div>
+              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">Facebook (Luka Xiong)</div>
+              <div style="color: #9CA3AF; font-size: 0.72rem;">Luka Xiong • Contact &amp; Réseau</div>
             </div>
           </div>
-          <span style="color: #60A5FA; font-size: 0.78rem; font-weight: 600;">Profil <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
+          <span style="color: #60A5FA; font-size: 0.76rem; font-weight: 600;">Profil <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
         </a>
       </div>
     </div>
@@ -1509,6 +1654,6 @@
   </div>
 
   <!-- Custom Script -->
-  <script src="script.js?v=31.0"></script>
+  <script src="script.js?v=35.0"></script>
 </body>
 </html>
