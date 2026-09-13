@@ -1,4 +1,83 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // --- MULTILINGUAL ENGINE (FR / EN / ES) ---
+  const langButtons = document.querySelectorAll('.lang-btn');
+
+  function setLanguage(lang) {
+    if (!window.PORTFOLIO_TRANSLATIONS || !window.PORTFOLIO_TRANSLATIONS[lang]) {
+      console.warn('Portfolio translations not available for language:', lang);
+      return;
+    }
+    const dict = window.PORTFOLIO_TRANSLATIONS[lang];
+    document.documentElement.lang = lang;
+    try {
+      localStorage.setItem('luka_portfolio_lang', lang);
+    } catch (e) {
+      console.warn('localStorage not accessible:', e);
+    }
+
+    if (dict['page.title']) {
+      document.title = dict['page.title'];
+    }
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && dict['page.desc']) {
+      metaDesc.setAttribute('content', dict['page.desc']);
+    }
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) {
+        if (/<[a-z][\s\S]*>/i.test(dict[key])) {
+          el.innerHTML = dict[key];
+        } else {
+          el.textContent = dict[key];
+        }
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+      const key = el.getAttribute('data-i18n-title');
+      if (dict[key] !== undefined) {
+        el.setAttribute('title', dict[key]);
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] !== undefined) {
+        el.setAttribute('placeholder', dict[key]);
+      }
+    });
+
+    langButtons.forEach(btn => {
+      if (btn.getAttribute('data-lang') === lang) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+      } else {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      }
+    });
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const lang = btn.getAttribute('data-lang');
+      if (lang) setLanguage(lang);
+    });
+  });
+
+  // Initialize language from localStorage or default to 'fr'
+  let savedLang = 'fr';
+  try {
+    savedLang = localStorage.getItem('luka_portfolio_lang') || 'fr';
+  } catch (e) {}
+  if (savedLang && savedLang !== 'fr') {
+    setLanguage(savedLang);
+  }
+  window.setPortfolioLanguage = setLanguage;
+
   // --- SPA VIEW SWITCHER ROUTER ---
   const navLinks = document.querySelectorAll('.nav-item-link');
   const mobileNavItems = document.querySelectorAll('.mobile-nav-item');

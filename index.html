@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=37.0">
+  <link rel="stylesheet" href="styles.css?v=43.0">
+  <script src="translations.js?v=43.0"></script>
 </head>
 <body>
 
@@ -26,26 +27,33 @@
       <img src="assets/candidate_photo.jpg" alt="Luka Xiong" class="header-avatar-mini">
       <div class="brand-text-group">
         <span class="brand-name">LUKA XIONG</span>
-        <span class="brand-subtitle"><span class="sub-sep">/ </span>CANDIDAT SKEMA<span class="sub-full"> BUSINESS SCHOOL</span></span>
+        <span class="brand-subtitle"><span class="sub-sep">/ </span><span data-i18n="brand.subtitle">CANDIDAT SKEMA BUSINESS SCHOOL</span></span>
       </div>
     </a>
 
     <!-- Desktop Navigation Links -->
     <div class="nav-links-wrapper">
       <ul class="nav-links-container">
-        <li><a href="#intro" class="nav-item-link active"><i class="fa-solid fa-address-card"></i> Bio &amp; Liens</a></li>
-        <li><a href="#hero" class="nav-item-link"><i class="fa-solid fa-compass"></i> Portfolio Hub</a></li>
-        <li><a href="#etape1" class="nav-item-link"><i class="fa-solid fa-certificate"></i> 1. LVMH</a></li>
-        <li><a href="#etape2" class="nav-item-link"><i class="fa-solid fa-building-user"></i> 2. Déméter</a></li>
-        <li><a href="#etape3" class="nav-item-link"><i class="fa-solid fa-chart-line"></i> 3. Reseller</a></li>
-        <li><a href="#etape4" class="nav-item-link"><i class="fa-solid fa-hands-holding-circle"></i> 4. Festivals Hmong</a></li>
+        <li><a href="#intro" class="nav-item-link active"><i class="fa-solid fa-address-card"></i> <span data-i18n="nav.bio">Bio &amp; Liens</span></a></li>
+        <li><a href="#hero" class="nav-item-link"><i class="fa-solid fa-compass"></i> <span data-i18n="nav.hub">Portfolio Hub</span></a></li>
+        <li><a href="#etape1" class="nav-item-link"><i class="fa-solid fa-certificate"></i> <span data-i18n="nav.lvmh">1. LVMH</span></a></li>
+        <li><a href="#etape2" class="nav-item-link"><i class="fa-solid fa-building-user"></i> <span data-i18n="nav.demeter">2. Déméter</span></a></li>
+        <li><a href="#etape3" class="nav-item-link"><i class="fa-solid fa-chart-line"></i> <span data-i18n="nav.resell">3. Reseller</span></a></li>
+        <li><a href="#etape4" class="nav-item-link"><i class="fa-solid fa-hands-holding-circle"></i> <span data-i18n="nav.hmong">4. Festivals Hmong</span></a></li>
       </ul>
     </div>
 
-    <!-- Desktop Contact Button -->
-    <button class="btn-vivid-blue header-contact-btn" id="btnShortlist">
-      <i class="fa-solid fa-file-pdf"></i> CV &amp; Contact
-    </button>
+    <!-- Desktop Language Switcher & Contact Button -->
+    <div class="header-right-actions">
+      <div class="lang-switcher" id="desktopLangSwitcher" role="group" aria-label="Langue">
+        <button type="button" class="lang-btn active" data-lang="fr" title="Français">FR</button>
+        <button type="button" class="lang-btn" data-lang="en" title="English">EN</button>
+        <button type="button" class="lang-btn" data-lang="es" title="Español">ES</button>
+      </div>
+      <button class="btn-vivid-blue header-contact-btn" id="btnShortlist">
+        <i class="fa-solid fa-file-pdf"></i> <span data-i18n="nav.cv_contact">CV &amp; Contact</span>
+      </button>
+    </div>
 
     <!-- Mobile 3-Bar Hamburger Toggle Button -->
     <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menu de navigation" title="Ouvrir le menu">
@@ -64,18 +72,28 @@
           <img src="assets/candidate_photo.jpg" alt="Luka Xiong" class="header-avatar-mini">
           <div>
             <div style="font-weight: 800; font-size: 0.95rem; color: #F9FAFB;">Luka Xiong</div>
-            <div style="font-size: 0.72rem; color: #FCA5A5; font-weight: 700;"><i class="fa-solid fa-graduation-cap"></i> Candidat SKEMA Business School</div>
+            <div style="font-size: 0.72rem; color: #FCA5A5; font-weight: 700;"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="mobile.title">Candidat SKEMA Business School</span></div>
           </div>
         </div>
         <button class="mobile-nav-close" id="mobileNavClose" aria-label="Fermer le menu">&times;</button>
+      </div>
+
+      <!-- Mobile Language Switcher Row -->
+      <div class="mobile-lang-box">
+        <span class="mobile-lang-label"><i class="fa-solid fa-globe"></i> <span data-i18n="mobile.lang_label">Langue / Language :</span></span>
+        <div class="lang-switcher" id="mobileLangSwitcher" role="group" aria-label="Choix de la langue">
+          <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="es">ES</button>
+        </div>
       </div>
 
       <nav class="mobile-nav-menu">
         <a href="#intro" class="mobile-nav-item active">
           <div class="mobile-nav-icon" style="color: #60A5FA; background: rgba(96, 165, 250, 0.12);"><i class="fa-solid fa-address-card"></i></div>
           <div class="mobile-nav-info">
-            <span class="mobile-nav-title">Bio &amp; Liens Rapides</span>
-            <span class="mobile-nav-subtitle">Page Linktree &amp; Contacts Directs</span>
+            <span class="mobile-nav-title" data-i18n="mobile.bio_title">Bio &amp; Liens Rapides</span>
+            <span class="mobile-nav-subtitle" data-i18n="mobile.bio_sub">Page Linktree &amp; Contacts Directs</span>
           </div>
           <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
         </a>
@@ -83,8 +101,8 @@
         <a href="#hero" class="mobile-nav-item">
           <div class="mobile-nav-icon"><i class="fa-solid fa-compass"></i></div>
           <div class="mobile-nav-info">
-            <span class="mobile-nav-title">Hub Portfolio Interactif</span>
-            <span class="mobile-nav-subtitle">Constellation des 4 Univers</span>
+            <span class="mobile-nav-title" data-i18n="mobile.hub_title">Hub Portfolio Interactif</span>
+            <span class="mobile-nav-subtitle" data-i18n="mobile.hub_sub">Constellation des 4 Univers</span>
           </div>
           <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
         </a>
@@ -92,8 +110,8 @@
         <a href="#etape1" class="mobile-nav-item">
           <div class="mobile-nav-icon" style="color: #F59E0B; background: rgba(245, 158, 11, 0.12);"><i class="fa-solid fa-certificate"></i></div>
           <div class="mobile-nav-info">
-            <span class="mobile-nav-title">1. INSIDE LVMH</span>
-            <span class="mobile-nav-subtitle">Certifications Luxe &amp; Management</span>
+            <span class="mobile-nav-title" data-i18n="mobile.lvmh_title">1. INSIDE LVMH</span>
+            <span class="mobile-nav-subtitle" data-i18n="mobile.lvmh_sub">Certifications Luxe &amp; Management</span>
           </div>
           <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
         </a>
@@ -101,8 +119,8 @@
         <a href="#etape2" class="mobile-nav-item">
           <div class="mobile-nav-icon" style="color: #10B981; background: rgba(16, 185, 129, 0.12);"><i class="fa-solid fa-building-user"></i></div>
           <div class="mobile-nav-info">
-            <span class="mobile-nav-title">2. C'Parc Déméter</span>
-            <span class="mobile-nav-subtitle">Architecture &amp; Transition Écologique</span>
+            <span class="mobile-nav-title" data-i18n="mobile.demeter_title">2. C'Parc Déméter</span>
+            <span class="mobile-nav-subtitle" data-i18n="mobile.demeter_sub">Architecture &amp; Transition Écologique</span>
           </div>
           <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
         </a>
@@ -110,8 +128,8 @@
         <a href="#etape3" class="mobile-nav-item">
           <div class="mobile-nav-icon" style="color: #3B82F6; background: rgba(59, 130, 246, 0.12);"><i class="fa-solid fa-chart-line"></i></div>
           <div class="mobile-nav-info">
-            <span class="mobile-nav-title">3. Achat-Revente</span>
-            <span class="mobile-nav-subtitle">7 ans de terrain • Esprit d'Entreprise</span>
+            <span class="mobile-nav-title" data-i18n="mobile.resell_title">3. Achat-Revente</span>
+            <span class="mobile-nav-subtitle" data-i18n="mobile.resell_sub">7 ans de terrain • Esprit d'Entreprise</span>
           </div>
           <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
         </a>
@@ -119,8 +137,8 @@
         <a href="#etape4" class="mobile-nav-item">
           <div class="mobile-nav-icon" style="color: #EF4444; background: rgba(239, 68, 68, 0.12);"><i class="fa-solid fa-hands-holding-circle"></i></div>
           <div class="mobile-nav-info">
-            <span class="mobile-nav-title">4. Festivals Hmong</span>
-            <span class="mobile-nav-subtitle">Bénévolat &amp; Engagement Communautaire</span>
+            <span class="mobile-nav-title" data-i18n="mobile.hmong_title">4. Festivals Hmong</span>
+            <span class="mobile-nav-subtitle" data-i18n="mobile.hmong_sub">Bénévolat &amp; Engagement Communautaire</span>
           </div>
           <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
         </a>
@@ -128,7 +146,7 @@
 
       <div class="mobile-nav-footer">
         <button class="btn-mobile-contact" id="btnMobileContact">
-          <i class="fa-solid fa-file-pdf"></i> Consulter mes CV &amp; Contact
+          <i class="fa-solid fa-file-pdf"></i> <span data-i18n="mobile.cta_cv">Consulter mes CV &amp; Contact</span>
         </button>
       </div>
     </div>
@@ -136,7 +154,7 @@
 
   <!-- Sticky Bottom Floating Contact & CV Button -->
   <button class="sticky-contact-btn" id="btnShortlistFloating">
-    <i class="fa-solid fa-file-pdf"></i> CV &amp; Contact
+    <i class="fa-solid fa-file-pdf"></i> <span data-i18n="sticky.cv_btn">CV &amp; Contact</span>
   </button>
 
   <!-- INTRO LINKTREE PROFILE & CONTACTS LANDING SECTION -->
@@ -147,20 +165,20 @@
       <div class="linktree-left-panel">
         <div class="linktree-avatar-wrap">
           <img src="assets/candidate_photo.jpg" alt="Luka Xiong" class="linktree-avatar">
-          <div class="linktree-online-badge" title="Disponible pour échange"></div>
+          <div class="linktree-online-badge" title="Disponible pour échange" data-i18n-title="intro.online_badge"></div>
         </div>
 
         <div class="linktree-meta-block">
           <div class="skema-tag" style="margin-bottom: 6px;">
-            <i class="fa-solid fa-graduation-cap"></i> Candidat BBA • SKEMA Business School
+            <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="intro.skema_tag">Candidat BBA • SKEMA Business School</span>
           </div>
           <h1 class="linktree-name">LUKA XIONG</h1>
-          <div class="linktree-subtitle">
+          <div class="linktree-subtitle" data-i18n="intro.subtitle">
             Bac STI2D Architecture (Chartres) • Certifié INSIDE LVMH
           </div>
         </div>
 
-        <p class="linktree-bio">
+        <p class="linktree-bio" data-i18n="intro.bio">
           "Étudiant et jeune bachelier d'un Bac STI2D Architecture, passionné par le commerce."
         </p>
 
@@ -169,8 +187,8 @@
           <div class="cta-left">
             <span class="cta-pulse-icon"><i class="fa-solid fa-compass"></i></span>
             <div class="cta-text-wrap">
-              <span class="cta-label">DOSSIER DE CANDIDATURE OFFICIEL</span>
-              <span class="cta-title">Accéder au Portfolio Interactif</span>
+              <span class="cta-label" data-i18n="intro.cta_label">DOSSIER DE CANDIDATURE OFFICIEL</span>
+              <span class="cta-title" data-i18n="intro.cta_title">Accéder au Portfolio Interactif</span>
             </div>
           </div>
           <i class="fa-solid fa-arrow-right cta-arrow"></i>
@@ -179,16 +197,16 @@
         <!-- Desktop Quick Highlights Pill Grid -->
         <div class="intro-highlights-grid">
           <div class="highlight-mini-pill">
-            <i class="fa-solid fa-award" style="color: #D4AF37;"></i> 3 Certificats LVMH
+            <i class="fa-solid fa-award" style="color: #D4AF37;"></i> <span data-i18n="intro.pill_lvmh">3 Certificats LVMH</span>
           </div>
           <div class="highlight-mini-pill">
-            <i class="fa-solid fa-compass-drafting" style="color: #10B981;"></i> Projet Déméter
+            <i class="fa-solid fa-compass-drafting" style="color: #10B981;"></i> <span data-i18n="intro.pill_demeter">Projet Déméter</span>
           </div>
           <div class="highlight-mini-pill">
-            <i class="fa-solid fa-chart-line" style="color: #3B82F6;"></i> 7 Ans Achat-Revente
+            <i class="fa-solid fa-chart-line" style="color: #3B82F6;"></i> <span data-i18n="intro.pill_resell">7 Ans Achat-Revente</span>
           </div>
           <div class="highlight-mini-pill">
-            <i class="fa-solid fa-users" style="color: #EF4444;"></i> Bénévolat Hmong
+            <i class="fa-solid fa-users" style="color: #EF4444;"></i> <span data-i18n="intro.pill_hmong">Bénévolat Hmong</span>
           </div>
         </div>
       </div>
@@ -196,8 +214,8 @@
       <!-- Right Column: Interactive Direct Links & Contacts Bento Grid -->
       <div class="linktree-right-panel">
         <div class="linktree-section-header">
-          <span class="linktree-section-label">Coordonnées &amp; Canaux Directs</span>
-          <span class="linktree-badge-pro"><i class="fa-solid fa-circle-check" style="color: #10B981;"></i> Profils Officiels</span>
+          <span class="linktree-section-label" data-i18n="intro.links_header">Coordonnées &amp; Canaux Directs</span>
+          <span class="linktree-badge-pro"><i class="fa-solid fa-circle-check" style="color: #10B981;"></i> <span data-i18n="intro.badge_pro">Profils Officiels</span></span>
         </div>
 
         <!-- 1. LinkedIn -->
@@ -207,11 +225,11 @@
               <i class="fa-brands fa-linkedin-in"></i>
             </div>
             <div class="link-info">
-              <span class="link-title">LinkedIn Professionnel</span>
-              <span class="link-sub">Parcours, compétences &amp; certifications</span>
+              <span class="link-title" data-i18n="intro.link_linkedin_title">LinkedIn Professionnel</span>
+              <span class="link-sub" data-i18n="intro.link_linkedin_sub">Parcours, compétences &amp; certifications</span>
             </div>
           </div>
-          <span class="link-action-pill">Profil <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          <span class="link-action-pill"><span data-i18n="intro.link_linkedin_btn">Profil</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </a>
 
         <!-- 2. Email Pro Proton -->
@@ -221,11 +239,11 @@
               <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="link-info">
-              <span class="link-title">Email Pro : luka.xiong@proton.me</span>
-              <span class="link-sub">Messagerie sécurisée • Réponse rapide</span>
+              <span class="link-title" data-i18n="intro.link_proton_title">Email Pro : luka.xiong@proton.me</span>
+              <span class="link-sub" data-i18n="intro.link_proton_sub">Messagerie sécurisée • Réponse rapide</span>
             </div>
           </div>
-          <span class="link-action-pill" style="color: #A78BFA; border-color: rgba(109, 74, 255, 0.4);">Écrire <i class="fa-solid fa-paper-plane"></i></span>
+          <span class="link-action-pill" style="color: #A78BFA; border-color: rgba(109, 74, 255, 0.4);"><span data-i18n="intro.link_proton_btn">Écrire</span> <i class="fa-solid fa-paper-plane"></i></span>
         </a>
 
         <!-- 3. Instagram -->
@@ -235,8 +253,8 @@
               <i class="fa-brands fa-instagram"></i>
             </div>
             <div class="link-info">
-              <span class="link-title">Instagram (@lukahmg)</span>
-              <span class="link-sub">Lifestyle, coulisses &amp; contact</span>
+              <span class="link-title" data-i18n="intro.link_insta_title">Instagram (@lukahmg)</span>
+              <span class="link-sub" data-i18n="intro.link_insta_sub">Lifestyle, coulisses &amp; contact</span>
             </div>
           </div>
           <span class="link-action-pill" style="color: #F472B6; border-color: rgba(225, 48, 108, 0.4);">@lukahmg <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
@@ -249,8 +267,8 @@
               <i class="fa-brands fa-facebook-f"></i>
             </div>
             <div class="link-info">
-              <span class="link-title">Facebook (Luka Xiong)</span>
-              <span class="link-sub">Réseau personnel &amp; associatif</span>
+              <span class="link-title" data-i18n="intro.link_fb_title">Facebook (Luka Xiong)</span>
+              <span class="link-sub" data-i18n="intro.link_fb_sub">Réseau personnel &amp; associatif</span>
             </div>
           </div>
           <span class="link-action-pill" style="color: #60A5FA; border-color: rgba(24, 119, 242, 0.4);">Profil <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
@@ -263,16 +281,16 @@
               <i class="fa-solid fa-file-pdf"></i>
             </div>
             <div class="link-info">
-              <span class="link-title">Curriculum Vitae (Mes CV)</span>
-              <span class="link-sub">Télécharger &amp; consulter mes CV (FR / EN / ES)</span>
+              <span class="link-title" data-i18n="intro.link_cv_title">Curriculum Vitae (Mes CV)</span>
+              <span class="link-sub" data-i18n="intro.link_cv_sub">Télécharger &amp; consulter mes CV (FR / EN / ES)</span>
             </div>
           </div>
-          <span class="link-action-pill" style="color: #FCA5A5; border-color: rgba(185, 28, 28, 0.4);">Consulter <i class="fa-solid fa-download"></i></span>
+          <span class="link-action-pill" style="color: #FCA5A5; border-color: rgba(185, 28, 28, 0.4);"><span data-i18n="intro.link_cv_btn">Consulter</span> <i class="fa-solid fa-download"></i></span>
         </button>
 
         <!-- Discrete Footer Note -->
         <div class="linktree-footer">
-          <span>Portfolio Officiel Luka Xiong • Candidature BBA SKEMA Business School</span>
+          <span data-i18n="intro.footer_note">Portfolio Officiel Luka Xiong • Candidature BBA SKEMA Business School</span>
         </div>
       </div>
 
@@ -302,11 +320,11 @@
 
         <div class="center-core-content">
           <div class="skema-tag" style="margin-bottom: 8px;">
-            <i class="fa-solid fa-graduation-cap"></i> Candidat BBA • SKEMA Business School
+            <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="intro.skema_tag">Candidat BBA • SKEMA Business School</span>
           </div>
           <h1 class="center-core-title">LUKA XIONG</h1>
-          <div class="center-core-subtitle">Bac STI2D Architecture • Candidat SKEMA Business School</div>
-          <div class="center-core-quote">
+          <div class="center-core-subtitle" data-i18n="hero.subtitle">Bac STI2D Architecture • Candidat SKEMA Business School</div>
+          <div class="center-core-quote" data-i18n="hero.quote">
             "Étudiant et jeune bachelier d'un Bac STI2D Architecture, passionné par le commerce."
           </div>
 
@@ -320,10 +338,10 @@
 
           <div style="margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
             <button type="button" id="heroCvBtn" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 700; color: #FFFFFF; text-decoration: none; padding: 6px 16px; background: #B91C1C; border: 1px solid rgba(255,255,255,0.2); border-radius: 99px; cursor: pointer; box-shadow: 0 4px 12px rgba(185, 28, 28, 0.4); transition: all 0.2s ease;">
-              <i class="fa-solid fa-file-pdf"></i> Consulter mes CV (PDF)
+              <i class="fa-solid fa-file-pdf"></i> <span data-i18n="hero.cv_btn">Consulter mes CV (PDF)</span>
             </button>
             <a href="#intro" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.76rem; font-weight: 700; color: #94A3B8; text-decoration: none; padding: 6px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 99px; transition: all 0.2s ease;">
-              <i class="fa-solid fa-address-card" style="color: #60A5FA;"></i> Bio &amp; Liens
+              <i class="fa-solid fa-address-card" style="color: #60A5FA;"></i> <span data-i18n="hero.bio_btn">Bio &amp; Liens</span>
             </a>
           </div>
         </div>
@@ -335,9 +353,9 @@
       <a href="#etape1" class="orbit-node node-lvmh">
         <div class="node-icon"><i class="fa-solid fa-certificate"></i></div>
         <div class="node-text-wrap">
-          <span class="node-tag">1. CERTIFICATIONS LUXE</span>
-          <span class="node-title">INSIDE LVMH</span>
-          <span class="node-desc">Filières Global Management</span>
+          <span class="node-tag" data-i18n="hero.node1_tag">1. CERTIFICATIONS LUXE</span>
+          <span class="node-title" data-i18n="hero.node1_title">INSIDE LVMH</span>
+          <span class="node-desc" data-i18n="hero.node1_desc">Filières Global Management</span>
         </div>
       </a>
 
@@ -345,9 +363,9 @@
       <a href="#etape2" class="orbit-node node-demeter">
         <div class="node-icon"><i class="fa-solid fa-building-user"></i></div>
         <div class="node-text-wrap">
-          <span class="node-tag">2. ARCHITECTURE DURABLE</span>
-          <span class="node-title">C'Parc Déméter</span>
-          <span class="node-desc">Transition Durable &amp; Éco-Conception</span>
+          <span class="node-tag" data-i18n="hero.node2_tag">2. ARCHITECTURE DURABLE</span>
+          <span class="node-title" data-i18n="hero.node2_title">C'Parc Déméter</span>
+          <span class="node-desc" data-i18n="hero.node2_desc">Transition Durable &amp; Éco-Conception</span>
         </div>
       </a>
 
@@ -355,9 +373,9 @@
       <a href="#etape3" class="orbit-node node-resell">
         <div class="node-icon"><i class="fa-solid fa-chart-line"></i></div>
         <div class="node-text-wrap">
-          <span class="node-tag">3. ESPRIT D'ENTREPRISE</span>
-          <span class="node-title">Achat-Revente</span>
-          <span class="node-desc">7 Ans Terrain • SKEMA Ventures</span>
+          <span class="node-tag" data-i18n="hero.node3_tag">3. ESPRIT D'ENTREPRISE</span>
+          <span class="node-title" data-i18n="hero.node3_title">Achat-Revente</span>
+          <span class="node-desc" data-i18n="hero.node3_desc">7 Ans Terrain • SKEMA Ventures</span>
         </div>
       </a>
 
@@ -365,9 +383,9 @@
       <a href="#etape4" class="orbit-node node-benevolat">
         <div class="node-icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
         <div class="node-text-wrap">
-          <span class="node-tag">4. DIVERSITÉ &amp; LEADERSHIP</span>
-          <span class="node-title">Festivals Hmong</span>
-          <span class="node-desc">"At Home Worldwide" • 7 Villes</span>
+          <span class="node-tag" data-i18n="hero.node4_tag">4. DIVERSITÉ &amp; LEADERSHIP</span>
+          <span class="node-title" data-i18n="hero.node4_title">Festivals Hmong</span>
+          <span class="node-desc" data-i18n="hero.node4_desc">"At Home Worldwide" • 7 Villes</span>
         </div>
       </a>
 
@@ -376,23 +394,23 @@
 
   <!-- ÉTAPE 1 : CERTIFICATIONS PROFESSIONNELLES INSIDE LVMH -->
   <section class="modern-section" id="etape1">
-    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
+    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.back_to_hub">Retour à l'accueil</span></a>
     <div class="skema-tag">
-      <i class="fa-solid fa-graduation-cap"></i> Synergie SKEMA • Filières Global Management &amp; Luxe
+      <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="lvmh.skema_tag">Synergie SKEMA • Filières Global Management &amp; Luxe</span>
     </div>
     <div class="step-number-tag">
-      <i class="fa-solid fa-certificate"></i> ÉTAPE 1 / 4 — APPRENDRE AU-DELÀ DES COURS
+      <i class="fa-solid fa-certificate"></i> <span data-i18n="lvmh.step_tag">ÉTAPE 1 / 4 — APPRENDRE AU-DELÀ DES COURS</span>
     </div>
-    <h2 class="section-hero-title">Certifications <highlight class="gold">INSIDE LVMH</highlight></h2>
-    <div class="section-hero-subtitle">Immersion certifiée dans les coulisses et l'excellence managériale du premier groupe de luxe mondial</div>
+    <h2 class="section-hero-title"><span data-i18n="lvmh.title">Certifications INSIDE LVMH</span></h2>
+    <div class="section-hero-subtitle" data-i18n="lvmh.subtitle">Immersion certifiée dans les coulisses et l'excellence managériale du premier groupe de luxe mondial</div>
 
     <!-- Official LVMH Certificates Display -->
     <div style="margin-bottom: 2.5rem;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
         <div style="font-size: 0.85rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #EAB308;">
-          <i class="fa-solid fa-award"></i> Mes 3 Certificats Officiels INSIDE LVMH
+          <i class="fa-solid fa-award"></i> <span data-i18n="lvmh.certs_header">Mes 3 Certificats Officiels INSIDE LVMH</span>
         </div>
-        <span style="font-size: 0.78rem; color: #94A3B8; font-weight: 600;"><i class="fa-solid fa-shield-halved" style="color: #D4AF37;"></i> Validé &amp; Diplômé</span>
+        <span style="font-size: 0.78rem; color: #94A3B8; font-weight: 600;"><i class="fa-solid fa-shield-halved" style="color: #D4AF37;"></i> <span data-i18n="lvmh.certs_badge">Validé &amp; Diplômé</span></span>
       </div>
 
       <div class="grid-3">
@@ -407,16 +425,16 @@
                 <span style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 1</span>
                 <span style="color: #94A3B8; font-size: 0.7rem; font-weight: 600;"><i class="fa-solid fa-calendar-check" style="color: #D4AF37;"></i> 10/12/2025</span>
               </div>
-              <div style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;">Creation &amp; Branding, Operations &amp; Supply Chain</div>
+              <div style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;" data-i18n="lvmh.cert1_title">Creation &amp; Branding, Operations &amp; Supply Chain</div>
               <div style="color: #64748B; font-size: 0.68rem; margin-top: 4px; font-family: monospace;">ID: a361674b-f0f9-4cda...</div>
             </div>
           </div>
           <div style="display: flex; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);">
             <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/lvmh_cert_1_hd.png" style="flex: 1; padding: 6px 10px; font-size: 0.74rem;">
-              <i class="fa-solid fa-eye"></i> Aperçu HD
+              <i class="fa-solid fa-eye"></i> <span data-i18n="lvmh.btn_preview">Aperçu HD</span>
             </button>
             <a href="assets/certificat_lvmh_creation_operations.pdf" target="_blank" download="Certificat_LVMH_Creation_Operations_Luka_Xiong.pdf" class="btn-cv-dl" style="background: rgba(212, 175, 55, 0.2); border-color: #D4AF37; color: #FFFFFF !important; padding: 6px 10px; font-size: 0.74rem;" title="Télécharger le PDF officiel">
-              <i class="fa-solid fa-download"></i> PDF
+              <i class="fa-solid fa-download"></i> <span data-i18n="lvmh.btn_download">PDF</span>
             </a>
           </div>
         </div>
@@ -432,16 +450,16 @@
                 <span style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 2</span>
                 <span style="color: #94A3B8; font-size: 0.7rem; font-weight: 600;"><i class="fa-solid fa-calendar-check" style="color: #D4AF37;"></i> 05/07/2026</span>
               </div>
-              <div style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;">Creation &amp; Branding, Retail &amp; Customer Experience</div>
+              <div style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;" data-i18n="lvmh.cert2_title">Creation &amp; Branding, Retail &amp; Customer Experience</div>
               <div style="color: #64748B; font-size: 0.68rem; margin-top: 4px; font-family: monospace;">ID: 3e78050c-1c9d-4a4c...</div>
             </div>
           </div>
           <div style="display: flex; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);">
             <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/lvmh_cert_2_hd.png" style="flex: 1; padding: 6px 10px; font-size: 0.74rem;">
-              <i class="fa-solid fa-eye"></i> Aperçu HD
+              <i class="fa-solid fa-eye"></i> <span data-i18n="lvmh.btn_preview">Aperçu HD</span>
             </button>
             <a href="assets/certificat_lvmh_creation_retail.pdf" target="_blank" download="Certificat_LVMH_Creation_Retail_Luka_Xiong.pdf" class="btn-cv-dl" style="background: rgba(212, 175, 55, 0.2); border-color: #D4AF37; color: #FFFFFF !important; padding: 6px 10px; font-size: 0.74rem;" title="Télécharger le PDF officiel">
-              <i class="fa-solid fa-download"></i> PDF
+              <i class="fa-solid fa-download"></i> <span data-i18n="lvmh.btn_download">PDF</span>
             </a>
           </div>
         </div>
@@ -457,16 +475,16 @@
                 <span style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 3</span>
                 <span style="color: #94A3B8; font-size: 0.7rem; font-weight: 600;"><i class="fa-solid fa-calendar-check" style="color: #D4AF37;"></i> 05/07/2026</span>
               </div>
-              <div style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;">Operations &amp; Supply Chain, Retail &amp; Customer Experience</div>
+              <div style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;" data-i18n="lvmh.cert3_title">Operations &amp; Supply Chain, Retail &amp; Customer Experience</div>
               <div style="color: #64748B; font-size: 0.68rem; margin-top: 4px; font-family: monospace;">ID: a361674b-f0f9-4cda...</div>
             </div>
           </div>
           <div style="display: flex; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);">
             <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/lvmh_cert_3_hd.png" style="flex: 1; padding: 6px 10px; font-size: 0.74rem;">
-              <i class="fa-solid fa-eye"></i> Aperçu HD
+              <i class="fa-solid fa-eye"></i> <span data-i18n="lvmh.btn_preview">Aperçu HD</span>
             </button>
             <a href="assets/certificat_lvmh_operations_retail.pdf" target="_blank" download="Certificat_LVMH_Operations_Retail_Luka_Xiong.pdf" class="btn-cv-dl" style="background: rgba(212, 175, 55, 0.2); border-color: #D4AF37; color: #FFFFFF !important; padding: 6px 10px; font-size: 0.74rem;" title="Télécharger le PDF officiel">
-              <i class="fa-solid fa-download"></i> PDF
+              <i class="fa-solid fa-download"></i> <span data-i18n="lvmh.btn_download">PDF</span>
             </a>
           </div>
         </div>
@@ -476,28 +494,28 @@
     <!-- Ce que j'ai concrètement appris avec INSIDE LVMH (4 Piliers Clés) -->
     <div class="tab-container vivid-card card-lvmh" style="margin-bottom: 2rem;">
       <div style="font-size: 0.85rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #EAB308; margin-bottom: 1.25rem;">
-        <i class="fa-solid fa-lightbulb"></i> Ce Que J'ai Concrètement Appris &amp; Retenu (Mes 4 Piliers Clés)
+        <i class="fa-solid fa-lightbulb"></i> <span data-i18n="lvmh.learn_header">Ce Que J'ai Concrètement Appris &amp; Retenu (Mes 4 Piliers Clés)</span>
       </div>
 
       <div class="tab-controls">
-        <button class="tab-btn active" data-tab="module1"><i class="fa-solid fa-landmark"></i> 1. Histoire &amp; Marques</button>
-        <button class="tab-btn" data-tab="module2"><i class="fa-solid fa-wand-magic-sparkles"></i> 2. Image &amp; Création</button>
-        <button class="tab-btn" data-tab="module3"><i class="fa-solid fa-leaf"></i> 3. Logistique &amp; Écologie</button>
-        <button class="tab-btn" data-tab="module4"><i class="fa-solid fa-gem"></i> 4. Vente &amp; Accueil Client</button>
+        <button class="tab-btn active" data-tab="module1"><i class="fa-solid fa-landmark"></i> <span data-i18n="lvmh.tab1_btn">1. Histoire &amp; Marques</span></button>
+        <button class="tab-btn" data-tab="module2"><i class="fa-solid fa-wand-magic-sparkles"></i> <span data-i18n="lvmh.tab2_btn">2. Image &amp; Création</span></button>
+        <button class="tab-btn" data-tab="module3"><i class="fa-solid fa-leaf"></i> <span data-i18n="lvmh.tab3_btn">3. Logistique &amp; Écologie</span></button>
+        <button class="tab-btn" data-tab="module4"><i class="fa-solid fa-gem"></i> <span data-i18n="lvmh.tab4_btn">4. Vente &amp; Accueil Client</span></button>
       </div>
 
       <div class="tab-pane active" id="module1">
-        <h4 style="color: #F9FAFB; font-size: 1.2rem; font-weight: 800; margin-bottom: 12px;">1. Modèle Économique &amp; Préservation de la Valeur</h4>
+        <h4 style="color: #F9FAFB; font-size: 1.2rem; font-weight: 800; margin-bottom: 12px;" data-i18n="lvmh.tab1_title">1. Modèle Économique &amp; Préservation de la Valeur</h4>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <div class="insight-bullet">
             <i class="fa-solid fa-building-columns" style="color: #D4AF37;"></i>
-            <div>
+            <div data-i18n="lvmh.tab1_p1">
               <strong>Préservation des 75 Maisons :</strong> Gestion décentralisée d'un portefeuille de marques prestigieuses, en maintenant l'héritage historique et l'artisanat d'exception de chacune sans standardisation.
             </div>
           </div>
           <div class="insight-bullet">
             <i class="fa-solid fa-chart-pie" style="color: #D4AF37;"></i>
-            <div>
+            <div data-i18n="lvmh.tab1_p2">
               <strong>Modèle Économique du Luxe :</strong> Rareté maîtrisée, marges brutes élevées, absence de déstockage massif pour protéger la valeur et la désirabilité sur le très long terme.
             </div>
           </div>
@@ -505,17 +523,17 @@
       </div>
 
       <div class="tab-pane" id="module2">
-        <h4 style="color: #F9FAFB; font-size: 1.2rem; font-weight: 800; margin-bottom: 12px;">2. Créativité &amp; Image de Marque</h4>
+        <h4 style="color: #F9FAFB; font-size: 1.2rem; font-weight: 800; margin-bottom: 12px;" data-i18n="lvmh.tab2_title">2. Créativité &amp; Image de Marque</h4>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <div class="insight-bullet">
             <i class="fa-solid fa-wand-magic-sparkles" style="color: #D4AF37;"></i>
-            <div>
+            <div data-i18n="lvmh.tab2_p1">
               <strong>Équilibre Création &amp; Rentabilité :</strong> Apporter une vision artistique contemporaine et audacieuse tout en respectant scrupuleusement les codes intemporels de la Maison.
             </div>
           </div>
           <div class="insight-bullet">
             <i class="fa-solid fa-shield-halved" style="color: #D4AF37;"></i>
-            <div>
+            <div data-i18n="lvmh.tab2_p2">
               <strong>Capital Marque International :</strong> Protection juridique rigoureuse de la propriété intellectuelle, cohérence globale de la communication et lutte anti-contrefaçon.
             </div>
           </div>
@@ -523,17 +541,17 @@
       </div>
 
       <div class="tab-pane" id="module3">
-        <h4 style="color: #F9FAFB; font-size: 1.2rem; font-weight: 800; margin-bottom: 12px;">3. Logistique, Qualité &amp; Respect de l'Environnement</h4>
+        <h4 style="color: #F9FAFB; font-size: 1.2rem; font-weight: 800; margin-bottom: 12px;" data-i18n="lvmh.tab3_title">3. Logistique, Qualité &amp; Respect de l'Environnement</h4>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <div class="insight-bullet">
             <i class="fa-solid fa-boxes-packing" style="color: #D4AF37;"></i>
-            <div>
+            <div data-i18n="lvmh.tab3_p1">
               <strong>Supply Chain Haute Précision :</strong> Traçabilité totale des approvisionnements, sélection éthique des matières nobles et zéro compromis sur la qualité des finitions.
             </div>
           </div>
           <div class="insight-bullet">
             <i class="fa-solid fa-leaf" style="color: #10B981;"></i>
-            <div>
+            <div data-i18n="lvmh.tab3_p2">
               <strong>Programme LIFE 360 :</strong> Intégration concrète de l'éco-conception, réduction de l'empreinte carbone transport et circularité vertueuse dans tous les ateliers.
             </div>
           </div>
@@ -541,17 +559,17 @@
       </div>
 
       <div class="tab-pane" id="module4">
-        <h4 style="color: #F9FAFB; font-size: 1.2rem; font-weight: 800; margin-bottom: 12px;">4. Vente en Boutique, En Ligne &amp; Accueil Client</h4>
+        <h4 style="color: #F9FAFB; font-size: 1.2rem; font-weight: 800; margin-bottom: 12px;" data-i18n="lvmh.tab4_title">4. Vente en Boutique, En Ligne &amp; Accueil Client</h4>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <div class="insight-bullet">
             <i class="fa-solid fa-gem" style="color: #D4AF37;"></i>
-            <div>
+            <div data-i18n="lvmh.tab4_p1">
               <strong>Expérience Client Omnicanale :</strong> Accueil sur-mesure d'exception en boutique et continuité irréprochable du service, de l'écoute et du packaging soigné sur le digital.
             </div>
           </div>
           <div class="insight-bullet">
             <i class="fa-solid fa-handshake" style="color: #D4AF37;"></i>
-            <div>
+            <div data-i18n="lvmh.tab4_p2">
               <strong>Dimension Émotionnelle :</strong> Le client n'achète pas un simple produit, mais intègre une histoire humaine, un savoir-faire d'art et un univers d'excellence.
             </div>
           </div>
@@ -563,32 +581,32 @@
     <div class="grid-2">
       <div class="vivid-card card-lvmh">
         <div class="card-watermark"><i class="fa-solid fa-graduation-cap"></i></div>
-        <div style="font-size: 0.78rem; font-weight: 800; color: #EAB308; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Démarche Personnelle</div>
-        <h3 class="vivid-card-title">Pourquoi cette initiative en autonomie ?</h3>
+        <div style="font-size: 0.78rem; font-weight: 800; color: #EAB308; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;" data-i18n="lvmh.why_tag">Démarche Personnelle</div>
+        <h3 class="vivid-card-title" data-i18n="lvmh.why_title">Pourquoi cette initiative en autonomie ?</h3>
         <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px;">
           <div class="insight-bullet">
             <i class="fa-solid fa-compass" style="color: #D4AF37;"></i>
-            <div><strong>Curiosité &amp; Proactivité :</strong> Volonté de me former par moi-même en dehors des cours du lycée pour comprendre la gestion des plus grandes entreprises mondiales.</div>
+            <div data-i18n="lvmh.why_p1"><strong>Curiosité &amp; Proactivité :</strong> Volonté de me former par moi-même en dehors des cours du lycée pour comprendre la gestion des plus grandes entreprises mondiales.</div>
           </div>
           <div class="insight-bullet">
             <i class="fa-solid fa-bullseye" style="color: #D4AF37;"></i>
-            <div><strong>Exigence BBA SKEMA :</strong> Acquérir dès le lycée une culture managériale solide pour être immédiatement opérationnel et pertinent en cours.</div>
+            <div data-i18n="lvmh.why_p2"><strong>Exigence BBA SKEMA :</strong> Acquérir dès le lycée une culture managériale solide pour être immédiatement opérationnel et pertinent en cours.</div>
           </div>
         </div>
       </div>
 
       <div class="vivid-card card-lvmh">
         <div class="card-watermark"><i class="fa-solid fa-briefcase"></i></div>
-        <div style="font-size: 0.78rem; font-weight: 800; color: #EAB308; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Application Concrète</div>
-        <h3 class="vivid-card-title">Ce que cela m'apporte au quotidien</h3>
+        <div style="font-size: 0.78rem; font-weight: 800; color: #EAB308; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;" data-i18n="lvmh.impact_tag">Application Concrète</div>
+        <h3 class="vivid-card-title" data-i18n="lvmh.impact_title">Ce que cela m'apporte au quotidien</h3>
         <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px;">
           <div class="insight-bullet">
             <i class="fa-solid fa-check-double" style="color: #D4AF37;"></i>
-            <div><strong>Souci du Détail &amp; Authenticité :</strong> Application stricte des critères de qualité dans mon activité d'achat-revente et vérification des pièces.</div>
+            <div data-i18n="lvmh.impact_p1"><strong>Souci du Détail &amp; Authenticité :</strong> Application stricte des critères de qualité dans mon activité d'achat-revente et vérification des pièces.</div>
           </div>
           <div class="insight-bullet">
             <i class="fa-solid fa-people-arrows" style="color: #D4AF37;"></i>
-            <div><strong>Sens du Service &amp; de l'Accueil :</strong> Rigueur d'organisation transposée dans mes projets d'architecture et l'accueil lors de mes engagements bénévoles.</div>
+            <div data-i18n="lvmh.impact_p2"><strong>Sens du Service &amp; de l'Accueil :</strong> Rigueur d'organisation transposée dans mes projets d'architecture et l'accueil lors de mes engagements bénévoles.</div>
           </div>
         </div>
       </div>
@@ -597,52 +615,52 @@
 
   <!-- ÉTAPE 2 : PROJET SCOLAIRE STI2D ARCHITECTURE (C'PARC DÉMÉTER - JEHAN DE BEAUCE) -->
   <section class="modern-section" id="etape2">
-    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
+    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.back_to_hub">Retour à l'accueil</span></a>
     <div class="skema-tag">
-      <i class="fa-solid fa-graduation-cap"></i> Synergie SKEMA • Transition Durable &amp; Éco-Conception
+      <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="demeter.skema_tag">Synergie SKEMA • Transition Durable &amp; Éco-Conception</span>
     </div>
     <div class="step-number-tag">
-      <i class="fa-solid fa-building-user"></i> ÉTAPE 2 / 4 — CONCEVOIR DES PROJETS CONCRETS
+      <i class="fa-solid fa-building-user"></i> <span data-i18n="demeter.step_tag">ÉTAPE 2 / 4 — CONCEVOIR DES PROJETS CONCRETS</span>
     </div>
-    <h2 class="section-hero-title">Projet Scolaire : <highlight class="emerald">C'Parc Déméter</highlight></h2>
-    <div class="section-hero-subtitle">
+    <h2 class="section-hero-title"><span data-i18n="demeter.title">Projet Scolaire : C'Parc Déméter</span></h2>
+    <div class="section-hero-subtitle" data-i18n="demeter.subtitle">
       Projet d'aménagement écologique et durable du <strong>Quartier de La Madeleine à Chartres</strong> — Exposition publique avec Le Forum &amp; la Ville de Chartres (Trophée des Talents de la Préfecture 2025)
     </div>
 
     <!-- EXECUTIVE KPI BAR DÉMÉTER -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
       <div class="vivid-card card-demeter" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;">Projet Urbain</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;">Éco-Responsable</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Quartier de La Madeleine à Chartres</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="demeter.kpi1_title">Projet Urbain</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;" data-i18n="demeter.kpi1_sub">Éco-Responsable</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="demeter.kpi1_desc">Quartier de La Madeleine à Chartres</div>
       </div>
       <div class="vivid-card card-demeter" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;">STI2D &amp; Art</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;">Lycée Jehan-de-Beauce</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Chaudronnerie, électricité &amp; architecture</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="demeter.kpi2_title">STI2D &amp; Art</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;" data-i18n="demeter.kpi2_sub">Lycée Jehan-de-Beauce</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="demeter.kpi2_desc">Chaudronnerie, électricité &amp; architecture</div>
       </div>
       <div class="vivid-card card-demeter" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;">5 Maquettes</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;">Prototypes d'Atelier</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Réalisations concrètes exposées au public</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="demeter.kpi3_title">5 Maquettes</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;" data-i18n="demeter.kpi3_sub">Prototypes d'Atelier</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="demeter.kpi3_desc">Réalisations concrètes exposées au public</div>
       </div>
       <div class="vivid-card card-demeter" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;">Lauréat 2025</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;">Trophée des Talents</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Certifié par le Maire de Chartres</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="demeter.kpi4_title">Lauréat 2025</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;" data-i18n="demeter.kpi4_sub">Trophée des Talents</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="demeter.kpi4_desc">Certifié par le Maire de Chartres</div>
       </div>
     </div>
 
     <!-- SOUS-NAVIGATION EN 3 ONGLETS ÉPURÉS -->
     <div class="section-tab-nav">
       <button class="section-tab-btn active" data-tab="tab-maquettes">
-        <i class="fa-solid fa-shapes" style="color: #10B981;"></i> 1. Maquettes d'Atelier (5 Réalisations)
+        <i class="fa-solid fa-shapes" style="color: #10B981;"></i> <span data-i18n="demeter.tab1_nav">1. Maquettes d'Atelier (5 Réalisations)</span>
       </button>
       <button class="section-tab-btn" data-tab="tab-archi">
-        <i class="fa-solid fa-compass-drafting" style="color: #10B981;"></i> 2. Dossier &amp; Plans d'Architecture
+        <i class="fa-solid fa-compass-drafting" style="color: #10B981;"></i> <span data-i18n="demeter.tab2_nav">2. Dossier &amp; Plans d'Architecture</span>
       </button>
       <button class="section-tab-btn" data-tab="tab-officiel">
-        <i class="fa-solid fa-award" style="color: #10B981;"></i> 3. Exposition, Trophée &amp; Certificat
+        <i class="fa-solid fa-award" style="color: #10B981;"></i> <span data-i18n="demeter.tab3_nav">3. Exposition, Trophée &amp; Certificat</span>
       </button>
     </div>
 
@@ -650,13 +668,13 @@
     <div class="section-tab-pane active" id="tab-maquettes">
       <div style="margin-bottom: 2rem;">
         <div style="font-size: 0.82rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">
-          <i class="fa-solid fa-hammer"></i> Prototypage Manuel &amp; Réalisations Concrètes
+          <i class="fa-solid fa-hammer"></i> <span data-i18n="demeter.m_tag">Prototypage Manuel &amp; Réalisations Concrètes</span>
         </div>
-        <h3 style="font-size: 1.4rem; font-weight: 800; color: #F9FAFB; margin-bottom: 0.5rem;">
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: #F9FAFB; margin-bottom: 0.5rem;" data-i18n="demeter.m_title">
           5 Maquettes à l'Échelle Conçues en Atelier
         </h3>
         <p class="vivid-card-desc" style="font-size: 0.95rem; max-width: 850px; margin-bottom: 1.5rem;">
-          Chaque élément architectural a été prototypé manuellement en atelier (bois, résine, matériaux éco-responsables) puis exposé aux élus de la Ville de Chartres à la Maison Pour Tous de La Madeleine.
+          <span data-i18n="demeter.m_desc">Chaque élément architectural a été prototypé manuellement en atelier (bois, résine, matériaux éco-responsables) puis exposé aux élus de la Ville de Chartres à la Maison Pour Tous de La Madeleine.</span>
         </p>
 
         <!-- Grille des 2 Maquettes Majeures -->
@@ -669,25 +687,25 @@
               </div>
               <div style="padding-top: 14px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px;">
-                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 800;">Passerelle Piétons &amp; Vélos</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;">Toiture Solaire</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;">Vitraux de Chartres</span>
+                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 800;" data-i18n="demeter.m1_pill1">Passerelle Piétons &amp; Vélos</span>
+                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;" data-i18n="demeter.m1_pill2">Toiture Solaire</span>
+                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;" data-i18n="demeter.m1_pill3">Vitraux de Chartres</span>
                 </div>
-                <h4 style="font-size: 1.2rem; font-weight: 800; color: #F9FAFB;">Passerelle Écologique &amp; Vitraux Colorés</h4>
+                <h4 style="font-size: 1.2rem; font-weight: 800; color: #F9FAFB;" data-i18n="demeter.m1_title">Passerelle Écologique &amp; Vitraux Colorés</h4>
                 <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
                   <div class="insight-bullet" style="padding: 10px 14px;">
                     <i class="fa-solid fa-solar-panel" style="color: #10B981;"></i>
-                    <div><strong>Toiture Solaire :</strong> Production d'électricité autonome et ombrage au-dessus de la voie routière.</div>
+                    <div data-i18n="demeter.m1_b1"><strong>Toiture Solaire :</strong> Production d'électricité autonome et ombrage au-dessus de la voie routière.</div>
                   </div>
                   <div class="insight-bullet" style="padding: 10px 14px;">
                     <i class="fa-solid fa-palette" style="color: #10B981;"></i>
-                    <div><strong>Vitraux de Chartres :</strong> Éclairage naturel polychrome inspiré de la rosace de la Cathédrale.</div>
+                    <div data-i18n="demeter.m1_b2"><strong>Vitraux de Chartres :</strong> Éclairage naturel polychrome inspiré de la rosace de la Cathédrale.</div>
                   </div>
                 </div>
               </div>
             </div>
             <div style="margin-top: 14px; font-size: 0.78rem; color: #94A3B8; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-ruler-combined" style="color: #10B981;"></i> Prototypage atelier Lycée Jehan-de-Beauce
+              <i class="fa-solid fa-ruler-combined" style="color: #10B981;"></i> <span data-i18n="demeter.m1_footer">Prototypage atelier Lycée Jehan-de-Beauce</span>
             </div>
           </div>
 
@@ -699,25 +717,25 @@
               </div>
               <div style="padding-top: 14px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px;">
-                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 800;">Mobilier Urbain</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;">Îlot de Fraîcheur</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;">Mobilité Douce</span>
+                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 800;" data-i18n="demeter.m2_pill1">Mobilier Urbain</span>
+                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;" data-i18n="demeter.m2_pill2">Îlot de Fraîcheur</span>
+                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;" data-i18n="demeter.m2_pill3">Mobilité Douce</span>
                 </div>
-                <h4 style="font-size: 1.2rem; font-weight: 800; color: #F9FAFB;">Bassin d'Eau &amp; Banc Circulaire d'Ombrage</h4>
+                <h4 style="font-size: 1.2rem; font-weight: 800; color: #F9FAFB;" data-i18n="demeter.m2_title">Bassin d'Eau &amp; Banc Circulaire d'Ombrage</h4>
                 <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
                   <div class="insight-bullet" style="padding: 10px 14px;">
                     <i class="fa-solid fa-water" style="color: #10B981;"></i>
-                    <div><strong>Îlot de Fraîcheur :</strong> Bassin d'eau sécurisé avec banc circulaire en bois entourant un arbre d'ombrage.</div>
+                    <div data-i18n="demeter.m2_b1"><strong>Îlot de Fraîcheur :</strong> Bassin d'eau sécurisé avec banc circulaire en bois entourant un arbre d'ombrage.</div>
                   </div>
                   <div class="insight-bullet" style="padding: 10px 14px;">
                     <i class="fa-solid fa-bicycle" style="color: #10B981;"></i>
-                    <div><strong>Mobilité Douce :</strong> Racks vélos et trottinettes intégrés aux allées perméables pour désenclaver le parc.</div>
+                    <div data-i18n="demeter.m2_b2"><strong>Mobilité Douce :</strong> Racks vélos et trottinettes intégrés aux allées perméables pour désenclaver le parc.</div>
                   </div>
                 </div>
               </div>
             </div>
             <div style="margin-top: 14px; font-size: 0.78rem; color: #94A3B8; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-tree" style="color: #10B981;"></i> Aménagement paysager et îlot de fraîcheur
+              <i class="fa-solid fa-tree" style="color: #10B981;"></i> <span data-i18n="demeter.m2_footer">Aménagement paysager et îlot de fraîcheur</span>
             </div>
           </div>
         </div>
@@ -732,17 +750,17 @@
               </div>
               <div style="padding-top: 12px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px;">
-                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 800;">Lieu Convivial</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600;">Terrasse Bois</span>
+                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 800;" data-i18n="demeter.m3_pill1">Lieu Convivial</span>
+                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600;" data-i18n="demeter.m3_pill2">Terrasse Bois</span>
                 </div>
-                <h4 style="font-size: 1.1rem; font-weight: 800; color: #F9FAFB;">« La Guinguette » du Parc</h4>
+                <h4 style="font-size: 1.1rem; font-weight: 800; color: #F9FAFB;" data-i18n="demeter.m3_title">« La Guinguette » du Parc</h4>
                 <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 6px; line-height: 1.5;">
-                  Espace de restauration circulaire avec bardage bois vertical, terrasse et auvent textile rayé bleu et blanc pour créer du lien social.
+                  <span data-i18n="demeter.m3_desc">Espace de restauration circulaire avec bardage bois vertical, terrasse et auvent textile rayé bleu et blanc pour créer du lien social.</span>
                 </p>
               </div>
             </div>
             <div style="margin-top: 10px; font-size: 0.75rem; color: #94A3B8; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-mug-hot" style="color: #10B981;"></i> Rencontre et lien social
+              <i class="fa-solid fa-mug-hot" style="color: #10B981;"></i> <span data-i18n="demeter.m3_footer">Rencontre et lien social</span>
             </div>
           </div>
 
@@ -754,17 +772,17 @@
               </div>
               <div style="padding-top: 12px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px;">
-                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 800;">Culture &amp; Scène</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600;">Gradins en Herbe</span>
+                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 800;" data-i18n="demeter.m4_pill1">Culture &amp; Scène</span>
+                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600;" data-i18n="demeter.m4_pill2">Gradins en Herbe</span>
                 </div>
-                <h4 style="font-size: 1.1rem; font-weight: 800; color: #F9FAFB;">Amphithéâtre de Verdure</h4>
+                <h4 style="font-size: 1.1rem; font-weight: 800; color: #F9FAFB;" data-i18n="demeter.m4_title">Amphithéâtre de Verdure</h4>
                 <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 6px; line-height: 1.5;">
-                  Gradins étagés en herbe et bois suivant la pente naturelle, avec scène couverte pour accueillir cinéma plein air et spectacles vivants.
+                  <span data-i18n="demeter.m4_desc">Gradins étagés en herbe et bois suivant la pente naturelle, avec scène couverte pour accueillir cinéma plein air et spectacles vivants.</span>
                 </p>
               </div>
             </div>
             <div style="margin-top: 10px; font-size: 0.75rem; color: #94A3B8; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-masks-theater" style="color: #10B981;"></i> Spectacles vivants
+              <i class="fa-solid fa-masks-theater" style="color: #10B981;"></i> <span data-i18n="demeter.m4_footer">Spectacles vivants</span>
             </div>
           </div>
 
@@ -776,17 +794,17 @@
               </div>
               <div style="padding-top: 12px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px;">
-                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 800;">Kiosque Bois</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600;">Vue Panoramique</span>
+                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 800;" data-i18n="demeter.m5_pill1">Kiosque Bois</span>
+                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600;" data-i18n="demeter.m5_pill2">Vue Panoramique</span>
                 </div>
-                <h4 style="font-size: 1.1rem; font-weight: 800; color: #F9FAFB;">Kiosque &amp; Vue Panoramique</h4>
+                <h4 style="font-size: 1.1rem; font-weight: 800; color: #F9FAFB;" data-i18n="demeter.m5_title">Kiosque &amp; Vue Panoramique</h4>
                 <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 6px; line-height: 1.5;">
-                  Kiosque octogonal en bois abrité avec banquettes, fontaine et vue panoramique sur l'ensemble du parc réaménagé.
+                  <span data-i18n="demeter.m5_desc">Kiosque octogonal en bois abrité avec banquettes, fontaine et vue panoramique sur l'ensemble du parc réaménagé.</span>
                 </p>
               </div>
             </div>
             <div style="margin-top: 10px; font-size: 0.75rem; color: #94A3B8; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-map-location-dot" style="color: #10B981;"></i> Intégration dans le quartier
+              <i class="fa-solid fa-map-location-dot" style="color: #10B981;"></i> <span data-i18n="demeter.m5_footer">Intégration dans le quartier</span>
             </div>
           </div>
         </div>
@@ -800,9 +818,9 @@
       <div class="vivid-card card-demeter" style="padding: 1.8rem; margin-bottom: 2rem;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
           <div style="font-size: 0.82rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 1px;">
-            <i class="fa-solid fa-book-bookmark"></i> Document de Référence
+            <i class="fa-solid fa-book-bookmark"></i> <span data-i18n="demeter.doc_tag">Document de Référence</span>
           </div>
-          <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(16, 185, 129, 0.3);">Dossier Officiel</span>
+          <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(16, 185, 129, 0.3);" data-i18n="demeter.doc_badge">Dossier Officiel</span>
         </div>
         <div class="photo-frame-wrapper aspect-banner image-box">
           <img loading="lazy" decoding="async" src="assets/demeter_slide_1_cover.jpg" alt="Page de couverture officielle Projet C'Parc Déméter La Madeleine Chartres" onerror="this.src='assets/demeter_slide_1_cover.png';">
@@ -812,9 +830,9 @@
       <!-- Dossier Amphithéâtre : 4 Pages du Document -->
       <div style="margin-bottom: 2rem;">
         <div style="font-size: 0.82rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">
-          <i class="fa-solid fa-compass-drafting"></i> Étude Détaillée
+          <i class="fa-solid fa-compass-drafting"></i> <span data-i18n="demeter.amphi_tag">Étude Détaillée</span>
         </div>
-        <h3 style="font-size: 1.4rem; font-weight: 800; color: #F9FAFB; margin-bottom: 1rem;">
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: #F9FAFB; margin-bottom: 1rem;" data-i18n="demeter.amphi_title">
           Amphithéâtre en Plein Air (Dossier en 4 Pages)
         </h3>
         <div class="grid-4">
@@ -824,7 +842,7 @@
             </div>
             <div style="padding-top: 10px;">
               <span style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 1</span>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;">Amphithéâtre Romantique</div>
+              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;" data-i18n="demeter.amphi_p1">Amphithéâtre Romantique</div>
             </div>
           </div>
           <div class="vivid-card card-demeter image-box" style="padding: 14px;">
@@ -833,7 +851,7 @@
             </div>
             <div style="padding-top: 10px;">
               <span style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 2</span>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;">Gradins en Pierre</div>
+              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;" data-i18n="demeter.amphi_p2">Gradins en Pierre</div>
             </div>
           </div>
           <div class="vivid-card card-demeter image-box" style="padding: 14px;">
@@ -842,7 +860,7 @@
             </div>
             <div style="padding-top: 10px;">
               <span style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 3</span>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;">Scène Monumentale</div>
+              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;" data-i18n="demeter.amphi_p3">Scène Monumentale</div>
             </div>
           </div>
           <div class="vivid-card card-demeter image-box" style="padding: 14px;">
@@ -851,7 +869,7 @@
             </div>
             <div style="padding-top: 10px;">
               <span style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 4</span>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;">Synthèse &amp; Intégration</div>
+              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;" data-i18n="demeter.amphi_p4">Synthèse &amp; Intégration</div>
             </div>
           </div>
         </div>
@@ -861,9 +879,9 @@
       <div class="grid-2" style="gap: 1.5rem;">
         <div class="vivid-card card-demeter" style="padding: 1.8rem;">
           <div style="font-size: 0.8rem; font-weight: 800; color: #34D399; text-transform: uppercase; margin-bottom: 8px;">
-            <i class="fa-solid fa-palette"></i> Signature Esthétique
+            <i class="fa-solid fa-palette"></i> <span data-i18n="demeter.facade_tag">Signature Esthétique</span>
           </div>
-          <h4 style="color: #F9FAFB; font-size: 1.15rem; font-weight: 800; margin-bottom: 12px;">Façade Ajourée &amp; Vitraux de Chartres</h4>
+          <h4 style="color: #F9FAFB; font-size: 1.15rem; font-weight: 800; margin-bottom: 12px;" data-i18n="demeter.facade_title">Façade Ajourée &amp; Vitraux de Chartres</h4>
           <div class="grid-2" style="gap: 10px;">
             <div class="photo-frame-wrapper aspect-4-3 image-box">
               <img loading="lazy" decoding="async" src="assets/demeter_slide_2_facade.png" alt="Façade Ajourée" onerror="this.src='assets/demeter_slide_2_facade.jpg';">
@@ -875,20 +893,20 @@
           <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
             <div class="insight-bullet" style="padding: 10px 14px;">
               <i class="fa-solid fa-landmark" style="color: #10B981;"></i>
-              <div><strong>Héritage Local :</strong> Balcon ajouré inspiré de la Place Morard et transparence géométrique.</div>
+              <div data-i18n="demeter.facade_b1"><strong>Héritage Local :</strong> Balcon ajouré inspiré de la Place Morard et transparence géométrique.</div>
             </div>
             <div class="insight-bullet" style="padding: 10px 14px;">
               <i class="fa-solid fa-sun" style="color: #10B981;"></i>
-              <div><strong>Lumière Naturelle :</strong> Motifs botaniques inspirés de la rosace de la Cathédrale de Chartres.</div>
+              <div data-i18n="demeter.facade_b2"><strong>Lumière Naturelle :</strong> Motifs botaniques inspirés de la rosace de la Cathédrale de Chartres.</div>
             </div>
           </div>
         </div>
 
         <div class="vivid-card card-demeter" style="padding: 1.8rem;">
           <div style="font-size: 0.8rem; font-weight: 800; color: #34D399; text-transform: uppercase; margin-bottom: 8px;">
-            <i class="fa-solid fa-bolt"></i> Énergie &amp; Équipements
+            <i class="fa-solid fa-bolt"></i> <span data-i18n="demeter.solar_tag">Énergie &amp; Équipements</span>
           </div>
-          <h4 style="color: #F9FAFB; font-size: 1.15rem; font-weight: 800; margin-bottom: 12px;">Bornes Solaires &amp; Éclairage Intelligent</h4>
+          <h4 style="color: #F9FAFB; font-size: 1.15rem; font-weight: 800; margin-bottom: 12px;" data-i18n="demeter.solar_title">Bornes Solaires &amp; Éclairage Intelligent</h4>
           <div class="grid-2" style="gap: 10px;">
             <div class="photo-frame-wrapper aspect-4-3 image-box">
               <img loading="lazy" decoding="async" src="assets/demeter_slide_4_bornes.png" alt="Bornes Solaires" onerror="this.src='assets/demeter_slide_4_bornes.jpg';">
@@ -900,11 +918,11 @@
           <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
             <div class="insight-bullet" style="padding: 10px 14px;">
               <i class="fa-solid fa-charging-station" style="color: #10B981;"></i>
-              <div><strong>Bornes Solaires :</strong> Toiture photovoltaïque alimentant des stations de charge pour vélos/trottinettes.</div>
+              <div data-i18n="demeter.solar_b1"><strong>Bornes Solaires :</strong> Toiture photovoltaïque alimentant des stations de charge pour vélos/trottinettes.</div>
             </div>
             <div class="insight-bullet" style="padding: 10px 14px;">
               <i class="fa-solid fa-lightbulb" style="color: #10B981;"></i>
-              <div><strong>Détecteurs de Pas :</strong> Éclairage LED nocturne interactif s'illuminant au passage des piétons.</div>
+              <div data-i18n="demeter.solar_b2"><strong>Détecteurs de Pas :</strong> Éclairage LED nocturne interactif s'illuminant au passage des piétons.</div>
             </div>
           </div>
         </div>
@@ -921,9 +939,9 @@
             <img loading="lazy" decoding="async" src="assets/demeter_inauguration.png" alt="Inauguration officielle exposition Clos Pajot se réinvente" onerror="this.src='assets/demeter_project.jpg';">
           </div>
           <div style="padding-top: 12px;">
-            <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; font-weight: 800; font-size: 0.74rem; text-transform: uppercase; padding: 2px 10px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.3);">Vernissage Officiel</span>
-            <div style="color: #F9FAFB; font-weight: 800; font-size: 1.1rem; margin-top: 6px;">Inauguration à la Maison Pour Tous</div>
-            <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 4px;">Présentation publique des maquettes et prototypes aux élus et habitants du quartier de La Madeleine.</p>
+            <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; font-weight: 800; font-size: 0.74rem; text-transform: uppercase; padding: 2px 10px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.3);" data-i18n="demeter.inaug_tag">Vernissage Officiel</span>
+            <div style="color: #F9FAFB; font-weight: 800; font-size: 1.1rem; margin-top: 6px;" data-i18n="demeter.inaug_title">Inauguration à la Maison Pour Tous</div>
+            <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 4px;"><span data-i18n="demeter.inaug_desc">Présentation publique des maquettes et prototypes aux élus et habitants du quartier de La Madeleine.</span></p>
           </div>
         </div>
 
@@ -932,9 +950,9 @@
             <img loading="lazy" decoding="async" src="assets/demeter_marche.png" alt="Halle du marché potager place Billard" onerror="this.src='assets/demeter_project.jpg';">
           </div>
           <div style="padding-top: 12px;">
-            <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; font-weight: 800; font-size: 0.74rem; text-transform: uppercase; padding: 2px 10px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.3);">Espace Partagé</span>
-            <div style="color: #F9FAFB; font-weight: 800; font-size: 1.1rem; margin-top: 6px;">Marché Couvert du Potager</div>
-            <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 4px;">Halle couverte inspirée de la Place Billard à Chartres pour valoriser les récoltes du potager partagé.</p>
+            <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; font-weight: 800; font-size: 0.74rem; text-transform: uppercase; padding: 2px 10px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.3);" data-i18n="demeter.marche_tag">Espace Partagé</span>
+            <div style="color: #F9FAFB; font-weight: 800; font-size: 1.1rem; margin-top: 6px;" data-i18n="demeter.marche_title">Marché Couvert du Potager</div>
+            <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 4px;"><span data-i18n="demeter.marche_desc">Halle couverte inspirée de la Place Billard à Chartres pour valoriser les récoltes du potager partagé.</span></p>
           </div>
         </div>
       </div>
@@ -947,13 +965,13 @@
               <img loading="lazy" decoding="async" src="assets/logo_echo_republicain.png" alt="Logo L'Écho Républicain" style="height: 32px; object-fit: contain; display: block;">
             </div>
             <div style="font-size: 0.82rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 1px;">
-              <i class="fa-solid fa-award"></i> Trophée des Talents 2025 • L'Écho Républicain
+              <i class="fa-solid fa-award"></i> <span data-i18n="demeter.echo_tag">Trophée des Talents 2025 • L'Écho Républicain</span>
             </div>
-            <h3 class="vivid-card-title" style="font-size: 1.35rem; margin-top: 4px;">« Le Clos Pajot se réinvente »</h3>
+            <h3 class="vivid-card-title" style="font-size: 1.35rem; margin-top: 4px;" data-i18n="demeter.echo_title">« Le Clos Pajot se réinvente »</h3>
           </div>
 
           <a href="lecho_article.html" target="_blank" rel="noopener noreferrer" class="btn-vivid-blue" style="font-size: 0.85rem; padding: 10px 18px; text-decoration: none; border-color: rgba(16, 185, 129, 0.4);">
-            Ouvrir l'article dans un onglet <i class="fa-solid fa-arrow-up-right-from-square" style="color: #34D399;"></i>
+            <span data-i18n="demeter.echo_btn">Ouvrir l'article dans un onglet</span> <i class="fa-solid fa-arrow-up-right-from-square" style="color: #34D399;"></i>
           </a>
         </div>
 
@@ -968,22 +986,22 @@
           <div>
             <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); padding: 4px 12px; border-radius: 99px; margin-bottom: 6px;">
               <i class="fa-solid fa-stamp" style="color: #D4AF37;"></i>
-              <span style="color: #D4AF37; font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Attestation Officielle • Ville de Chartres</span>
+              <span style="color: #D4AF37; font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;" data-i18n="demeter.cert_badge">Attestation Officielle • Ville de Chartres</span>
             </div>
-            <h3 class="vivid-card-title" style="font-size: 1.35rem; margin-top: 2px;">
+            <h3 class="vivid-card-title" style="font-size: 1.35rem; margin-top: 2px;" data-i18n="demeter.cert_title">
               Certificat de Participation délivré à Luka Xiong
             </h3>
             <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 4px;">
-              Signé par <strong>Ladislas VERGNE</strong>, Maire de Chartres et Président de Chartres métropole.
+              <span data-i18n="demeter.cert_desc">Signé par <strong>Ladislas VERGNE</strong>, Maire de Chartres et Président de Chartres métropole.</span>
             </p>
           </div>
 
           <div style="display: flex; gap: 8px; flex-wrap: wrap;">
             <button type="button" class="btn-vivid-blue clickable-proof" data-img="assets/certificat_clos_pajot_hd.jpg" style="font-size: 0.85rem; padding: 10px 18px; background: rgba(212, 175, 55, 0.22); border-color: #D4AF37; color: #FFFFFF; cursor: pointer;">
-              <i class="fa-solid fa-eye"></i> Aperçu Immédiat (HD)
+              <i class="fa-solid fa-eye"></i> <span data-i18n="demeter.cert_btn_view">Aperçu Immédiat (HD)</span>
             </button>
             <a href="assets/certificat_participation_clos_pajot.pdf" target="_blank" download="certificat_participation_clos_pajot.pdf" class="btn-vivid-blue" style="font-size: 0.85rem; padding: 10px 18px; text-decoration: none; background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.2); color: #CBD5E1;">
-              <i class="fa-solid fa-download"></i> Télécharger PDF
+              <i class="fa-solid fa-download"></i> <span data-i18n="demeter.cert_btn_dl">Télécharger PDF</span>
             </a>
           </div>
         </div>
@@ -993,8 +1011,8 @@
         </div>
         
         <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 0.82rem; color: #94A3B8;">
-          <span><i class="fa-solid fa-signature" style="color: #D4AF37;"></i> Fait à Chartres • Signé Ladislas VERGNE</span>
-          <span style="color: #CBD5E1; font-weight: 700;"><i class="fa-solid fa-check-double" style="color: #10B981;"></i> Certificat Authentifié &amp; Conforme</span>
+          <span><i class="fa-solid fa-signature" style="color: #D4AF37;"></i> <span data-i18n="demeter.cert_footer_signed">Fait à Chartres • Signé Ladislas VERGNE</span></span>
+          <span style="color: #CBD5E1; font-weight: 700;"><i class="fa-solid fa-check-double" style="color: #10B981;"></i> <span data-i18n="demeter.cert_footer_auth">Certificat Authentifié &amp; Conforme</span></span>
         </div>
       </div>
 
@@ -1003,39 +1021,39 @@
 
   <!-- ÉTAPE 3 : ESPRIT ENTREPRENEURIAL & COMMERCE -->
   <section class="modern-section" id="etape3">
-    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
+    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.back_to_hub">Retour à l'accueil</span></a>
     <div class="skema-tag">
-      <i class="fa-solid fa-graduation-cap"></i> Synergie SKEMA • Esprit Pionnier &amp; Entrepreneuriat (SKEMA Ventures)
+      <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="resell.skema_tag">Synergie SKEMA • Esprit Pionnier &amp; Entrepreneuriat (SKEMA Ventures)</span>
     </div>
     <div class="step-number-tag">
-      <i class="fa-solid fa-chart-line" style="color: #3B82F6;"></i> ÉTAPE 3 / 4 — COMMERCE, ACHAT-REVENTE &amp; LOGISTIQUE
+      <i class="fa-solid fa-chart-line" style="color: #3B82F6;"></i> <span data-i18n="resell.step_tag">ÉTAPE 3 / 4 — COMMERCE, ACHAT-REVENTE &amp; LOGISTIQUE</span>
     </div>
-    <h2 class="section-hero-title">Achat-Revente &amp; Commerce Indépendant <highlight class="cobalt">(7 Ans d'Expérience)</highlight></h2>
-    <div class="section-hero-subtitle">
+    <h2 class="section-hero-title"><span data-i18n="resell.title">Achat-Revente &amp; Commerce Indépendant</span> <highlight class="cobalt" data-i18n="resell.title_highlight">(7 Ans d'Expérience)</highlight></h2>
+    <div class="section-hero-subtitle" data-i18n="resell.subtitle">
       Activité commerciale autonome depuis 2017 : sourcing d'opportunités, certification d'authenticité, revente rapide sous le prix du marché et logistique d'expédition sécurisée.
     </div>
 
     <!-- EXECUTIVE KPI SUMMARY BAR -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
       <div class="vivid-card card-resell" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;">7 Ans</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;">Expérience Terrain</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Activité continue et autonome depuis 2017</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi1_title">7 Ans</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi1_sub">Expérience Terrain</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi1_desc">Activité continue et autonome depuis 2017</div>
       </div>
       <div class="vivid-card card-resell" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;">-30% à -60%</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;">Sous la Cote Marché</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Garantie de revente éclair &amp; marge saine</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi2_title">-30% à -60%</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi2_sub">Sous la Cote Marché</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi2_desc">Garantie de revente éclair &amp; marge saine</div>
       </div>
       <div class="vivid-card card-resell" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;">0 Invendu</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;">Zéro Stock Dormant</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Rotation continue du capital financier</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi3_title">0 Invendu</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi3_sub">Zéro Stock Dormant</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi3_desc">Rotation continue du capital financier</div>
       </div>
       <div class="vivid-card card-resell" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;">100% Opportuniste</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;">Toutes Marques</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Sneakers, mode, vestes, pièces collectors</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi4_title">100% Opportuniste</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi4_sub">Toutes Marques</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi4_desc">Sneakers, mode, vestes, pièces collectors</div>
       </div>
     </div>
 
@@ -1051,9 +1069,9 @@
         </div>
         
         <div style="font-size: 0.82rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
-          <i class="fa-solid fa-crosshairs"></i> Pilier 1 • Sourcing Stratégique &amp; Opportunisme
+          <i class="fa-solid fa-crosshairs"></i> <span data-i18n="resell.p1_tag">Pilier 1 • Sourcing Stratégique &amp; Opportunisme</span>
         </div>
-        <h3 class="vivid-card-title" style="font-size: 1.5rem; margin-bottom: 0.8rem;">
+        <h3 class="vivid-card-title" style="font-size: 1.5rem; margin-bottom: 0.8rem;" data-i18n="resell.p1_title">
           Acheter au Prix le Plus Bas Sans Restriction de Marque
         </h3>
         
@@ -1061,46 +1079,354 @@
         <div style="background: rgba(59, 130, 246, 0.08); border-left: 3px solid #3B82F6; padding: 14px 18px; border-radius: var(--radius-sm); margin-bottom: 1.5rem;">
           <p style="margin: 0; font-size: 0.96rem; color: #F9FAFB; font-weight: 600; line-height: 1.6;">
             <i class="fa-solid fa-quote-left" style="color: #60A5FA; margin-right: 8px;"></i>
-            Je ne me limite à <strong>aucune marque précise</strong> : je saisis <strong>toutes les opportunités rentables</strong> dès que le prix d'achat est décoté (-40% à -70% sous le marché) et que la demande est immédiate.
+            <span data-i18n="resell.p1_quote">Je ne me limite à <strong>aucune marque précise</strong> : je saisis <strong>toutes les opportunités rentables</strong> dès que le prix d'achat est décoté (-40% à -70% sous le marché) et que la demande est immédiate.</span>
           </p>
         </div>
 
         <div class="grid-3" style="gap: 1.25rem;">
           <div class="insight-bullet" style="flex-direction: column; gap: 8px; padding: 18px;">
             <div style="font-size: 1.05rem; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-tags" style="color: #60A5FA;"></i> Cumul &amp; Bons Plans
+              <i class="fa-solid fa-tags" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_b1_title">Cumul &amp; Bons Plans</span>
             </div>
-            <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin: 0;">
+            <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin: 0;" data-i18n="resell.p1_b1_desc">
               Optimisation systématique du coût d'acquisition en combinant soldes croisées, codes VIP, remises fidélité et réseaux de revendeurs fiables.
             </p>
           </div>
 
           <div class="insight-bullet" style="flex-direction: column; gap: 8px; padding: 18px;">
             <div style="font-size: 1.05rem; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-snowflake" style="color: #60A5FA;"></i> Achats Hors-Saison
+              <i class="fa-solid fa-snowflake" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_b2_title">Achats Hors-Saison</span>
             </div>
-            <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin: 0;">
+            <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin: 0;" data-i18n="resell.p1_b2_desc">
               Acheter des doudounes et pièces chaudes bradées en plein été pour les revendre à marge maximale dès les premiers froids de l'automne.
             </p>
           </div>
 
           <div class="insight-bullet" style="flex-direction: column; gap: 8px; padding: 18px;">
             <div style="font-size: 1.05rem; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-shield-check" style="color: #60A5FA;"></i> Authenticité 100%
+              <i class="fa-solid fa-shield-check" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_b3_title">Authenticité 100%</span>
             </div>
-            <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin: 0;">
+            <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin: 0;" data-i18n="resell.p1_b3_desc">
               Expertise physique méticuleuse : inspection des coutures, qualité des cuirs/tissus, étiquettes RFID d'origine et contrôle sous lampe UV anti-contrefaçon.
             </p>
           </div>
         </div>
 
-        <!-- Badges Typologies de Produits -->
+        <!-- Badges Typologies de Produits & Marques Phares -->
         <div style="margin-top: 1.5rem; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 0.78rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; margin-right: 6px;">Articles Traités :</span>
-          <span style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-shoe-prints" style="color: #60A5FA;"></i> Sneakers &amp; Chaussures</span>
-          <span style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-vest" style="color: #60A5FA;"></i> Doudounes &amp; Vestes</span>
-          <span style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-shirt" style="color: #60A5FA;"></i> Sweats, Polos &amp; Tops</span>
-          <span style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-gem" style="color: #60A5FA;"></i> Accessoires de Collection</span>
+          <span style="font-size: 0.78rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; margin-right: 6px;" data-i18n="resell.p1_items_label">Articles Traités :</span>
+          <span style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-shoe-prints" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_item1">Sneakers &amp; Chaussures</span></span>
+          <span style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-vest" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_item2">Doudounes &amp; Vestes</span></span>
+          <span style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-shirt" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_item3">Sweats, Polos &amp; Tops</span></span>
+          <span style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-gem" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_item4">Accessoires de Collection</span></span>
+        </div>
+        <div style="margin-top: 0.75rem; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+          <span style="font-size: 0.78rem; font-weight: 800; color: #CBD5E1; text-transform: uppercase; margin-right: 6px;" data-i18n="resell.p1_brands_label">Marques Clés :</span>
+          <span style="background: rgba(245, 158, 11, 0.1); color: #FCD34D; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(245, 158, 11, 0.25);"><i class="fa-solid fa-star"></i> Air Jordan (Jordan 4, Jordan 1)</span>
+          <span style="background: rgba(16, 185, 129, 0.1); color: #6EE7B7; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.25);"><i class="fa-solid fa-bolt"></i> Adidas (Yeezy, Samba, Campus 00s)</span>
+          <span style="background: rgba(59, 130, 246, 0.1); color: #93C5FD; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(59, 130, 246, 0.25);"><i class="fa-solid fa-fire"></i> Nike &amp; Nike SB Dunk</span>
+          <span style="background: rgba(168, 85, 247, 0.1); color: #D8B4FE; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(168, 85, 247, 0.25);"><i class="fa-solid fa-award"></i> New Balance (993, Made in USA)</span>
+        </div>
+
+        <!-- Showcase Terrain : Sneakers Rares, Hype & Collaborations (Secteur Principal) -->
+        <div style="margin-top: 1.5rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 22px; border-radius: var(--radius-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
+            <div style="font-size: 0.85rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1px;">
+              <i class="fa-solid fa-fire" style="color: #F59E0B;"></i> <span data-i18n="resell.showcase_title">Vitrine Terrain : Le Cœur de Mon Activité — Sneakers Rares, Hype &amp; Collaborations</span>
+            </div>
+            <span style="font-size: 0.72rem; color: #3B82F6; font-weight: 700; background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.25); padding: 3px 10px; border-radius: 99px;">
+              <i class="fa-solid fa-award"></i> <span data-i18n="resell.showcase_badge">Spécialité &amp; Expertise Principale</span>
+            </span>
+          </div>
+
+          <div class="grid-2" style="gap: 1.25rem;">
+            <!-- Photo 1: Air Jordan 4 Retro Metallic Gold & Stock Pyramide -->
+            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="photo-frame-wrapper clickable-proof" data-img="assets/resell_sneakers_jordan4.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 320px; background: #000; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
+                  <img loading="lazy" decoding="async" src="assets/resell_sneakers_jordan4.jpg" alt="Air Jordan 4 Retro Metallic Gold exposée sur sa pyramide de boîtes Jordan" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> Agrandir
+                  </div>
+                </div>
+                <div style="margin-top: 12px;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                    <span style="color: #F59E0B; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_jordan_tag">Volume Jordan Brand</span>
+                    <span style="font-size: 0.72rem; color: #94A3B8;" data-i18n="resell.photo_jordan_sub">Pyramide Deadstock</span>
+                  </div>
+                  <h4 style="color: #F9FAFB; font-size: 1rem; font-weight: 800; margin-bottom: 4px;" data-i18n="resell.photo_jordan_title">Air Jordan 4 Retro &amp; Stock Massif</h4>
+                  <p style="color: #CBD5E1; font-size: 0.84rem; line-height: 1.5; margin: 0;">
+                    <span data-i18n="resell.photo_jordan_desc">Stock réel de paires neuves authentiques sourcées lors des drops officiels. Édition Air Jordan 4 Retro "Metallic Gold" exposée sur son stock de boîtes d'origine à motifs mouchetés dorés.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 2: Adidas Samba OG Leopard & Tour de Boîtes -->
+            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="photo-frame-wrapper clickable-proof" data-img="assets/resell_sneakers_adidas_samba.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 320px; background: #000; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
+                  <img loading="lazy" decoding="async" src="assets/resell_sneakers_adidas_samba.jpg" alt="Adidas Samba OG Leopard posée sur une tour de boîtes bleues Adidas Originals" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> Agrandir
+                  </div>
+                </div>
+                <div style="margin-top: 12px;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                    <span style="color: #10B981; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_adidas_tag">Tendance &amp; Volume Adidas</span>
+                    <span style="font-size: 0.72rem; color: #94A3B8;" data-i18n="resell.photo_adidas_sub">Tour de Boîtes Bleues</span>
+                  </div>
+                  <h4 style="color: #F9FAFB; font-size: 1rem; font-weight: 800; margin-bottom: 4px;" data-i18n="resell.photo_adidas_title">Adidas Samba OG "Leopard" &amp; Flux Continu</h4>
+                  <p style="color: #CBD5E1; font-size: 0.84rem; line-height: 1.5; margin: 0;">
+                    <span data-i18n="resell.photo_adidas_desc">Capacité à capter les silhouettes virales et recherchées. Paire Adidas Samba OG W en finition pony hair léopard reposant sur une colonne de boîtes bleues d'origine étiquetées.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 3: Hype & Studio (Travis Scott, Futura, Air 180) -->
+            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="photo-frame-wrapper clickable-proof" data-img="assets/resell_sneakers_hype_nike.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 320px; background: #000; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
+                  <img loading="lazy" decoding="async" src="assets/resell_sneakers_hype_nike.jpg" alt="Sélection de sneakers collectors Nike : Travis Scott AJ1 Canary, Futura SB Dunk, Air 180" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> Agrandir
+                  </div>
+                </div>
+                <div style="margin-top: 12px;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                    <span style="color: #F59E0B; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_hype_tag">Éditions Limitées &amp; Hype</span>
+                    <span style="font-size: 0.72rem; color: #94A3B8;" data-i18n="resell.photo_hype_sub">Deadstock &bull; Full Set</span>
+                  </div>
+                  <h4 style="color: #F9FAFB; font-size: 1rem; font-weight: 800; margin-bottom: 4px;" data-i18n="resell.photo_hype_title">Travis Scott Canary &bull; Futura SB Dunk &bull; Air 180</h4>
+                  <p style="color: #CBD5E1; font-size: 0.84rem; line-height: 1.5; margin: 0;">
+                    <span data-i18n="resell.photo_hype_desc">Sélection deadstock avec packaging d'origine complet : Air Jordan 1 Low Travis Scott "Canary", Nike SB Dunk Low Futura Laboratories et Nike Air 180 OG. Inspection minutieuse et expédition soignée.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 4: Collaborations Rares (Joe Freshgoods x NB 993 Pack) -->
+            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="photo-frame-wrapper clickable-proof" data-img="assets/resell_sneakers_collab_nb.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 320px; background: #000; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
+                  <img loading="lazy" decoding="async" src="assets/resell_sneakers_collab_nb.jpg" alt="Collection New Balance 993 x Joe Freshgoods Performance Art complète" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> Agrandir
+                  </div>
+                </div>
+                <div style="margin-top: 12px;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                    <span style="color: #60A5FA; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_collab_tag">Pack Collector Intégral</span>
+                    <span style="font-size: 0.72rem; color: #94A3B8;" data-i18n="resell.photo_collab_sub">Trio Complet 3/3</span>
+                  </div>
+                  <h4 style="color: #F9FAFB; font-size: 1rem; font-weight: 800; margin-bottom: 4px;" data-i18n="resell.photo_collab_title">Joe Freshgoods &times; New Balance 993 "Performance Art"</h4>
+                  <p style="color: #CBD5E1; font-size: 0.84rem; line-height: 1.5; margin: 0;">
+                    <span data-i18n="resell.photo_collab_desc">Sourcing du set intégral des 3 coloris (Arctic Blue, Powder Pink, Sage Green) avec boîtes et accessoires d'origine. Capacité avérée à sourcer et négocier des packs rares et recherchés.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stratégie de Pricing Éclair & Exemple Concret -->
+          <div style="margin-top: 1.5rem; background: rgba(59, 130, 246, 0.08); border-left: 3px solid #3B82F6; padding: 14px 18px; border-radius: var(--radius-sm);">
+            <div style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 0.92rem; color: #60A5FA; margin-bottom: 6px;">
+              <i class="fa-solid fa-bolt-lightning"></i> <span data-i18n="resell.pricing_strategy_title">Stratégie de Vente Éclair : Vendre Moins Cher pour Vendre Tout de Suite</span>
+            </div>
+            <p style="margin: 0; font-size: 0.88rem; color: #E2E8F0; line-height: 1.55;">
+              <span data-i18n="resell.pricing_strategy_desc"><strong>Principe directeur (ex. Air Jordan 4) :</strong> Imaginons une Air Jordan 4 achetée <em>Retail en Cop</em> à <strong>210 €</strong> et revendue à <strong>350 €</strong> sur les sites de sneakers. Plutôt que de fixer 350 € et d'attendre des semaines, <strong>je la vendais à 310 €</strong>. Être nettement moins cher que les plateformes déclenche un achat immédiat des clients. La paire part en quelques heures, sans risque de stock dormant, et le capital est instantanément réinvesti dans le drop suivant !</span>
+            </p>
+          </div>
+
+          <!-- Grille des 4 Paires : Prix Retail Cop vs Revente Day 1 vs Mon Prix Vente Flash -->
+          <div style="margin-top: 1.5rem;">
+            <div style="font-size: 0.82rem; font-weight: 800; color: #94A3B8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">
+              <i class="fa-solid fa-chart-simple" style="color: #60A5FA;"></i> <span data-i18n="resell.pricing_grid_title">Application Réelle sur les Paires Exposées (Cote Revente le Jour de la Sortie vs Mon Prix) :</span>
+            </div>
+            
+            <div class="grid-4" style="gap: 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+              <!-- Paire 1: Travis Scott AJ1 Canary -->
+              <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(251, 191, 36, 0.25); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <span style="font-size: 0.72rem; font-weight: 800; color: #F59E0B; text-transform: uppercase;">Jordan &times; Travis Scott</span>
+                    <span style="font-size: 0.68rem; color: #94A3B8; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">Sortie Mai 2024</span>
+                  </div>
+                  <h5 style="color: #F9FAFB; font-size: 0.95rem; font-weight: 800; margin-bottom: 10px;">AJ1 Low OG "Canary"</h5>
+                  
+                  <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
+                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                      <span style="color: #94A3B8;"><i class="fa-solid fa-tag"></i> <span data-i18n="resell.price_cop_label">Prix Cop (Retail) :</span></span>
+                      <strong style="color: #F9FAFB;">160 €</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                      <span style="color: #94A3B8;"><i class="fa-solid fa-globe"></i> <span data-i18n="resell.price_market_label">Cote Sites Day 1 :</span></span>
+                      <strong style="color: #EF4444; text-decoration: line-through;">490 €</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
+                      <span style="color: #93C5FD; font-weight: 700;"><i class="fa-solid fa-bolt"></i> <span data-i18n="resell.price_luka_label">Mon Prix Vendu :</span></span>
+                      <strong style="color: #60A5FA; font-size: 0.95rem;">420 €</strong>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Vente en &lt; 12h</span>
+                  <span style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+260 € Net</span>
+                </div>
+              </div>
+
+              <!-- Paire 2: Futura SB Dunk Low -->
+              <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <span style="font-size: 0.72rem; font-weight: 800; color: #38BDF8; text-transform: uppercase;">Nike SB &times; Futura</span>
+                    <span style="font-size: 0.68rem; color: #94A3B8; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">Sortie Mai 2024</span>
+                  </div>
+                  <h5 style="color: #F9FAFB; font-size: 0.95rem; font-weight: 800; margin-bottom: 10px;">Dunk Low "Bleached Aqua"</h5>
+                  
+                  <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
+                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                      <span style="color: #94A3B8;"><i class="fa-solid fa-tag"></i> <span data-i18n="resell.price_cop_label">Prix Cop (Retail) :</span></span>
+                      <strong style="color: #F9FAFB;">135 €</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                      <span style="color: #94A3B8;"><i class="fa-solid fa-globe"></i> <span data-i18n="resell.price_market_label">Cote Sites Day 1 :</span></span>
+                      <strong style="color: #EF4444; text-decoration: line-through;">300 €</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
+                      <span style="color: #93C5FD; font-weight: 700;"><i class="fa-solid fa-bolt"></i> <span data-i18n="resell.price_luka_label">Mon Prix Vendu :</span></span>
+                      <strong style="color: #60A5FA; font-size: 0.95rem;">260 €</strong>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Vente le Jour J</span>
+                  <span style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+125 € Net</span>
+                </div>
+              </div>
+
+              <!-- Paire 3: Nike Air 180 Ultramarine -->
+              <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(239, 68, 68, 0.25); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <span style="font-size: 0.72rem; font-weight: 800; color: #F87171; text-transform: uppercase;">Nike Sportswear</span>
+                    <span style="font-size: 0.68rem; color: #94A3B8; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">Sortie Mai 2024</span>
+                  </div>
+                  <h5 style="color: #F9FAFB; font-size: 0.95rem; font-weight: 800; margin-bottom: 10px;">Air 180 OG "Ultramarine"</h5>
+                  
+                  <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
+                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                      <span style="color: #94A3B8;"><i class="fa-solid fa-tag"></i> <span data-i18n="resell.price_cop_label">Prix Cop (Retail) :</span></span>
+                      <strong style="color: #F9FAFB;">150 €</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                      <span style="color: #94A3B8;"><i class="fa-solid fa-globe"></i> <span data-i18n="resell.price_market_label">Cote Sites Day 1 :</span></span>
+                      <strong style="color: #EF4444; text-decoration: line-through;">210 €</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
+                      <span style="color: #93C5FD; font-weight: 700;"><i class="fa-solid fa-bolt"></i> <span data-i18n="resell.price_luka_label">Mon Prix Vendu :</span></span>
+                      <strong style="color: #60A5FA; font-size: 0.95rem;">180 €</strong>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Rotation en 24h</span>
+                  <span style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+30 € Net</span>
+                </div>
+              </div>
+
+              <!-- Paire 4: New Balance 993 Joe Freshgoods -->
+              <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(52, 211, 153, 0.25); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <span style="font-size: 0.72rem; font-weight: 800; color: #34D399; text-transform: uppercase;">New Balance &times; JFG</span>
+                    <span style="font-size: 0.68rem; color: #94A3B8; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">Pack Collector 3/3</span>
+                  </div>
+                  <h5 style="color: #F9FAFB; font-size: 0.95rem; font-weight: 800; margin-bottom: 10px;">993 "Performance Art"</h5>
+                  
+                  <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
+                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                      <span style="color: #94A3B8;"><i class="fa-solid fa-tag"></i> Prix Cop (Retail / u) :</span>
+                      <strong style="color: #F9FAFB;">240 €</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                      <span style="color: #94A3B8;"><i class="fa-solid fa-globe"></i> <span data-i18n="resell.price_market_label">Cote Sites Day 1 :</span></span>
+                      <strong style="color: #EF4444; text-decoration: line-through;">400 € / u</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
+                      <span style="color: #93C5FD; font-weight: 700;"><i class="fa-solid fa-bolt"></i> <span data-i18n="resell.price_luka_label">Mon Prix Vendu :</span></span>
+                      <strong style="color: #60A5FA; font-size: 0.95rem;">330 € / u</strong>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Pack ou Unitaire</span>
+                  <span style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+90 € à +230 €</span>
+                </div>
+              </div>
+
+              <!-- Paire 5: Air Jordan 4 Retro -->
+              <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <span style="font-size: 0.72rem; font-weight: 800; color: #F59E0B; text-transform: uppercase;">Jordan Brand</span>
+                    <span style="font-size: 0.68rem; color: #10B981; background: rgba(16,185,129,0.12); padding: 2px 6px; border-radius: 4px; font-weight: 700;">Best-Seller N°1</span>
+                  </div>
+                  <h5 style="color: #F9FAFB; font-size: 0.95rem; font-weight: 800; margin-bottom: 10px;">Air Jordan 4 Retro</h5>
+                  
+                  <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
+                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                      <span style="color: #94A3B8;"><i class="fa-solid fa-tag"></i> <span data-i18n="resell.price_cop_label">Prix Cop (Retail) :</span></span>
+                      <strong style="color: #F9FAFB;">210 €</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                      <span style="color: #94A3B8;"><i class="fa-solid fa-globe"></i> <span data-i18n="resell.price_market_label">Cote Sites Day 1 :</span></span>
+                      <strong style="color: #EF4444; text-decoration: line-through;">350 €</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
+                      <span style="color: #93C5FD; font-weight: 700;"><i class="fa-solid fa-bolt"></i> <span data-i18n="resell.price_luka_label">Mon Prix Vendu :</span></span>
+                      <strong style="color: #60A5FA; font-size: 0.95rem;">310 €</strong>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Vente en &lt; 6h</span>
+                  <span style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+100 € Net</span>
+                </div>
+              </div>
+
+              <!-- Paire 6: Adidas Yeezy & Campus 00s -->
+              <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(147, 197, 253, 0.3); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <span style="font-size: 0.72rem; font-weight: 800; color: #93C5FD; text-transform: uppercase;">Adidas Originals</span>
+                    <span style="font-size: 0.68rem; color: #60A5FA; background: rgba(59,130,246,0.12); padding: 2px 6px; border-radius: 4px; font-weight: 700;">Volume &amp; Flux</span>
+                  </div>
+                  <h5 style="color: #F9FAFB; font-size: 0.95rem; font-weight: 800; margin-bottom: 10px;">Adidas Yeezy &amp; Campus 00s</h5>
+                  
+                  <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
+                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                      <span style="color: #94A3B8;"><i class="fa-solid fa-tag"></i> <span data-i18n="resell.price_cop_label">Prix Cop (Retail) :</span></span>
+                      <strong style="color: #F9FAFB;">70 € à 230 €</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                      <span style="color: #94A3B8;"><i class="fa-solid fa-globe"></i> <span data-i18n="resell.price_market_label">Cote Sites Day 1 :</span></span>
+                      <strong style="color: #EF4444; text-decoration: line-through;">140 € à 330 €</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
+                      <span style="color: #93C5FD; font-weight: 700;"><i class="fa-solid fa-bolt"></i> <span data-i18n="resell.price_luka_label">Mon Prix Vendu :</span></span>
+                      <strong style="color: #60A5FA; font-size: 0.95rem;">115 € à 285 €</strong>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Rotation Immédiate</span>
+                  <span style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+45 € à +55 € Net</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1111,53 +1437,53 @@
         <div class="vivid-card card-resell" style="padding: 2.2rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="font-size: 0.82rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
-              <i class="fa-solid fa-scale-balanced"></i> Pilier 2 • Stratégie &amp; Rentabilité
+              <i class="fa-solid fa-scale-balanced"></i> <span data-i18n="resell.p2_tag">Pilier 2 • Stratégie &amp; Rentabilité</span>
             </div>
-            <h3 class="vivid-card-title" style="font-size: 1.4rem; margin-bottom: 0.8rem;">
+            <h3 class="vivid-card-title" style="font-size: 1.4rem; margin-bottom: 0.8rem;" data-i18n="resell.p2_title">
               Pourquoi Revendre Moins Cher que les Autres ?
             </h3>
             <p class="vivid-card-desc" style="font-size: 0.95rem; margin-bottom: 1.25rem;">
-              Un modèle économique fondé sur la <strong>vitesse de rotation du capital</strong> plutôt que sur la marge unitaire spéculative :
+              <span data-i18n="resell.p2_desc">Un modèle économique fondé sur la <strong>vitesse de rotation du capital</strong> plutôt que sur la marge unitaire spéculative :</span>
             </p>
 
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem;">
               <div class="insight-bullet" style="padding: 12px 16px;">
                 <i class="fa-solid fa-1" style="color: #60A5FA;"></i>
-                <div><strong>Achat à Coût Minimal :</strong> Grâce au sourcing négocié, le coût d'acquisition de départ est très bas (ex. <strong>120 €</strong>).</div>
+                <div data-i18n="resell.p2_step1"><strong>Achat au Prix Retail (Cop) :</strong> Sourcing officiel dès la sortie (ex. <strong>Air Jordan 4 à 210 €</strong> ou <strong>Adidas Yeezy Slide à 70 €</strong>).</div>
               </div>
               <div class="insight-bullet" style="padding: 12px 16px;">
                 <i class="fa-solid fa-2" style="color: #60A5FA;"></i>
-                <div><strong>Prix Ultra-Attractif :</strong> Quand la cote internet est à 280 €, je la propose à <strong>180 €</strong> (-35%). L'acheteur fait une vraie économie immédiate.</div>
+                <div data-i18n="resell.p2_step2"><strong>Prix Ultra-Attractif :</strong> Quand la cote internet grimpe à 350 €, je la propose à <strong>310 €</strong> (-40 € sous le marché). L'acheteur fait une vraie économie immédiate et achète sans hésiter.</div>
               </div>
               <div class="insight-bullet" style="padding: 12px 16px;">
                 <i class="fa-solid fa-3" style="color: #60A5FA;"></i>
-                <div><strong>Vente Express &amp; 0 Invendu :</strong> L'article part en <strong>24h à 72h</strong>, libérant la trésorerie avec un <strong>bénéfice net de +60 € (+50% de ROI)</strong>.</div>
+                <div data-i18n="resell.p2_step3"><strong>Vente Flash &amp; 0 Invendu :</strong> La paire part en <strong>quelques heures</strong>, libérant la trésorerie avec <strong>+100 € de marge nette (+48% de ROI)</strong> réinvestis immédiatement.</div>
               </div>
             </div>
           </div>
 
           <div class="slider-group" style="margin-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.2rem;">
             <div style="font-size: 0.8rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; margin-bottom: 8px;">
-              <i class="fa-solid fa-sliders"></i> Ajuster les Montants du Simulateur :
+              <i class="fa-solid fa-sliders"></i> <span data-i18n="resell.sim_adjust_title">Ajuster les Montants du Simulateur :</span>
             </div>
             
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 700; color: #F9FAFB;">
-              <span>Prix d'Achat Fournisseur</span>
+              <span data-i18n="resell.sim_buy_label">Prix d'Achat Fournisseur (Cop Retail)</span>
               <div class="num-input-box">
-                <input type="text" id="inputBuy" value="120" inputmode="numeric" pattern="[0-9]*">
+                <input type="text" id="inputBuy" value="210" inputmode="numeric" pattern="[0-9]*">
                 <span>€</span>
               </div>
             </div>
-            <input type="range" id="sliderBuy" min="1" max="2000" value="120" style="width: 100%; margin-top: 4px;">
+            <input type="range" id="sliderBuy" min="1" max="2000" value="210" style="width: 100%; margin-top: 4px;">
 
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 700; color: #F9FAFB; margin-top: 10px;">
-              <span>Prix de Revente Fixé</span>
+              <span data-i18n="resell.sim_sell_label">Prix de Revente Fixé (Vente Flash)</span>
               <div class="num-input-box">
-                <input type="text" id="inputSell" value="180" inputmode="numeric" pattern="[0-9]*">
+                <input type="text" id="inputSell" value="310" inputmode="numeric" pattern="[0-9]*">
                 <span>€</span>
               </div>
             </div>
-            <input type="range" id="sliderSell" min="1" max="5000" value="180" style="width: 100%; margin-top: 4px;">
+            <input type="range" id="sliderSell" min="1" max="5000" value="310" style="width: 100%; margin-top: 4px;">
           </div>
         </div>
 
@@ -1166,18 +1492,18 @@
           <div class="card-watermark"><i class="fa-solid fa-calculator"></i></div>
           
           <div style="width: 100%; padding: 12px 0;">
-            <div style="font-size: 0.85rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Bénéfice Net par Vente</div>
-            <div style="font-size: 3.4rem; font-weight: 900; color: #10B981; line-height: 1.1; margin-top: 6px;" id="resProfit">+60 €</div>
+            <div style="font-size: 0.85rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;" data-i18n="resell.sim_res_profit">Bénéfice Net par Vente</div>
+            <div style="font-size: 3.4rem; font-weight: 900; color: #10B981; line-height: 1.1; margin-top: 6px;" id="resProfit">+100 €</div>
           </div>
 
           <div style="width: 100%; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 18px 0; margin: 12px 0;">
-            <div style="font-size: 0.85rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Marge Nette sur Prix de Vente</div>
-            <div style="font-size: 3.4rem; font-weight: 900; color: #FFFFFF; line-height: 1.1; margin-top: 6px;" id="resMargin">33%</div>
+            <div style="font-size: 0.85rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;" data-i18n="resell.sim_res_margin">Marge Nette sur Prix de Vente</div>
+            <div style="font-size: 3.4rem; font-weight: 900; color: #FFFFFF; line-height: 1.1; margin-top: 6px;" id="resMargin">32%</div>
           </div>
 
           <div style="width: 100%; padding: 12px 0;">
-            <div style="font-size: 0.85rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Retour sur Investissement (ROI)</div>
-            <div style="font-size: 3.4rem; font-weight: 900; color: #60A5FA; line-height: 1.1; margin-top: 6px;" id="resRoi">+50%</div>
+            <div style="font-size: 0.85rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;" data-i18n="resell.sim_res_roi">Retour sur Investissement (ROI)</div>
+            <div style="font-size: 3.4rem; font-weight: 900; color: #60A5FA; line-height: 1.1; margin-top: 6px;" id="resRoi">+48%</div>
           </div>
         </div>
       </div>
@@ -1190,20 +1516,20 @@
         </div>
 
         <div style="font-size: 0.82rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
-          <i class="fa-solid fa-boxes-packing"></i> Pilier 3 • Vente Multi-Plateformes &amp; Logistique
+          <i class="fa-solid fa-boxes-packing"></i> <span data-i18n="resell.p3_tag">Pilier 3 • Vente Multi-Plateformes &amp; Logistique</span>
         </div>
-        <h3 class="vivid-card-title" style="font-size: 1.4rem; margin-bottom: 0.8rem;">
+        <h3 class="vivid-card-title" style="font-size: 1.4rem; margin-bottom: 0.8rem;" data-i18n="resell.p3_title">
           Distribution Ciblée, Emballage Blindé &amp; Expéditions Suivies
         </h3>
         <p class="vivid-card-desc" style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-          Chaque article est mis en vente sur le canal le plus pertinent pour maximiser sa valeur, puis expédié dans un conditionnement protecteur rigoureux :
+          <span data-i18n="resell.p3_desc">Chaque article est mis en vente sur le canal le plus pertinent pour maximiser sa valeur, puis expédié dans un conditionnement protecteur rigoureux :</span>
         </p>
 
         <div class="grid-2" style="gap: 1.5rem;">
           <!-- Canaux de Vente -->
           <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 18px; border-radius: var(--radius-sm);">
             <div style="font-size: 0.82rem; font-weight: 800; color: #CBD5E1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
-              <i class="fa-solid fa-store" style="color: #60A5FA;"></i> Canaux de Vente Spécialisés &amp; Grand Public
+              <i class="fa-solid fa-store" style="color: #60A5FA;"></i> <span data-i18n="resell.p3_channels_title">Canaux de Vente Spécialisés &amp; Grand Public</span>
             </div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
               <a href="https://stockx.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="StockX"><img src="assets/logo_stockx.png" alt="StockX" style="height:14px;"> StockX</a>
@@ -1219,15 +1545,75 @@
           <!-- Logistique & Transporteurs -->
           <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 18px; border-radius: var(--radius-sm);">
             <div style="font-size: 0.82rem; font-weight: 800; color: #CBD5E1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
-              <i class="fa-solid fa-box" style="color: #60A5FA;"></i> Emballage Renforcé, Calage Journal &amp; Suivis
+              <i class="fa-solid fa-box" style="color: #60A5FA;"></i> <span data-i18n="resell.p3_shipping_title">Emballage Renforcé, Calage Journal &amp; Suivis</span>
             </div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
               <a href="https://www.chronopost.fr/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Chronopost Express"><img src="assets/logo_chronopost.jpg" alt="Chronopost" style="height:14px;"> Chronopost</a>
+              <a href="https://www.dhl.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="DHL Express"><i class="fa-solid fa-truck-fast" style="color: #FBBF24;"></i> DHL Express</a>
               <a href="https://www.ups.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="UPS Express"><img src="assets/logo_ups.png" alt="UPS" style="height:14px;"> UPS International</a>
               <a href="https://www.laposte.fr/colissimo" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Colissimo Signature"><svg viewBox="0 0 24 24" style="height:14px; width:14px; fill:#CBD5E1;"><path d="M2 6h12v12H2V6zm14 2h4l2 3v7h-6V8zm-8 4l-3 3h6l-3-3z"/></svg> Colissimo</a>
               <a href="https://www.mondialrelay.fr/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Mondial Relay"><svg viewBox="0 0 24 24" style="height:14px; width:14px; fill:#CBD5E1;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm-2 9.5V7l2 2 2-2v4.5h-1.2v-2.1L12 10.2l-.8-.8v2.1H10z"/></svg> Mondial Relay</a>
               <a href="https://www.relaiscolis.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Relais Colis"><img src="assets/logo_relaiscolis.png" alt="Relais Colis" style="height:14px;"> Relais Colis</a>
             </div>
+          </div>
+        </div>
+
+        <!-- Showcase Terrain : Stock DHL & Tournée de Livraison -->
+        <div style="margin-top: 1.5rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 22px; border-radius: var(--radius-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
+            <div style="font-size: 0.85rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1px;">
+              <i class="fa-solid fa-camera" style="color: #60A5FA;"></i> <span data-i18n="resell.logistics_proof_title">Preuves Terrain : Logistique &amp; Tournées d'Expédition Réelles</span>
+            </div>
+            <span style="font-size: 0.72rem; color: #10B981; font-weight: 700; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.25); padding: 3px 10px; border-radius: 99px;">
+              <i class="fa-solid fa-check-double"></i> <span data-i18n="resell.logistics_proof_badge">Flux Réel en Activité</span>
+            </span>
+          </div>
+
+          <div class="grid-2" style="gap: 1.25rem;">
+            <!-- Photo 1: Cartons DHL -->
+            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="photo-frame-wrapper clickable-proof" data-img="assets/resell_stock_cartons_dhl.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 320px; background: #000; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
+                  <img loading="lazy" decoding="async" src="assets/resell_stock_cartons_dhl.jpg" alt="Stock de cartons d'expédition DHL Express" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> Agrandir
+                  </div>
+                </div>
+                <div style="margin-top: 12px;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                    <span style="color: #F59E0B; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_dhl_tag">Conditionnement Officiel</span>
+                    <span style="font-size: 0.72rem; color: #94A3B8;" data-i18n="resell.photo_dhl_sub">Cartons DHL Format 3</span>
+                  </div>
+                  <h4 style="color: #F9FAFB; font-size: 1rem; font-weight: 800; margin-bottom: 4px;" data-i18n="resell.photo_dhl_title">Stock Dédié de Cartons DHL Express</h4>
+                  <p style="color: #CBD5E1; font-size: 0.84rem; line-height: 1.5; margin: 0;">
+                    <span data-i18n="resell.photo_dhl_desc">Cartons neufs renforcés et sécurisés sous film, toujours en stock pour préparer instantanément les commandes de vêtements, vestes et paires collectors dès la vente validée.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 2: Coffre de voiture chargé -->
+            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="photo-frame-wrapper clickable-proof" data-img="assets/resell_expedition_coffre_dhl.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 320px; background: #000; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
+                  <img loading="lazy" decoding="async" src="assets/resell_expedition_coffre_dhl.jpg" alt="Coffre chargé de colis DHL et Chronopost prêts pour la livraison" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> Agrandir
+                  </div>
+                </div>
+                <div style="margin-top: 12px;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                    <span style="color: #60A5FA; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_trunk_tag">Expéditions Groupées</span>
+                    <span style="font-size: 0.72rem; color: #94A3B8;" data-i18n="resell.photo_trunk_sub">Tournées Quotidiennes</span>
+                  </div>
+                  <h4 style="color: #F9FAFB; font-size: 1rem; font-weight: 800; margin-bottom: 4px;" data-i18n="resell.photo_trunk_title">Coffre Chargé &amp; Départ pour Expédition</h4>
+                  <p style="color: #CBD5E1; font-size: 0.84rem; line-height: 1.5; margin: 0;">
+                    <span data-i18n="resell.photo_trunk_desc">Volume réel lors des pics d'activité : colis scellés, étiquetés Chronopost / DHL et transportés en point relais ou centre de tri pour un départ le jour même vers les acheteurs.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -1237,42 +1623,42 @@
 
   <!-- ÉTAPE 4 : BÉNÉVOLAT & SUPPORT OPÉRATIONNEL — CIRCUIT ÉVÉNEMENTIEL -->
   <section class="modern-section" id="etape4">
-    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
+    <a href="#hero" class="back-to-hub-btn"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.back_to_hub">Retour à l'accueil</span></a>
     <div class="skema-tag">
-      <i class="fa-solid fa-graduation-cap"></i> Synergie SKEMA • "At Home Worldwide" &amp; Diversité Internationale
+      <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="hmong.skema_tag">Synergie SKEMA • "At Home Worldwide" &amp; Diversité Internationale</span>
     </div>
     <div class="step-number-tag">
-      <i class="fa-solid fa-hands-holding-circle" style="color: #E11D48;"></i> ÉTAPE 4 / 4 — ENGAGEMENT ASSOCIATIF &amp; BÉNÉVOLAT
+      <i class="fa-solid fa-hands-holding-circle" style="color: #E11D48;"></i> <span data-i18n="hmong.step_tag">ÉTAPE 4 / 4 — ENGAGEMENT ASSOCIATIF &amp; BÉNÉVOLAT</span>
     </div>
     <h2 class="section-hero-title">
-      <span style="font-size: 0.85em; display: block; letter-spacing: 1px; color: #FB7185; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Bénévolat &amp; Rassemblements</span>
-      Festivals Hmong • Nouvel An Hmong <highlight class="carmine">&amp; Événements Culturels</highlight>
+      <span style="font-size: 0.85em; display: block; letter-spacing: 1px; color: #FB7185; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;" data-i18n="hmong.title_lead">Bénévolat &amp; Rassemblements</span>
+      <span data-i18n="hmong.title">Festivals Hmong • Nouvel An Hmong &amp; Événements Culturels</span>
     </h2>
-    <div class="section-hero-subtitle">
+    <div class="section-hero-subtitle" data-i18n="hmong.subtitle">
       Bénévole engagé lors des <strong>Festivals Hmong, du Nouvel An Hmong et des grands rassemblements culturels</strong> dans 7 villes en France (Engagement actif depuis 2015).
     </div>
 
     <!-- EXECUTIVE KPI BAR BÉNÉVOLAT -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
       <div class="vivid-card card-benevolat" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;">Depuis 2015</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;">Fidélité &amp; Sérieux</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Plus de 10 ans de présence sur le terrain</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="hmong.kpi1_title">Depuis 2015</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;" data-i18n="hmong.kpi1_sub">Fidélité &amp; Sérieux</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="hmong.kpi1_desc">Plus de 10 ans de présence sur le terrain</div>
       </div>
       <div class="vivid-card card-benevolat" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;">7 Villes</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;">Partout en France</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Aubigny, Lyon, Nîmes, Orléans, Gien, Paris...</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="hmong.kpi2_title">7 Villes</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;" data-i18n="hmong.kpi2_sub">Partout en France</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="hmong.kpi2_desc">Aubigny, Lyon, Nîmes, Orléans, Gien, Paris...</div>
       </div>
       <div class="vivid-card card-benevolat" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;">5 000+</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;">Visiteurs par Édition</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Grands rassemblements intergénérationnels</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="hmong.kpi3_title">5 000+</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;" data-i18n="hmong.kpi3_sub">Visiteurs par Édition</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="hmong.kpi3_desc">Grands rassemblements intergénérationnels</div>
       </div>
       <div class="vivid-card card-benevolat" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;">USA &amp; Asie</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;">Accueil International</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;">Artistes et personnalités de la diaspora</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="hmong.kpi4_title">USA &amp; Asie</div>
+        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;" data-i18n="hmong.kpi4_sub">Accueil International</div>
+        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="hmong.kpi4_desc">Artistes et personnalités de la diaspora</div>
       </div>
     </div>
 
@@ -1283,18 +1669,18 @@
       <div class="vivid-card card-benevolat" style="padding: 2.2rem; display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <div style="font-size: 0.82rem; font-weight: 800; color: #FB7185; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
-            <i class="fa-solid fa-map-location-dot"></i> Pilier 1 • Terrain &amp; Coordination
+            <i class="fa-solid fa-map-location-dot"></i> <span data-i18n="hmong.p1_tag">Pilier 1 • Terrain &amp; Coordination</span>
           </div>
-          <h3 class="vivid-card-title" style="font-size: 1.35rem; margin-bottom: 0.8rem;">
+          <h3 class="vivid-card-title" style="font-size: 1.35rem; margin-bottom: 0.8rem;" data-i18n="hmong.p1_title">
             Engagement Actif dans 7 Grandes Villes de France
           </h3>
           <p class="vivid-card-desc" style="font-size: 0.95rem; margin-bottom: 1.25rem;">
-            Depuis plus de 10 ans (dès 2015), j'apporte une aide concrète sur le terrain lors des grands festivals culturels et sportifs rassemblant des milliers de visiteurs :
+            <span data-i18n="hmong.p1_desc">Depuis plus de 10 ans (dès 2015), j'apporte une aide concrète sur le terrain lors des grands festivals culturels et sportifs rassemblant des milliers de visiteurs :</span>
           </p>
 
           <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 1.25rem;">
             <div style="font-size: 0.78rem; font-weight: 800; color: #FB7185; text-transform: uppercase; margin-bottom: 8px;">
-              <i class="fa-solid fa-location-dot"></i> Les 7 Villes d'Intervention :
+              <i class="fa-solid fa-location-dot"></i> <span data-i18n="hmong.p1_cities_title">Les 7 Villes d'Intervention :</span>
             </div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
               <span class="brand-logo-pill" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Aubigny-sur-Nère</span>
@@ -1310,15 +1696,15 @@
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem;">
             <div class="insight-bullet" style="padding: 12px 16px;">
               <i class="fa-solid fa-utensils" style="color: #E11D48;"></i>
-              <div><strong>Restauration &amp; Bar :</strong> Service aux stands, gestion des flux lors des coups de rush et encaissements rapides.</div>
+              <div data-i18n="hmong.p1_b1"><strong>Restauration &amp; Bar :</strong> Service aux stands, gestion des flux lors des coups de rush et encaissements rapides.</div>
             </div>
             <div class="insight-bullet" style="padding: 12px 16px;">
               <i class="fa-solid fa-bullhorn" style="color: #E11D48;"></i>
-              <div><strong>Accueil &amp; Orientation :</strong> Guidage chaleureux des familles, communication bilingue et régulation des flux d'entrées.</div>
+              <div data-i18n="hmong.p1_b2"><strong>Accueil &amp; Orientation :</strong> Guidage chaleureux des familles, communication bilingue et régulation des flux d'entrées.</div>
             </div>
             <div class="insight-bullet" style="padding: 12px 16px;">
               <i class="fa-solid fa-trowel-bricks" style="color: #E11D48;"></i>
-              <div><strong>Logistique &amp; Terrains :</strong> Montage des structures, préparation des aires sportives (football, volley, pétanque) et sécurisation.</div>
+              <div data-i18n="hmong.p1_b3"><strong>Logistique &amp; Terrains :</strong> Montage des structures, préparation des aires sportives (football, volley, pétanque) et sécurisation.</div>
             </div>
           </div>
         </div>
@@ -1328,36 +1714,36 @@
       <div class="vivid-card card-benevolat" style="padding: 2.2rem; display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <div style="font-size: 0.82rem; font-weight: 800; color: #FB7185; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
-            <i class="fa-solid fa-handshake-angle"></i> Pilier 2 • Accueil, Échange &amp; Solidarité
+            <i class="fa-solid fa-handshake-angle"></i> <span data-i18n="hmong.p2_tag">Pilier 2 • Accueil, Échange &amp; Solidarité</span>
           </div>
-          <h3 class="vivid-card-title" style="font-size: 1.35rem; margin-bottom: 0.8rem;">
+          <h3 class="vivid-card-title" style="font-size: 1.35rem; margin-bottom: 0.8rem;" data-i18n="hmong.p2_title">
             Accueillir, Aider et Travailler en Équipe
           </h3>
           <p class="vivid-card-desc" style="font-size: 0.95rem; margin-bottom: 1.25rem;">
-            Ce que ces événements m'ont appris au contact direct du public et des différentes générations :
+            <span data-i18n="hmong.p2_desc">Ce que ces événements m'ont appris au contact direct du public et des différentes générations :</span>
           </p>
 
           <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 1.25rem;">
             <div style="font-size: 0.78rem; font-weight: 800; color: #FB7185; text-transform: uppercase; margin-bottom: 6px;">
-              <i class="fa-solid fa-star"></i> Accueil des invités et artistes (USA &amp; Asie) :
+              <i class="fa-solid fa-star"></i> <span data-i18n="hmong.p2_artists_title">Accueil des invités et artistes (USA &amp; Asie) :</span>
             </div>
             <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin: 0;">
-              Aider à recevoir les artistes et chanteurs venus pour le festival : les orienter, veiller à ce qu'ils ne manquent de rien dans les coulisses et faire le lien avec l'équipe qui gère la scène.
+              <span data-i18n="hmong.p2_artists_desc">Aider à recevoir les artistes et chanteurs venus pour le festival : les orienter, veiller à ce qu'ils ne manquent de rien dans les coulisses et faire le lien avec l'équipe qui gère la scène.</span>
             </p>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem;">
             <div class="insight-bullet" style="padding: 12px 16px;">
               <i class="fa-solid fa-people-group" style="color: #E11D48;"></i>
-              <div><strong>Entraide entre générations :</strong> Travailler main dans la main avec les anciens comme avec les plus jeunes, écouter les conseils et rester solidaire quand il y a du monde.</div>
+              <div data-i18n="hmong.p2_b1"><strong>Entraide entre générations :</strong> Travailler main dans la main avec les anciens comme avec les plus jeunes, écouter les conseils et rester solidaire quand il y a du monde.</div>
             </div>
             <div class="insight-bullet" style="padding: 12px 16px;">
               <i class="fa-solid fa-bolt-lightning" style="color: #E11D48;"></i>
-              <div><strong>Sens de la débrouille :</strong> Savoir réagir vite et calmement face à un imprévu, toujours avec le sourire et le sens de l'accueil.</div>
+              <div data-i18n="hmong.p2_b2"><strong>Sens de la débrouille :</strong> Savoir réagir vite et calmement face à un imprévu, toujours avec le sourire et le sens de l'accueil.</div>
             </div>
             <div class="insight-bullet" style="padding: 12px 16px;">
               <i class="fa-solid fa-gem" style="color: #E11D48;"></i>
-              <div><strong>Un engagement sur la durée :</strong> Revenir chaque année depuis plus de 10 ans pour donner un coup de main et faire vivre la communauté.</div>
+              <div data-i18n="hmong.p2_b3"><strong>Un engagement sur la durée :</strong> Revenir chaque année depuis plus de 10 ans pour donner un coup de main et faire vivre la communauté.</div>
             </div>
           </div>
         </div>
@@ -1369,13 +1755,13 @@
     <div style="margin-top: 2rem;">
       <div style="text-align: center; margin-bottom: 1.5rem;">
         <div style="font-size: 0.82rem; font-weight: 700; color: #FB7185; text-transform: uppercase; letter-spacing: 1.5px;">
-          <i class="fa-solid fa-video"></i> Immersion Vidéo
+          <i class="fa-solid fa-video"></i> <span data-i18n="hmong.video_tag">Immersion Vidéo</span>
         </div>
         <h3 style="font-size: 1.4rem; font-weight: 800; color: #F9FAFB; margin-top: 4px;">
-          Découvrir l'Ambiance des <highlight class="carmine">Festivals Hmong en Vidéo</highlight>
+          <span data-i18n="hmong.video_title">Découvrir l'Ambiance des Festivals Hmong en Vidéo</span>
         </h3>
         <p style="font-size: 0.92rem; color: #94A3B8; font-weight: 500; max-width: 680px; margin: 6px auto 0;">
-          Deux documents authentiques pour visualiser la dimension de ces rassemblements :
+          <span data-i18n="hmong.video_sub">Deux documents authentiques pour visualiser la dimension de ces rassemblements :</span>
         </p>
       </div>
 
@@ -1386,15 +1772,15 @@
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
               <span style="background: rgba(255, 255, 255, 0.06); color: #E2E8F0; font-size: 0.74rem; font-weight: 700; padding: 3px 10px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.12);">
-                <i class="fa-solid fa-tv"></i> Reportage France 3
+                <i class="fa-solid fa-tv"></i> <span data-i18n="hmong.v1_tag">Reportage France 3</span>
               </span>
-              <span style="font-size: 0.75rem; color: #94A3B8; font-weight: 600;"><i class="fa-solid fa-location-dot" style="color: #CBD5E1;"></i> Aubigny-sur-Nère</span>
+              <span style="font-size: 0.75rem; color: #94A3B8; font-weight: 600;"><i class="fa-solid fa-location-dot" style="color: #CBD5E1;"></i> <span data-i18n="hmong.v1_loc">Aubigny-sur-Nère</span></span>
             </div>
-            <h4 style="color: #F9FAFB; font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;">Grand Rassemblement &amp; Fête Culturelle</h4>
+            <h4 style="color: #F9FAFB; font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;" data-i18n="hmong.v1_title">Grand Rassemblement &amp; Fête Culturelle</h4>
             <p style="color: #CBD5E1; font-size: 0.84rem; line-height: 1.5; margin-bottom: 8px;">
-              Reportage télévisé de France 3 sur le Festival Hmong à Aubigny-sur-Nère : danses traditionnelles, beaux costumes brodés, cuisine, tournois sportifs et partage culturel.
+              <span data-i18n="hmong.v1_desc">Reportage télévisé de France 3 sur le Festival Hmong à Aubigny-sur-Nère : danses traditionnelles, beaux costumes brodés, cuisine, tournois sportifs et partage culturel.</span>
             </p>
-            <div style="background: rgba(255, 255, 255, 0.03); border-left: 2px solid rgba(255, 255, 255, 0.2); padding: 6px 10px; border-radius: var(--radius-sm); font-size: 0.76rem; color: #CBD5E1; margin-bottom: 12px;">
+            <div style="background: rgba(255, 255, 255, 0.03); border-left: 2px solid rgba(255, 255, 255, 0.2); padding: 6px 10px; border-radius: var(--radius-sm); font-size: 0.76rem; color: #CBD5E1; margin-bottom: 12px;" data-i18n="hmong.v1_precision">
               <strong>ℹ️ Précision :</strong> Ce reportage date de <strong>2015</strong>. Depuis, les rassemblements ont beaucoup évolué et grandi : des milliers de personnes accueillies, de grandes scènes et la venue d'artistes internationaux.
             </div>
           </div>
@@ -1412,7 +1798,7 @@
 
           <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; gap: 8px;">
             <span style="font-size: 0.74rem; color: #94A3B8; font-weight: 500;">
-              <i class="fa-solid fa-film"></i> Archives France 3 (2015)
+              <i class="fa-solid fa-film"></i> <span data-i18n="hmong.v1_footer">Archives France 3 (2015)</span>
             </span>
             <a href="https://youtu.be/C3WvrLced94" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" style="font-size: 0.75rem; padding: 4px 10px;" title="Voir la vidéo sur YouTube">
               <i class="fa-brands fa-youtube" style="color: #EF4444;"></i> YouTube <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
@@ -1425,13 +1811,13 @@
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
               <span style="background: rgba(255, 255, 255, 0.06); color: #E2E8F0; font-size: 0.74rem; font-weight: 700; padding: 3px 10px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.12);">
-                <i class="fa-solid fa-video"></i> Concert en Direct
+                <i class="fa-solid fa-video"></i> <span data-i18n="hmong.v2_tag">Concert en Direct</span>
               </span>
-              <span style="font-size: 0.75rem; color: #94A3B8; font-weight: 600;"><i class="fa-solid fa-location-dot" style="color: #CBD5E1;"></i> Andrézieux-Bouthéon</span>
+              <span style="font-size: 0.75rem; color: #94A3B8; font-weight: 600;"><i class="fa-solid fa-location-dot" style="color: #CBD5E1;"></i> <span data-i18n="hmong.v2_loc">Andrézieux-Bouthéon</span></span>
             </div>
-            <h4 style="color: #F9FAFB; font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;">Suddenrush — "Mi Noog" en Concert</h4>
+            <h4 style="color: #F9FAFB; font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;" data-i18n="hmong.v2_title">Suddenrush — "Mi Noog" en Concert</h4>
             <p style="color: #CBD5E1; font-size: 0.84rem; line-height: 1.5; margin-bottom: 12px;">
-              Vidéo filmée au premier rang pendant la soirée festive (19-20 Juillet 2024 à Andrézieux) : ambiance survoltée avec des milliers de spectateurs et des artistes sur scène.
+              <span data-i18n="hmong.v2_desc">Vidéo filmée au premier rang pendant la soirée festive (19-20 Juillet 2024 à Andrézieux) : ambiance survoltée avec des milliers de spectateurs et des artistes sur scène.</span>
             </p>
           </div>
           
@@ -1448,7 +1834,7 @@
 
           <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
             <span style="font-size: 0.74rem; color: #94A3B8; font-weight: 500;">
-              <i class="fa-solid fa-microphone-lines"></i> Soirée de Gala &amp; Scène Internationale
+              <i class="fa-solid fa-microphone-lines"></i> <span data-i18n="hmong.v2_footer">Soirée de Gala &amp; Scène Internationale</span>
             </span>
             <a href="https://youtu.be/vKfPg94vR6A" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" style="font-size: 0.75rem; padding: 4px 10px;" title="Voir le concert sur YouTube">
               <i class="fa-brands fa-youtube" style="color: #EF4444;"></i> YouTube <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
@@ -1464,7 +1850,7 @@
   <div class="shortlist-drawer" id="shortlistDrawer">
     <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 1.25rem;">
       <div style="font-size: 1.05rem; font-weight: 800; color: #F9FAFB; letter-spacing: -0.01em; display: flex; align-items: center; gap: 8px;">
-        <i class="fa-solid fa-file-lines" style="color: #EF4444;"></i> MES CV &amp; CONTACT
+        <i class="fa-solid fa-file-lines" style="color: #EF4444;"></i> <span data-i18n="drawer.title">MES CV &amp; CONTACT</span>
       </div>
       <button id="shortlistClose" style="background: transparent; border: none; font-size: 1.5rem; color: #9CA3AF; cursor: pointer; padding: 4px 8px; transition: color 0.2s ease;" aria-label="Fermer le panneau">&times;</button>
     </div>
@@ -1475,8 +1861,8 @@
         <img src="assets/candidate_photo.jpg" alt="Luka Xiong" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.2);">
         <div>
           <div style="font-weight: 800; font-size: 1rem; color: #F9FAFB;">Luka Xiong</div>
-          <div style="font-size: 0.74rem; color: #FCA5A5; font-weight: 700;"><i class="fa-solid fa-graduation-cap"></i> Candidat BBA • SKEMA Business School</div>
-          <div style="font-size: 0.72rem; color: #9CA3AF; font-weight: 500;">Bac STI2D Architecture (Chartres)</div>
+          <div style="font-size: 0.74rem; color: #FCA5A5; font-weight: 700;"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="intro.skema_tag">Candidat BBA • SKEMA Business School</span></div>
+          <div style="font-size: 0.72rem; color: #9CA3AF; font-weight: 500;" data-i18n="drawer.candidate_sub2">Bac STI2D Architecture (Chartres)</div>
         </div>
       </div>
 
@@ -1484,9 +1870,9 @@
       <div style="display: flex; flex-direction: column; gap: 10px;">
         <div style="display: flex; align-items: center; justify-content: space-between;">
           <strong style="color: #F9FAFB; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.8px;">
-            <i class="fa-solid fa-file-pdf" style="color: #EF4444;"></i> Mes CV à disposition (PDF) :
+            <i class="fa-solid fa-file-pdf" style="color: #EF4444;"></i> <span data-i18n="drawer.cv_header">Mes CV à disposition (PDF) :</span>
           </strong>
-          <span style="font-size: 0.68rem; color: #10B981; font-weight: 700; background: rgba(16, 185, 129, 0.12); padding: 2px 8px; border-radius: 99px;">PDF Officiels</span>
+          <span style="font-size: 0.68rem; color: #10B981; font-weight: 700; background: rgba(16, 185, 129, 0.12); padding: 2px 8px; border-radius: 99px;" data-i18n="drawer.cv_badge">PDF Officiels</span>
         </div>
 
         <!-- 1. CV Français (SKEMA) -->
@@ -1494,16 +1880,16 @@
           <div class="cv-card-top">
             <div class="cv-flag-icon">🇫🇷</div>
             <div class="cv-card-meta">
-              <div class="cv-title">CV Français — SKEMA BBA</div>
-              <div class="cv-sub">Bac STI2D Architecture • LVMH • 7 ans Achat-Revente</div>
+              <div class="cv-title" data-i18n="drawer.cv1_title">CV Français — SKEMA BBA</div>
+              <div class="cv-sub" data-i18n="drawer.cv1_sub">Bac STI2D Architecture • LVMH • 7 ans Achat-Revente</div>
             </div>
           </div>
           <div class="cv-card-actions">
             <a href="assets/CV_Luka_XIONG_SKEMA.pdf" target="_blank" download="CV_Luka_XIONG_SKEMA.pdf" class="btn-cv-dl">
-              <i class="fa-solid fa-download"></i> Télécharger PDF
+              <i class="fa-solid fa-download"></i> <span data-i18n="drawer.btn_dl">Télécharger PDF</span>
             </a>
             <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/cv_luka_fr_hd.png" title="Aperçu du CV Français">
-              <i class="fa-solid fa-eye"></i> Aperçu
+              <i class="fa-solid fa-eye"></i> <span data-i18n="drawer.btn_preview">Aperçu</span>
             </button>
           </div>
         </div>
@@ -1513,16 +1899,16 @@
           <div class="cv-card-top">
             <div class="cv-flag-icon">🇬🇧</div>
             <div class="cv-card-meta">
-              <div class="cv-title">CV English — UK Format</div>
-              <div class="cv-sub">Junior International Trade Candidate</div>
+              <div class="cv-title" data-i18n="drawer.cv2_title">CV English — UK Format</div>
+              <div class="cv-sub" data-i18n="drawer.cv2_sub">Junior International Trade Candidate</div>
             </div>
           </div>
           <div class="cv-card-actions">
             <a href="assets/CV_Luka_XIONG_UK.pdf" target="_blank" download="CV_Luka_XIONG_UK.pdf" class="btn-cv-dl">
-              <i class="fa-solid fa-download"></i> Télécharger PDF
+              <i class="fa-solid fa-download"></i> <span data-i18n="drawer.btn_dl">Télécharger PDF</span>
             </a>
             <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/cv_luka_uk_hd.png" title="Aperçu du CV Anglais UK">
-              <i class="fa-solid fa-eye"></i> Aperçu
+              <i class="fa-solid fa-eye"></i> <span data-i18n="drawer.btn_preview">Aperçu</span>
             </button>
           </div>
         </div>
@@ -1532,16 +1918,16 @@
           <div class="cv-card-top">
             <div class="cv-flag-icon">🇺🇸</div>
             <div class="cv-card-meta">
-              <div class="cv-title">CV English — USA Resume</div>
-              <div class="cv-sub">International Trade Candidate • US Format</div>
+              <div class="cv-title" data-i18n="drawer.cv3_title">CV English — USA Resume</div>
+              <div class="cv-sub" data-i18n="drawer.cv3_sub">International Trade Candidate • US Format</div>
             </div>
           </div>
           <div class="cv-card-actions">
             <a href="assets/CV_Luka_XIONG_USA.pdf" target="_blank" download="CV_Luka_XIONG_USA.pdf" class="btn-cv-dl">
-              <i class="fa-solid fa-download"></i> Télécharger PDF
+              <i class="fa-solid fa-download"></i> <span data-i18n="drawer.btn_dl">Télécharger PDF</span>
             </a>
             <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/cv_luka_usa_hd.png" title="Aperçu du CV Américain (USA)">
-              <i class="fa-solid fa-eye"></i> Aperçu
+              <i class="fa-solid fa-eye"></i> <span data-i18n="drawer.btn_preview">Aperçu</span>
             </button>
           </div>
         </div>
@@ -1551,16 +1937,16 @@
           <div class="cv-card-top">
             <div class="cv-flag-icon">🇪🇸</div>
             <div class="cv-card-meta">
-              <div class="cv-title">CV Español — Internacional</div>
-              <div class="cv-sub">Comercio Internacional • B2B &amp; Prospección</div>
+              <div class="cv-title" data-i18n="drawer.cv4_title">CV Español — Internacional</div>
+              <div class="cv-sub" data-i18n="drawer.cv4_sub">Comercio Internacional • B2B &amp; Prospección</div>
             </div>
           </div>
           <div class="cv-card-actions">
             <a href="assets/CV_Luka_XIONG_ES.pdf" target="_blank" download="CV_Luka_XIONG_ES.pdf" class="btn-cv-dl">
-              <i class="fa-solid fa-download"></i> Télécharger PDF
+              <i class="fa-solid fa-download"></i> <span data-i18n="drawer.btn_dl">Télécharger PDF</span>
             </a>
             <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/cv_luka_es_hd.png" title="Aperçu du CV Espagnol">
-              <i class="fa-solid fa-eye"></i> Aperçu
+              <i class="fa-solid fa-eye"></i> <span data-i18n="drawer.btn_preview">Aperçu</span>
             </button>
           </div>
         </div>
@@ -1568,7 +1954,7 @@
 
       <!-- Detailed Social Media & Direct Channels -->
       <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 0.25rem; padding-top: 0.9rem; border-top: 1px solid rgba(255,255,255,0.08);">
-        <strong style="color: #9CA3AF; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px;">Coordonnées Directes :</strong>
+        <strong style="color: #9CA3AF; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px;" data-i18n="drawer.contacts_header">Coordonnées Directes :</strong>
         
         <!-- Phone Detail Card -->
         <a href="tel:+33629452103" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
@@ -1578,10 +1964,10 @@
             </div>
             <div>
               <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">+33 6 29 45 21 03</div>
-              <div style="color: #9CA3AF; font-size: 0.72rem;">Appel / SMS direct</div>
+              <div style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.call_label">Appel / SMS direct</div>
             </div>
           </div>
-          <span style="color: #34D399; font-size: 0.76rem; font-weight: 600;">Appeler <i class="fa-solid fa-phone-volume" style="font-size: 0.7rem;"></i></span>
+          <span style="color: #34D399; font-size: 0.76rem; font-weight: 600;"><span data-i18n="drawer.call_btn">Appeler</span> <i class="fa-solid fa-phone-volume" style="font-size: 0.7rem;"></i></span>
         </a>
 
         <!-- Proton Mail Detail Card -->
@@ -1592,10 +1978,10 @@
             </div>
             <div>
               <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">Email Pro (Proton)</div>
-              <div style="color: #9CA3AF; font-size: 0.72rem;">luka.xiong@proton.me</div>
+              <div style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.email_label">luka.xiong@proton.me</div>
             </div>
           </div>
-          <span style="color: #A78BFA; font-size: 0.76rem; font-weight: 600;">Écrire <i class="fa-solid fa-paper-plane" style="font-size: 0.7rem;"></i></span>
+          <span style="color: #A78BFA; font-size: 0.76rem; font-weight: 600;"><span data-i18n="drawer.email_btn">Écrire</span> <i class="fa-solid fa-paper-plane" style="font-size: 0.7rem;"></i></span>
         </a>
 
         <!-- LinkedIn Detail Card -->
@@ -1606,7 +1992,7 @@
             </div>
             <div>
               <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">LinkedIn</div>
-              <div style="color: #9CA3AF; font-size: 0.72rem;">Luka Xiong • Parcours &amp; Certifications</div>
+              <div style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.linkedin_sub">Luka Xiong • Parcours &amp; Certifications</div>
             </div>
           </div>
           <span style="color: #60A5FA; font-size: 0.76rem; font-weight: 600;">Profil <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
@@ -1620,7 +2006,7 @@
             </div>
             <div>
               <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">Instagram</div>
-              <div style="color: #9CA3AF; font-size: 0.72rem;">@lukahmg • Contact direct &amp; Lifestyle</div>
+              <div style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.insta_sub">@lukahmg • Contact direct &amp; Lifestyle</div>
             </div>
           </div>
           <span style="color: #F472B6; font-size: 0.76rem; font-weight: 600;">@lukahmg <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
@@ -1634,7 +2020,7 @@
             </div>
             <div>
               <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">Facebook (Luka Xiong)</div>
-              <div style="color: #9CA3AF; font-size: 0.72rem;">Luka Xiong • Contact &amp; Réseau</div>
+              <div style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.fb_sub">Luka Xiong • Contact &amp; Réseau</div>
             </div>
           </div>
           <span style="color: #60A5FA; font-size: 0.76rem; font-weight: 600;">Profil <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
@@ -1655,16 +2041,16 @@
       </div>
       <div class="modal-fallback" id="modalFallback" style="display: none; text-align: center; color: #F9FAFB; padding: 2rem; background: rgba(17, 24, 39, 0.95); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; max-width: 440px; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.8);">
         <i class="fa-solid fa-file-pdf" style="font-size: 3rem; color: #EF4444; margin-bottom: 1rem;"></i>
-        <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">Document Officiel Prêt</h3>
-        <p style="color: #9CA3AF; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.25rem;">L'aperçu haute résolution peut être consulté ou téléchargé directement :</p>
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;" data-i18n="modal.ready_title">Document Officiel Prêt</h3>
+        <p style="color: #9CA3AF; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.25rem;" data-i18n="modal.ready_desc">L'aperçu haute résolution peut être consulté ou téléchargé directement :</p>
         <a id="modalFallbackLink" href="#" target="_blank" class="btn-cv-dl" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; font-size: 0.9rem; border-radius: 99px; text-decoration: none; background: #B91C1C; color: #FFF; font-weight: 700; box-shadow: 0 6px 20px rgba(185, 28, 28, 0.4);">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir le Document PDF
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="modal.ready_btn">Ouvrir le Document PDF</span>
         </a>
       </div>
     </div>
   </div>
 
   <!-- Custom Script -->
-  <script src="script.js?v=37.0"></script>
+  <script src="script.js?v=43.0"></script>
 </body>
 </html>
