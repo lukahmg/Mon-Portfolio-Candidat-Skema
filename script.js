@@ -468,6 +468,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function showModalImage(imgSrc) {
     if (!modalOverlay || !modalImage || !imgSrc) return;
 
+    const cleanSrc = imgSrc.split('?')[0];
+    const versionParam = imgSrc.includes('?') ? '?' + imgSrc.split('?')[1] : '';
+
     if (modalSpinner) modalSpinner.style.display = 'flex';
     if (modalFallback) modalFallback.style.display = 'none';
     modalImage.style.display = 'block';
@@ -484,14 +487,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     modalImage.onerror = () => {
-      if (!attemptedFallback && fallbackMap[imgSrc]) {
+      if (!attemptedFallback && fallbackMap[cleanSrc]) {
         attemptedFallback = true;
-        modalImage.src = fallbackMap[imgSrc];
+        modalImage.src = fallbackMap[cleanSrc] + versionParam;
       } else {
         if (modalSpinner) modalSpinner.style.display = 'none';
         modalImage.style.display = 'none';
         if (modalFallback && modalFallbackLink) {
-          modalFallbackLink.href = pdfMap[imgSrc] || imgSrc;
+          modalFallbackLink.href = (pdfMap[cleanSrc] || cleanSrc) + versionParam;
           modalFallback.style.display = 'block';
         }
       }
