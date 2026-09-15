@@ -450,7 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const fallbackMap = {
     'assets/cv_luka_fr_hd.png': 'assets/cv_luka_fr.png',
     'assets/cv_luka_uk_hd.png': 'assets/cv_luka_en.png',
-    'assets/cv_luka_usa_hd.png': 'assets/cv_luka_en.png',
+    'assets/cv_luka_usa_hd.png': 'assets/cv_luka_usa.png',
     'assets/cv_luka_es_hd.png': 'assets/cv_luka_es.png'
   };
 
