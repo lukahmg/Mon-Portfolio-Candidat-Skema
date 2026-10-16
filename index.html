@@ -15,10 +15,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Stylesheet & Defer Translation Engine -->
-  <link rel="stylesheet" href="styles.css?v=67.0">
-  <script defer src="translations.js?v=67.0"></script>
+  <link rel="stylesheet" href="styles.css?v=70.0">
+  <script defer src="translations.js?v=70.0"></script>
 </head>
-<body class="on-intro">
+<body class="on-intro theme-light">
 
   <!-- Interactive Animated Reactive Canvas Background -->
   <canvas id="bgCanvas"></canvas>
@@ -57,6 +57,13 @@
 
     <!-- Desktop Language Switcher & Contact Button -->
     <div class="header-right-actions">
+      <!-- Theme Switcher Button -->
+      <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Mode Recruteur Épuré" data-i18n-title="theme.toggle_title_light" title="Passer en Mode Recruteur Épuré (Fond Clair)">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+        <span class="theme-btn-label" data-i18n="theme.toggle_label">Mode Recruteur</span>
+      </button>
+
       <div class="lang-switcher" id="desktopLangSwitcher" role="group" aria-label="Langue">
         <button type="button" class="lang-btn active" data-lang="fr" title="Français">FR</button>
         <button type="button" class="lang-btn" data-lang="en" title="English">EN</button>
@@ -83,11 +90,20 @@
         <div class="mobile-nav-brand">
           <img src="assets/candidate_photo.jpg" alt="Luka Xiong" class="header-avatar-mini">
           <div>
-            <div style="font-weight: 800; font-size: 0.95rem; color: #F9FAFB;">Luka Xiong</div>
-            <div style="font-size: 0.72rem; color: #FCA5A5; font-weight: 700;"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="mobile.title">Candidat SKEMA Business School</span></div>
+            <div class="mobile-brand-name" style="font-weight: 800; font-size: 0.95rem; color: #F9FAFB;">Luka Xiong</div>
+            <div class="mobile-brand-sub" style="font-size: 0.72rem; color: #FCA5A5; font-weight: 700;"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="mobile.title">Candidat SKEMA Business School</span></div>
           </div>
         </div>
         <button class="mobile-nav-close" id="mobileNavClose" aria-label="Fermer le menu">&times;</button>
+      </div>
+
+      <!-- Mobile Theme Toggle -->
+      <div style="padding: 0 1.25rem; margin-top: 0.75rem;">
+        <button type="button" class="mobile-theme-btn" id="mobileThemeToggleBtn">
+          <i class="fa-solid fa-sun icon-sun"></i>
+          <i class="fa-solid fa-moon icon-moon" style="display:none;"></i>
+          <span id="mobileThemeLabel" data-i18n="theme.mobile_label_light">Mode Recruteur Épuré (Clair)</span>
+        </button>
       </div>
 
       <!-- Mobile Language Switcher Row -->
@@ -190,6 +206,20 @@
           </div>
         </div>
 
+        <!-- Ambition & Orientation Professionnelle (Réponse directe au retour de Mme Le Rouzic) -->
+        <div class="intro-ambition-card">
+          <div class="ambition-header">
+            <span class="ambition-badge"><i class="fa-solid fa-bullseye"></i> <span data-i18n="intro.ambition_badge">Objectif &amp; Ambition Professionnelle</span></span>
+            <span class="ambition-status"><i class="fa-solid fa-circle-check"></i> <span data-i18n="intro.ambition_status">À l'écoute d'opportunités</span></span>
+          </div>
+          <div class="ambition-title" data-i18n="intro.ambition_title">
+            Sourcing International, Achat Stratégique &amp; Management Commercial Luxe
+          </div>
+          <div class="ambition-desc" data-i18n="intro.ambition_desc">
+            Candidat au Global BBA de SKEMA Business School et ouvert aux opportunités de <strong>Stage &amp; Alternance</strong> en Commerce International, Sourcing ou Développement Commercial Luxe. Objectif : piloter la stratégie d'achat et le développement international de marques prestigieuses.
+          </div>
+        </div>
+
         <div class="linktree-bio" data-i18n="intro.bio">
           "Titulaire d'un Bac STI2D Architecture et actuellement étudiant en BTS Commerce International, je pratique depuis 7 ans le Resell et le sourcing international. Passionné par le luxe et le commerce, je candidate à SKEMA Business School."
         </div>
@@ -236,11 +266,18 @@
         
         <div class="linktree-section-header">
           <span class="linktree-section-label" data-i18n="intro.links_header">Coordonnées &amp; Canaux Directs</span>
-          <!-- In-Page Language Switcher on Intro Landing (since navbar is hidden) -->
-          <div class="lang-switcher" id="introLangSwitcher" role="group" aria-label="Langue">
-            <button type="button" class="lang-btn active" data-lang="fr" title="Français">FR</button>
-            <button type="button" class="lang-btn" data-lang="en" title="English">EN</button>
-            <button type="button" class="lang-btn" data-lang="es" title="Español">ES</button>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button type="button" class="theme-toggle-btn intro-theme-btn" id="introThemeToggleBtn" aria-label="Mode Recruteur Épuré" data-i18n-title="theme.toggle_title_light" title="Passer en Mode Recruteur Épuré (Fond Clair)">
+              <i class="fa-solid fa-sun icon-sun"></i>
+              <i class="fa-solid fa-moon icon-moon"></i>
+              <span class="theme-btn-label" data-i18n="theme.toggle_label">Mode Recruteur</span>
+            </button>
+            <!-- In-Page Language Switcher on Intro Landing (since navbar is hidden) -->
+            <div class="lang-switcher" id="introLangSwitcher" role="group" aria-label="Langue">
+              <button type="button" class="lang-btn active" data-lang="fr" title="Français">FR</button>
+              <button type="button" class="lang-btn" data-lang="en" title="English">EN</button>
+              <button type="button" class="lang-btn" data-lang="es" title="Español">ES</button>
+            </div>
           </div>
         </div>
 
@@ -298,7 +335,7 @@
           <!-- CV Trigger Card -->
           <div class="linktree-link-card" id="linktreeContactBtn" style="cursor: pointer;">
             <div class="link-card-left">
-              <div class="link-icon-box" style="background: rgba(185, 28, 28, 0.2); color: #EF4444; border: 1px solid rgba(185, 28, 28, 0.4);">
+              <div class="link-icon-box" style="background: rgba(185, 28, 28, 0.15); color: #DC2626; border: 1px solid rgba(185, 28, 28, 0.35);">
                 <i class="fa-solid fa-file-pdf"></i>
               </div>
               <div class="link-info">
@@ -306,7 +343,7 @@
                 <span class="link-sub" data-i18n="intro.link_cv_sub">Télécharger &amp; consulter mes CV officiels (FR / EN / ES)</span>
               </div>
             </div>
-            <div class="link-action-pill" style="background: rgba(185, 28, 28, 0.2); color: #FCA5A5; border-color: rgba(185, 28, 28, 0.4);">
+            <div class="link-action-pill cv-action-pill" style="background: rgba(185, 28, 28, 0.16); color: #FCA5A5; border-color: rgba(185, 28, 28, 0.35);">
               <span data-i18n="intro.link_cv_btn">Consulter</span> <i class="fa-solid fa-arrow-right"></i>
             </div>
           </div>
@@ -349,23 +386,29 @@
             <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="intro.skema_tag">Candidat BBA • SKEMA Business School</span>
           </div>
           <h1 class="center-core-title">LUKA XIONG</h1>
-          <div class="center-core-subtitle" data-i18n="hero.subtitle">Bac STI2D Architecture • Candidat SKEMA Business School</div>
+          <div class="center-core-subtitle" data-i18n="hero.subtitle">BTS Commerce International • Bac STI2D Architecture • Candidat SKEMA</div>
           <div class="center-core-quote" data-i18n="hero.quote">
-            "Étudiant et jeune bachelier d'un Bac STI2D Architecture, passionné par le commerce."
+            "Étudiant en BTS Commerce International &amp; certifié LVMH. Objectif : Sourcing International &amp; Stratégie de Marque Luxe."
+          </div>
+          <div class="hero-ambition-pill">
+            <i class="fa-solid fa-crosshairs"></i> <span data-i18n="hero.target_role">Objectif : Acheteur International / Sourcing Luxe • Ouvert aux Stages &amp; Alternance</span>
           </div>
 
           <!-- Social Quick Links -->
-          <div class="center-social-bar">
+          <div class="center-social-bar" style="margin-top: 10px;">
             <a href="https://www.linkedin.com/in/luka-xiong-8209503b0/" target="_blank" rel="noopener noreferrer" class="orbit-social-link" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
             <a href="mailto:luka.xiong@proton.me" class="orbit-social-link" title="Email Pro Proton (luka.xiong@proton.me)"><i class="fa-solid fa-envelope"></i></a>
             <a href="https://www.instagram.com/lukahmg/" target="_blank" rel="noopener noreferrer" class="orbit-social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
           </div>
 
-          <div style="margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
-            <button type="button" id="heroCvBtn" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 700; color: #FFFFFF; text-decoration: none; padding: 6px 16px; background: #B91C1C; border: 1px solid rgba(255,255,255,0.2); border-radius: 99px; cursor: pointer; box-shadow: 0 4px 12px rgba(185, 28, 28, 0.4); transition: all 0.2s ease;">
+          <div style="margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
+            <button type="button" id="heroCvBtn" class="hero-btn-primary" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 700; color: #FFFFFF; text-decoration: none; padding: 6px 16px; background: #B91C1C; border: 1px solid rgba(255,255,255,0.2); border-radius: 99px; cursor: pointer; box-shadow: 0 4px 12px rgba(185, 28, 28, 0.4); transition: all 0.2s ease;">
               <i class="fa-solid fa-file-pdf"></i> <span data-i18n="hero.cv_btn">Consulter mes CV (PDF)</span>
             </button>
-            <a href="#intro" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.76rem; font-weight: 700; color: #94A3B8; text-decoration: none; padding: 6px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 99px; transition: all 0.2s ease;">
+            <button type="button" id="heroSkillsBtn" class="hero-btn-secondary" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 700; color: #60A5FA; text-decoration: none; padding: 6px 14px; background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 99px; cursor: pointer; transition: all 0.2s ease;">
+              <i class="fa-solid fa-list-check"></i> <span data-i18n="hero.skills_btn">Grille de Compétences</span>
+            </button>
+            <a href="#intro" class="hero-btn-tertiary" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.76rem; font-weight: 700; color: #94A3B8; text-decoration: none; padding: 6px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 99px; transition: all 0.2s ease;">
               <i class="fa-solid fa-address-card" style="color: #60A5FA;"></i> <span data-i18n="hero.bio_btn">Bio &amp; Liens</span>
             </a>
           </div>
@@ -424,15 +467,30 @@
       <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="lvmh.skema_tag">Synergie SKEMA • Filières Global Management &amp; Luxe</span>
     </div>
     <div class="step-number-tag">
-      <i class="fa-solid fa-certificate"></i> <span data-i18n="lvmh.step_tag">ÉTAPE 1 / 4 — APPRENDRE AU-DELÀ DES COURS</span>
+      <i class="fa-solid fa-certificate"></i> <span data-i18n="lvmh.step_tag">COMPÉTENCE 1 / 4 — STRATÉGIE DE MARQUE &amp; EXPÉRIENCE CLIENT LUXE</span>
     </div>
-    <h2 class="section-hero-title"><span data-i18n="lvmh.title">Certifications INSIDE LVMH</span></h2>
-    <div class="section-hero-subtitle" data-i18n="lvmh.subtitle">Immersion certifiée dans les coulisses et l'excellence managériale du premier groupe de luxe mondial</div>
+    <h2 class="section-hero-title"><span data-i18n="lvmh.title">Stratégie de Marque, Retail &amp; Chaîne de Valeur Luxe</span></h2>
+    <div class="section-hero-subtitle" data-i18n="lvmh.subtitle">Immersion certifiée dans les coulisses et l'excellence managériale du premier groupe de luxe mondial (Programme Inside LVMH)</div>
+
+    <!-- Official Context Callout (Réponse directe au retour de Mme Le Rouzic) -->
+    <div class="section-context-callout">
+      <div class="callout-icon">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+      <div class="callout-content">
+        <div class="callout-badge" data-i18n="lvmh.context_badge">
+          <i class="fa-solid fa-award"></i> CONTEXTE DE LA CERTIFICATION : DÉMARCHE PROACTIVE EN CANDIDAT LIBRE
+        </div>
+        <p class="callout-text" data-i18n="lvmh.context_desc">
+          Certification officielle obtenue <strong>en totale autonomie et en candidat libre</strong> en parallèle de mes études, représentant plus de <strong>30 heures de masterclasses et d'évaluations rigoureuses</strong> dispensées par les directeurs et dirigeants des Maisons LVMH (Dior, Louis Vuitton, Guerlain, Moët Hennessy, Sephora...). Une démarche volontaire née d'une véritable passion pour l'excellence opérationnelle, la désirabilité des marques et la chaîne de valeur du luxe mondial.
+        </p>
+      </div>
+    </div>
 
     <!-- Official LVMH Certificates Display -->
     <div style="margin-bottom: 2.5rem;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
-        <div style="font-size: 0.85rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #EAB308;">
+        <div class="lvmh-section-kicker" style="font-size: 0.85rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #EAB308;">
           <i class="fa-solid fa-award"></i> <span data-i18n="lvmh.certs_header">Mes 3 Certificats Officiels INSIDE LVMH</span>
         </div>
         <span style="font-size: 0.78rem; color: #94A3B8; font-weight: 600;"><i class="fa-solid fa-shield-halved" style="color: #D4AF37;"></i> <span data-i18n="lvmh.certs_badge">Validé &amp; Diplômé</span></span>
@@ -447,18 +505,18 @@
             </div>
             <div style="padding: 12px 4px 4px 4px;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                <span style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 1</span>
+                <span class="pill-accent-gold" style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 1</span>
                 <span style="color: #94A3B8; font-size: 0.7rem; font-weight: 600;"><i class="fa-solid fa-calendar-check" style="color: #D4AF37;"></i> 10/12/2025</span>
               </div>
-              <div style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;" data-i18n="lvmh.cert1_title">Creation &amp; Branding, Operations &amp; Supply Chain</div>
+              <div class="cert-card-title" style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;" data-i18n="lvmh.cert1_title">Creation &amp; Branding, Operations &amp; Supply Chain</div>
               <div style="color: #64748B; font-size: 0.68rem; margin-top: 4px; font-family: monospace;">ID: a361674b-f0f9-4cda...</div>
             </div>
           </div>
-          <div style="display: flex; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);">
+          <div class="card-footer-divider" style="display: flex; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);">
             <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/lvmh_cert_1_hd.png" style="flex: 1; padding: 6px 10px; font-size: 0.74rem;">
               <i class="fa-solid fa-eye"></i> <span data-i18n="lvmh.btn_preview">Aperçu HD</span>
             </button>
-            <a href="assets/certificat_lvmh_creation_operations.pdf" target="_blank" download="Certificat_LVMH_Creation_Operations_Luka_Xiong.pdf" class="btn-cv-dl" style="background: rgba(212, 175, 55, 0.2); border-color: #D4AF37; color: #FFFFFF !important; padding: 6px 10px; font-size: 0.74rem;" title="Télécharger le PDF officiel">
+            <a href="assets/certificat_lvmh_creation_operations.pdf" target="_blank" download="Certificat_LVMH_Creation_Operations_Luka_Xiong.pdf" class="btn-cv-dl" style="padding: 6px 10px; font-size: 0.74rem;" title="Télécharger le PDF officiel">
               <i class="fa-solid fa-download"></i> <span data-i18n="lvmh.btn_download">PDF</span>
             </a>
           </div>
@@ -472,18 +530,18 @@
             </div>
             <div style="padding: 12px 4px 4px 4px;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                <span style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 2</span>
+                <span class="pill-accent-gold" style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 2</span>
                 <span style="color: #94A3B8; font-size: 0.7rem; font-weight: 600;"><i class="fa-solid fa-calendar-check" style="color: #D4AF37;"></i> 05/07/2026</span>
               </div>
-              <div style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;" data-i18n="lvmh.cert2_title">Creation &amp; Branding, Retail &amp; Customer Experience</div>
+              <div class="cert-card-title" style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;" data-i18n="lvmh.cert2_title">Creation &amp; Branding, Retail &amp; Customer Experience</div>
               <div style="color: #64748B; font-size: 0.68rem; margin-top: 4px; font-family: monospace;">ID: 3e78050c-1c9d-4a4c...</div>
             </div>
           </div>
-          <div style="display: flex; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);">
+          <div class="card-footer-divider" style="display: flex; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);">
             <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/lvmh_cert_2_hd.png" style="flex: 1; padding: 6px 10px; font-size: 0.74rem;">
               <i class="fa-solid fa-eye"></i> <span data-i18n="lvmh.btn_preview">Aperçu HD</span>
             </button>
-            <a href="assets/certificat_lvmh_creation_retail.pdf" target="_blank" download="Certificat_LVMH_Creation_Retail_Luka_Xiong.pdf" class="btn-cv-dl" style="background: rgba(212, 175, 55, 0.2); border-color: #D4AF37; color: #FFFFFF !important; padding: 6px 10px; font-size: 0.74rem;" title="Télécharger le PDF officiel">
+            <a href="assets/certificat_lvmh_creation_retail.pdf" target="_blank" download="Certificat_LVMH_Creation_Retail_Luka_Xiong.pdf" class="btn-cv-dl" style="padding: 6px 10px; font-size: 0.74rem;" title="Télécharger le PDF officiel">
               <i class="fa-solid fa-download"></i> <span data-i18n="lvmh.btn_download">PDF</span>
             </a>
           </div>
@@ -497,18 +555,18 @@
             </div>
             <div style="padding: 12px 4px 4px 4px;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                <span style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 3</span>
+                <span class="pill-accent-gold" style="background: rgba(212, 175, 55, 0.15); color: #F59E0B; padding: 2px 8px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; border: 1px solid rgba(212, 175, 55, 0.3);">Spécialisation 3</span>
                 <span style="color: #94A3B8; font-size: 0.7rem; font-weight: 600;"><i class="fa-solid fa-calendar-check" style="color: #D4AF37;"></i> 05/07/2026</span>
               </div>
-              <div style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;" data-i18n="lvmh.cert3_title">Operations &amp; Supply Chain, Retail &amp; Customer Experience</div>
+              <div class="cert-card-title" style="color: #F9FAFB; font-weight: 800; font-size: 0.92rem; line-height: 1.35;" data-i18n="lvmh.cert3_title">Operations &amp; Supply Chain, Retail &amp; Customer Experience</div>
               <div style="color: #64748B; font-size: 0.68rem; margin-top: 4px; font-family: monospace;">ID: a361674b-f0f9-4cda...</div>
             </div>
           </div>
-          <div style="display: flex; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);">
+          <div class="card-footer-divider" style="display: flex; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);">
             <button type="button" class="btn-cv-prev clickable-proof" data-img="assets/lvmh_cert_3_hd.png" style="flex: 1; padding: 6px 10px; font-size: 0.74rem;">
               <i class="fa-solid fa-eye"></i> <span data-i18n="lvmh.btn_preview">Aperçu HD</span>
             </button>
-            <a href="assets/certificat_lvmh_operations_retail.pdf" target="_blank" download="Certificat_LVMH_Operations_Retail_Luka_Xiong.pdf" class="btn-cv-dl" style="background: rgba(212, 175, 55, 0.2); border-color: #D4AF37; color: #FFFFFF !important; padding: 6px 10px; font-size: 0.74rem;" title="Télécharger le PDF officiel">
+            <a href="assets/certificat_lvmh_operations_retail.pdf" target="_blank" download="Certificat_LVMH_Operations_Retail_Luka_Xiong.pdf" class="btn-cv-dl" style="padding: 6px 10px; font-size: 0.74rem;" title="Télécharger le PDF officiel">
               <i class="fa-solid fa-download"></i> <span data-i18n="lvmh.btn_download">PDF</span>
             </a>
           </div>
@@ -518,7 +576,7 @@
 
     <!-- Ce que j'ai concrètement appris avec INSIDE LVMH (4 Piliers Clés) -->
     <div class="tab-container vivid-card card-lvmh" style="margin-bottom: 2rem;">
-      <div style="font-size: 0.85rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #EAB308; margin-bottom: 1.25rem;">
+      <div class="lvmh-section-kicker" style="font-size: 0.85rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #EAB308; margin-bottom: 1.25rem;">
         <i class="fa-solid fa-lightbulb"></i> <span data-i18n="lvmh.learn_header">Ce Que J'ai Concrètement Appris &amp; Retenu (Mes 4 Piliers Clés)</span>
       </div>
 
@@ -606,7 +664,7 @@
     <div class="grid-2">
       <div class="vivid-card card-lvmh">
         <div class="card-watermark"><i class="fa-solid fa-graduation-cap"></i></div>
-        <div style="font-size: 0.78rem; font-weight: 800; color: #EAB308; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;" data-i18n="lvmh.why_tag">Démarche Personnelle</div>
+        <div class="lvmh-section-kicker" style="font-size: 0.78rem; font-weight: 800; color: #EAB308; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;" data-i18n="lvmh.why_tag">Démarche Personnelle</div>
         <h3 class="vivid-card-title" data-i18n="lvmh.why_title">Pourquoi cette initiative en autonomie ?</h3>
         <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px;">
           <div class="insight-bullet">
@@ -622,7 +680,7 @@
 
       <div class="vivid-card card-lvmh">
         <div class="card-watermark"><i class="fa-solid fa-briefcase"></i></div>
-        <div style="font-size: 0.78rem; font-weight: 800; color: #EAB308; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;" data-i18n="lvmh.impact_tag">Application Concrète</div>
+        <div class="lvmh-section-kicker" style="font-size: 0.78rem; font-weight: 800; color: #EAB308; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;" data-i18n="lvmh.impact_tag">Application Concrète</div>
         <h3 class="vivid-card-title" data-i18n="lvmh.impact_title">Ce que cela m'apporte au quotidien</h3>
         <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px;">
           <div class="insight-bullet">
@@ -645,34 +703,34 @@
       <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="demeter.skema_tag">Synergie SKEMA • Transition Durable &amp; Éco-Conception</span>
     </div>
     <div class="step-number-tag">
-      <i class="fa-solid fa-building-user"></i> <span data-i18n="demeter.step_tag">ÉTAPE 2 / 4 — CONCEVOIR DES PROJETS CONCRETS</span>
+      <i class="fa-solid fa-building-user"></i> <span data-i18n="demeter.step_tag">COMPÉTENCE 2 / 4 — GESTION DE PROJET B2B &amp; ÉCO-CONCEPTION</span>
     </div>
-    <h2 class="section-hero-title"><span data-i18n="demeter.title">Projet Scolaire : C'Parc Déméter</span></h2>
+    <h2 class="section-hero-title"><span data-i18n="demeter.title">Gestion de Projet B2B, Modélisation 3D &amp; Éco-Conception</span></h2>
     <div class="section-hero-subtitle" data-i18n="demeter.subtitle">
       Projet d'aménagement écologique et durable du <strong>Quartier de La Madeleine à Chartres</strong> — Exposition publique avec Le Forum &amp; la Ville de Chartres (Trophée des Talents de la Préfecture 2025)
     </div>
 
     <!-- EXECUTIVE KPI BAR DÉMÉTER -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
-      <div class="vivid-card card-demeter" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="demeter.kpi1_title">Projet Urbain</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;" data-i18n="demeter.kpi1_sub">Éco-Responsable</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="demeter.kpi1_desc">Quartier de La Madeleine à Chartres</div>
+      <div class="vivid-card card-demeter kpi-stat-card" style="padding: 1.5rem; text-align: center;">
+        <div class="kpi-stat-val" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="demeter.kpi1_title">Projet Urbain</div>
+        <div class="kpi-stat-sub kpi-emerald" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;" data-i18n="demeter.kpi1_sub">Éco-Responsable</div>
+        <div class="kpi-stat-desc" style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="demeter.kpi1_desc">Quartier de La Madeleine à Chartres</div>
       </div>
-      <div class="vivid-card card-demeter" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="demeter.kpi2_title">STI2D &amp; Art</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;" data-i18n="demeter.kpi2_sub">Lycée Jehan-de-Beauce</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="demeter.kpi2_desc">Chaudronnerie, électricité &amp; architecture</div>
+      <div class="vivid-card card-demeter kpi-stat-card" style="padding: 1.5rem; text-align: center;">
+        <div class="kpi-stat-val" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="demeter.kpi2_title">STI2D &amp; Art</div>
+        <div class="kpi-stat-sub kpi-emerald" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;" data-i18n="demeter.kpi2_sub">Lycée Jehan-de-Beauce</div>
+        <div class="kpi-stat-desc" style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="demeter.kpi2_desc">Chaudronnerie, électricité &amp; architecture</div>
       </div>
-      <div class="vivid-card card-demeter" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="demeter.kpi3_title">5 Maquettes</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;" data-i18n="demeter.kpi3_sub">Prototypes d'Atelier</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="demeter.kpi3_desc">Réalisations concrètes exposées au public</div>
+      <div class="vivid-card card-demeter kpi-stat-card" style="padding: 1.5rem; text-align: center;">
+        <div class="kpi-stat-val" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="demeter.kpi3_title">5 Maquettes</div>
+        <div class="kpi-stat-sub kpi-emerald" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;" data-i18n="demeter.kpi3_sub">Prototypes d'Atelier</div>
+        <div class="kpi-stat-desc" style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="demeter.kpi3_desc">Réalisations concrètes exposées au public</div>
       </div>
-      <div class="vivid-card card-demeter" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="demeter.kpi4_title">Lauréat 2025</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;" data-i18n="demeter.kpi4_sub">Trophée des Talents</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="demeter.kpi4_desc">Certifié par le Maire de Chartres</div>
+      <div class="vivid-card card-demeter kpi-stat-card" style="padding: 1.5rem; text-align: center;">
+        <div class="kpi-stat-val" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="demeter.kpi4_title">Lauréat 2025</div>
+        <div class="kpi-stat-sub kpi-emerald" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #34D399; margin-top: 4px;" data-i18n="demeter.kpi4_sub">Trophée des Talents</div>
+        <div class="kpi-stat-desc" style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="demeter.kpi4_desc">Certifié par le Maire de Chartres</div>
       </div>
     </div>
 
@@ -692,7 +750,7 @@
     <!-- CONTENU ONGLET 1 : LES 5 MAQUETTES PHYSIQUES D'ATELIER -->
     <div class="section-tab-pane active" id="tab-maquettes">
       <div style="margin-bottom: 2rem;">
-        <div style="font-size: 0.82rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">
+        <div class="demeter-section-kicker" style="font-size: 0.82rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">
           <i class="fa-solid fa-hammer"></i> <span data-i18n="demeter.m_tag">Prototypage Manuel &amp; Réalisations Concrètes</span>
         </div>
         <h3 style="font-size: 1.4rem; font-weight: 800; color: #F9FAFB; margin-bottom: 0.5rem;" data-i18n="demeter.m_title">
@@ -712,9 +770,9 @@
               </div>
               <div style="padding-top: 14px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px;">
-                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 800;" data-i18n="demeter.m1_pill1">Passerelle Piétons &amp; Vélos</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;" data-i18n="demeter.m1_pill2">Toiture Solaire</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;" data-i18n="demeter.m1_pill3">Vitraux de Chartres</span>
+                  <span class="pill-accent-emerald" style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 800;" data-i18n="demeter.m1_pill1">Passerelle Piétons &amp; Vélos</span>
+                  <span class="pill-neutral" style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;" data-i18n="demeter.m1_pill2">Toiture Solaire</span>
+                  <span class="pill-neutral" style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;" data-i18n="demeter.m1_pill3">Vitraux de Chartres</span>
                 </div>
                 <h4 style="font-size: 1.2rem; font-weight: 800; color: #F9FAFB;" data-i18n="demeter.m1_title">Passerelle Écologique &amp; Vitraux Colorés</h4>
                 <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
@@ -742,9 +800,9 @@
               </div>
               <div style="padding-top: 14px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px;">
-                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 800;" data-i18n="demeter.m2_pill1">Mobilier Urbain</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;" data-i18n="demeter.m2_pill2">Îlot de Fraîcheur</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;" data-i18n="demeter.m2_pill3">Mobilité Douce</span>
+                  <span class="pill-accent-emerald" style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 800;" data-i18n="demeter.m2_pill1">Mobilier Urbain</span>
+                  <span class="pill-neutral" style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;" data-i18n="demeter.m2_pill2">Îlot de Fraîcheur</span>
+                  <span class="pill-neutral" style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 600;" data-i18n="demeter.m2_pill3">Mobilité Douce</span>
                 </div>
                 <h4 style="font-size: 1.2rem; font-weight: 800; color: #F9FAFB;" data-i18n="demeter.m2_title">Bassin d'Eau &amp; Banc Circulaire d'Ombrage</h4>
                 <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
@@ -775,8 +833,8 @@
               </div>
               <div style="padding-top: 12px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px;">
-                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 800;" data-i18n="demeter.m3_pill1">Lieu Convivial</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600;" data-i18n="demeter.m3_pill2">Terrasse Bois</span>
+                  <span class="pill-accent-emerald" style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 800;" data-i18n="demeter.m3_pill1">Lieu Convivial</span>
+                  <span class="pill-neutral" style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600;" data-i18n="demeter.m3_pill2">Terrasse Bois</span>
                 </div>
                 <h4 style="font-size: 1.1rem; font-weight: 800; color: #F9FAFB;" data-i18n="demeter.m3_title">« La Guinguette » du Parc</h4>
                 <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 6px; line-height: 1.5;">
@@ -797,8 +855,8 @@
               </div>
               <div style="padding-top: 12px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px;">
-                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 800;" data-i18n="demeter.m4_pill1">Culture &amp; Scène</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600;" data-i18n="demeter.m4_pill2">Gradins en Herbe</span>
+                  <span class="pill-accent-emerald" style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 800;" data-i18n="demeter.m4_pill1">Culture &amp; Scène</span>
+                  <span class="pill-neutral" style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600;" data-i18n="demeter.m4_pill2">Gradins en Herbe</span>
                 </div>
                 <h4 style="font-size: 1.1rem; font-weight: 800; color: #F9FAFB;" data-i18n="demeter.m4_title">Amphithéâtre de Verdure</h4>
                 <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 6px; line-height: 1.5;">
@@ -819,8 +877,8 @@
               </div>
               <div style="padding-top: 12px;">
                 <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px;">
-                  <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 800;" data-i18n="demeter.m5_pill1">Kiosque Bois</span>
-                  <span style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600;" data-i18n="demeter.m5_pill2">Vue Panoramique</span>
+                  <span class="pill-accent-emerald" style="background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 800;" data-i18n="demeter.m5_pill1">Kiosque Bois</span>
+                  <span class="pill-neutral" style="background: rgba(255, 255, 255, 0.04); color: #CBD5E1; border: 1px solid rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600;" data-i18n="demeter.m5_pill2">Vue Panoramique</span>
                 </div>
                 <h4 style="font-size: 1.1rem; font-weight: 800; color: #F9FAFB;" data-i18n="demeter.m5_title">Kiosque &amp; Vue Panoramique</h4>
                 <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 6px; line-height: 1.5;">
@@ -842,10 +900,10 @@
       <!-- Plan de Couverture Officiel -->
       <div class="vivid-card card-demeter" style="padding: 1.8rem; margin-bottom: 2rem;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-          <div style="font-size: 0.82rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 1px;">
+          <div class="demeter-section-kicker" style="font-size: 0.82rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 1px;">
             <i class="fa-solid fa-book-bookmark"></i> <span data-i18n="demeter.doc_tag">Document de Référence</span>
           </div>
-          <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(16, 185, 129, 0.3);" data-i18n="demeter.doc_badge">Dossier Officiel</span>
+          <span class="pill-accent-emerald" style="background: rgba(16, 185, 129, 0.15); color: #34D399; padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(16, 185, 129, 0.3);" data-i18n="demeter.doc_badge">Dossier Officiel</span>
         </div>
         <div class="photo-frame-wrapper aspect-banner image-box">
           <img loading="lazy" decoding="async" src="assets/demeter_slide_1_cover.jpg" alt="Page de couverture officielle Projet C'Parc Déméter La Madeleine Chartres">
@@ -854,7 +912,7 @@
 
       <!-- Dossier Amphithéâtre : 4 Pages du Document -->
       <div style="margin-bottom: 2rem;">
-        <div style="font-size: 0.82rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">
+        <div class="demeter-section-kicker" style="font-size: 0.82rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">
           <i class="fa-solid fa-compass-drafting"></i> <span data-i18n="demeter.amphi_tag">Étude Détaillée</span>
         </div>
         <h3 style="font-size: 1.4rem; font-weight: 800; color: #F9FAFB; margin-bottom: 1rem;" data-i18n="demeter.amphi_title">
@@ -866,8 +924,8 @@
               <img loading="lazy" decoding="async" src="assets/demeter_amphitheatre_p1.png" alt="Amphithéâtre - Page 1">
             </div>
             <div style="padding-top: 10px;">
-              <span style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 1</span>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;" data-i18n="demeter.amphi_p1">Amphithéâtre Romantique</div>
+              <span class="demeter-section-kicker" style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 1</span>
+              <div class="cert-card-title" style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;" data-i18n="demeter.amphi_p1">Amphithéâtre Romantique</div>
             </div>
           </div>
           <div class="vivid-card card-demeter image-box" style="padding: 14px;">
@@ -875,8 +933,8 @@
               <img loading="lazy" decoding="async" src="assets/demeter_amphitheatre_p2.png" alt="Amphithéâtre - Page 2">
             </div>
             <div style="padding-top: 10px;">
-              <span style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 2</span>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;" data-i18n="demeter.amphi_p2">Gradins en Pierre</div>
+              <span class="demeter-section-kicker" style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 2</span>
+              <div class="cert-card-title" style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;" data-i18n="demeter.amphi_p2">Gradins en Pierre</div>
             </div>
           </div>
           <div class="vivid-card card-demeter image-box" style="padding: 14px;">
@@ -884,8 +942,8 @@
               <img loading="lazy" decoding="async" src="assets/demeter_amphitheatre_p3.jpg" alt="Amphithéâtre - Page 3">
             </div>
             <div style="padding-top: 10px;">
-              <span style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 3</span>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;" data-i18n="demeter.amphi_p3">Scène Monumentale</div>
+              <span class="demeter-section-kicker" style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 3</span>
+              <div class="cert-card-title" style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;" data-i18n="demeter.amphi_p3">Scène Monumentale</div>
             </div>
           </div>
           <div class="vivid-card card-demeter image-box" style="padding: 14px;">
@@ -893,8 +951,8 @@
               <img loading="lazy" decoding="async" src="assets/demeter_amphitheatre_p4.jpg" alt="Amphithéâtre - Page 4">
             </div>
             <div style="padding-top: 10px;">
-              <span style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 4</span>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;" data-i18n="demeter.amphi_p4">Synthèse &amp; Intégration</div>
+              <span class="demeter-section-kicker" style="color: #34D399; font-weight: 800; font-size: 0.75rem;">PAGE 4</span>
+              <div class="cert-card-title" style="color: #F9FAFB; font-weight: 700; font-size: 0.95rem; margin-top: 2px;" data-i18n="demeter.amphi_p4">Synthèse &amp; Intégration</div>
             </div>
           </div>
         </div>
@@ -903,7 +961,7 @@
       <!-- Signatures Architecturales & Équipements -->
       <div class="grid-2" style="gap: 1.5rem;">
         <div class="vivid-card card-demeter" style="padding: 1.8rem;">
-          <div style="font-size: 0.8rem; font-weight: 800; color: #34D399; text-transform: uppercase; margin-bottom: 8px;">
+          <div class="demeter-section-kicker" style="font-size: 0.8rem; font-weight: 800; color: #34D399; text-transform: uppercase; margin-bottom: 8px;">
             <i class="fa-solid fa-palette"></i> <span data-i18n="demeter.facade_tag">Signature Esthétique</span>
           </div>
           <h4 style="color: #F9FAFB; font-size: 1.15rem; font-weight: 800; margin-bottom: 12px;" data-i18n="demeter.facade_title">Façade Ajourée &amp; Vitraux de Chartres</h4>
@@ -928,7 +986,7 @@
         </div>
 
         <div class="vivid-card card-demeter" style="padding: 1.8rem;">
-          <div style="font-size: 0.8rem; font-weight: 800; color: #34D399; text-transform: uppercase; margin-bottom: 8px;">
+          <div class="demeter-section-kicker" style="font-size: 0.8rem; font-weight: 800; color: #34D399; text-transform: uppercase; margin-bottom: 8px;">
             <i class="fa-solid fa-bolt"></i> <span data-i18n="demeter.solar_tag">Énergie &amp; Équipements</span>
           </div>
           <h4 style="color: #F9FAFB; font-size: 1.15rem; font-weight: 800; margin-bottom: 12px;" data-i18n="demeter.solar_title">Bornes Solaires &amp; Éclairage Intelligent</h4>
@@ -964,8 +1022,8 @@
             <img loading="lazy" decoding="async" src="assets/demeter_inauguration.png" alt="Inauguration officielle exposition Clos Pajot se réinvente" onerror="this.src='assets/demeter_project.jpg';">
           </div>
           <div style="padding-top: 12px;">
-            <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; font-weight: 800; font-size: 0.74rem; text-transform: uppercase; padding: 2px 10px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.3);" data-i18n="demeter.inaug_tag">Vernissage Officiel</span>
-            <div style="color: #F9FAFB; font-weight: 800; font-size: 1.1rem; margin-top: 6px;" data-i18n="demeter.inaug_title">Inauguration à la Maison Pour Tous</div>
+            <span class="pill-accent-emerald" style="background: rgba(16, 185, 129, 0.15); color: #34D399; font-weight: 800; font-size: 0.74rem; text-transform: uppercase; padding: 2px 10px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.3);" data-i18n="demeter.inaug_tag">Vernissage Officiel</span>
+            <div class="cert-card-title" style="color: #F9FAFB; font-weight: 800; font-size: 1.1rem; margin-top: 6px;" data-i18n="demeter.inaug_title">Inauguration à la Maison Pour Tous</div>
             <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 4px;"><span data-i18n="demeter.inaug_desc">Présentation publique des maquettes et prototypes aux élus et habitants du quartier de La Madeleine.</span></p>
           </div>
         </div>
@@ -975,8 +1033,8 @@
             <img loading="lazy" decoding="async" src="assets/demeter_marche.png" alt="Halle du marché potager place Billard" onerror="this.src='assets/demeter_project.jpg';">
           </div>
           <div style="padding-top: 12px;">
-            <span style="background: rgba(16, 185, 129, 0.15); color: #34D399; font-weight: 800; font-size: 0.74rem; text-transform: uppercase; padding: 2px 10px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.3);" data-i18n="demeter.marche_tag">Espace Partagé</span>
-            <div style="color: #F9FAFB; font-weight: 800; font-size: 1.1rem; margin-top: 6px;" data-i18n="demeter.marche_title">Marché Couvert du Potager</div>
+            <span class="pill-accent-emerald" style="background: rgba(16, 185, 129, 0.15); color: #34D399; font-weight: 800; font-size: 0.74rem; text-transform: uppercase; padding: 2px 10px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.3);" data-i18n="demeter.marche_tag">Espace Partagé</span>
+            <div class="cert-card-title" style="color: #F9FAFB; font-weight: 800; font-size: 1.1rem; margin-top: 6px;" data-i18n="demeter.marche_title">Marché Couvert du Potager</div>
             <p class="vivid-card-desc" style="font-size: 0.88rem; margin-top: 4px;"><span data-i18n="demeter.marche_desc">Halle couverte inspirée de la Place Billard à Chartres pour valoriser les récoltes du potager partagé.</span></p>
           </div>
         </div>
@@ -986,21 +1044,21 @@
       <div class="vivid-card card-demeter" style="padding: 2rem; margin-bottom: 2rem;">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
           <div>
-            <div style="margin-bottom: 10px; background: rgba(255, 255, 255, 0.95); padding: 6px 14px; border-radius: var(--radius-sm); width: fit-content; display: inline-block;">
+            <div style="margin-bottom: 10px; background: rgba(255, 255, 255, 0.95); padding: 6px 14px; border-radius: var(--radius-sm); width: fit-content; display: inline-block; border: 1px solid rgba(15, 23, 42, 0.08);">
               <img loading="lazy" decoding="async" src="assets/logo_echo_republicain.png" alt="Logo L'Écho Républicain" style="height: 32px; object-fit: contain; display: block;">
             </div>
-            <div style="font-size: 0.82rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 1px;">
+            <div class="demeter-section-kicker" style="font-size: 0.82rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 1px;">
               <i class="fa-solid fa-award"></i> <span data-i18n="demeter.echo_tag">Trophée des Talents 2025 • L'Écho Républicain</span>
             </div>
             <h3 class="vivid-card-title" style="font-size: 1.35rem; margin-top: 4px;" data-i18n="demeter.echo_title">« Le Clos Pajot se réinvente »</h3>
           </div>
 
           <a href="lecho_article.html" target="_blank" rel="noopener noreferrer" class="btn-vivid-blue" style="font-size: 0.85rem; padding: 10px 18px; text-decoration: none; border-color: rgba(16, 185, 129, 0.4);">
-            <span data-i18n="demeter.echo_btn">Ouvrir l'article dans un onglet</span> <i class="fa-solid fa-arrow-up-right-from-square" style="color: #34D399;"></i>
+            <span data-i18n="demeter.echo_btn">Ouvrir l'article dans un onglet</span> <i class="fa-solid fa-arrow-up-right-from-square" style="color: #10B981;"></i>
           </a>
         </div>
 
-        <div style="width: 100%; height: 480px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(255,255,255,0.12); background: #0B0F19;">
+        <div class="iframe-article-frame" style="width: 100%; height: 480px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(255,255,255,0.12); background: #FFFFFF;">
           <iframe src="lecho_article.html" style="width: 100%; height: 100%; border: none; display: block;" title="Article L'Écho Républicain"></iframe>
         </div>
       </div>
@@ -1009,9 +1067,9 @@
       <div class="vivid-card card-lvmh" style="padding: 2rem; border-top: 3px solid #D4AF37 !important;">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
           <div>
-            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); padding: 4px 12px; border-radius: 99px; margin-bottom: 6px;">
+            <div class="pill-accent-gold" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); padding: 4px 12px; border-radius: 99px; margin-bottom: 6px;">
               <i class="fa-solid fa-stamp" style="color: #D4AF37;"></i>
-              <span style="color: #D4AF37; font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;" data-i18n="demeter.cert_badge">Attestation Officielle • Ville de Chartres</span>
+              <span class="lvmh-section-kicker" style="color: #D4AF37; font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;" data-i18n="demeter.cert_badge">Attestation Officielle • Ville de Chartres</span>
             </div>
             <h3 class="vivid-card-title" style="font-size: 1.35rem; margin-top: 2px;" data-i18n="demeter.cert_title">
               Certificat de Participation délivré à Luka Xiong
@@ -1022,10 +1080,10 @@
           </div>
 
           <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <button type="button" class="btn-vivid-blue clickable-proof" data-img="assets/certificat_clos_pajot_hd.jpg" style="font-size: 0.85rem; padding: 10px 18px; background: rgba(212, 175, 55, 0.22); border-color: #D4AF37; color: #FFFFFF; cursor: pointer;">
+            <button type="button" class="btn-cv-dl clickable-proof" data-img="assets/certificat_clos_pajot_hd.jpg" style="font-size: 0.85rem; padding: 10px 18px; border-radius: 99px; cursor: pointer;">
               <i class="fa-solid fa-eye"></i> <span data-i18n="demeter.cert_btn_view">Aperçu Immédiat (HD)</span>
             </button>
-            <a href="assets/certificat_participation_clos_pajot.pdf" target="_blank" download="certificat_participation_clos_pajot.pdf" class="btn-vivid-blue" style="font-size: 0.85rem; padding: 10px 18px; text-decoration: none; background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.2); color: #CBD5E1;">
+            <a href="assets/certificat_participation_clos_pajot.pdf" target="_blank" download="certificat_participation_clos_pajot.pdf" class="btn-cv-prev" style="font-size: 0.85rem; padding: 10px 18px; border-radius: 99px; text-decoration: none;">
               <i class="fa-solid fa-download"></i> <span data-i18n="demeter.cert_btn_dl">Télécharger PDF</span>
             </a>
           </div>
@@ -1037,7 +1095,7 @@
         
         <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 0.82rem; color: #94A3B8;">
           <span><i class="fa-solid fa-signature" style="color: #D4AF37;"></i> <span data-i18n="demeter.cert_footer_signed">Fait à Chartres • Signé Ladislas VERGNE</span></span>
-          <span style="color: #CBD5E1; font-weight: 700;"><i class="fa-solid fa-check-double" style="color: #10B981;"></i> <span data-i18n="demeter.cert_footer_auth">Certificat Authentifié &amp; Conforme</span></span>
+          <span class="cert-card-title" style="color: #CBD5E1; font-weight: 700;"><i class="fa-solid fa-check-double" style="color: #10B981;"></i> <span data-i18n="demeter.cert_footer_auth">Certificat Authentifié &amp; Conforme</span></span>
         </div>
       </div>
 
@@ -1051,46 +1109,46 @@
       <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="resell.skema_tag">Synergie SKEMA • Esprit Pionnier &amp; Entrepreneuriat (SKEMA Ventures)</span>
     </div>
     <div class="step-number-tag">
-      <i class="fa-solid fa-chart-line" style="color: #3B82F6;"></i> <span data-i18n="resell.step_tag">ÉTAPE 3 / 4 — RESELLER, SOURCING MONDIAL &amp; LOGISTIQUE</span>
+      <i class="fa-solid fa-chart-line" style="color: #3B82F6;"></i> <span data-i18n="resell.step_tag">COMPÉTENCE 3 / 4 — SOURCING MONDIAL, PRICING &amp; NÉGOCIATION</span>
     </div>
-    <h2 class="section-hero-title"><span data-i18n="resell.title">Reseller &amp; Sourcing International</span> <highlight class="cobalt" data-i18n="resell.title_highlight">(7 Ans d'Activité • Sourcing International)</highlight></h2>
+    <h2 class="section-hero-title"><span data-i18n="resell.title">Sourcing International, Négociation &amp; Stratégie de Pricing</span> <highlight class="cobalt" data-i18n="resell.title_highlight">(7 Ans d'Activité • Sourcing International)</highlight></h2>
     <div class="section-hero-subtitle" data-i18n="resell.subtitle">
       Deux activités complémentaires sur le terrain : l'Achat-Revente (anticipation, opportunités décotées, gestion de stock physique et rotation de capital) et le Personal Shopper (recherche sur-mesure d'articles collectors introuvables sur mandat direct du client).
     </div>
 
     <!-- EXECUTIVE KPI SUMMARY BAR -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
-      <div class="vivid-card card-resell" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi1_title">7 Ans</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi1_sub">Pratique Terrain</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi1_desc">Achat-revente et sourcing actif depuis 2019</div>
+      <div class="vivid-card card-resell kpi-stat-card" style="padding: 1.5rem; text-align: center;">
+        <div class="kpi-stat-val" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi1_title">7 Ans</div>
+        <div class="kpi-stat-sub kpi-cobalt" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi1_sub">Pratique Terrain</div>
+        <div class="kpi-stat-desc" style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi1_desc">Achat-revente et sourcing actif depuis 2019</div>
       </div>
-      <div class="vivid-card card-resell" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi2_title">Réseau Mondial</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi2_sub">Fournisseurs Vérifiés</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi2_desc">Sourcing direct Europe, USA, Asie</div>
+      <div class="vivid-card card-resell kpi-stat-card" style="padding: 1.5rem; text-align: center;">
+        <div class="kpi-stat-val" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi2_title">Réseau Mondial</div>
+        <div class="kpi-stat-sub kpi-cobalt" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi2_sub">Fournisseurs Vérifiés</div>
+        <div class="kpi-stat-desc" style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi2_desc">Sourcing direct Europe, USA, Asie</div>
       </div>
-      <div class="vivid-card card-resell" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi3_title">Sur Mesure</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi3_sub">Personal Shopper</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi3_desc">Recherche ciblée sur mandat du client</div>
+      <div class="vivid-card card-resell kpi-stat-card" style="padding: 1.5rem; text-align: center;">
+        <div class="kpi-stat-val" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi3_title">Sur Mesure</div>
+        <div class="kpi-stat-sub kpi-cobalt" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi3_sub">Personal Shopper</div>
+        <div class="kpi-stat-desc" style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi3_desc">Recherche ciblée sur mandat du client</div>
       </div>
-      <div class="vivid-card card-resell" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi4_title">Stock Maîtrisé</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi4_sub">Contrôle &amp; Qualité</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi4_desc">Stockage soigné (doudounes, sneakers) &amp; tests UV</div>
+      <div class="vivid-card card-resell kpi-stat-card" style="padding: 1.5rem; text-align: center;">
+        <div class="kpi-stat-val" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="resell.kpi4_title">Stock Maîtrisé</div>
+        <div class="kpi-stat-sub kpi-cobalt" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #60A5FA; margin-top: 4px;" data-i18n="resell.kpi4_sub">Contrôle &amp; Qualité</div>
+        <div class="kpi-stat-desc" style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="resell.kpi4_desc">Stockage soigné (doudounes, sneakers) &amp; tests UV</div>
       </div>
     </div>
 
     <!-- DEDICATED RESELLER & SOURCING MONDIAL STRATEGIC CARD -->
-    <div class="vivid-card card-resell" style="padding: 2.2rem; margin-bottom: 2.5rem; border: 1px solid rgba(96, 165, 250, 0.3); background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 58, 138, 0.25));">
+    <div class="vivid-card card-resell resell-master-card" style="padding: 2.2rem; margin-bottom: 2.5rem; border: 1px solid rgba(96, 165, 250, 0.3); background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 58, 138, 0.25));">
       <div class="card-brand-watermarks">
         <i class="fa-solid fa-boxes-stacked" style="font-size: 4rem; opacity: 0.08; color: #FFFFFF;"></i>
         <i class="fa-solid fa-user-tie" style="font-size: 4rem; opacity: 0.08; color: #FFFFFF;"></i>
         <i class="fa-solid fa-globe" style="font-size: 4rem; opacity: 0.08; color: #FFFFFF;"></i>
       </div>
 
-      <div style="font-size: 0.82rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
+      <div class="resell-section-kicker" style="font-size: 0.82rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
         <i class="fa-solid fa-layer-group"></i> <span data-i18n="resell.ps_badge">Deux Métiers Complémentaires sur le Terrain</span>
       </div>
       <h3 class="vivid-card-title" style="font-size: 1.6rem; margin-bottom: 0.8rem;" data-i18n="resell.ps_title">
@@ -1098,7 +1156,7 @@
       </h3>
 
       <!-- Core Master Quote explaining the distinction -->
-      <div style="background: rgba(59, 130, 246, 0.12); border-left: 4px solid #3B82F6; padding: 18px 22px; border-radius: var(--radius-sm); margin-bottom: 1.8rem;">
+      <div class="resell-quote-banner" style="background: rgba(59, 130, 246, 0.12); border-left: 4px solid #3B82F6; padding: 18px 22px; border-radius: var(--radius-sm); margin-bottom: 1.8rem;">
         <p style="margin: 0; font-size: 1.02rem; color: #F9FAFB; font-weight: 600; line-height: 1.7;">
           <i class="fa-solid fa-quote-left" style="color: #60A5FA; margin-right: 10px;"></i>
           <span data-i18n="resell.ps_quote">Mon activité commerciale réunit deux compétences distinctes : d'un côté l'<strong>Achat-Revente (Resell)</strong>, où j'anticipe les tendances du marché, saisis des opportunités décotées et gère du stock physique (comme des doudounes achetées hors-saison en été) que j'inspecte minutieusement avant revente ; de l'autre le <strong>Personal Shopper</strong>, un service sur-mesure où un client me mandate pour trouver un article précis introuvable ou en rupture de stock via mon réseau international de revendeurs certifiés.</span>
@@ -1109,44 +1167,44 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
         
         <!-- Arm 1: Achat-Revente -->
-        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(96, 165, 250, 0.25); border-radius: var(--radius-md); padding: 1.5rem; display: flex; flex-direction: column; gap: 14px;">
-          <div style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px;">
-            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(59, 130, 246, 0.15); display: flex; align-items: center; justify-content: center; color: #60A5FA; font-size: 1.15rem;">
+        <div class="resell-arm-card arm-blue" style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(96, 165, 250, 0.25); border-radius: var(--radius-md); padding: 1.5rem; display: flex; flex-direction: column; gap: 14px;">
+          <div class="arm-header-row" style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px;">
+            <div class="arm-icon-box" style="width: 38px; height: 38px; border-radius: 8px; background: rgba(59, 130, 246, 0.15); display: flex; align-items: center; justify-content: center; color: #60A5FA; font-size: 1.15rem;">
               <i class="fa-solid fa-boxes-stacked"></i>
             </div>
             <div>
               <h4 style="color: #FFFFFF; font-size: 1.1rem; font-weight: 800; margin: 0;" data-i18n="resell.arm1_title">1. L'Achat-Revente (Resell)</h4>
-              <span style="color: #60A5FA; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;" data-i18n="resell.arm1_sub">Anticipation, Stockage Réel &amp; Rotation</span>
+              <span class="resell-section-kicker" style="color: #60A5FA; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;" data-i18n="resell.arm1_sub">Anticipation, Stockage Réel &amp; Rotation</span>
             </div>
           </div>
           <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.55; margin: 0;" data-i18n="resell.arm1_desc">
             Achat proactif d'opportunités décotées (drops officiels de sneakers, doudounes et vestes de marque achetées à prix cassé hors-saison). Je stocke physiquement ces pièces chez moi le temps d'effectuer l'inspection méticuleuse (coutures, étiquettes, lampe UV) et de les proposer au prix le plus attractif du marché.
           </p>
-          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; color: #94A3B8;">
-            <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-check" style="color: #60A5FA;"></i> <span data-i18n="resell.arm1_p1">Achats contre-cycliques (ex. doudounes en plein été)</span></div>
-            <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-check" style="color: #60A5FA;"></i> <span data-i18n="resell.arm1_p2">Stockage soigné et inspection physique systématique</span></div>
-            <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-check" style="color: #60A5FA;"></i> <span data-i18n="resell.arm1_p3">Revente rapide à prix compétitif pour rotation du capital</span></div>
+          <div class="arm-checks-list" style="display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; color: #94A3B8;">
+            <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-check" style="color: #3B82F6;"></i> <span data-i18n="resell.arm1_p1">Achats contre-cycliques (ex. doudounes en plein été)</span></div>
+            <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-check" style="color: #3B82F6;"></i> <span data-i18n="resell.arm1_p2">Stockage soigné et inspection physique systématique</span></div>
+            <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-check" style="color: #3B82F6;"></i> <span data-i18n="resell.arm1_p3">Revente rapide à prix compétitif pour rotation du capital</span></div>
           </div>
         </div>
 
         <!-- Arm 2: Personal Shopper -->
-        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-md); padding: 1.5rem; display: flex; flex-direction: column; gap: 14px;">
-          <div style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px;">
-            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(16, 185, 129, 0.15); display: flex; align-items: center; justify-content: center; color: #34D399; font-size: 1.15rem;">
+        <div class="resell-arm-card arm-emerald" style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-md); padding: 1.5rem; display: flex; flex-direction: column; gap: 14px;">
+          <div class="arm-header-row" style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px;">
+            <div class="arm-icon-box" style="width: 38px; height: 38px; border-radius: 8px; background: rgba(16, 185, 129, 0.15); display: flex; align-items: center; justify-content: center; color: #10B981; font-size: 1.15rem;">
               <i class="fa-solid fa-user-tie"></i>
             </div>
             <div>
               <h4 style="color: #FFFFFF; font-size: 1.1rem; font-weight: 800; margin: 0;" data-i18n="resell.arm2_title">2. Le Personal Shopper</h4>
-              <span style="color: #34D399; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;" data-i18n="resell.arm2_sub">Recherche Sur-Mesure à la Demande</span>
+              <span class="demeter-section-kicker" style="color: #34D399; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;" data-i18n="resell.arm2_sub">Recherche Sur-Mesure à la Demande</span>
             </div>
           </div>
           <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.55; margin: 0;" data-i18n="resell.arm2_desc">
             Accompagnement d'un client qui cherche un article précis introuvable ou sold-out. Sur mandat de recherche (modèle, pointure, coloris), j'active mon réseau international de revendeurs fiables en Europe, aux USA et en Asie, négocie le prix juste, contrôle l'authenticité et livre directement le client.
           </p>
-          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; color: #94A3B8;">
-            <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-check" style="color: #34D399;"></i> <span data-i18n="resell.arm2_p1">Mandat ciblé sur une pièce introuvable ou sold-out</span></div>
-            <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-check" style="color: #34D399;"></i> <span data-i18n="resell.arm2_p2">Activation du carnet d'adresses international (Europe, USA, Asie)</span></div>
-            <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-check" style="color: #34D399;"></i> <span data-i18n="resell.arm2_p3">Certification rigoureuse et expédition sécurisée directe</span></div>
+          <div class="arm-checks-list" style="display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; color: #94A3B8;">
+            <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-check" style="color: #10B981;"></i> <span data-i18n="resell.arm2_p1">Mandat ciblé sur une pièce introuvable ou sold-out</span></div>
+            <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-check" style="color: #10B981;"></i> <span data-i18n="resell.arm2_p2">Activation du carnet d'adresses international (Europe, USA, Asie)</span></div>
+            <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-check" style="color: #10B981;"></i> <span data-i18n="resell.arm2_p3">Certification rigoureuse et expédition sécurisée directe</span></div>
           </div>
         </div>
 
@@ -1164,7 +1222,7 @@
           <i class="fa-solid fa-shield-halved" style="font-size: 3.5rem; opacity: 0.08; color: #FFFFFF;"></i>
         </div>
         
-        <div style="font-size: 0.82rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
+        <div class="resell-section-kicker" style="font-size: 0.82rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
           <i class="fa-solid fa-crosshairs"></i> <span data-i18n="resell.p1_tag">Pilier 1 • Sourcing Stratégique &amp; Opportunisme</span>
         </div>
         <h3 class="vivid-card-title" style="font-size: 1.5rem; margin-bottom: 0.8rem;" data-i18n="resell.p1_title">
@@ -1172,7 +1230,7 @@
         </h3>
         
         <!-- Punchline -->
-        <div style="background: rgba(59, 130, 246, 0.08); border-left: 3px solid #3B82F6; padding: 14px 18px; border-radius: var(--radius-sm); margin-bottom: 1.5rem;">
+        <div class="resell-quote-banner" style="background: rgba(59, 130, 246, 0.08); border-left: 3px solid #3B82F6; padding: 14px 18px; border-radius: var(--radius-sm); margin-bottom: 1.5rem;">
           <p style="margin: 0; font-size: 0.96rem; color: #F9FAFB; font-weight: 600; line-height: 1.6;">
             <i class="fa-solid fa-quote-left" style="color: #60A5FA; margin-right: 8px;"></i>
             <span data-i18n="resell.p1_quote">Je ne me limite à <strong>aucune marque précise</strong> : je saisis <strong>toutes les opportunités rentables</strong> dès que le prix d'achat est décoté (-40% à -70% sous le marché) et que la demande est immédiate.</span>
@@ -1181,8 +1239,8 @@
 
         <div class="grid-3" style="gap: 1.25rem;">
           <div class="insight-bullet" style="flex-direction: column; gap: 8px; padding: 18px;">
-            <div style="font-size: 1.05rem; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-tags" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_b1_title">Cumul &amp; Bons Plans</span>
+            <div class="cert-card-title" style="font-size: 1.05rem; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-tags" style="color: #3B82F6;"></i> <span data-i18n="resell.p1_b1_title">Cumul &amp; Bons Plans</span>
             </div>
             <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin: 0;" data-i18n="resell.p1_b1_desc">
               Optimisation systématique du coût d'acquisition en combinant soldes croisées, codes VIP, remises fidélité et réseaux de revendeurs fiables.
@@ -1190,8 +1248,8 @@
           </div>
 
           <div class="insight-bullet" style="flex-direction: column; gap: 8px; padding: 18px;">
-            <div style="font-size: 1.05rem; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-snowflake" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_b2_title">Achats Hors-Saison</span>
+            <div class="cert-card-title" style="font-size: 1.05rem; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-snowflake" style="color: #3B82F6;"></i> <span data-i18n="resell.p1_b2_title">Achats Hors-Saison</span>
             </div>
             <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin: 0;" data-i18n="resell.p1_b2_desc">
               Acheter des doudounes et pièces chaudes bradées en plein été pour les revendre à marge maximale dès les premiers froids de l'automne.
@@ -1199,8 +1257,8 @@
           </div>
 
           <div class="insight-bullet" style="flex-direction: column; gap: 8px; padding: 18px;">
-            <div style="font-size: 1.05rem; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-shield-check" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_b3_title">Authenticité 100%</span>
+            <div class="cert-card-title" style="font-size: 1.05rem; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-shield-check" style="color: #3B82F6;"></i> <span data-i18n="resell.p1_b3_title">Authenticité 100%</span>
             </div>
             <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin: 0;" data-i18n="resell.p1_b3_desc">
               Expertise physique méticuleuse : inspection des coutures, qualité des cuirs/tissus, étiquettes RFID d'origine et contrôle sous lampe UV anti-contrefaçon.
@@ -1210,44 +1268,44 @@
 
         <!-- Badges Typologies de Produits & Marques Phares -->
         <div style="margin-top: 1.5rem; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 0.78rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; margin-right: 6px;" data-i18n="resell.p1_items_label">Articles Traités :</span>
-          <span style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-shoe-prints" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_item1">Sneakers &amp; Chaussures</span></span>
-          <span style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-vest" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_item2">Doudounes &amp; Vestes</span></span>
-          <span style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-shirt" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_item3">Sweats, Polos &amp; Tops</span></span>
-          <span style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-gem" style="color: #60A5FA;"></i> <span data-i18n="resell.p1_item4">Accessoires de Collection</span></span>
+          <span class="resell-section-kicker" style="font-size: 0.78rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; margin-right: 6px;" data-i18n="resell.p1_items_label">Articles Traités :</span>
+          <span class="pill-neutral" style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-shoe-prints" style="color: #3B82F6;"></i> <span data-i18n="resell.p1_item1">Sneakers &amp; Chaussures</span></span>
+          <span class="pill-neutral" style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-vest" style="color: #3B82F6;"></i> <span data-i18n="resell.p1_item2">Doudounes &amp; Vestes</span></span>
+          <span class="pill-neutral" style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-shirt" style="color: #3B82F6;"></i> <span data-i18n="resell.p1_item3">Sweats, Polos &amp; Tops</span></span>
+          <span class="pill-neutral" style="background: rgba(255, 255, 255, 0.05); color: #F9FAFB; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.08);"><i class="fa-solid fa-gem" style="color: #3B82F6;"></i> <span data-i18n="resell.p1_item4">Accessoires de Collection</span></span>
         </div>
         <div style="margin-top: 0.75rem; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 0.78rem; font-weight: 800; color: #CBD5E1; text-transform: uppercase; margin-right: 6px;" data-i18n="resell.p1_brands_label">Marques Clés :</span>
-          <span style="background: rgba(245, 158, 11, 0.1); color: #FCD34D; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(245, 158, 11, 0.25);"><i class="fa-solid fa-star"></i> Air Jordan (Jordan 4, Jordan 1)</span>
-          <span style="background: rgba(16, 185, 129, 0.1); color: #6EE7B7; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.25);"><i class="fa-solid fa-bolt"></i> Adidas (Yeezy, Samba, Campus 00s)</span>
-          <span style="background: rgba(59, 130, 246, 0.1); color: #93C5FD; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(59, 130, 246, 0.25);"><i class="fa-solid fa-fire"></i> Nike &amp; Nike SB Dunk</span>
-          <span style="background: rgba(168, 85, 247, 0.1); color: #D8B4FE; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(168, 85, 247, 0.25);"><i class="fa-solid fa-award"></i> New Balance (993, Made in USA)</span>
+          <span class="cert-card-title" style="font-size: 0.78rem; font-weight: 800; color: #CBD5E1; text-transform: uppercase; margin-right: 6px;" data-i18n="resell.p1_brands_label">Marques Clés :</span>
+          <span class="pill-accent-gold" style="background: rgba(245, 158, 11, 0.1); color: #FCD34D; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(245, 158, 11, 0.25);"><i class="fa-solid fa-star"></i> Air Jordan (Jordan 4, Jordan 1)</span>
+          <span class="pill-accent-emerald" style="background: rgba(16, 185, 129, 0.1); color: #6EE7B7; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.25);"><i class="fa-solid fa-bolt"></i> Adidas (Yeezy, Samba, Campus 00s)</span>
+          <span class="pill-accent-blue" style="background: rgba(59, 130, 246, 0.1); color: #93C5FD; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(59, 130, 246, 0.25);"><i class="fa-solid fa-fire"></i> Nike &amp; Nike SB Dunk</span>
+          <span class="pill-accent-purple" style="background: rgba(168, 85, 247, 0.1); color: #D8B4FE; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; border: 1px solid rgba(168, 85, 247, 0.25);"><i class="fa-solid fa-award"></i> New Balance (993, Made in USA)</span>
         </div>
 
         <!-- Showcase Terrain : Sneakers Rares, Hype & Collaborations (Secteur Principal) -->
-        <div style="margin-top: 1.5rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 22px; border-radius: var(--radius-sm);">
+        <div class="showcase-terrain-box" style="margin-top: 1.5rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 22px; border-radius: var(--radius-sm);">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
-            <div style="font-size: 0.85rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1px;">
+            <div class="resell-section-kicker" style="font-size: 0.85rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1px;">
               <i class="fa-solid fa-fire" style="color: #F59E0B;"></i> <span data-i18n="resell.showcase_title">Vitrine Terrain : Le Cœur de Mon Activité — Sneakers Rares, Hype &amp; Collaborations</span>
             </div>
-            <span style="font-size: 0.72rem; color: #3B82F6; font-weight: 700; background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.25); padding: 3px 10px; border-radius: 99px;">
+            <span class="pill-accent-blue" style="font-size: 0.72rem; color: #3B82F6; font-weight: 700; background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.25); padding: 3px 10px; border-radius: 99px;">
               <i class="fa-solid fa-award"></i> <span data-i18n="resell.showcase_badge">Spécialité &amp; Expertise Principale</span>
             </span>
           </div>
 
           <div class="grid-2" style="gap: 1.25rem;">
             <!-- Photo 1: Air Jordan 4 Retro Metallic Gold & Stock Pyramide -->
-            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="showcase-photo-card" style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
               <div>
-                <div class="photo-frame-wrapper clickable-proof" data-img="assets/resell_sneakers_jordan4.jpg?v=66.0" style="border-radius: var(--radius-sm); overflow: hidden; height: 350px; background: #070d18; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
+                <div class="photo-frame-wrapper showcase-img-frame clickable-proof" data-img="assets/resell_sneakers_jordan4.jpg?v=66.0" style="border-radius: var(--radius-sm); overflow: hidden; height: 350px; background: #070d18; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
                   <img loading="lazy" decoding="async" src="assets/resell_sneakers_jordan4.jpg?v=66.0" alt="Air Jordan 4 Retro Metallic Gold exposée sur sa pyramide de boîtes Jordan" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
-                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
+                  <div class="photo-zoom-badge" style="position: absolute; bottom: 8px; right: 8px; background: rgba(15, 23, 42, 0.82); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
                     <i class="fa-solid fa-magnifying-glass-plus"></i> Agrandir
                   </div>
                 </div>
                 <div style="margin-top: 12px;">
                   <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-                    <span style="color: #F59E0B; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_jordan_tag">Volume Jordan Brand</span>
+                    <span class="lvmh-section-kicker" style="color: #F59E0B; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_jordan_tag">Volume Jordan Brand</span>
                     <span style="font-size: 0.72rem; color: #94A3B8;" data-i18n="resell.photo_jordan_sub">Pyramide Deadstock</span>
                   </div>
                   <h4 style="color: #F9FAFB; font-size: 1rem; font-weight: 800; margin-bottom: 4px;" data-i18n="resell.photo_jordan_title">Air Jordan 4 Retro &amp; Stock Massif</h4>
@@ -1259,17 +1317,17 @@
             </div>
 
             <!-- Photo 2: Adidas Samba OG Leopard & Tour de Boîtes -->
-            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="showcase-photo-card" style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
               <div>
-                <div class="photo-frame-wrapper clickable-proof" data-img="assets/resell_sneakers_adidas_samba.jpg?v=66.0" style="border-radius: var(--radius-sm); overflow: hidden; height: 350px; background: #070d18; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
+                <div class="photo-frame-wrapper showcase-img-frame clickable-proof" data-img="assets/resell_sneakers_adidas_samba.jpg?v=66.0" style="border-radius: var(--radius-sm); overflow: hidden; height: 350px; background: #070d18; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
                   <img loading="lazy" decoding="async" src="assets/resell_sneakers_adidas_samba.jpg?v=66.0" alt="Adidas Samba OG Leopard posée sur une tour de boîtes bleues Adidas Originals" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
-                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
+                  <div class="photo-zoom-badge" style="position: absolute; bottom: 8px; right: 8px; background: rgba(15, 23, 42, 0.82); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
                     <i class="fa-solid fa-magnifying-glass-plus"></i> Agrandir
                   </div>
                 </div>
                 <div style="margin-top: 12px;">
                   <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-                    <span style="color: #10B981; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_adidas_tag">Tendance &amp; Volume Adidas</span>
+                    <span class="demeter-section-kicker" style="color: #10B981; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_adidas_tag">Tendance &amp; Volume Adidas</span>
                     <span style="font-size: 0.72rem; color: #94A3B8;" data-i18n="resell.photo_adidas_sub">Tour de Boîtes Bleues</span>
                   </div>
                   <h4 style="color: #F9FAFB; font-size: 1rem; font-weight: 800; margin-bottom: 4px;" data-i18n="resell.photo_adidas_title">Adidas Samba OG "Leopard" &amp; Flux Continu</h4>
@@ -1281,17 +1339,17 @@
             </div>
 
             <!-- Photo 3: Hype & Studio (Travis Scott, Futura, Air 180) -->
-            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="showcase-photo-card" style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
               <div>
-                <div class="photo-frame-wrapper clickable-proof" data-img="assets/resell_sneakers_hype_nike.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 350px; background: #070d18; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
+                <div class="photo-frame-wrapper showcase-img-frame clickable-proof" data-img="assets/resell_sneakers_hype_nike.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 350px; background: #070d18; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
                   <img loading="lazy" decoding="async" src="assets/resell_sneakers_hype_nike.jpg" alt="Sélection de sneakers collectors Nike : Travis Scott AJ1 Canary, Futura SB Dunk, Air 180" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
-                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
+                  <div class="photo-zoom-badge" style="position: absolute; bottom: 8px; right: 8px; background: rgba(15, 23, 42, 0.82); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
                     <i class="fa-solid fa-magnifying-glass-plus"></i> Agrandir
                   </div>
                 </div>
                 <div style="margin-top: 12px;">
                   <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-                    <span style="color: #F59E0B; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_hype_tag">Éditions Limitées &amp; Hype</span>
+                    <span class="lvmh-section-kicker" style="color: #F59E0B; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_hype_tag">Éditions Limitées &amp; Hype</span>
                     <span style="font-size: 0.72rem; color: #94A3B8;" data-i18n="resell.photo_hype_sub">Deadstock &bull; Full Set</span>
                   </div>
                   <h4 style="color: #F9FAFB; font-size: 1rem; font-weight: 800; margin-bottom: 4px;" data-i18n="resell.photo_hype_title">Travis Scott Canary &bull; Futura SB Dunk &bull; Air 180</h4>
@@ -1303,17 +1361,17 @@
             </div>
 
             <!-- Photo 4: Collaborations Rares (Joe Freshgoods x NB 993 Pack) -->
-            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="showcase-photo-card" style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
               <div>
-                <div class="photo-frame-wrapper clickable-proof" data-img="assets/resell_sneakers_collab_nb.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 350px; background: #070d18; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
+                <div class="photo-frame-wrapper showcase-img-frame clickable-proof" data-img="assets/resell_sneakers_collab_nb.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 350px; background: #070d18; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
                   <img loading="lazy" decoding="async" src="assets/resell_sneakers_collab_nb.jpg" alt="Collection New Balance 993 x Joe Freshgoods Performance Art complète" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
-                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
+                  <div class="photo-zoom-badge" style="position: absolute; bottom: 8px; right: 8px; background: rgba(15, 23, 42, 0.82); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
                     <i class="fa-solid fa-magnifying-glass-plus"></i> Agrandir
                   </div>
                 </div>
                 <div style="margin-top: 12px;">
                   <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-                    <span style="color: #60A5FA; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_collab_tag">Pack Collector Intégral</span>
+                    <span class="resell-section-kicker" style="color: #60A5FA; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_collab_tag">Pack Collector Intégral</span>
                     <span style="font-size: 0.72rem; color: #94A3B8;" data-i18n="resell.photo_collab_sub">Trio Complet 3/3</span>
                   </div>
                   <h4 style="color: #F9FAFB; font-size: 1rem; font-weight: 800; margin-bottom: 4px;" data-i18n="resell.photo_collab_title">Joe Freshgoods &times; New Balance 993 "Performance Art"</h4>
@@ -1326,8 +1384,8 @@
           </div>
 
           <!-- Stratégie de Pricing Éclair & Exemple Concret -->
-          <div style="margin-top: 1.5rem; background: rgba(59, 130, 246, 0.08); border-left: 3px solid #3B82F6; padding: 14px 18px; border-radius: var(--radius-sm);">
-            <div style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 0.92rem; color: #60A5FA; margin-bottom: 6px;">
+          <div class="resell-quote-banner" style="margin-top: 1.5rem; background: rgba(59, 130, 246, 0.08); border-left: 3px solid #3B82F6; padding: 14px 18px; border-radius: var(--radius-sm);">
+            <div class="resell-section-kicker" style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 0.92rem; color: #60A5FA; margin-bottom: 6px;">
               <i class="fa-solid fa-bolt-lightning"></i> <span data-i18n="resell.pricing_strategy_title">Stratégie de Vente Éclair : Vendre Moins Cher pour Vendre Tout de Suite</span>
             </div>
             <p style="margin: 0; font-size: 0.88rem; color: #E2E8F0; line-height: 1.55;">
@@ -1337,188 +1395,188 @@
 
           <!-- Grille des 4 Paires : Prix Retail Cop vs Revente Day 1 vs Mon Prix Vente Flash -->
           <div style="margin-top: 1.5rem;">
-            <div style="font-size: 0.82rem; font-weight: 800; color: #94A3B8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">
-              <i class="fa-solid fa-chart-simple" style="color: #60A5FA;"></i> <span data-i18n="resell.pricing_grid_title">Application Réelle sur les Paires Exposées (Cote Revente le Jour de la Sortie vs Mon Prix) :</span>
+            <div class="cert-card-title" style="font-size: 0.82rem; font-weight: 800; color: #94A3B8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">
+              <i class="fa-solid fa-chart-simple" style="color: #3B82F6;"></i> <span data-i18n="resell.pricing_grid_title">Application Réelle sur les Paires Exposées (Cote Revente le Jour de la Sortie vs Mon Prix) :</span>
             </div>
             
             <div class="grid-4" style="gap: 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
               <!-- Paire 1: Travis Scott AJ1 Canary -->
-              <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(251, 191, 36, 0.25); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div class="pricing-pair-card" style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(251, 191, 36, 0.25); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                    <span style="font-size: 0.72rem; font-weight: 800; color: #F59E0B; text-transform: uppercase;">Jordan &times; Travis Scott</span>
-                    <span style="font-size: 0.68rem; color: #94A3B8; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">Sortie Mai 2024</span>
+                    <span class="lvmh-section-kicker" style="font-size: 0.72rem; font-weight: 800; color: #F59E0B; text-transform: uppercase;">Jordan &times; Travis Scott</span>
+                    <span class="pill-neutral" style="font-size: 0.68rem; color: #94A3B8; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">Sortie Mai 2024</span>
                   </div>
                   <h5 style="color: #F9FAFB; font-size: 0.95rem; font-weight: 800; margin-bottom: 10px;">AJ1 Low OG "Canary"</h5>
                   
                   <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
-                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <div class="pricing-row-neutral" style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
                       <span style="color: #94A3B8;"><i class="fa-solid fa-tag"></i> <span data-i18n="resell.price_cop_label">Prix Cop (Retail) :</span></span>
-                      <strong style="color: #F9FAFB;">160 €</strong>
+                      <strong class="cert-card-title" style="color: #F9FAFB;">160 €</strong>
                     </div>
-                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <div class="pricing-row-neutral" style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
                       <span style="color: #94A3B8;"><i class="fa-solid fa-globe"></i> <span data-i18n="resell.price_market_label">Cote Sites Day 1 :</span></span>
-                      <strong style="color: #EF4444; text-decoration: line-through;">490 €</strong>
+                      <strong style="color: #DC2626; text-decoration: line-through;">490 €</strong>
                     </div>
-                    <div style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
+                    <div class="pricing-row-highlight" style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
                       <span style="color: #93C5FD; font-weight: 700;"><i class="fa-solid fa-bolt"></i> <span data-i18n="resell.price_luka_label">Mon Prix Vendu :</span></span>
                       <strong style="color: #60A5FA; font-size: 0.95rem;">420 €</strong>
                     </div>
                   </div>
                 </div>
-                <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
-                  <span style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Vente en &lt; 12h</span>
-                  <span style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+260 € Net</span>
+                <div class="card-footer-divider" style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
+                  <span class="demeter-section-kicker" style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Vente en &lt; 12h</span>
+                  <span class="demeter-section-kicker" style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+260 € Net</span>
                 </div>
               </div>
 
               <!-- Paire 2: Futura SB Dunk Low -->
-              <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div class="pricing-pair-card" style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                    <span style="font-size: 0.72rem; font-weight: 800; color: #38BDF8; text-transform: uppercase;">Nike SB &times; Futura</span>
-                    <span style="font-size: 0.68rem; color: #94A3B8; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">Sortie Mai 2024</span>
+                    <span class="resell-section-kicker" style="font-size: 0.72rem; font-weight: 800; color: #38BDF8; text-transform: uppercase;">Nike SB &times; Futura</span>
+                    <span class="pill-neutral" style="font-size: 0.68rem; color: #94A3B8; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">Sortie Mai 2024</span>
                   </div>
                   <h5 style="color: #F9FAFB; font-size: 0.95rem; font-weight: 800; margin-bottom: 10px;">Dunk Low "Bleached Aqua"</h5>
                   
                   <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
-                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <div class="pricing-row-neutral" style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
                       <span style="color: #94A3B8;"><i class="fa-solid fa-tag"></i> <span data-i18n="resell.price_cop_label">Prix Cop (Retail) :</span></span>
-                      <strong style="color: #F9FAFB;">135 €</strong>
+                      <strong class="cert-card-title" style="color: #F9FAFB;">135 €</strong>
                     </div>
-                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <div class="pricing-row-neutral" style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
                       <span style="color: #94A3B8;"><i class="fa-solid fa-globe"></i> <span data-i18n="resell.price_market_label">Cote Sites Day 1 :</span></span>
-                      <strong style="color: #EF4444; text-decoration: line-through;">300 €</strong>
+                      <strong style="color: #DC2626; text-decoration: line-through;">300 €</strong>
                     </div>
-                    <div style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
+                    <div class="pricing-row-highlight" style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
                       <span style="color: #93C5FD; font-weight: 700;"><i class="fa-solid fa-bolt"></i> <span data-i18n="resell.price_luka_label">Mon Prix Vendu :</span></span>
                       <strong style="color: #60A5FA; font-size: 0.95rem;">260 €</strong>
                     </div>
                   </div>
                 </div>
-                <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
-                  <span style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Vente le Jour J</span>
-                  <span style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+125 € Net</span>
+                <div class="card-footer-divider" style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
+                  <span class="demeter-section-kicker" style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Vente le Jour J</span>
+                  <span class="demeter-section-kicker" style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+125 € Net</span>
                 </div>
               </div>
 
               <!-- Paire 3: Nike Air 180 Ultramarine -->
-              <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(239, 68, 68, 0.25); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div class="pricing-pair-card" style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(239, 68, 68, 0.25); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                    <span style="font-size: 0.72rem; font-weight: 800; color: #F87171; text-transform: uppercase;">Nike Sportswear</span>
-                    <span style="font-size: 0.68rem; color: #94A3B8; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">Sortie Mai 2024</span>
+                    <span class="hmong-section-kicker" style="font-size: 0.72rem; font-weight: 800; color: #F87171; text-transform: uppercase;">Nike Sportswear</span>
+                    <span class="pill-neutral" style="font-size: 0.68rem; color: #94A3B8; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">Sortie Mai 2024</span>
                   </div>
                   <h5 style="color: #F9FAFB; font-size: 0.95rem; font-weight: 800; margin-bottom: 10px;">Air 180 OG "Ultramarine"</h5>
                   
                   <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
-                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <div class="pricing-row-neutral" style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
                       <span style="color: #94A3B8;"><i class="fa-solid fa-tag"></i> <span data-i18n="resell.price_cop_label">Prix Cop (Retail) :</span></span>
-                      <strong style="color: #F9FAFB;">150 €</strong>
+                      <strong class="cert-card-title" style="color: #F9FAFB;">150 €</strong>
                     </div>
-                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <div class="pricing-row-neutral" style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
                       <span style="color: #94A3B8;"><i class="fa-solid fa-globe"></i> <span data-i18n="resell.price_market_label">Cote Sites Day 1 :</span></span>
-                      <strong style="color: #EF4444; text-decoration: line-through;">210 €</strong>
+                      <strong style="color: #DC2626; text-decoration: line-through;">210 €</strong>
                     </div>
-                    <div style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
+                    <div class="pricing-row-highlight" style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
                       <span style="color: #93C5FD; font-weight: 700;"><i class="fa-solid fa-bolt"></i> <span data-i18n="resell.price_luka_label">Mon Prix Vendu :</span></span>
                       <strong style="color: #60A5FA; font-size: 0.95rem;">180 €</strong>
                     </div>
                   </div>
                 </div>
-                <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
-                  <span style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Rotation en 24h</span>
-                  <span style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+30 € Net</span>
+                <div class="card-footer-divider" style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
+                  <span class="demeter-section-kicker" style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Rotation en 24h</span>
+                  <span class="demeter-section-kicker" style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+30 € Net</span>
                 </div>
               </div>
 
               <!-- Paire 4: New Balance 993 Joe Freshgoods -->
-              <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(52, 211, 153, 0.25); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div class="pricing-pair-card" style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(52, 211, 153, 0.25); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                    <span style="font-size: 0.72rem; font-weight: 800; color: #34D399; text-transform: uppercase;">New Balance &times; JFG</span>
-                    <span style="font-size: 0.68rem; color: #94A3B8; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">Pack Collector 3/3</span>
+                    <span class="demeter-section-kicker" style="font-size: 0.72rem; font-weight: 800; color: #34D399; text-transform: uppercase;">New Balance &times; JFG</span>
+                    <span class="pill-neutral" style="font-size: 0.68rem; color: #94A3B8; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">Pack Collector 3/3</span>
                   </div>
                   <h5 style="color: #F9FAFB; font-size: 0.95rem; font-weight: 800; margin-bottom: 10px;">993 "Performance Art"</h5>
                   
                   <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
-                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <div class="pricing-row-neutral" style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
                       <span style="color: #94A3B8;"><i class="fa-solid fa-tag"></i> Prix Cop (Retail / u) :</span>
-                      <strong style="color: #F9FAFB;">240 €</strong>
+                      <strong class="cert-card-title" style="color: #F9FAFB;">240 €</strong>
                     </div>
-                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <div class="pricing-row-neutral" style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
                       <span style="color: #94A3B8;"><i class="fa-solid fa-globe"></i> <span data-i18n="resell.price_market_label">Cote Sites Day 1 :</span></span>
-                      <strong style="color: #EF4444; text-decoration: line-through;">400 € / u</strong>
+                      <strong style="color: #DC2626; text-decoration: line-through;">400 € / u</strong>
                     </div>
-                    <div style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
+                    <div class="pricing-row-highlight" style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
                       <span style="color: #93C5FD; font-weight: 700;"><i class="fa-solid fa-bolt"></i> <span data-i18n="resell.price_luka_label">Mon Prix Vendu :</span></span>
                       <strong style="color: #60A5FA; font-size: 0.95rem;">330 € / u</strong>
                     </div>
                   </div>
                 </div>
-                <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
-                  <span style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Pack ou Unitaire</span>
-                  <span style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+90 € à +230 €</span>
+                <div class="card-footer-divider" style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
+                  <span class="demeter-section-kicker" style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Pack ou Unitaire</span>
+                  <span class="demeter-section-kicker" style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+90 € à +230 €</span>
                 </div>
               </div>
 
               <!-- Paire 5: Air Jordan 4 Retro -->
-              <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div class="pricing-pair-card" style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                    <span style="font-size: 0.72rem; font-weight: 800; color: #F59E0B; text-transform: uppercase;">Jordan Brand</span>
-                    <span style="font-size: 0.68rem; color: #10B981; background: rgba(16,185,129,0.12); padding: 2px 6px; border-radius: 4px; font-weight: 700;">Best-Seller N°1</span>
+                    <span class="lvmh-section-kicker" style="font-size: 0.72rem; font-weight: 800; color: #F59E0B; text-transform: uppercase;">Jordan Brand</span>
+                    <span class="pill-accent-emerald" style="font-size: 0.68rem; color: #10B981; background: rgba(16,185,129,0.12); padding: 2px 6px; border-radius: 4px; font-weight: 700;">Best-Seller N°1</span>
                   </div>
                   <h5 style="color: #F9FAFB; font-size: 0.95rem; font-weight: 800; margin-bottom: 10px;">Air Jordan 4 Retro</h5>
                   
                   <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
-                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <div class="pricing-row-neutral" style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
                       <span style="color: #94A3B8;"><i class="fa-solid fa-tag"></i> <span data-i18n="resell.price_cop_label">Prix Cop (Retail) :</span></span>
-                      <strong style="color: #F9FAFB;">210 €</strong>
+                      <strong class="cert-card-title" style="color: #F9FAFB;">210 €</strong>
                     </div>
-                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <div class="pricing-row-neutral" style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
                       <span style="color: #94A3B8;"><i class="fa-solid fa-globe"></i> <span data-i18n="resell.price_market_label">Cote Sites Day 1 :</span></span>
-                      <strong style="color: #EF4444; text-decoration: line-through;">350 €</strong>
+                      <strong style="color: #DC2626; text-decoration: line-through;">350 €</strong>
                     </div>
-                    <div style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
+                    <div class="pricing-row-highlight" style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
                       <span style="color: #93C5FD; font-weight: 700;"><i class="fa-solid fa-bolt"></i> <span data-i18n="resell.price_luka_label">Mon Prix Vendu :</span></span>
                       <strong style="color: #60A5FA; font-size: 0.95rem;">310 €</strong>
                     </div>
                   </div>
                 </div>
-                <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
-                  <span style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Vente en &lt; 6h</span>
-                  <span style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+100 € Net</span>
+                <div class="card-footer-divider" style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
+                  <span class="demeter-section-kicker" style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Vente en &lt; 6h</span>
+                  <span class="demeter-section-kicker" style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+100 € Net</span>
                 </div>
               </div>
 
               <!-- Paire 6: Adidas Yeezy & Campus 00s -->
-              <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(147, 197, 253, 0.3); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div class="pricing-pair-card" style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(147, 197, 253, 0.3); border-radius: var(--radius-sm); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                    <span style="font-size: 0.72rem; font-weight: 800; color: #93C5FD; text-transform: uppercase;">Adidas Originals</span>
-                    <span style="font-size: 0.68rem; color: #60A5FA; background: rgba(59,130,246,0.12); padding: 2px 6px; border-radius: 4px; font-weight: 700;">Volume &amp; Flux</span>
+                    <span class="resell-section-kicker" style="font-size: 0.72rem; font-weight: 800; color: #93C5FD; text-transform: uppercase;">Adidas Originals</span>
+                    <span class="pill-accent-blue" style="font-size: 0.68rem; color: #60A5FA; background: rgba(59,130,246,0.12); padding: 2px 6px; border-radius: 4px; font-weight: 700;">Volume &amp; Flux</span>
                   </div>
                   <h5 style="color: #F9FAFB; font-size: 0.95rem; font-weight: 800; margin-bottom: 10px;">Adidas Yeezy &amp; Campus 00s</h5>
                   
                   <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
-                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <div class="pricing-row-neutral" style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
                       <span style="color: #94A3B8;"><i class="fa-solid fa-tag"></i> <span data-i18n="resell.price_cop_label">Prix Cop (Retail) :</span></span>
-                      <strong style="color: #F9FAFB;">70 € à 230 €</strong>
+                      <strong class="cert-card-title" style="color: #F9FAFB;">70 € à 230 €</strong>
                     </div>
-                    <div style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <div class="pricing-row-neutral" style="display: flex; justify-content: space-between; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
                       <span style="color: #94A3B8;"><i class="fa-solid fa-globe"></i> <span data-i18n="resell.price_market_label">Cote Sites Day 1 :</span></span>
-                      <strong style="color: #EF4444; text-decoration: line-through;">140 € à 330 €</strong>
+                      <strong style="color: #DC2626; text-decoration: line-through;">140 € à 330 €</strong>
                     </div>
-                    <div style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
+                    <div class="pricing-row-highlight" style="display: flex; justify-content: space-between; padding: 6px 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px;">
                       <span style="color: #93C5FD; font-weight: 700;"><i class="fa-solid fa-bolt"></i> <span data-i18n="resell.price_luka_label">Mon Prix Vendu :</span></span>
                       <strong style="color: #60A5FA; font-size: 0.95rem;">115 € à 285 €</strong>
                     </div>
                   </div>
                 </div>
-                <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
-                  <span style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Rotation Immédiate</span>
-                  <span style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+45 € à +55 € Net</span>
+                <div class="card-footer-divider" style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
+                  <span class="demeter-section-kicker" style="font-size: 0.72rem; color: #10B981; font-weight: 700;"><i class="fa-solid fa-arrow-trend-up"></i> Rotation Immédiate</span>
+                  <span class="demeter-section-kicker" style="font-size: 0.85rem; font-weight: 900; color: #10B981;">+45 € à +55 € Net</span>
                 </div>
               </div>
             </div>
@@ -1532,7 +1590,7 @@
         <!-- Colonne Gauche : Stratégie de Pricing -->
         <div class="vivid-card card-resell" style="padding: 2.2rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="font-size: 0.82rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
+            <div class="resell-section-kicker" style="font-size: 0.82rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
               <i class="fa-solid fa-scale-balanced"></i> <span data-i18n="resell.p2_tag">Pilier 2 • Stratégie &amp; Rentabilité</span>
             </div>
             <h3 class="vivid-card-title" style="font-size: 1.4rem; margin-bottom: 0.8rem;" data-i18n="resell.p2_title">
@@ -1544,26 +1602,26 @@
 
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem;">
               <div class="insight-bullet" style="padding: 12px 16px;">
-                <i class="fa-solid fa-1" style="color: #60A5FA;"></i>
+                <i class="fa-solid fa-1" style="color: #3B82F6;"></i>
                 <div data-i18n="resell.p2_step1"><strong>Achat au Prix Retail (Cop) :</strong> Sourcing officiel dès la sortie (ex. <strong>Air Jordan 4 à 210 €</strong> ou <strong>Adidas Yeezy Slide à 70 €</strong>).</div>
               </div>
               <div class="insight-bullet" style="padding: 12px 16px;">
-                <i class="fa-solid fa-2" style="color: #60A5FA;"></i>
+                <i class="fa-solid fa-2" style="color: #3B82F6;"></i>
                 <div data-i18n="resell.p2_step2"><strong>Prix Ultra-Attractif :</strong> Quand la cote internet grimpe à 350 €, je la propose à <strong>310 €</strong> (-40 € sous le marché). L'acheteur fait une vraie économie immédiate et achète sans hésiter.</div>
               </div>
               <div class="insight-bullet" style="padding: 12px 16px;">
-                <i class="fa-solid fa-3" style="color: #60A5FA;"></i>
+                <i class="fa-solid fa-3" style="color: #3B82F6;"></i>
                 <div data-i18n="resell.p2_step3"><strong>Vente &amp; Expédition Rapide :</strong> La paire est expédiée en <strong>quelques heures</strong>, assurant une rotation fluide avec <strong>+100 € de marge nette (+48% de ROI)</strong> réinvestis dans l'activité.</div>
               </div>
             </div>
           </div>
 
           <div class="slider-group" style="margin-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.2rem;">
-            <div style="font-size: 0.8rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; margin-bottom: 8px;">
+            <div class="resell-section-kicker" style="font-size: 0.8rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; margin-bottom: 8px;">
               <i class="fa-solid fa-sliders"></i> <span data-i18n="resell.sim_adjust_title">Ajuster les Montants du Simulateur :</span>
             </div>
             
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 700; color: #F9FAFB;">
+            <div class="cert-card-title" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 700; color: #F9FAFB;">
               <span data-i18n="resell.sim_buy_label">Prix d'Achat Fournisseur (Cop Retail)</span>
               <div class="num-input-box">
                 <input type="text" id="inputBuy" value="210" inputmode="numeric" pattern="[0-9]*">
@@ -1572,7 +1630,7 @@
             </div>
             <input type="range" id="sliderBuy" min="1" max="2000" value="210" style="width: 100%; margin-top: 4px;">
 
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 700; color: #F9FAFB; margin-top: 10px;">
+            <div class="cert-card-title" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 700; color: #F9FAFB; margin-top: 10px;">
               <span data-i18n="resell.sim_sell_label">Prix de Revente Fixé (Vente Flash)</span>
               <div class="num-input-box">
                 <input type="text" id="inputSell" value="310" inputmode="numeric" pattern="[0-9]*">
@@ -1592,7 +1650,7 @@
             <div style="font-size: 3.4rem; font-weight: 900; color: #10B981; line-height: 1.1; margin-top: 6px;" id="resProfit">+100 €</div>
           </div>
 
-          <div style="width: 100%; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 18px 0; margin: 12px 0;">
+          <div class="sim-divider-row" style="width: 100%; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 18px 0; margin: 12px 0;">
             <div style="font-size: 0.85rem; color: #94A3B8; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;" data-i18n="resell.sim_res_margin">Marge Nette sur Prix de Vente</div>
             <div style="font-size: 3.4rem; font-weight: 900; color: #FFFFFF; line-height: 1.1; margin-top: 6px;" id="resMargin">32%</div>
           </div>
@@ -1611,7 +1669,7 @@
           <i class="fa-solid fa-box-open" style="font-size: 3.5rem; opacity: 0.08; color: #FFFFFF;"></i>
         </div>
 
-        <div style="font-size: 0.82rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
+        <div class="resell-section-kicker" style="font-size: 0.82rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
           <i class="fa-solid fa-boxes-packing"></i> <span data-i18n="resell.p3_tag">Pilier 3 • Vente Multi-Plateformes &amp; Logistique</span>
         </div>
         <h3 class="vivid-card-title" style="font-size: 1.4rem; margin-bottom: 0.8rem;" data-i18n="resell.p3_title">
@@ -1623,9 +1681,9 @@
 
         <div class="grid-2" style="gap: 1.5rem;">
           <!-- Canaux de Vente -->
-          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 18px; border-radius: var(--radius-sm);">
-            <div style="font-size: 0.82rem; font-weight: 800; color: #CBD5E1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
-              <i class="fa-solid fa-store" style="color: #60A5FA;"></i> <span data-i18n="resell.p3_channels_title">Canaux de Vente Spécialisés &amp; Grand Public</span>
+          <div class="showcase-terrain-box" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 18px; border-radius: var(--radius-sm);">
+            <div class="cert-card-title" style="font-size: 0.82rem; font-weight: 800; color: #CBD5E1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+              <i class="fa-solid fa-store" style="color: #3B82F6;"></i> <span data-i18n="resell.p3_channels_title">Canaux de Vente Spécialisés &amp; Grand Public</span>
             </div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
               <a href="https://stockx.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="StockX"><img src="assets/logo_stockx.png" alt="StockX" style="height:14px;"> StockX</a>
@@ -1639,45 +1697,45 @@
           </div>
 
           <!-- Logistique & Transporteurs -->
-          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 18px; border-radius: var(--radius-sm);">
-            <div style="font-size: 0.82rem; font-weight: 800; color: #CBD5E1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
-              <i class="fa-solid fa-box" style="color: #60A5FA;"></i> <span data-i18n="resell.p3_shipping_title">Emballage Renforcé, Calage Journal &amp; Suivis</span>
+          <div class="showcase-terrain-box" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 18px; border-radius: var(--radius-sm);">
+            <div class="cert-card-title" style="font-size: 0.82rem; font-weight: 800; color: #CBD5E1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+              <i class="fa-solid fa-box" style="color: #3B82F6;"></i> <span data-i18n="resell.p3_shipping_title">Emballage Renforcé, Calage Journal &amp; Suivis</span>
             </div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
               <a href="https://www.chronopost.fr/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Chronopost Express"><img src="assets/logo_chronopost.jpg" alt="Chronopost" style="height:14px;"> Chronopost</a>
-              <a href="https://www.dhl.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="DHL Express"><i class="fa-solid fa-truck-fast" style="color: #FBBF24;"></i> DHL Express</a>
+              <a href="https://www.dhl.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="DHL Express"><i class="fa-solid fa-truck-fast" style="color: #F59E0B;"></i> DHL Express</a>
               <a href="https://www.ups.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="UPS Express"><img src="assets/logo_ups.png" alt="UPS" style="height:14px;"> UPS International</a>
-              <a href="https://www.laposte.fr/colissimo" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Colissimo Signature"><svg viewBox="0 0 24 24" style="height:14px; width:14px; fill:#CBD5E1;"><path d="M2 6h12v12H2V6zm14 2h4l2 3v7h-6V8zm-8 4l-3 3h6l-3-3z"/></svg> Colissimo</a>
-              <a href="https://www.mondialrelay.fr/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Mondial Relay"><svg viewBox="0 0 24 24" style="height:14px; width:14px; fill:#CBD5E1;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm-2 9.5V7l2 2 2-2v4.5h-1.2v-2.1L12 10.2l-.8-.8v2.1H10z"/></svg> Mondial Relay</a>
+              <a href="https://www.laposte.fr/colissimo" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Colissimo Signature"><svg viewBox="0 0 24 24" style="height:14px; width:14px; fill:currentColor;"><path d="M2 6h12v12H2V6zm14 2h4l2 3v7h-6V8zm-8 4l-3 3h6l-3-3z"/></svg> Colissimo</a>
+              <a href="https://www.mondialrelay.fr/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Mondial Relay"><svg viewBox="0 0 24 24" style="height:14px; width:14px; fill:currentColor;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm-2 9.5V7l2 2 2-2v4.5h-1.2v-2.1L12 10.2l-.8-.8v2.1H10z"/></svg> Mondial Relay</a>
               <a href="https://www.relaiscolis.com/" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" title="Relais Colis"><img src="assets/logo_relaiscolis.png" alt="Relais Colis" style="height:14px;"> Relais Colis</a>
             </div>
           </div>
         </div>
 
         <!-- Showcase Terrain : Stock DHL & Tournée de Livraison -->
-        <div style="margin-top: 1.5rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 22px; border-radius: var(--radius-sm);">
+        <div class="showcase-terrain-box" style="margin-top: 1.5rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 22px; border-radius: var(--radius-sm);">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
-            <div style="font-size: 0.85rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1px;">
-              <i class="fa-solid fa-camera" style="color: #60A5FA;"></i> <span data-i18n="resell.logistics_proof_title">Preuves Terrain : Logistique &amp; Tournées d'Expédition Réelles</span>
+            <div class="resell-section-kicker" style="font-size: 0.85rem; font-weight: 800; color: #60A5FA; text-transform: uppercase; letter-spacing: 1px;">
+              <i class="fa-solid fa-camera" style="color: #3B82F6;"></i> <span data-i18n="resell.logistics_proof_title">Preuves Terrain : Logistique &amp; Tournées d'Expédition Réelles</span>
             </div>
-            <span style="font-size: 0.72rem; color: #10B981; font-weight: 700; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.25); padding: 3px 10px; border-radius: 99px;">
+            <span class="pill-accent-emerald" style="font-size: 0.72rem; color: #10B981; font-weight: 700; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.25); padding: 3px 10px; border-radius: 99px;">
               <i class="fa-solid fa-check-double"></i> <span data-i18n="resell.logistics_proof_badge">Flux Réel en Activité</span>
             </span>
           </div>
 
           <div class="grid-2" style="gap: 1.25rem;">
             <!-- Photo 1: Cartons DHL -->
-            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="showcase-photo-card" style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
               <div>
-                <div class="photo-frame-wrapper clickable-proof" data-img="assets/resell_stock_cartons_dhl.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 350px; background: #070d18; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
+                <div class="photo-frame-wrapper showcase-img-frame clickable-proof" data-img="assets/resell_stock_cartons_dhl.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 350px; background: #070d18; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
                   <img loading="lazy" decoding="async" src="assets/resell_stock_cartons_dhl.jpg" alt="Stock de cartons d'expédition DHL Express" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
-                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
+                  <div class="photo-zoom-badge" style="position: absolute; bottom: 8px; right: 8px; background: rgba(15, 23, 42, 0.82); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
                     <i class="fa-solid fa-magnifying-glass-plus"></i> Agrandir
                   </div>
                 </div>
                 <div style="margin-top: 12px;">
                   <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-                    <span style="color: #F59E0B; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_dhl_tag">Conditionnement Officiel</span>
+                    <span class="lvmh-section-kicker" style="color: #F59E0B; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_dhl_tag">Conditionnement Officiel</span>
                     <span style="font-size: 0.72rem; color: #94A3B8;" data-i18n="resell.photo_dhl_sub">Cartons DHL Format 3</span>
                   </div>
                   <h4 style="color: #F9FAFB; font-size: 1rem; font-weight: 800; margin-bottom: 4px;" data-i18n="resell.photo_dhl_title">Stock Dédié de Cartons DHL Express</h4>
@@ -1689,17 +1747,17 @@
             </div>
 
             <!-- Photo 2: Coffre de voiture chargé -->
-            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="showcase-photo-card" style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
               <div>
-                <div class="photo-frame-wrapper clickable-proof" data-img="assets/resell_expedition_coffre_dhl.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 350px; background: #070d18; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
+                <div class="photo-frame-wrapper showcase-img-frame clickable-proof" data-img="assets/resell_expedition_coffre_dhl.jpg" style="border-radius: var(--radius-sm); overflow: hidden; height: 350px; background: #070d18; position: relative; cursor: zoom-in;" title="Cliquez pour agrandir">
                   <img loading="lazy" decoding="async" src="assets/resell_expedition_coffre_dhl.jpg" alt="Coffre chargé de colis DHL et Chronopost prêts pour la livraison" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
-                  <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
+                  <div class="photo-zoom-badge" style="position: absolute; bottom: 8px; right: 8px; background: rgba(15, 23, 42, 0.82); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 99px; font-size: 0.72rem; color: #F9FAFB; font-weight: 600;">
                     <i class="fa-solid fa-magnifying-glass-plus"></i> Agrandir
                   </div>
                 </div>
                 <div style="margin-top: 12px;">
                   <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-                    <span style="color: #60A5FA; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_trunk_tag">Expéditions Groupées</span>
+                    <span class="resell-section-kicker" style="color: #60A5FA; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;" data-i18n="resell.photo_trunk_tag">Expéditions Groupées</span>
                     <span style="font-size: 0.72rem; color: #94A3B8;" data-i18n="resell.photo_trunk_sub">Tournées Quotidiennes</span>
                   </div>
                   <h4 style="color: #F9FAFB; font-size: 1rem; font-weight: 800; margin-bottom: 4px;" data-i18n="resell.photo_trunk_title">Coffre Chargé &amp; Départ pour Expédition</h4>
@@ -1724,11 +1782,11 @@
       <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="hmong.skema_tag">Synergie SKEMA • "At Home Worldwide" &amp; Diversité Internationale</span>
     </div>
     <div class="step-number-tag">
-      <i class="fa-solid fa-hands-holding-circle" style="color: #E11D48;"></i> <span data-i18n="hmong.step_tag">ÉTAPE 4 / 4 — ENGAGEMENT ASSOCIATIF &amp; BÉNÉVOLAT</span>
+      <i class="fa-solid fa-hands-holding-circle" style="color: #E11D48;"></i> <span data-i18n="hmong.step_tag">COMPÉTENCE 4 / 4 — COORDINATION D'ÉQUIPE &amp; LOGISTIQUE OPÉRATIONNELLE</span>
     </div>
     <h2 class="section-hero-title">
-      <span style="font-size: 0.85em; display: block; letter-spacing: 1px; color: #FB7185; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;" data-i18n="hmong.title_lead">Bénévolat &amp; Rassemblements</span>
-      <span data-i18n="hmong.title">Festivals Hmong • Nouvel An Hmong &amp; Événements Culturels</span>
+      <span class="hmong-section-kicker" style="font-size: 0.85em; display: block; letter-spacing: 1px; color: #FB7185; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;" data-i18n="hmong.title_lead">Bénévolat, Événements &amp; SDIS</span>
+      <span data-i18n="hmong.title">Coordination d'Équipe, Logistique Terrain &amp; Rigueur Opérationnelle</span>
     </h2>
     <div class="section-hero-subtitle" data-i18n="hmong.subtitle">
       Bénévole engagé lors des <strong>Festivals Hmong, du Nouvel An Hmong et des grands rassemblements culturels</strong> dans 7 villes en France (Engagement actif depuis 2015).
@@ -1736,25 +1794,25 @@
 
     <!-- EXECUTIVE KPI BAR BÉNÉVOLAT -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
-      <div class="vivid-card card-benevolat" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="hmong.kpi1_title">Depuis 2015</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;" data-i18n="hmong.kpi1_sub">Fidélité &amp; Sérieux</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="hmong.kpi1_desc">Plus de 10 ans de présence sur le terrain</div>
+      <div class="vivid-card card-benevolat kpi-stat-card" style="padding: 1.5rem; text-align: center;">
+        <div class="kpi-stat-val" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="hmong.kpi1_title">Depuis 2015</div>
+        <div class="kpi-stat-sub" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;" data-i18n="hmong.kpi1_sub">Fidélité &amp; Sérieux</div>
+        <div class="kpi-stat-desc" style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="hmong.kpi1_desc">Plus de 10 ans de présence sur le terrain</div>
       </div>
-      <div class="vivid-card card-benevolat" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="hmong.kpi2_title">7 Villes</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;" data-i18n="hmong.kpi2_sub">Partout en France</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="hmong.kpi2_desc">Aubigny, Lyon, Nîmes, Orléans, Gien, Paris...</div>
+      <div class="vivid-card card-benevolat kpi-stat-card" style="padding: 1.5rem; text-align: center;">
+        <div class="kpi-stat-val" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="hmong.kpi2_title">7 Villes</div>
+        <div class="kpi-stat-sub" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;" data-i18n="hmong.kpi2_sub">Partout en France</div>
+        <div class="kpi-stat-desc" style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="hmong.kpi2_desc">Aubigny, Lyon, Nîmes, Orléans, Gien, Paris...</div>
       </div>
-      <div class="vivid-card card-benevolat" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="hmong.kpi3_title">2 000+</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;" data-i18n="hmong.kpi3_sub">Visiteurs par Édition</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="hmong.kpi3_desc">Grands rassemblements intergénérationnels</div>
+      <div class="vivid-card card-benevolat kpi-stat-card" style="padding: 1.5rem; text-align: center;">
+        <div class="kpi-stat-val" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="hmong.kpi3_title">2 000+</div>
+        <div class="kpi-stat-sub" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;" data-i18n="hmong.kpi3_sub">Visiteurs par Édition</div>
+        <div class="kpi-stat-desc" style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="hmong.kpi3_desc">Grands rassemblements intergénérationnels</div>
       </div>
-      <div class="vivid-card card-benevolat" style="padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="hmong.kpi4_title">USA &amp; Asie</div>
-        <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;" data-i18n="hmong.kpi4_sub">Accueil International</div>
-        <div style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="hmong.kpi4_desc">Artistes et personnalités de la diaspora</div>
+      <div class="vivid-card card-benevolat kpi-stat-card" style="padding: 1.5rem; text-align: center;">
+        <div class="kpi-stat-val" style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF;" data-i18n="hmong.kpi4_title">USA &amp; Asie</div>
+        <div class="kpi-stat-sub" style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #FB7185; margin-top: 4px;" data-i18n="hmong.kpi4_sub">Accueil International</div>
+        <div class="kpi-stat-desc" style="font-size: 0.78rem; color: #94A3B8; font-weight: 500; margin-top: 2px;" data-i18n="hmong.kpi4_desc">Artistes et personnalités de la diaspora</div>
       </div>
     </div>
 
@@ -1764,7 +1822,7 @@
       <!-- CARTE 1: MAILLAGE TERRITORIAL & MISSIONS DE TERRAIN -->
       <div class="vivid-card card-benevolat" style="padding: 2.2rem; display: flex; flex-direction: column; justify-content: space-between;">
         <div>
-          <div style="font-size: 0.82rem; font-weight: 800; color: #FB7185; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
+          <div class="hmong-section-kicker" style="font-size: 0.82rem; font-weight: 800; color: #FB7185; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
             <i class="fa-solid fa-map-location-dot"></i> <span data-i18n="hmong.p1_tag">Pilier 1 • Terrain &amp; Entraide Collective</span>
           </div>
           <h3 class="vivid-card-title" style="font-size: 1.35rem; margin-bottom: 0.8rem;" data-i18n="hmong.p1_title">
@@ -1774,18 +1832,18 @@
             <span data-i18n="hmong.p1_desc">Depuis plus de 10 ans (dès 2015), je participe et j'aide sur le terrain lors des grands festivals rassemblant la communauté :</span>
           </p>
 
-          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 1.25rem;">
-            <div style="font-size: 0.78rem; font-weight: 800; color: #FB7185; text-transform: uppercase; margin-bottom: 8px;">
+          <div class="hmong-sub-box" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 1.25rem;">
+            <div class="hmong-section-kicker" style="font-size: 0.78rem; font-weight: 800; color: #FB7185; text-transform: uppercase; margin-bottom: 8px;">
               <i class="fa-solid fa-location-dot"></i> <span data-i18n="hmong.p1_cities_title">Les 7 Villes d'Intervention :</span>
             </div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <span class="brand-logo-pill" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Aubigny-sur-Nère</span>
-              <span class="brand-logo-pill" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Villefranche</span>
-              <span class="brand-logo-pill" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Nîmes</span>
-              <span class="brand-logo-pill" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Orléans</span>
-              <span class="brand-logo-pill" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Gien</span>
-              <span class="brand-logo-pill" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Andrézieux</span>
-              <span class="brand-logo-pill" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Paris</span>
+              <span class="brand-logo-pill pill-accent-rose" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Aubigny-sur-Nère</span>
+              <span class="brand-logo-pill pill-accent-rose" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Villefranche</span>
+              <span class="brand-logo-pill pill-accent-rose" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Nîmes</span>
+              <span class="brand-logo-pill pill-accent-rose" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Orléans</span>
+              <span class="brand-logo-pill pill-accent-rose" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Gien</span>
+              <span class="brand-logo-pill pill-accent-rose" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Andrézieux</span>
+              <span class="brand-logo-pill pill-accent-rose" style="border: 1px solid rgba(225, 29, 72, 0.2); background: rgba(225, 29, 72, 0.06); color: #F1F5F9;">Paris</span>
             </div>
           </div>
 
@@ -1806,7 +1864,7 @@
       <!-- CARTE 2: ACCUEIL, ENTRAIDE & EXPÉRIENCE HUMAINE -->
       <div class="vivid-card card-benevolat" style="padding: 2.2rem; display: flex; flex-direction: column; justify-content: space-between;">
         <div>
-          <div style="font-size: 0.82rem; font-weight: 800; color: #FB7185; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
+          <div class="hmong-section-kicker" style="font-size: 0.82rem; font-weight: 800; color: #FB7185; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
             <i class="fa-solid fa-handshake-angle"></i> <span data-i18n="hmong.p2_tag">Pilier 2 • Accueil, Échange &amp; Solidarité</span>
           </div>
           <h3 class="vivid-card-title" style="font-size: 1.35rem; margin-bottom: 0.8rem;" data-i18n="hmong.p2_title">
@@ -1816,11 +1874,11 @@
             <span data-i18n="hmong.p2_desc">Ce que ces rassemblements m'ont appris au contact direct du public et des différentes générations :</span>
           </p>
 
-          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 1.25rem;">
-            <div style="font-size: 0.78rem; font-weight: 800; color: #FB7185; text-transform: uppercase; margin-bottom: 6px;">
+          <div class="hmong-sub-box" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 1.25rem;">
+            <div class="hmong-section-kicker" style="font-size: 0.78rem; font-weight: 800; color: #FB7185; text-transform: uppercase; margin-bottom: 6px;">
               <i class="fa-solid fa-star"></i> <span data-i18n="hmong.p2_artists_title">Participation à l'accueil des artistes (USA &amp; Asie) :</span>
             </div>
-            <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin: 0;">
+            <p class="hmong-sub-text" style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin: 0;">
               <span data-i18n="hmong.p2_artists_desc">Assistance pour recevoir les artistes et chanteurs invités : les guider sur le site, veiller à leur confort dans les coulisses et assister les organisateurs.</span>
             </p>
           </div>
@@ -1843,13 +1901,13 @@
     <!-- NOUVEAU BLOCK VIDÉOS : REPORTAGE FRANCE 3 & CONCERT LIVE 1080P SOIRÉE DU FESTIVAL -->
     <div style="margin-top: 2rem;">
       <div style="text-align: center; margin-bottom: 1.5rem;">
-        <div style="font-size: 0.82rem; font-weight: 700; color: #FB7185; text-transform: uppercase; letter-spacing: 1.5px;">
+        <div class="hmong-section-kicker" style="font-size: 0.82rem; font-weight: 700; color: #FB7185; text-transform: uppercase; letter-spacing: 1.5px;">
           <i class="fa-solid fa-video"></i> <span data-i18n="hmong.video_tag">Immersion Vidéo</span>
         </div>
         <h3 style="font-size: 1.4rem; font-weight: 800; color: #F9FAFB; margin-top: 4px;">
           <span data-i18n="hmong.video_title">Découvrir l'Ambiance des Festivals Hmong en Vidéo</span>
         </h3>
-        <p style="font-size: 0.92rem; color: #94A3B8; font-weight: 500; max-width: 680px; margin: 6px auto 0;">
+        <p class="kpi-stat-desc" style="font-size: 0.92rem; color: #94A3B8; font-weight: 500; max-width: 680px; margin: 6px auto 0;">
           <span data-i18n="hmong.video_sub">Deux documents authentiques pour visualiser la dimension de ces rassemblements :</span>
         </p>
       </div>
@@ -1860,21 +1918,21 @@
         <div class="vivid-card card-benevolat" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <span style="background: rgba(255, 255, 255, 0.06); color: #E2E8F0; font-size: 0.74rem; font-weight: 700; padding: 3px 10px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.12);">
+              <span class="pill-neutral" style="background: rgba(255, 255, 255, 0.06); color: #E2E8F0; font-size: 0.74rem; font-weight: 700; padding: 3px 10px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.12);">
                 <i class="fa-solid fa-tv"></i> <span data-i18n="hmong.v1_tag">Reportage France 3</span>
               </span>
-              <span style="font-size: 0.75rem; color: #94A3B8; font-weight: 600;"><i class="fa-solid fa-location-dot" style="color: #CBD5E1;"></i> <span data-i18n="hmong.v1_loc">Aubigny-sur-Nère</span></span>
+              <span class="kpi-stat-desc" style="font-size: 0.75rem; color: #94A3B8; font-weight: 600;"><i class="fa-solid fa-location-dot" style="color: #E11D48;"></i> <span data-i18n="hmong.v1_loc">Aubigny-sur-Nère</span></span>
             </div>
             <h4 style="color: #F9FAFB; font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;" data-i18n="hmong.v1_title">Grand Rassemblement &amp; Fête Culturelle</h4>
             <p style="color: #CBD5E1; font-size: 0.84rem; line-height: 1.5; margin-bottom: 8px;">
               <span data-i18n="hmong.v1_desc">Reportage télévisé de France 3 sur le Festival Hmong à Aubigny-sur-Nère : danses traditionnelles, beaux costumes brodés, cuisine, tournois sportifs et partage culturel.</span>
             </p>
-            <div style="background: rgba(255, 255, 255, 0.03); border-left: 2px solid rgba(255, 255, 255, 0.2); padding: 6px 10px; border-radius: var(--radius-sm); font-size: 0.76rem; color: #CBD5E1; margin-bottom: 12px;" data-i18n="hmong.v1_precision">
+            <div class="hmong-sub-box" style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid #E11D48; padding: 8px 12px; border-radius: var(--radius-sm); font-size: 0.76rem; color: #CBD5E1; margin-bottom: 12px;" data-i18n="hmong.v1_precision">
               <strong>ℹ️ Précision :</strong> Ce reportage date de <strong>2015</strong>. Depuis, les rassemblements ont beaucoup évolué et grandi : des milliers de personnes accueillies, de grandes scènes et la venue d'artistes internationaux.
             </div>
           </div>
           
-          <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.12); background: #000; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
+          <div class="video-embed-frame" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.12); background: #000; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
             <iframe 
               src="https://www.youtube-nocookie.com/embed/C3WvrLced94" 
               loading="lazy"
@@ -1885,8 +1943,8 @@
             </iframe>
           </div>
 
-          <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; gap: 8px;">
-            <span style="font-size: 0.74rem; color: #94A3B8; font-weight: 500;">
+          <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+            <span class="kpi-stat-desc" style="font-size: 0.74rem; color: #94A3B8; font-weight: 500;">
               <i class="fa-solid fa-film"></i> <span data-i18n="hmong.v1_footer">Archives France 3 (2015)</span>
             </span>
             <a href="https://youtu.be/C3WvrLced94" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" style="font-size: 0.75rem; padding: 4px 10px;" title="Voir la vidéo sur YouTube">
@@ -1899,10 +1957,10 @@
         <div class="vivid-card card-benevolat" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <span style="background: rgba(255, 255, 255, 0.06); color: #E2E8F0; font-size: 0.74rem; font-weight: 700; padding: 3px 10px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.12);">
+              <span class="pill-neutral" style="background: rgba(255, 255, 255, 0.06); color: #E2E8F0; font-size: 0.74rem; font-weight: 700; padding: 3px 10px; border-radius: 99px; border: 1px solid rgba(255, 255, 255, 0.12);">
                 <i class="fa-solid fa-video"></i> <span data-i18n="hmong.v2_tag">Concert en Direct</span>
               </span>
-              <span style="font-size: 0.75rem; color: #94A3B8; font-weight: 600;"><i class="fa-solid fa-location-dot" style="color: #CBD5E1;"></i> <span data-i18n="hmong.v2_loc">Andrézieux-Bouthéon</span></span>
+              <span class="kpi-stat-desc" style="font-size: 0.75rem; color: #94A3B8; font-weight: 600;"><i class="fa-solid fa-location-dot" style="color: #E11D48;"></i> <span data-i18n="hmong.v2_loc">Andrézieux-Bouthéon</span></span>
             </div>
             <h4 style="color: #F9FAFB; font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;" data-i18n="hmong.v2_title">Suddenrush — "Mi Noog" en Concert</h4>
             <p style="color: #CBD5E1; font-size: 0.84rem; line-height: 1.5; margin-bottom: 12px;">
@@ -1910,7 +1968,7 @@
             </p>
           </div>
           
-          <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.12); background: #000; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
+          <div class="video-embed-frame" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,0.12); background: #000; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
             <iframe 
               src="https://www.youtube-nocookie.com/embed/vKfPg94vR6A" 
               loading="lazy"
@@ -1922,7 +1980,7 @@
           </div>
 
           <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-            <span style="font-size: 0.74rem; color: #94A3B8; font-weight: 500;">
+            <span class="kpi-stat-desc" style="font-size: 0.74rem; color: #94A3B8; font-weight: 500;">
               <i class="fa-solid fa-microphone-lines"></i> <span data-i18n="hmong.v2_footer">Soirée de Gala &amp; Scène Internationale</span>
             </span>
             <a href="https://youtu.be/vKfPg94vR6A" target="_blank" rel="noopener noreferrer" class="brand-logo-pill" style="font-size: 0.75rem; padding: 4px 10px;" title="Voir le concert sur YouTube">
@@ -1937,31 +1995,77 @@
 
   <!-- Off-Canvas CV & Contact Drawer -->
   <div class="shortlist-drawer" id="shortlistDrawer">
-    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 1.25rem;">
-      <div style="font-size: 1.05rem; font-weight: 800; color: #F9FAFB; letter-spacing: -0.01em; display: flex; align-items: center; gap: 8px;">
+    <div class="drawer-header-row" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 1.25rem;">
+      <div class="drawer-main-title" style="font-size: 1.05rem; font-weight: 800; color: #F9FAFB; letter-spacing: -0.01em; display: flex; align-items: center; gap: 8px;">
         <i class="fa-solid fa-file-lines" style="color: #EF4444;"></i> <span data-i18n="drawer.title">MES CV &amp; CONTACT</span>
       </div>
-      <button id="shortlistClose" style="background: transparent; border: none; font-size: 1.5rem; color: #9CA3AF; cursor: pointer; padding: 4px 8px; transition: color 0.2s ease;" aria-label="Fermer le panneau">&times;</button>
+      <button id="shortlistClose" class="drawer-close-btn" style="background: transparent; border: none; font-size: 1.5rem; color: #9CA3AF; cursor: pointer; padding: 4px 8px; transition: color 0.2s ease;" aria-label="Fermer le panneau">&times;</button>
     </div>
 
     <div style="flex: 1; display: flex; flex-direction: column; gap: 1.25rem;">
       <!-- Candidate Quick Card -->
-      <div style="display: flex; align-items: center; gap: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px 14px; border-radius: var(--radius-md);">
+      <div class="drawer-candidate-card" style="display: flex; align-items: center; gap: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px 14px; border-radius: var(--radius-md);">
         <img src="assets/candidate_photo.jpg" alt="Luka Xiong" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.2);">
         <div>
-          <div style="font-weight: 800; font-size: 1rem; color: #F9FAFB;">Luka Xiong</div>
-          <div style="font-size: 0.74rem; color: #FCA5A5; font-weight: 700;"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="intro.skema_tag">Candidat BBA • SKEMA Business School</span></div>
-          <div style="font-size: 0.72rem; color: #9CA3AF; font-weight: 500;" data-i18n="drawer.candidate_sub2">Bac STI2D Architecture (Chartres)</div>
+          <div class="drawer-candidate-name" style="font-weight: 800; font-size: 1rem; color: #F9FAFB;">Luka Xiong</div>
+          <div class="drawer-candidate-tag" style="font-size: 0.74rem; color: #FCA5A5; font-weight: 700;"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="intro.skema_tag">Candidat BBA • SKEMA Business School</span></div>
+          <div class="drawer-candidate-sub" style="font-size: 0.72rem; color: #9CA3AF; font-weight: 500;" data-i18n="drawer.candidate_sub2">Bac STI2D Architecture (Chartres)</div>
+        </div>
+      </div>
+
+      <!-- Executive Recruiter Ambition & Skills Matrix -->
+      <div class="drawer-recruiter-box" id="drawerSkillsMatrixBox">
+        <div class="drawer-recruiter-header">
+          <span class="drawer-recruiter-tag"><i class="fa-solid fa-bullseye"></i> <span data-i18n="drawer.ambition_tag">PROJET &amp; AMBITION PROFESSIONNELLE</span></span>
+          <span class="drawer-recruiter-badge" data-i18n="drawer.ambition_status">Stage / Alternance</span>
+        </div>
+        <div class="drawer-recruiter-title" data-i18n="drawer.ambition_title">
+          Acheteur International / Sourcing Luxe &amp; Management Commercial
+        </div>
+        <p class="drawer-recruiter-desc" data-i18n="drawer.ambition_desc">
+          À la recherche d'une opportunité de stage ou d'alternance pour piloter le développement commercial, le sourcing international et l'expérience client d'exception.
+        </p>
+
+        <!-- 4 Core Competencies Matrix -->
+        <div class="drawer-skills-matrix">
+          <div class="drawer-skill-row">
+            <span class="skill-dot" style="background: #F59E0B;"></span>
+            <div class="skill-info">
+              <strong data-i18n="matrix.pole1_title">Commerce &amp; Stratégie Luxe</strong>
+              <span data-i18n="matrix.pole1_short">Storytelling, codes du luxe, expérience client VIP, LIFE 360</span>
+            </div>
+          </div>
+          <div class="drawer-skill-row">
+            <span class="skill-dot" style="background: #3B82F6;"></span>
+            <div class="skill-info">
+              <strong data-i18n="matrix.pole2_title">Sourcing &amp; Négociation Internationale</strong>
+              <span data-i18n="matrix.pole2_short">Prospection multi-pays, arbitrage prix/marge, cash-flow, logistique</span>
+            </div>
+          </div>
+          <div class="drawer-skill-row">
+            <span class="skill-dot" style="background: #10B981;"></span>
+            <div class="skill-info">
+              <strong data-i18n="matrix.pole3_title">Gestion de Projet &amp; Outils 3D/Tech</strong>
+              <span data-i18n="matrix.pole3_short">Modélisation 3D (SketchUp/Revit), éco-conception, Suite Adobe</span>
+            </div>
+          </div>
+          <div class="drawer-skill-row">
+            <span class="skill-dot" style="background: #EF4444;"></span>
+            <div class="skill-info">
+              <strong data-i18n="matrix.pole4_title">Leadership &amp; Rigueur Opérationnelle</strong>
+              <span data-i18n="matrix.pole4_short">Management d'équipe événementielle, sang-froid &amp; rigueur SDIS</span>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- CV Section -->
       <div style="display: flex; flex-direction: column; gap: 10px;">
         <div style="display: flex; align-items: center; justify-content: space-between;">
-          <strong style="color: #F9FAFB; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.8px;">
+          <strong class="drawer-section-heading" style="color: #F9FAFB; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.8px;">
             <i class="fa-solid fa-file-pdf" style="color: #EF4444;"></i> <span data-i18n="drawer.cv_header">Mes CV à disposition (PDF) :</span>
           </strong>
-          <span style="font-size: 0.68rem; color: #10B981; font-weight: 700; background: rgba(16, 185, 129, 0.12); padding: 2px 8px; border-radius: 99px;" data-i18n="drawer.cv_badge">PDF Officiels</span>
+          <span class="pill-accent-emerald" style="font-size: 0.68rem; color: #10B981; font-weight: 700; background: rgba(16, 185, 129, 0.12); padding: 2px 8px; border-radius: 99px;" data-i18n="drawer.cv_badge">PDF Officiels</span>
         </div>
 
         <!-- 1. CV Français (SKEMA) -->
@@ -2042,63 +2146,63 @@
       </div>
 
       <!-- Detailed Social Media & Direct Channels -->
-      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 0.25rem; padding-top: 0.9rem; border-top: 1px solid rgba(255,255,255,0.08);">
-        <strong style="color: #9CA3AF; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px;" data-i18n="drawer.contacts_header">Coordonnées Directes :</strong>
+      <div class="drawer-channels-group" style="display: flex; flex-direction: column; gap: 10px; margin-top: 0.25rem; padding-top: 0.9rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <strong class="drawer-section-heading" style="color: #9CA3AF; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px;" data-i18n="drawer.contacts_header">Coordonnées Directes :</strong>
         
         <!-- Phone Detail Card -->
-        <a href="tel:+33629452103" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
+        <a href="tel:+33629452103" class="drawer-channel-card" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 32px; height: 32px; border-radius: 8px; background: #10B981; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
+            <div class="drawer-channel-icon" style="width: 32px; height: 32px; border-radius: 8px; background: #10B981; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
               <i class="fa-solid fa-phone"></i>
             </div>
             <div>
-              <div class="selectable-copy" style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">+33 6 29 45 21 03</div>
-              <div style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.call_label">Appel / SMS direct</div>
+              <div class="selectable-copy drawer-channel-title" style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">+33 6 29 45 21 03</div>
+              <div class="drawer-channel-sub" style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.call_label">Appel / SMS direct</div>
             </div>
           </div>
-          <span style="color: #34D399; font-size: 0.76rem; font-weight: 600;"><span data-i18n="drawer.call_btn">Appeler</span> <i class="fa-solid fa-phone-volume" style="font-size: 0.7rem;"></i></span>
+          <span class="drawer-channel-cta cta-emerald" style="color: #34D399; font-size: 0.76rem; font-weight: 600;"><span data-i18n="drawer.call_btn">Appeler</span> <i class="fa-solid fa-phone-volume" style="font-size: 0.7rem;"></i></span>
         </a>
 
         <!-- Proton Mail Detail Card -->
-        <a href="mailto:luka.xiong@proton.me" style="background: rgba(109, 74, 255, 0.08); border: 1px solid rgba(109, 74, 255, 0.25); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
+        <a href="mailto:luka.xiong@proton.me" class="drawer-channel-card" style="background: rgba(109, 74, 255, 0.08); border: 1px solid rgba(109, 74, 255, 0.25); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 32px; height: 32px; border-radius: 8px; background: #6D4AFF; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
+            <div class="drawer-channel-icon" style="width: 32px; height: 32px; border-radius: 8px; background: #6D4AFF; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
               <i class="fa-solid fa-envelope"></i>
             </div>
             <div>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">Email Pro (Proton)</div>
-              <div class="selectable-copy" style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.email_label">luka.xiong@proton.me</div>
+              <div class="drawer-channel-title" style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">Email Pro (Proton)</div>
+              <div class="selectable-copy drawer-channel-sub" style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.email_label">luka.xiong@proton.me</div>
             </div>
           </div>
-          <span style="color: #A78BFA; font-size: 0.76rem; font-weight: 600;"><span data-i18n="drawer.email_btn">Écrire</span> <i class="fa-solid fa-paper-plane" style="font-size: 0.7rem;"></i></span>
+          <span class="drawer-channel-cta cta-purple" style="color: #A78BFA; font-size: 0.76rem; font-weight: 600;"><span data-i18n="drawer.email_btn">Écrire</span> <i class="fa-solid fa-paper-plane" style="font-size: 0.7rem;"></i></span>
         </a>
 
         <!-- LinkedIn Detail Card -->
-        <a href="https://www.linkedin.com/in/luka-xiong-8209503b0/" target="_blank" rel="noopener noreferrer" style="background: rgba(10, 102, 194, 0.08); border: 1px solid rgba(10, 102, 194, 0.25); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
+        <a href="https://www.linkedin.com/in/luka-xiong-8209503b0/" target="_blank" rel="noopener noreferrer" class="drawer-channel-card" style="background: rgba(10, 102, 194, 0.08); border: 1px solid rgba(10, 102, 194, 0.25); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 32px; height: 32px; border-radius: 8px; background: #0A66C2; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
+            <div class="drawer-channel-icon" style="width: 32px; height: 32px; border-radius: 8px; background: #0A66C2; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
               <i class="fa-brands fa-linkedin-in"></i>
             </div>
             <div>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">LinkedIn</div>
-              <div style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.linkedin_sub">Luka Xiong • Parcours &amp; Certifications</div>
+              <div class="drawer-channel-title" style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">LinkedIn</div>
+              <div class="drawer-channel-sub" style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.linkedin_sub">Luka Xiong • Parcours &amp; Certifications</div>
             </div>
           </div>
-          <span style="color: #60A5FA; font-size: 0.76rem; font-weight: 600;">Profil <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
+          <span class="drawer-channel-cta cta-blue" style="color: #60A5FA; font-size: 0.76rem; font-weight: 600;">Profil <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
         </a>
 
         <!-- Instagram Detail Card -->
-        <a href="https://www.instagram.com/lukahmg/" target="_blank" rel="noopener noreferrer" style="background: rgba(225, 48, 108, 0.06); border: 1px solid rgba(225, 48, 108, 0.2); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
+        <a href="https://www.instagram.com/lukahmg/" target="_blank" rel="noopener noreferrer" class="drawer-channel-card" style="background: rgba(225, 48, 108, 0.06); border: 1px solid rgba(225, 48, 108, 0.2); padding: 10px 14px; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease;">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, #833AB4, #FD1D1D, #F56040); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
+            <div class="drawer-channel-icon" style="width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, #833AB4, #FD1D1D, #F56040); color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">
               <i class="fa-brands fa-instagram"></i>
             </div>
             <div>
-              <div style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">Instagram</div>
-              <div style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.insta_sub">@lukahmg • Contact direct &amp; Lifestyle</div>
+              <div class="drawer-channel-title" style="color: #F9FAFB; font-weight: 700; font-size: 0.85rem;">Instagram</div>
+              <div class="drawer-channel-sub" style="color: #9CA3AF; font-size: 0.72rem;" data-i18n="drawer.insta_sub">@lukahmg • Contact direct &amp; Lifestyle</div>
             </div>
           </div>
-          <span style="color: #F472B6; font-size: 0.76rem; font-weight: 600;">@lukahmg <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
+          <span class="drawer-channel-cta cta-rose" style="color: #F472B6; font-size: 0.76rem; font-weight: 600;">@lukahmg <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></span>
         </a>
 
       </div>
@@ -2127,6 +2231,6 @@
   </div>
 
   <!-- Custom Script -->
-  <script src="script.js?v=67.0"></script>
+  <script src="script.js?v=70.0"></script>
 </body>
 </html>

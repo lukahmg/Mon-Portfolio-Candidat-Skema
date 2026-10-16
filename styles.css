@@ -3520,3 +3520,1401 @@ img {
   overflow: hidden;
 }
 
+
+/* ==========================================================================
+   THEME TOGGLE BUTTONS (DESKTOP NAVBAR, INTRO LANDING & MOBILE MENU)
+   ========================================================================== */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(11, 15, 25, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #CBD5E1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 6px 13px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.theme-toggle-btn:hover {
+  color: #FFFFFF;
+  background: rgba(31, 41, 55, 0.85);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.theme-toggle-btn .icon-sun {
+  color: #F59E0B;
+  display: inline-block;
+  font-size: 0.82rem;
+}
+
+.theme-toggle-btn .icon-moon {
+  color: #60A5FA;
+  display: none;
+  font-size: 0.82rem;
+}
+
+.intro-theme-btn {
+  padding: 5px 12px;
+  font-size: 0.72rem;
+}
+
+.mobile-theme-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #F9FAFB;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+}
+
+.mobile-theme-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================================
+   AMBITION & PROJET PROFESSIONNEL (INTRO LANDING & HUB)
+   ========================================================================== */
+.intro-ambition-card {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(185, 28, 28, 0.12), rgba(17, 24, 39, 0.7));
+  border: 1px solid rgba(185, 28, 28, 0.35);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin: 4px 0 6px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+.ambition-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ambition-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FCA5A5;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ambition-status {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #34D399;
+  background: rgba(16, 185, 129, 0.14);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid rgba(16, 185, 129, 0.28);
+}
+
+.ambition-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.35;
+}
+
+.ambition-desc {
+  font-size: 0.8rem;
+  color: #CBD5E1;
+  line-height: 1.5;
+}
+
+.ambition-desc strong {
+  color: #F9FAFB;
+}
+
+.hero-ambition-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #FCA5A5;
+  background: rgba(185, 28, 28, 0.15);
+  border: 1px solid rgba(185, 28, 28, 0.32);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  margin-top: 10px;
+}
+
+/* ==========================================================================
+   LVMH OFFICIAL PROACTIVE CONTEXT CALLOUT
+   ========================================================================== */
+.section-context-callout {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(17, 24, 39, 0.75));
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin: 1.25rem 0 2rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.section-context-callout .callout-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(212, 175, 55, 0.16);
+  color: #F59E0B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.section-context-callout .callout-content {
+  flex: 1;
+}
+
+.section-context-callout .callout-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #F59E0B;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.section-context-callout .callout-text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #CBD5E1;
+}
+
+.section-context-callout .callout-text strong {
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   DRAWER RECRUITER AMBITION & 4-PILLAR SKILLS MATRIX
+   ========================================================================== */
+.drawer-recruiter-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.drawer-recruiter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.drawer-recruiter-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #FCA5A5;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.drawer-recruiter-badge {
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+}
+
+.drawer-recruiter-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #F9FAFB;
+  line-height: 1.35;
+}
+
+.drawer-recruiter-desc {
+  font-size: 0.76rem;
+  color: #9CA3AF;
+  line-height: 1.45;
+}
+
+.drawer-skills-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.drawer-skill-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.74rem;
+}
+
+.drawer-skill-row .skill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.drawer-skill-row .skill-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.drawer-skill-row strong {
+  color: #F9FAFB;
+  font-size: 0.78rem;
+}
+
+.drawer-skill-row span {
+  color: #9CA3AF;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   MODE RECRUTEUR ÉPURÉ (CORPORATE LIGHT / LUXURY WHITE DESIGN SYSTEM)
+   Native Executive Light Architecture — Default Theme
+   ========================================================================== */
+
+body.theme-light {
+  --bg-primary: #F8FAFC;            /* Clean Executive Bright Background */
+  --bg-surface: #FFFFFF;            /* Pure Crisp White */
+  --bg-surface-elevated: #F1F5F9;   /* Subtle Platinum Slate */
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFFFFF;
+  
+  --sec-accent: #B91C1C;            /* SKEMA Official Carmine Red */
+  --sec-accent-hover: #991B1B;
+  --sec-accent-subtle: rgba(185, 28, 28, 0.08);
+  --sec-accent-glow: rgba(185, 28, 28, 0.16);
+  --sec-border: rgba(15, 23, 42, 0.09);
+  --sec-card-bg: #FFFFFF;
+
+  --text-main: #0F172A;             /* Deep Midnight Slate (High Contrast) */
+  --text-muted: #475569;            /* Muted Slate Gray */
+  --text-sub: #1E293B;              /* Dark Subtext */
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 6px 20px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.04);
+  
+  background: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+html:has(body.theme-light) {
+  background: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+/* Subtle Canvas background in Light Mode */
+body.theme-light #bgCanvas {
+  opacity: 0.14 !important;
+}
+
+/* Base Headings & Paragraphs in Light Mode */
+body.theme-light h1,
+body.theme-light h2,
+body.theme-light h3,
+body.theme-light h4,
+body.theme-light h5,
+body.theme-light h6 {
+  color: #0F172A !important;
+}
+
+body.theme-light p {
+  color: #334155 !important;
+}
+
+/* Safe Inline Text & Container Normalization (Excluding Intentional White-on-Color Badges) */
+body.theme-light [style*="color: #F9FAFB"]:not(.photo-zoom-badge):not(.btn-cv-dl):not(.header-contact-btn):not(.sticky-contact-btn),
+body.theme-light [style*="color: #FFFFFF"]:not(.photo-zoom-badge):not(.drawer-channel-icon):not(.btn-cv-dl):not(.header-contact-btn):not(.sticky-contact-btn),
+body.theme-light [style*="color: #F1F5F9"]:not(.photo-zoom-badge),
+body.theme-light [style*="color: #E2E8F0"]:not(.photo-zoom-badge),
+body.theme-light [style*="color: #CBD5E1"]:not(.photo-zoom-badge) {
+  color: #0F172A !important;
+}
+
+body.theme-light [style*="color: #94A3B8"],
+body.theme-light [style*="color: #9CA3AF"],
+body.theme-light [style*="color: #64748B"] {
+  color: #475569 !important;
+}
+
+/* ==========================================================================
+   1. MODERN NAVBAR, HUD TOAST & CONTROLS IN LIGHT MODE
+   ========================================================================== */
+body.theme-light .modern-header {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(15, 23, 42, 0.09) !important;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06) !important;
+}
+
+body.theme-light .brand-name {
+  color: #0F172A !important;
+}
+
+body.theme-light .brand-subtitle {
+  color: #64748B !important;
+}
+
+body.theme-light .nav-links-container {
+  background: #F1F5F9 !important;
+  border: 1px solid rgba(15, 23, 42, 0.07) !important;
+}
+
+body.theme-light .nav-item-link {
+  color: #475569 !important;
+}
+
+body.theme-light .nav-item-link:hover {
+  color: #0F172A !important;
+  background: rgba(15, 23, 42, 0.05) !important;
+}
+
+body.theme-light .nav-item-link.active {
+  color: #0F172A !important;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06) !important;
+}
+
+body.theme-light .nav-item-link.active i {
+  color: #B91C1C !important;
+}
+
+/* Language HUD Floating Pill */
+body.theme-light .lang-hud-pill {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid rgba(185, 28, 28, 0.25) !important;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12) !important;
+}
+
+body.theme-light .lang-hud-label {
+  color: #0F172A !important;
+}
+
+/* Theme Toggle Button */
+body.theme-light .theme-toggle-btn {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.14) !important;
+  color: #0F172A !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05) !important;
+}
+
+body.theme-light .theme-toggle-btn:hover {
+  background: #F1F5F9 !important;
+  border-color: rgba(185, 28, 28, 0.35) !important;
+}
+
+body.theme-light .theme-toggle-btn .icon-sun {
+  display: none !important;
+}
+
+body.theme-light .theme-toggle-btn .icon-moon {
+  display: inline-block !important;
+  color: #334155 !important;
+}
+
+body.theme-light .mobile-theme-btn {
+  background: #F1F5F9 !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  color: #0F172A !important;
+}
+
+/* Language Switcher */
+body.theme-light .lang-switcher {
+  background: #F1F5F9 !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+body.theme-light .lang-btn {
+  color: #64748B !important;
+}
+
+body.theme-light .lang-btn:hover {
+  color: #0F172A !important;
+  background: rgba(15, 23, 42, 0.05) !important;
+}
+
+body.theme-light .lang-btn.active {
+  color: #0F172A !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Header Contact Button */
+body.theme-light .header-contact-btn {
+  background: #B91C1C !important;
+  color: #FFFFFF !important;
+  border-color: #991B1B !important;
+  box-shadow: 0 4px 14px rgba(185, 28, 28, 0.3) !important;
+}
+
+body.theme-light .header-contact-btn:hover {
+  background: #991B1B !important;
+}
+
+/* Mobile Hamburger Toggle */
+body.theme-light .mobile-nav-toggle .bar {
+  background: #0F172A !important;
+}
+
+/* ==========================================================================
+   2. INTRO / LINKTREE LANDING IN LIGHT MODE (DESKTOP & MOBILE)
+   ========================================================================== */
+body.theme-light .linktree-dashboard-container {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Fixes mobile dark panel override from @media (max-width: 768px) */
+body.theme-light .linktree-left-panel,
+body.theme-light .linktree-right-panel {
+  background: #FFFFFF !important;
+  border-color: rgba(15, 23, 42, 0.09) !important;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06) !important;
+}
+
+body.theme-light .linktree-avatar {
+  border-color: #FFFFFF !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12) !important;
+}
+
+body.theme-light .linktree-name {
+  color: #0F172A !important;
+}
+
+body.theme-light .linktree-subtitle {
+  color: #334155 !important;
+}
+
+body.theme-light .linktree-bio {
+  color: #334155 !important;
+  border-left: 3px solid #B91C1C !important;
+  background: #FEF2F2 !important;
+}
+
+/* Ambition Card */
+body.theme-light .intro-ambition-card {
+  background: linear-gradient(135deg, #FEF2F2 0%, #FFFFFF 100%) !important;
+  border: 1px solid rgba(185, 28, 28, 0.22) !important;
+  box-shadow: 0 4px 16px rgba(185, 28, 28, 0.05) !important;
+}
+
+body.theme-light .ambition-badge {
+  color: #B91C1C !important;
+}
+
+body.theme-light .ambition-status {
+  background: #ECFDF5 !important;
+  color: #065F46 !important;
+  border: 1px solid #A7F3D0 !important;
+}
+
+body.theme-light .ambition-title {
+  color: #0F172A !important;
+}
+
+body.theme-light .ambition-desc {
+  color: #334155 !important;
+}
+
+body.theme-light .ambition-desc strong {
+  color: #0F172A !important;
+}
+
+/* Big CTA Access Portfolio */
+body.theme-light .linktree-portfolio-cta {
+  background: linear-gradient(135deg, #B91C1C 0%, #DC2626 50%, #991B1B 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 28px rgba(185, 28, 28, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+body.theme-light .linktree-portfolio-cta .cta-label,
+body.theme-light .linktree-portfolio-cta .cta-title,
+body.theme-light .linktree-portfolio-cta .cta-arrow i,
+body.theme-light .linktree-portfolio-cta .cta-pulse-icon i {
+  color: #FFFFFF !important;
+}
+
+/* Highlights Mini-Pills */
+body.theme-light .highlight-mini-pill {
+  background: #F8FAFC !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+  border-right: 1px solid rgba(15, 23, 42, 0.08) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+  color: #0F172A !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03) !important;
+}
+
+body.theme-light .highlight-mini-pill span {
+  color: #0F172A !important;
+}
+
+/* Linktree Social Links */
+body.theme-light .linktree-section-label {
+  color: #0F172A !important;
+}
+
+body.theme-light .linktree-link-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03) !important;
+}
+
+body.theme-light .linktree-link-card:hover {
+  background: #F8FAFC !important;
+  border-color: rgba(185, 28, 28, 0.35) !important;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06) !important;
+}
+
+body.theme-light .link-title {
+  color: #0F172A !important;
+}
+
+body.theme-light .link-sub {
+  color: #475569 !important;
+}
+
+body.theme-light .link-action-pill {
+  background: #F1F5F9 !important;
+  color: #334155 !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+
+body.theme-light .link-action-pill:hover {
+  background: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+body.theme-light .cv-action-pill {
+  background: #FEF2F2 !important;
+  color: #B91C1C !important;
+  border: 1px solid #FECACA !important;
+}
+
+body.theme-light .intro-footer-note {
+  color: #64748B !important;
+}
+
+/* ==========================================================================
+   3. ORBIT HUB (#HERO) & CENTER PROFILE CORE IN LIGHT MODE
+   ========================================================================== */
+body.theme-light .skema-orbit-ring {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+body.theme-light .skema-core-aura {
+  background: radial-gradient(circle, rgba(185, 28, 28, 0.07) 0%, transparent 70%) !important;
+}
+
+/* CRITICAL FIX: .center-profile-core was previously dark navy rgba(17,24,39,0.90) */
+body.theme-light .center-profile-core,
+body.theme-light .center-core-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(185, 28, 28, 0.08) !important;
+}
+
+body.theme-light .center-core-title {
+  color: #0F172A !important;
+}
+
+body.theme-light .center-core-subtitle {
+  color: #334155 !important;
+}
+
+body.theme-light .center-core-quote {
+  color: #475569 !important;
+  border-top-color: rgba(15, 23, 42, 0.08) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+body.theme-light .hero-ambition-pill {
+  color: #991B1B !important;
+  background: #FEF2F2 !important;
+  border: 1px solid #FECACA !important;
+}
+
+body.theme-light .hero-ambition-pill i {
+  color: #B91C1C !important;
+}
+
+body.theme-light .hero-btn-primary,
+body.theme-light #heroCvBtn {
+  background: #B91C1C !important;
+  color: #FFFFFF !important;
+  border: 1px solid #991B1B !important;
+  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.3) !important;
+}
+
+body.theme-light .hero-btn-primary span,
+body.theme-light .hero-btn-primary i,
+body.theme-light #heroCvBtn span,
+body.theme-light #heroCvBtn i {
+  color: #FFFFFF !important;
+}
+
+body.theme-light .hero-btn-secondary,
+body.theme-light #heroSkillsBtn {
+  background: #EFF6FF !important;
+  color: #1D4ED8 !important;
+  border: 1px solid #BFDBFE !important;
+}
+
+body.theme-light .hero-btn-secondary:hover,
+body.theme-light #heroSkillsBtn:hover {
+  background: #DBEAFE !important;
+  color: #1E40AF !important;
+}
+
+body.theme-light .hero-btn-tertiary,
+body.theme-light .center-core-content a[href="#intro"] {
+  background: #F1F5F9 !important;
+  color: #334155 !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+}
+
+body.theme-light .hero-btn-tertiary:hover,
+body.theme-light .center-core-content a[href="#intro"]:hover {
+  background: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+body.theme-light .orbit-social-link {
+  color: #475569 !important;
+  background: #F8FAFC !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+body.theme-light .orbit-social-link:hover {
+  color: #0F172A !important;
+  background: #F1F5F9 !important;
+}
+
+/* Orbit Nodes */
+body.theme-light .orbit-node {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06) !important;
+}
+
+body.theme-light .orbit-node:hover {
+  background: #FFFFFF !important;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.12) !important;
+}
+
+body.theme-light .node-title {
+  color: #0F172A !important;
+}
+
+body.theme-light .node-desc {
+  color: #475569 !important;
+}
+
+body.theme-light .node-action {
+  color: #0F172A !important;
+  border-top-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+body.theme-light .node-lvmh { border-color: rgba(212, 175, 55, 0.45) !important; }
+body.theme-light .node-lvmh .node-tag { color: #B45309 !important; background: #FEF3C7 !important; border-color: #FDE68A !important; }
+body.theme-light .node-lvmh:hover { border-color: #D4AF37 !important; }
+
+body.theme-light .node-demeter { border-color: rgba(16, 185, 129, 0.45) !important; }
+body.theme-light .node-demeter .node-tag { color: #047857 !important; background: #ECFDF5 !important; border-color: #A7F3D0 !important; }
+body.theme-light .node-demeter:hover { border-color: #10B981 !important; }
+
+body.theme-light .node-resell { border-color: rgba(59, 130, 246, 0.45) !important; }
+body.theme-light .node-resell .node-tag { color: #1D4ED8 !important; background: #EFF6FF !important; border-color: #BFDBFE !important; }
+body.theme-light .node-resell:hover { border-color: #3B82F6 !important; }
+
+body.theme-light .node-benevolat { border-color: rgba(225, 29, 72, 0.45) !important; }
+body.theme-light .node-benevolat .node-tag { color: #BE123C !important; background: #FFF1F2 !important; border-color: #FECDD3 !important; }
+body.theme-light .node-benevolat:hover { border-color: #E11D48 !important; }
+
+/* ==========================================================================
+   4. SECTIONS, VIVID CARDS, KPI CARDS & PILLS IN LIGHT MODE
+   ========================================================================== */
+body.theme-light .section-hero-title {
+  color: #0F172A !important;
+}
+
+body.theme-light .section-hero-subtitle {
+  color: #334155 !important;
+}
+
+body.theme-light .section-hero-subtitle strong {
+  color: #0F172A !important;
+}
+
+/* Section Kickers */
+body.theme-light .lvmh-section-kicker {
+  color: #B45309 !important;
+}
+
+body.theme-light .demeter-section-kicker {
+  color: #047857 !important;
+}
+
+body.theme-light .resell-section-kicker {
+  color: #1D4ED8 !important;
+}
+
+body.theme-light .hmong-section-kicker {
+  color: #BE123C !important;
+}
+
+body.theme-light .back-to-hub-btn {
+  background: #FFFFFF !important;
+  color: #334155 !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+}
+
+body.theme-light .back-to-hub-btn:hover {
+  color: #0F172A !important;
+  background: #F1F5F9 !important;
+  border-color: rgba(185, 28, 28, 0.3) !important;
+}
+
+body.theme-light .skema-tag {
+  color: #92400E !important;
+  background: #FEF3C7 !important;
+  border: 1px solid #FDE68A !important;
+}
+
+body.theme-light .skema-tag i {
+  color: #B45309 !important;
+}
+
+body.theme-light .step-number-tag {
+  background: #F1F5F9 !important;
+  color: #334155 !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Vivid Cards & Process Encadre */
+body.theme-light .vivid-card,
+body.theme-light .process-encadre {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
+}
+
+body.theme-light .vivid-card:hover {
+  background: #FFFFFF !important;
+  border-color: rgba(185, 28, 28, 0.28) !important;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08) !important;
+}
+
+body.theme-light .vivid-card-title {
+  color: #0F172A !important;
+}
+
+body.theme-light .vivid-card p,
+body.theme-light .vivid-card-desc,
+body.theme-light .encadre-desc {
+  color: #334155 !important;
+}
+
+body.theme-light .card-footer-divider {
+  border-top: 1px solid rgba(15, 23, 42, 0.09) !important;
+}
+
+/* KPI Stat Cards (All 4 Sections) */
+body.theme-light .kpi-stat-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+}
+
+body.theme-light .kpi-stat-val {
+  color: #0F172A !important;
+}
+
+body.theme-light .card-lvmh .kpi-stat-sub { color: #B45309 !important; }
+body.theme-light .card-demeter .kpi-stat-sub { color: #047857 !important; }
+body.theme-light .card-resell .kpi-stat-sub { color: #1D4ED8 !important; }
+body.theme-light .card-benevolat .kpi-stat-sub { color: #BE123C !important; }
+
+body.theme-light .kpi-stat-desc {
+  color: #475569 !important;
+}
+
+/* Semantic Accent Pills */
+body.theme-light .pill-accent-gold {
+  background: #FEF3C7 !important;
+  color: #92400E !important;
+  border: 1px solid #FDE68A !important;
+}
+
+body.theme-light .pill-accent-emerald {
+  background: #ECFDF5 !important;
+  color: #065F46 !important;
+  border: 1px solid #A7F3D0 !important;
+}
+
+body.theme-light .pill-accent-blue {
+  background: #EFF6FF !important;
+  color: #1E40AF !important;
+  border: 1px solid #BFDBFE !important;
+}
+
+body.theme-light .pill-accent-purple {
+  background: #F5F3FF !important;
+  color: #5B21B6 !important;
+  border: 1px solid #DDD6FE !important;
+}
+
+body.theme-light .pill-accent-rose {
+  background: #FFF1F2 !important;
+  color: #9F1239 !important;
+  border: 1px solid #FECDD3 !important;
+}
+
+body.theme-light .pill-neutral {
+  background: #F1F5F9 !important;
+  color: #334155 !important;
+  border: 1px solid #CBD5E1 !important;
+}
+
+/* Insight Bullets */
+body.theme-light .insight-bullet {
+  background: #F8FAFC !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  color: #334155 !important;
+}
+
+body.theme-light .insight-bullet strong {
+  color: #0F172A !important;
+}
+
+body.theme-light .insight-bullet div {
+  color: #334155 !important;
+}
+
+body.theme-light .insight-bullet:hover {
+  background: #F1F5F9 !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+/* Subtle Watermarks */
+body.theme-light .card-brand-watermarks i,
+body.theme-light .card-watermark i {
+  color: #0F172A !important;
+  opacity: 0.035 !important;
+}
+
+/* Brand Logo Pills (StockX, Vinted, Cities, etc.) */
+body.theme-light .brand-logo-pill:not(.pill-accent-rose) {
+  color: #0F172A !important;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+}
+
+body.theme-light .brand-logo-pill:hover {
+  background: #F8FAFC !important;
+  border-color: #94A3B8 !important;
+  color: #0F172A !important;
+}
+
+/* Photo Frames & Zoom Badges (Fixes dark frame & black-on-black badge) */
+body.theme-light .photo-frame-wrapper,
+body.theme-light .showcase-img-frame {
+  background: #F1F5F9 !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+
+body.theme-light .photo-zoom-badge {
+  background: rgba(15, 23, 42, 0.84) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2) !important;
+}
+
+body.theme-light .photo-zoom-badge span,
+body.theme-light .photo-zoom-badge i {
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   5. TABS SYSTEMS IN LIGHT MODE
+   ========================================================================== */
+body.theme-light .section-tab-nav,
+body.theme-light .tab-controls {
+  background: #F1F5F9 !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+
+body.theme-light .section-tab-btn,
+body.theme-light .tab-btn {
+  color: #475569 !important;
+  background: transparent !important;
+}
+
+body.theme-light .section-tab-btn:hover,
+body.theme-light .tab-btn:hover {
+  color: #0F172A !important;
+  background: #FFFFFF !important;
+}
+
+body.theme-light .section-tab-btn.active,
+body.theme-light .tab-btn.active {
+  background: #0F172A !important;
+  color: #FFFFFF !important;
+  border: 1px solid #0F172A !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18) !important;
+}
+
+body.theme-light .section-tab-btn.active span,
+body.theme-light .tab-btn.active span {
+  color: #FFFFFF !important;
+}
+
+body.theme-light .section-tab-btn.active i {
+  color: #F87171 !important;
+}
+
+body.theme-light .tab-btn.active i {
+  color: #FBBF24 !important;
+}
+
+body.theme-light .tab-pane h4 {
+  color: #0F172A !important;
+}
+
+/* ==========================================================================
+   6. SECTION 1 (LVMH) & SECTION 2 (DÉMÉTER) IN LIGHT MODE
+   ========================================================================== */
+body.theme-light .section-context-callout {
+  background: #FEFCE8 !important;
+  border: 1.5px solid #FDE047 !important;
+  border-left: 5px solid #CA8A04 !important;
+  box-shadow: 0 4px 16px rgba(202, 138, 4, 0.08) !important;
+}
+
+body.theme-light .section-context-callout .callout-icon {
+  background: rgba(202, 138, 4, 0.12) !important;
+  color: #CA8A04 !important;
+}
+
+body.theme-light .section-context-callout .callout-badge {
+  color: #854D0E !important;
+}
+
+body.theme-light .section-context-callout .callout-text {
+  color: #713F12 !important;
+}
+
+body.theme-light .section-context-callout .callout-text strong {
+  color: #422006 !important;
+}
+
+body.theme-light .cert-card-title {
+  color: #0F172A !important;
+}
+
+body.theme-light .iframe-article-frame {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
+}
+
+body.theme-light .btn-vivid-blue {
+  background: #EFF6FF !important;
+  color: #1D4ED8 !important;
+  border: 1px solid #93C5FD !important;
+}
+
+body.theme-light .btn-vivid-blue:hover {
+  background: #DBEAFE !important;
+  color: #1E40AF !important;
+}
+
+/* ==========================================================================
+   7. SECTION 3: RESELLER, SHOWCASE & LIVE SIMULATOR IN LIGHT MODE
+   ========================================================================== */
+/* CRITICAL FIX: .resell-master-card had dark navy linear-gradient */
+body.theme-light .resell-master-card {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F0F7FF 100%) !important;
+  border: 1px solid rgba(59, 130, 246, 0.28) !important;
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.07) !important;
+}
+
+body.theme-light .resell-quote-banner {
+  background: #EFF6FF !important;
+  border-left: 4px solid #2563EB !important;
+  border-top: 1px solid #BFDBFE !important;
+  border-right: 1px solid #BFDBFE !important;
+  border-bottom: 1px solid #BFDBFE !important;
+}
+
+body.theme-light .resell-quote-banner p,
+body.theme-light .resell-quote-banner span {
+  color: #1E3A8A !important;
+}
+
+body.theme-light .resell-quote-banner strong {
+  color: #172554 !important;
+}
+
+body.theme-light .resell-arm-card.arm-blue {
+  background: #F8FAFC !important;
+  border: 1px solid #BFDBFE !important;
+}
+
+body.theme-light .resell-arm-card.arm-emerald {
+  background: #F8FAFC !important;
+  border: 1px solid #A7F3D0 !important;
+}
+
+body.theme-light .showcase-terrain-box {
+  background: #F8FAFC !important;
+  border: 1px solid rgba(15, 23, 42, 0.09) !important;
+}
+
+body.theme-light .showcase-photo-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Sneakers Price Comparison Grid */
+body.theme-light .pricing-pair-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04) !important;
+}
+
+body.theme-light .pricing-row-neutral {
+  background: #F8FAFC !important;
+  border: 1px solid rgba(15, 23, 42, 0.07) !important;
+}
+
+body.theme-light .pricing-row-highlight {
+  background: #EFF6FF !important;
+  border: 1px solid #BFDBFE !important;
+}
+
+body.theme-light .pricing-row-highlight span:first-child {
+  color: #1E40AF !important;
+}
+
+body.theme-light .pricing-row-highlight span:last-child {
+  color: #1D4ED8 !important;
+}
+
+/* Live Simulator Controls & Results */
+body.theme-light .sim-divider-row,
+body.theme-light .slider-group {
+  border-top: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+
+body.theme-light .num-input-box {
+  background: #F1F5F9 !important;
+  border: 1px solid #CBD5E1 !important;
+  color: #0F172A !important;
+}
+
+body.theme-light .num-input-box input {
+  color: #0F172A !important;
+  background: transparent !important;
+}
+
+body.theme-light .num-input-box span {
+  color: #475569 !important;
+}
+
+body.theme-light #resProfit {
+  color: #059669 !important;
+}
+
+body.theme-light #resMargin {
+  color: #0F172A !important;
+}
+
+body.theme-light #resRoi {
+  color: #1D4ED8 !important;
+}
+
+/* ==========================================================================
+   8. SECTION 4: HMONG & VOLUNTEERING IN LIGHT MODE
+   ========================================================================== */
+body.theme-light .hmong-sub-box {
+  background: #FFF1F2 !important;
+  border: 1px solid #FECDD3 !important;
+  color: #334155 !important;
+}
+
+body.theme-light .hmong-sub-text {
+  color: #334155 !important;
+}
+
+body.theme-light .video-embed-frame {
+  border: 1px solid rgba(15, 23, 42, 0.14) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* ==========================================================================
+   9. CV SHORTLIST DRAWER & MOBILE NAV IN LIGHT MODE
+   ========================================================================== */
+body.theme-light .shortlist-drawer {
+  background: #FFFFFF !important;
+  border-left: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: -10px 0 40px rgba(15, 23, 42, 0.12) !important;
+}
+
+body.theme-light .drawer-header-row {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+
+body.theme-light .drawer-main-title,
+body.theme-light .drawer-section-heading {
+  color: #0F172A !important;
+}
+
+body.theme-light .drawer-close-btn {
+  color: #475569 !important;
+}
+
+body.theme-light .drawer-close-btn:hover {
+  color: #0F172A !important;
+}
+
+body.theme-light .drawer-candidate-card {
+  background: #F8FAFC !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+
+body.theme-light .drawer-candidate-name {
+  color: #0F172A !important;
+}
+
+body.theme-light .drawer-candidate-tag {
+  color: #B91C1C !important;
+}
+
+body.theme-light .drawer-candidate-sub {
+  color: #475569 !important;
+}
+
+body.theme-light .drawer-recruiter-box {
+  background: #F8FAFC !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+
+body.theme-light .drawer-recruiter-tag {
+  color: #B91C1C !important;
+}
+
+body.theme-light .drawer-recruiter-badge {
+  background: #ECFDF5 !important;
+  color: #065F46 !important;
+  border: 1px solid #A7F3D0 !important;
+}
+
+body.theme-light .drawer-recruiter-title {
+  color: #0F172A !important;
+}
+
+body.theme-light .drawer-recruiter-desc {
+  color: #334155 !important;
+}
+
+body.theme-light .drawer-skills-matrix {
+  border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+body.theme-light .drawer-skill-row strong {
+  color: #0F172A !important;
+}
+
+body.theme-light .drawer-skill-row span {
+  color: #475569 !important;
+}
+
+body.theme-light .cv-card-item {
+  background: #F8FAFC !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+
+body.theme-light .cv-card-item:hover {
+  background: #FFFFFF !important;
+  border-color: rgba(185, 28, 28, 0.35) !important;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06) !important;
+}
+
+body.theme-light .cv-title {
+  color: #0F172A !important;
+}
+
+body.theme-light .cv-sub {
+  color: #475569 !important;
+}
+
+body.theme-light .btn-cv-dl {
+  background: #B91C1C !important;
+  border-color: #991B1B !important;
+  color: #FFFFFF !important;
+}
+
+body.theme-light .btn-cv-dl span,
+body.theme-light .btn-cv-dl i {
+  color: #FFFFFF !important;
+}
+
+body.theme-light .btn-cv-prev {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1px solid rgba(15, 23, 42, 0.14) !important;
+}
+
+body.theme-light .btn-cv-prev:hover {
+  background: #F1F5F9 !important;
+}
+
+/* Contact Direct Channel Cards in Drawer */
+body.theme-light .drawer-channels-group {
+  border-top: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+
+body.theme-light .drawer-channel-card {
+  background: #F8FAFC !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+
+body.theme-light .drawer-channel-card:hover {
+  background: #F1F5F9 !important;
+  border-color: rgba(185, 28, 28, 0.35) !important;
+}
+
+/* Preserve white icons inside colored channel boxes */
+body.theme-light .drawer-channel-icon,
+body.theme-light .drawer-channel-icon i {
+  color: #FFFFFF !important;
+}
+
+body.theme-light .drawer-channel-title {
+  color: #0F172A !important;
+}
+
+body.theme-light .drawer-channel-sub {
+  color: #475569 !important;
+}
+
+body.theme-light .drawer-channel-cta.cta-emerald { color: #059669 !important; }
+body.theme-light .drawer-channel-cta.cta-purple { color: #6D28D9 !important; }
+body.theme-light .drawer-channel-cta.cta-blue { color: #1D4ED8 !important; }
+body.theme-light .drawer-channel-cta.cta-rose { color: #BE123C !important; }
+
+/* Sticky Contact Button */
+body.theme-light .sticky-contact-btn {
+  background: #B91C1C !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 25px rgba(185, 28, 28, 0.32) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+body.theme-light .sticky-contact-btn span,
+body.theme-light .sticky-contact-btn i {
+  color: #FFFFFF !important;
+}
+
+/* Mobile Nav Sheet in Light Mode */
+body.theme-light .mobile-nav-pane {
+  background: #FFFFFF !important;
+  border-left: 1px solid rgba(15, 23, 42, 0.12) !important;
+}
+
+body.theme-light .mobile-brand-name {
+  color: #0F172A !important;
+}
+
+body.theme-light .mobile-brand-sub {
+  color: #64748B !important;
+}
+
+body.theme-light .mobile-nav-item {
+  background: #F8FAFC !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+body.theme-light .mobile-nav-title {
+  color: #0F172A !important;
+}
+
+body.theme-light .mobile-nav-subtitle {
+  color: #64748B !important;
+}
+
+body.theme-light .mobile-nav-arrow {
+  color: #94A3B8 !important;
+}
+
+/* Modal Fallback in Light Mode */
+body.theme-light .modal-fallback {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  color: #0F172A !important;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15) !important;
+}
+
+body.theme-light .modal-fallback h3 {
+  color: #0F172A !important;
+}
+
+body.theme-light .modal-fallback p {
+  color: #475569 !important;
+}

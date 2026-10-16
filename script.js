@@ -91,6 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.setAttribute('aria-pressed', 'false');
       }
     });
+
+    if (typeof updateThemeUI === 'function') {
+      updateThemeUI(document.body.classList.contains('theme-light') ? 'light' : 'dark');
+    }
   }
 
   function setLanguage(targetLang, clickedBtn = null) {
@@ -171,7 +175,109 @@ document.addEventListener('DOMContentLoaded', () => {
   if (savedLang && savedLang !== 'fr') {
     applyTranslations(savedLang);
   }
-  window.setPortfolioLanguage = setLanguage;
+    window.setPortfolioLanguage = setLanguage;
+
+  // --- EXECUTIVE THEME SWITCHER (MODE RECRUTEUR Ã‰PURÃ‰ VS MODE TECH SOMBRE) ---
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const mobileThemeToggleBtn = document.getElementById('mobileThemeToggleBtn');
+  const introThemeToggleBtn = document.getElementById('introThemeToggleBtn');
+  const mobileThemeLabel = document.getElementById('mobileThemeLabel');
+
+  function updateThemeUI(theme) {
+    const isLight = theme === 'light';
+    document.body.classList.toggle('theme-light', isLight);
+    document.documentElement.classList.toggle('theme-light', isLight);
+
+    const currentLang = document.documentElement.lang || 'fr';
+    const dict = (window.PORTFOLIO_TRANSLATIONS && window.PORTFOLIO_TRANSLATIONS[currentLang]) || {};
+
+    const toggleLabel = isLight 
+      ? (dict['theme.toggle_label_dark'] || (currentLang === 'fr' ? 'Mode Sombre' : (currentLang === 'es' ? 'Modo Oscuro' : 'Dark Mode')))
+      : (dict['theme.toggle_label'] || (currentLang === 'fr' ? 'Mode Recruteur' : (currentLang === 'es' ? 'Modo Reclutador' : 'Recruiter Mode')));
+
+    const toggleTitle = isLight 
+      ? (dict['theme.toggle_title_dark'] || 'Passer en Mode Tech Sombre')
+      : (dict['theme.toggle_title_light'] || 'Passer en Mode Recruteur Épuré (Fond Clair)');
+
+    const mobileLabel = isLight 
+      ? (dict['theme.mobile_label_dark'] || 'Mode Tech Sombre')
+      : (dict['theme.mobile_label_light'] || 'Mode Recruteur Épuré (Clair)');
+
+    [themeToggleBtn, introThemeToggleBtn].forEach(btn => {
+      if (!btn) return;
+      btn.setAttribute('title', toggleTitle);
+      const labelEl = btn.querySelector('.theme-btn-label');
+      if (labelEl) labelEl.textContent = toggleLabel;
+      const sunIcon = btn.querySelector('.icon-sun');
+      const moonIcon = btn.querySelector('.icon-moon');
+      if (sunIcon) sunIcon.style.display = isLight ? 'none' : 'inline-block';
+      if (moonIcon) moonIcon.style.display = isLight ? 'inline-block' : 'none';
+    });
+
+    if (mobileThemeToggleBtn) {
+      const sunIcon = mobileThemeToggleBtn.querySelector('.icon-sun');
+      const moonIcon = mobileThemeToggleBtn.querySelector('.icon-moon');
+      if (sunIcon) sunIcon.style.display = isLight ? 'none' : 'inline-block';
+      if (moonIcon) moonIcon.style.display = isLight ? 'inline-block' : 'none';
+      if (mobileThemeLabel) mobileThemeLabel.textContent = mobileLabel;
+    }
+  }
+
+  function setTheme(theme, notify = true) {
+    try {
+      localStorage.setItem('luka_portfolio_theme', theme);
+    } catch (e) {}
+
+    updateThemeUI(theme);
+
+    if (notify) {
+      const currentLang = document.documentElement.lang || 'fr';
+      const dict = (window.PORTFOLIO_TRANSLATIONS && window.PORTFOLIO_TRANSLATIONS[currentLang]) || {};
+      const hudMsg = theme === 'light' 
+        ? (dict['theme.hud_light'] || 'Mode Recruteur Épuré activé')
+        : (dict['theme.hud_dark'] || 'Mode Tech Sombre activé');
+
+      if (langHudPill && langHudLabel) {
+        langHudLabel.textContent = hudMsg;
+        langHudPill.classList.remove('is-visible');
+        void langHudPill.offsetWidth;
+        langHudPill.classList.add('is-visible');
+        if (hudTimeout) clearTimeout(hudTimeout);
+        hudTimeout = setTimeout(() => {
+          langHudPill.classList.remove('is-visible');
+        }, 1200);
+      }
+    }
+  }
+
+  function toggleTheme() {
+    const isCurrentlyLight = document.body.classList.contains('theme-light');
+    const newTheme = isCurrentlyLight ? 'dark' : 'light';
+    setTheme(newTheme, true);
+  }
+
+  [themeToggleBtn, mobileThemeToggleBtn, introThemeToggleBtn].forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleTheme();
+      });
+    }
+  });
+
+  // Initialize theme from localStorage (Mode Recruteur Épuré is the default mode)
+  let savedTheme = 'light';
+  try {
+    savedTheme = localStorage.getItem('luka_portfolio_theme') || 'light';
+  } catch (e) {}
+  if (savedTheme === 'dark') {
+    setTheme('dark', false);
+  } else {
+    setTheme('light', false);
+  }
+
+  window.setPortfolioTheme = setTheme;
 
   // --- SPA VIEW SWITCHER ROUTER (120HZ ULTRA-FLUID APP-LIKE MOTION) ---
   const navLinks = document.querySelectorAll('.nav-item-link');
@@ -380,6 +486,20 @@ document.addEventListener('DOMContentLoaded', () => {
     linktreeContactBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       openShortlist();
+    });
+  }
+
+  const heroSkillsBtn = document.getElementById('heroSkillsBtn');
+  if (heroSkillsBtn) {
+    heroSkillsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openShortlist();
+      setTimeout(() => {
+        const matrixBox = document.getElementById('drawerSkillsMatrixBox');
+        if (matrixBox) {
+          matrixBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 180);
     });
   }
 
