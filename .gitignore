@@ -1,1 +1,25 @@
+﻿# Dossier d'archives lourdes et documents personnels
+# Exclu pour éviter les blocages de taille de fichier sur GitHub (>25 Mo web / >100 Mo git)
+_MES_DOCS_ET_PDF/
 
+# Fichiers volumineux multimédias non requis pour le web (vidéos intégrées via YouTube)
+*.mp4
+*.mp3
+*.mov
+*.avi
+*.zip
+*.tar.gz
+
+# Fichiers systèmes et temporaires
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+*.tmp
+*.bak
+*~
+
+# Fichiers d'environnement et éditeurs
+.vscode/
+.idea/
